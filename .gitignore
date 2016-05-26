@@ -3,8 +3,7 @@
 node_modules/
 platforms/
 nbproject/
-www/lib
+www/lib/
 www/css/
 plugins/
 .idea/
-ionic.app.css
