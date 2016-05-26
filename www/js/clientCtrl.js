@@ -6,7 +6,7 @@
 
 angular.module('starter.controllers')
 
-  .controller('ClientCtrl', function ($scope, $state, $ionicActionSheet, $timeout, aJaxService, $ionicLoading, $ionicSlideBoxDelegate, clientService, utilService) {
+  .controller('ClientCtrl', function ($scope, $state, $ionicActionSheet, $ionicLoading, clientService, utilService, $ionicPopup) {
 
     $scope.data = {
       clients: null,
