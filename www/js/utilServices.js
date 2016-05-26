@@ -92,14 +92,21 @@ angular.module('starter.services')
         }
 
       }
-      function pickerFailure()
+      
+      function errorCall()
       {
-        // $ionicLoading.hide();
-        console.log('Error: ' + error);
         if (callback)
         {
           callback(undefined);
         }
+      }
+      
+      function pickerFailure()
+      {
+        // $ionicLoading.hide();
+        
+        console.log('Error: ' + error);
+        errorCall();
       }
 
       function pickerSuccess(results)
@@ -108,11 +115,8 @@ angular.module('starter.services')
 
         if (results.length == 0)
         {
-          if (callback)
-          {
-
-            callback(undefined);
-          }
+          
+          errorCall();
           return;
         }
         for (var i = 0; i < results.length; i++) {

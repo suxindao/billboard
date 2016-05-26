@@ -13,7 +13,7 @@
 
 angular.module('starter.controllers')
 
-  .controller('makeVideoCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $ionicLoading, $state, $stateParams) {
+  .controller('makeVideoCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $ionicLoading, $state, $stateParams,$ionicHistory) {
 
     $scope.programData = {"items": []};
 
@@ -28,7 +28,7 @@ angular.module('starter.controllers')
         console.log(JSON.stringify(results));
       }else
       {
-          $state.back();
+         $ionicHistory.goBack();
       }
 
     });
