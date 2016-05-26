@@ -26,6 +26,9 @@ angular.module('starter.controllers')
         init(results);
 
         console.log(JSON.stringify(results));
+      }else
+      {
+          $state.back();
       }
 
     });

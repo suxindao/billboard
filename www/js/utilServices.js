@@ -37,7 +37,14 @@ angular.module('starter.services')
 //                template: '<ion-spinner icon="spiral"></ion-spinner>'
 //            });
       if (!window.imagePicker)
-        return;
+      {
+          if(callback)
+          {
+              callback(undefined);
+          }
+            return;
+      }
+      
 
       var imageInfo = [];
 
