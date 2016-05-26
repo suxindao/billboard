@@ -1,0 +1,97 @@
+<ion-view view-title="个人设置" name="account-view" hide-nav-bar="true">
+  <ion-content class="" overflow-scroll="true" scroll="false">
+    <header class="heade header">
+      <a class="abtn clhm" ui-sref="main">
+        <img class="cloh" src="img/jmh.png"> 
+        首页       
+      </a>              
+      <span>个人设置</span>
+      <a class="bbtn clhm wdlog" ng-click="logout()">
+        退出登录
+      </a>
+    </header>
+    <div class="app_bg bgstyle">
+      <div class="adivm">
+        <ul class="adul">
+          <li class="adli">
+            <p class="fl">
+              <img class="adivg" src="img/aduse.png">
+              用户名：
+            </p>
+            <a class="line_k fr" style="color: #000;">
+              {{user.name}}
+              <!--<img  class="nextg" src="img/next.png">-->
+            </a>
+          </li>
+          <li class="adli">
+            <p class="fl">
+              <img class="gsev" src="img/gsev.png">
+              已制作节目：
+            </p>
+            <a class="line_k fr" style="color: #000;">
+              {{user.program}}
+              <!--<img  class="nextg" src="img/next.png">-->
+            </a>
+          </li>
+          <li class="adli">
+            <p class="fl">
+              <img class="note" src="img/note.png">
+              已发布节目：
+            </p>
+            <a class="line_k paddS fr" style="color: #000;">
+              {{user.publish}}
+            </a>
+          </li>
+          <li class="adli bornoe">
+            <p class="fl">
+              <img class="mgg" src="img/mgg.png">
+              已配对设备：
+            </p>
+            <a class="line_k fr" style="color: #000;">
+              {{user.client}}
+              <!--<img  class="nextg" src="img/next.png">-->
+            </a>
+          </li>
+        </ul>
+        <!--
+                <ul class="adul">
+                  <li class="adli real">
+                    <p class="fl">
+                      <img class="chat" src="img/chat.png">
+                      消息推送
+                    </p> 
+                    <label id="toggoe" class="toggle toggle-calm fr">
+                      <input type="checkbox" checked="">
+                      <div class="track">
+                        <div class="handle"></div>
+                      </div>
+                    </label><div class="clear"></div>         
+                  </li>
+        
+                  <li class="adli">
+                    <p class="fl">
+                      <img class="love" src="img/love.png">
+                      意见反馈
+                    </p>  
+                    <a class="line_k fr" style="color: #000;">
+        
+                      <img  class="nextg" src="img/next.png">
+                    </a>        
+                  </li>
+                  <li class="adli bornoe">
+                    <p class="fl">
+                      <img class="nbook" src="img/nbook.png">
+                      关于XXXXX
+                    </p>  
+                    <a class="line_k fr" style="color: #000;">
+        
+                      <img  class="nextg" src="img/next.png">
+                    </a>        
+                  </li>
+                </ul>
+        -->
+      </div>
+      <p class="txtlogo abptxt">Copyright © MagicPoster</p>
+    </div>
+  </ion-content>
+</ion-view>

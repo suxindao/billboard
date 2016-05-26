@@ -1,0 +1,44 @@
+<ion-view view-title="设备匹配" name="account-view" hide-nav-bar="true">
+  <ion-content class="" overflow-scroll="true" scroll="false"> 
+    <header class="heade">
+      <div class="abtn">
+        <!--        <a href="#" class="line_k">
+                  <img class="adues" src="img/adues.png">        
+                </a>-->
+      </div>  
+      <span>设备匹配</span>
+      <a class="bbtn clhm wdlog" ng-click="goMain()">
+        返回
+      </a>
+    </header>
+
+    <div class="app_bg bgstyle">
+      <!--<a class="jump" ng-click="goMain()">跳过<img class="jumpg" src="img/jump.png"></a>-->
+      <div class="kunb"></div>
+      <div class="clear"></div>
+      <div class="matd">
+        <img class="camg line_k " src="img/camera.png">
+
+        <img class="runmg" src="img/dian.png">
+        <img class="jtx none" src="img/jt.png">
+        <img class="ring none" src="img/ring.png">
+
+        <img class="modemg line_k " src="img/sz.png">
+      </div>
+      <img src="img/ggaotu.png" class="ggto">
+      <ul class="login_txt maro">
+        <li class="login_li" id="tel_li">
+          <label for="sid" class="lab_sid bkmg"></label>
+          <input type="text" class="txtput" id="sid" placeholder="请输入设备ID" ng-model="data.clientID" auto-focus>
+          <a class="amg" href="#"><img class="bxx" src="img/xx.png"></a>
+        </li>
+      </ul>
+      <p class="matok zcok" ng-show="data.showMessage" ng-bind="data.message"></p>
+      <p class="denlu matn dltn" ng-show="!data.showNextButton" ng-click="clientBind()">配对</p>
+      <p class="denlu matn dltn" ng-show="data.showNextButton" ng-click="goMain()">下一步</p>
+      <p class="txtlogo">Copyright © MagicPoster</p>
+    </div>
+
+  </ion-content>
+</ion-view>
+

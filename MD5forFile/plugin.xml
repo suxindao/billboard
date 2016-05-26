@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.billboard.md5" version="0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+  <name>MD5forFile</name>
+  <js-module name="MD5forFile" src="www/MD5forFile.js">
+    <clobbers target="cordova.plugins.MD5forFile" />
+  </js-module>
+  <platform name="android">
+    <config-file parent="/*" target="res/xml/config.xml">
+      <feature name="MD5forFile">
+        <param name="android-package" value="com.billboard.md5.MD5forFile" />
+      </feature>
+    </config-file>
+    <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+    <source-file src="src/android/MD5forFile.java" target-dir="src/com/billboard/md5" />
+    <source-file src="src/android/MD5.java" target-dir="src/com/billboard/md5" />
+  </platform>
+</plugin>

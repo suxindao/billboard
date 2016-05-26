@@ -1,0 +1,56 @@
+<ion-view view-title="主页面" name="main-view" hide-back-button="true" hide-nav-bar="true">
+  <ion-content class="" overflow-scroll="true" scroll="false">
+
+    <header class="heade">
+      <div class="abtn">
+        <a ui-sref="admin">
+          <img class="adues" src="img/adues.png">        
+        </a>
+
+      </div>  
+      <span>节目管理</span>
+      <a class="bbtn" ng-click="menu()">
+        <img class="cztn" src="img/sider.png">
+      </a>
+    </header>
+
+    <div class="app_bg bgstyle">
+      <div ng-show="data.showContent == 2">
+        <p class="psdeor">您还没有任何节目。</p>
+        <a ui-sref="makeVideo" class="dobtn bkmg real "><img src="img/sy.png" class="asy">立即制作</a><!--点击 dltn-->
+        <p class="txtlogo">Copyright © MagicPoster</p>
+      </div>
+
+      <div ng-show="data.showContent === 1">
+        <div class="vdiv">
+          <ion-slides options="swiper_options" ng-if="data.photos" slider="slider" style="width: 100%; height: auto;">
+            <ion-slide-page ng-repeat="photo in data.photos">
+              <p class="vtext">{{photo.name}}</p>
+              <div class="videon real">
+                <!--<img class="tplay absol" src="img/play.png">-->
+                <img ng-src="{{photo.first_image}}" class="bvmg {{photo.cssStyle}}" preview-url="{{photo.preview_url}}" inappbowser>
+                <p class="vptxt absol">
+                  <span class="line_k fl">{{photo.update_date}}</span>
+                  <span class="line_k"></span>
+                  <span class="line_k fr">{{photo.resolution}}</span>
+                </p>
+              </div>
+            </ion-slide-page>
+          </ion-slides>
+          <ul class="vsmg">
+            <li class="fsmg real fl" ng-repeat="photo in data.photos" ng-class="{'marr': ($index + 1) % 6 == 0}">
+              <a ng-click="updateSlide({{$index}})">
+                <p ng-class="{'mcbg': !($index === slider.activeIndex)}"></p>
+                <!--<p ng-hide="{{$index === slider.activeIndex}}" class="mcbg"></p>-->
+                <img class="asmg" ng-src="{{photo.preview_image}}">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <a ui-sref="makeVideo" class="dobtn bkmg mall dltn real"><img src="img/sy.png" class="asy">节目制作</a>
+        <p class="txtlogo abptxt">Copyright © MagicPoster</p>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+

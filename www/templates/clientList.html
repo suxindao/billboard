@@ -1,0 +1,39 @@
+<ion-view view-title="发布设备选择" name="account-view" hide-nav-bar="true">
+  <ion-content class="" overflow-scroll="true" scroll="false">
+    <header class="heade header">
+      <a class="abtn marg" ui-sref="match">
+        <img class="addp" src="img/addg.png">    
+      </a>
+      <span>设备管理</span>
+      <a class="bbtn clhm wdlog" ui-sref="main">
+        返回
+      </a>
+    </header>
+    <div ng-show="!data.showContent" class="app_bg bgstyle">
+      <p class="psdeor">没有设备</p>
+      <a ui-sref="match" class="dobtn bkmg real "><img src="img/sy.png" class="asy">绑定设备</a><!--点击 dltn-->
+      <p class="txtlogo">Copyright © MagicPoster</p>      
+
+    </div>
+    <div ng-show="data.showContent" class="app_bg bgstyle">
+      <ul class="maul">
+
+        <li class="mali fl" ng-repeat="client in data.clients">
+
+          <p class="map topz">
+            <span class="settxt">{{client.name}}</span>
+          </p>
+          <a ng-click="menu({{client.id}}, '{{client.name}}')">
+            <img class="bgko" ng-src="{{client.first_image}}">
+          </a>
+          <p class="map">
+            <span class="utit">{{client.id}}</span>
+            <span class="uqu vtime">{{client.create_date}}</span>
+          </p>
+
+        </li>
+
+      </ul>
+    </div>
+  </ion-content>
+</ion-view>  
