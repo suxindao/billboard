@@ -6,7 +6,7 @@
 
 angular.module('starter.controllers')
 
-  .controller('ManageCtrl', function ($scope, $state, $ionicActionSheet, $timeout, aJaxService, $ionicLoading, $ionicSlideBoxDelegate, contentService, $ionicPopup) {
+  .controller('ManageCtrl', function ($scope, $state, $ionicActionSheet, $timeout, aJaxService, $ionicLoading, $ionicSlideBoxDelegate, contentService, utilService) {
 
     $scope.swiper_options = {
       loop: false,
@@ -73,10 +73,7 @@ angular.module('starter.controllers')
           dataChangeHandler();
         } else {
           $scope.data.showContent = 2;
-          var alertPopup = $ionicPopup.alert({
-            title: '获取失败',
-            template: '获取内容失败'
-          });
+          utilService.showAlert('获取失败', '获取内容失败');
         }
       });
     }
@@ -123,11 +120,7 @@ angular.module('starter.controllers')
 
               contentService.removeContents(content_ID)
                 .success(function () {
-
-                  $ionicPopup.alert({
-                    title: '删除成功',
-                    template: '删除成功'
-                  }).then(function () {
+                  utilService.showAlert('删除成功', '删除成功', function () {
                     $scope.data.photos.splice(slideIndex, 1);
                     if ($scope.data.photos.length === 0) {
                       $scope.data.showContent = 2;
@@ -135,13 +128,9 @@ angular.module('starter.controllers')
                       dataChangeHandler();
                     }
                   });
-
                 })
                 .error(function (data) {
-                  $ionicPopup.alert({
-                    title: '删除失败',
-                    template: '删除失败'
-                  });
+                  utilService.showAlert('删除失败', '删除失败');
                 });
 
               break;

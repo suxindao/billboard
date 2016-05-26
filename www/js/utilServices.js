@@ -131,18 +131,17 @@ angular.module('starter.services')
 
     };
 
-    this.showAlert = function (title, callback)
+    this.showAlert = function (title, template, callback)
     {
       var alertPopup = $ionicPopup.alert({
-        title: '提示',
-        template: title
+        title: '<strong>' + title + '</strong>',
+        template: template
       });
       alertPopup.then(function (res) {
-        console.log('Thank you for not eating my delicious ice cream cone');
         if (callback)
           callback();
       });
-    }
+    };
 
     this.showPopup = function (title, subtitle, callback, scope, inputType) {
 
@@ -155,7 +154,7 @@ angular.module('starter.services')
       // 自定义弹窗
       var myPopup = $ionicPopup.show({
         template: '<input type="' + inputType + '" ng-model="data.value" autoFocus>',
-        title: title,
+        title: '<strong>' + title + '</strong>',
         subTitle: subtitle,
         scope: scope,
         buttons: [
@@ -177,8 +176,27 @@ angular.module('starter.services')
         console.log('Tapped!', res);
       });
 
+    };
+
+    this.showConfirm = function (title, template, okText, cancelText, callback)
+    {
+      var confirmPopup = $ionicPopup.confirm({
+        title: '<strong>' + title + '</strong>',
+        template: template,
+        okText: okText,
+        cancelText: cancelText
+      });
+
+      confirmPopup.then(function (res) {
+        if (res) {
+          if (callback)
+            callback(res);
+        } else {
+          // Don't close  
+        }
+      });
 
 
-    }
+    };
 
   });

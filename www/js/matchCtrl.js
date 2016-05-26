@@ -34,10 +34,7 @@ angular.module('starter.controllers')
 
         })
         .error(function (data) {
-          $ionicPopup.alert({
-            title: '',
-            template: '配对失败' + data.msgc
-          });
+          utilService.showAlert('配对设备', '配对失败' + data.msgc);
         });
     };
 

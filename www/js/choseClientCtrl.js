@@ -6,7 +6,7 @@
 
 angular.module('starter.controllers')
 
-  .controller('ChoseClientCtrl', function ($scope, $state, $stateParams, $ionicActionSheet, $timeout, contentService, $ionicLoading, $ionicSlideBoxDelegate, clientService, $ionicPopup) {
+  .controller('ChoseClientCtrl', function ($scope, $state, $stateParams, $ionicActionSheet, contentService, $ionicLoading, clientService, utilService) {
 
     $scope.data = {
       clients: null,
@@ -32,13 +32,8 @@ angular.module('starter.controllers')
         $scope.data.showContent = true;
         $scope.data.clients = data;
       } else {
-        $ionicPopup.confirm({
-          title: '设备列表',
-          template: '没有匹配设备,是否去匹配?'
-        }).then(function (res) {
-          if (res) {
-            $state.go("match");
-          }
+        utilService.showConfirm('设备列表', '没有匹配设备,是否去匹配?', '确定', '取消', function () {
+          $state.go("match");
         });
       }
     });
@@ -65,18 +60,12 @@ angular.module('starter.controllers')
 
                 contentService.publishContents($scope.contentid, ids)
                   .success(function () {
-                    $ionicPopup.alert({
-                      title: '发布成功',
-                      template: '发布成功'
-                    }).then(function () {
+                    utilService.showAlert('发布成功', '发布成功', function () {
                       $state.go("manage");
                     });
                   })
                   .error(function (data) {
-                    $ionicPopup.alert({
-                      title: '发布失败',
-                      template: data
-                    });
+                    utilService.showAlert('发布失败', data);
                   });
                 break;
             }
@@ -84,10 +73,7 @@ angular.module('starter.controllers')
           }
         });
       } else {
-        $ionicPopup.alert({
-          title: '内容发布',
-          template: '请选择设备'
-        });
+        utilService.showAlert('内容发布', '请选择设备');
       }
 
 

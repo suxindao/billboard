@@ -26,12 +26,7 @@ angular.module('starter.controllers', ['ionic'])
 
 
       if (!utilService.checkMobile($scope.data.mobile)) {
-
-        $ionicPopup.alert({
-          title: '提示',
-          template: '不是完整的11位手机号或者正确的手机号前七位！'
-        });
-
+        utilService.showAlert('提示', '不是完整的11位手机号或者正确的手机号前七位！');
         return;
       }
       var requestUrl = "?cmd=loginOrRegSendSMSCode&mobile=" + $scope.data.mobile;
@@ -49,10 +44,7 @@ angular.module('starter.controllers', ['ionic'])
           }
         })
         .error(function (data) {
-          var alertPopup = $ionicPopup.alert({
-            title: '获取失败',
-            template: '获取验证码失败！请重新获取！'
-          });
+          utilService.showAlert('获取失败', '获取验证码失败！请重新获取！');
         });
 
 
@@ -64,10 +56,7 @@ angular.module('starter.controllers', ['ionic'])
         return;
 
       if (!utilService.checkMobile($scope.data.mobile)) {
-        $ionicPopup.alert({
-          title: '提示',
-          template: '不是完整的11位手机号或者正确的手机号前七位！'
-        });
+        utilService.showAlert('提示', '不是完整的11位手机号或者正确的手机号前七位！');
         return;
       }
 
@@ -87,11 +76,8 @@ angular.module('starter.controllers', ['ionic'])
         .error(function (data) {
 
           aJaxService.setToken(undefined);
+          utilService.showAlert('登录', '登录失败！');
 
-          var alertPopup = $ionicPopup.alert({
-            title: '登录',
-            template: '登录失败!'
-          });
         });
     };
 

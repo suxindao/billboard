@@ -6,7 +6,7 @@
 
 angular.module('starter.controllers')
 
-  .controller('ClientCtrl', function ($scope, $state, $ionicActionSheet, $timeout, aJaxService, $ionicLoading, $ionicSlideBoxDelegate, clientService, $ionicPopup) {
+  .controller('ClientCtrl', function ($scope, $state, $ionicActionSheet, $timeout, aJaxService, $ionicLoading, $ionicSlideBoxDelegate, clientService, utilService) {
 
     $scope.data = {
       clients: null,
@@ -29,13 +29,8 @@ angular.module('starter.controllers')
         $scope.data.showContent = true;
         $scope.data.clients = data;
       } else {
-        $ionicPopup.confirm({
-          title: '设备列表',
-          template: '没有匹配设备,是否去匹配?'
-        }).then(function (res) {
-          if (res) {
-            $state.go("match");
-          }
+        utilService.showConfirm('设备列表', '没有匹配设备,是否去匹配?', '确定', '取消', function () {
+          $state.go("match");
         });
       }
     });
@@ -82,18 +77,12 @@ angular.module('starter.controllers')
                 console.log('id = ' + clientID + " name = " + res);
                 clientService.rename(clientID, res)
                   .success(function () {
-                    $ionicPopup.alert({
-                      title: '修改成功',
-                      template: '修改成功'
-                    }).then(function () {
+                    utilService.showAlert('修改成功', '修改成功', function () {
                       updateLocalName(clientID, res);
                     });
                   })
                   .error(function (data) {
-                    $ionicPopup.alert({
-                      title: '发布失败',
-                      template: data
-                    });
+                    utilService.showAlert('发布失败', data);
                   });
               });
 

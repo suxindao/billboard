@@ -14,7 +14,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
 
       function showConfirm() {
         var confirmPopup = $ionicPopup.confirm({
-          title: '<strong>退出应用?</strong>',
+          title: '退出应用?',
           template: '你确定要退出应用吗?',
           okText: '退出',
           cancelText: '取消'
