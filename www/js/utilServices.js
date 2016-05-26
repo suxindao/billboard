@@ -156,7 +156,7 @@ angular.module('starter.services')
 
     this.showPopup = function (title, subtitle, callback, scope, inputType) {
 
-      scope.data = {}
+      scope.data = {};
 
       if (inputType == undefined)
       {
