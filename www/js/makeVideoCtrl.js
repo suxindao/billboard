@@ -199,7 +199,7 @@ angular.module('starter.controllers')
               if (ret)
               {
 
-                utilService.showAlert("制作节目成功！", function ()
+                utilService.showAlert("","制作节目成功！", function ()
                 {
                   $state.go("manage");
                 });
@@ -207,7 +207,7 @@ angular.module('starter.controllers')
 
               } else
               {
-                utilService.showAlert("制作节目失败！");
+                utilService.showAlert("","制作节目失败！");
               }
 
               $ionicLoading.hide();
@@ -230,14 +230,14 @@ angular.module('starter.controllers')
                   {
                     if (ret)
                     {
-                      utilService.showAlert("制作节目成功！", function ()
+                      utilService.showAlert("","制作节目成功！", function ()
                       {
                         $state.go("manage");
                       });
 
                     } else
                     {
-                      utilService.showAlert("制作节目失败！");
+                      utilService.showAlert("","制作节目失败！");
                     }
 
                     $ionicLoading.hide();
