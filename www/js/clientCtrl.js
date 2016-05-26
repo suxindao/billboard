@@ -116,9 +116,8 @@ angular.module('starter.controllers')
     function getLocalName(clientID) {
         var name;
 
-
         $scope.data.clients.forEach(function(client) {
-            console.log(client.id);
+
             if (parseInt(client.id) == parseInt(clientID)) {
                 name = client.name;
             };
