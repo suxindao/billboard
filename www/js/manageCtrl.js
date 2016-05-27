@@ -24,9 +24,7 @@ angular.module('starter.controllers')
         depth: 100,
         modifier: 1,
         slideShadows: true
-      },
-      freeMode: true
-
+      }
     };
 
     $scope.$on("$ionicSlides.sliderInitialized", function (event, data) {
