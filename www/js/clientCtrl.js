@@ -6,7 +6,7 @@
 
 angular.module('starter.controllers')
 
-  .controller('ClientCtrl', function ($scope, $state, $ionicActionSheet, $timeout, aJaxService, $ionicLoading, $ionicSlideBoxDelegate, clientService, utilService) {
+  .controller('ClientCtrl', function ($scope, $state, $ionicActionSheet, $ionicLoading, clientService, utilService, $ionicPopup) {
 
     $scope.data = {
       clients: null,
@@ -38,11 +38,13 @@ angular.module('starter.controllers')
 
     $scope.updateSlide = function (index) {
       $scope.slider.slideTo(index, 500, null);
-//      dataChangeHandler();
+      //      dataChangeHandler();
     };
 
     //页面右上角按钮
     $scope.menu = function (clientID) {
+
+      $scope.data.name = getLocalName(clientID);
 
       var hideSheet = $ionicActionSheet.show({
         buttons: [
@@ -53,14 +55,14 @@ angular.module('starter.controllers')
 
           switch (index) {
             case 0: //修改设备名称
+
               $ionicPopup.show({
                 template: '<input type="text" ng-model="data.name">',
                 title: '修改设备名',
                 subTitle: '请输入新设备名',
                 scope: $scope,
                 buttons: [
-                  {text: '取消'},
-                  {
+                  {text: '取消'}, {
                     text: '<b>确定</b>',
                     type: 'button-positive',
                     onTap: function (e) {
@@ -75,15 +77,17 @@ angular.module('starter.controllers')
                 ]
               }).then(function (res) {
                 console.log('id = ' + clientID + " name = " + res);
-                clientService.rename(clientID, res)
-                  .success(function () {
-                    utilService.showAlert('修改成功', '修改成功', function () {
-                      updateLocalName(clientID, res);
+                if (res) {
+                  clientService.rename(clientID, res)
+                    .success(function () {
+                      utilService.showAlert('修改成功', '修改成功', function () {
+                        updateLocalName(clientID, res);
+                      });
+                    })
+                    .error(function (data) {
+                      utilService.showAlert('发布失败', data);
                     });
-                  })
-                  .error(function (data) {
-                    utilService.showAlert('发布失败', data);
-                  });
+                }
               });
 
               break;
@@ -95,9 +99,9 @@ angular.module('starter.controllers')
         }
       });
 
-//      $timeout(function () {
-//        hideSheet();
-//      }, 5000);
+      //      $timeout(function () {
+      //        hideSheet();
+      //      }, 5000);
 
     };
 
@@ -108,5 +112,23 @@ angular.module('starter.controllers')
           client.name = name;
       });
     }
+
+    function getLocalName(clientID) {
+      var name;
+
+      $scope.data.clients.forEach(function (client) {
+        console.log(client.name);
+        if (client.id == clientID) {
+          name = client.name;
+        }
+      });
+
+      return name;
+
+//      var client;
+//      var res = $scope.data.clients.find(client => client.id == clientID);
+//      return res ? res.name : res;
+    }
+
 
   });

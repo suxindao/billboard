@@ -16,10 +16,10 @@ $dark:                            #444 !default;
 */
 
 // The path for our ionicons font files, relative to the built CSS in www/css
-$ionicons-font-path: "fonts" !default;
+$ionicons-font-path: "ionic/fonts" !default;
 
 // Include all of Ionic
-@import "ionic";
+@import "ionic/ionic";
 
 @function px($number){
   @return $number/2;
@@ -281,7 +281,7 @@ html,body{width: 100%; height: 100%}
 .videon{display: table-cell; width: px(678px); height: px(550px); border-radius: px(2px); text-align: center; vertical-align: middle; background-color: #3f3d3e;}
 .tplay{width: px(128px)!important; height: px(128px)!important; top: 50%; left: 50%; margin-top: px(-64px); margin-left: px(-64px);}
 .bvmg{width: px(680px); height: px(550px);}
-.vptxt{bottom: px(0px); left: px(0px); width: px(608px); height: px(72px); background: rgba(39,74,69,0.8); font-size: px(24px);
+.vptxt{bottom: px(0px); left: px(0px); width: px(598px); height: px(72px); background: rgba(39,74,69,0.8); font-size: px(24px);
        text-align: center; line-height: px(72px); color: #b6b4b4; padding: 0 px(35px);}
 .vsmg{height: px(228px); border-top: px(2px) solid #3f3d3e; border-bottom: px(2px) solid #3f3d3e; padding: px(29px) px(47px); background: #565454; margin-top: px(86px);
 overflow: scroll;}
@@ -371,7 +371,7 @@ body{-webkit-font-smoothing: subpixel-antialiased;}
 }
 
 .swiper-slide {
-  width: 341px !important;
+  /*width: 341px !important;*/
   height: 309.5px;
 
 }

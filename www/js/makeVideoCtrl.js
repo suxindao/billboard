@@ -13,7 +13,7 @@
 
 angular.module('starter.controllers')
 
-  .controller('makeVideoCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $ionicLoading, $state, $stateParams) {
+  .controller('makeVideoCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $ionicLoading, $state, $stateParams,$ionicHistory) {
 
     $scope.programData = {"items": []};
 
@@ -26,6 +26,9 @@ angular.module('starter.controllers')
         init(results);
 
         console.log(JSON.stringify(results));
+      }else
+      {
+         $ionicHistory.goBack();
       }
 
     });
@@ -199,7 +202,7 @@ angular.module('starter.controllers')
               if (ret)
               {
 
-                utilService.showAlert("制作节目成功！", function ()
+                utilService.showAlert("","制作节目成功！", function ()
                 {
                   $state.go("manage");
                 });
@@ -207,7 +210,7 @@ angular.module('starter.controllers')
 
               } else
               {
-                utilService.showAlert("制作节目失败！");
+                utilService.showAlert("","制作节目失败！");
               }
 
               $ionicLoading.hide();
@@ -230,14 +233,14 @@ angular.module('starter.controllers')
                   {
                     if (ret)
                     {
-                      utilService.showAlert("制作节目成功！", function ()
+                      utilService.showAlert("","制作节目成功！", function ()
                       {
                         $state.go("manage");
                       });
 
                     } else
                     {
-                      utilService.showAlert("制作节目失败！");
+                      utilService.showAlert("","制作节目失败！");
                     }
 
                     $ionicLoading.hide();

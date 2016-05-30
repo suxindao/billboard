@@ -37,7 +37,14 @@ angular.module('starter.services')
 //                template: '<ion-spinner icon="spiral"></ion-spinner>'
 //            });
       if (!window.imagePicker)
-        return;
+      {
+          if(callback)
+          {
+              callback(undefined);
+          }
+            return;
+      }
+      
 
       var imageInfo = [];
 
@@ -85,14 +92,21 @@ angular.module('starter.services')
         }
 
       }
-      function pickerFailure()
+      
+      function errorCall()
       {
-        // $ionicLoading.hide();
-        console.log('Error: ' + error);
         if (callback)
         {
           callback(undefined);
         }
+      }
+      
+      function pickerFailure()
+      {
+        // $ionicLoading.hide();
+        
+        console.log('Error: ' + error);
+        errorCall();
       }
 
       function pickerSuccess(results)
@@ -101,11 +115,8 @@ angular.module('starter.services')
 
         if (results.length == 0)
         {
-          if (callback)
-          {
-
-            callback(undefined);
-          }
+          
+          errorCall();
           return;
         }
         for (var i = 0; i < results.length; i++) {
@@ -145,7 +156,7 @@ angular.module('starter.services')
 
     this.showPopup = function (title, subtitle, callback, scope, inputType) {
 
-      scope.data = {}
+      scope.data = {};
 
       if (inputType == undefined)
       {
