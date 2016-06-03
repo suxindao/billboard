@@ -71,7 +71,7 @@ body{overflow: hidden;}
   background-attachment: fixed;
 
   /* 让背景图基于容器大小伸缩 */
-  background-size: cover;
+  background-size: 100% 100%;
 
   /* 设置背景颜色，背景图加载过程中会显示背景色 */
   background-color: #565353;
