@@ -75,7 +75,7 @@ angular.module('starter.directives', [])
       link: function (_scope, _element) {
         $timeout(function () {
           _element[0].focus();
-        }, 0);
+        }, 1000);
       }
     };
   })
