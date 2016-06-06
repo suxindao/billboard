@@ -22,7 +22,7 @@ $ionicons-font-path: "ionic/fonts" !default;
 @import "ionic/ionic";
 
 @function px($number){
-  @return $number/2;
+  @return $number/3;
 }     
 
 html{ font-family: "微软雅黑", Microsoft YaHei, sans-serif;}

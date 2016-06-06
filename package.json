@@ -28,7 +28,9 @@
     },
     "cordova-plugin-file",
     "MD5forFile",
-    "cordova-plugin-inappbrowser"
+    "cordova-plugin-inappbrowser",
+    "cordova-hot-code-push-plugin",
+    "cordova-hot-code-push-local-dev-addon"
   ],
   "cordovaPlatforms": [
     "android"
