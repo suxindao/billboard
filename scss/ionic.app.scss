@@ -26,10 +26,10 @@ $ionicons-font-path: "ionic/fonts" !default;
   /*@return $number/2;*/
 }     
 
-/*html{ font-family: "微软雅黑", Microsoft YaHei, sans-serif;}*/
-/*body,p,ul,li{ padding: 0; margin: 0;list-style:none;}*/
-/*a{text-decoration:none; color:#fff;}
-body{overflow: hidden;}*/
+html{ font-family: "微软雅黑", Microsoft YaHei, sans-serif;}
+body,p,ul,li{ padding: 0; margin: 0;list-style:none;}
+a{text-decoration:none; color:#fff;}
+body{overflow: hidden;}
 .fr{float: right;}
 .fl{float: left;}
 .clear{clear: both;}
@@ -225,7 +225,7 @@ body{overflow: hidden;}*/
 
 .matok{ font-size:px(36px); width: 100%; text-align: center; position: absolute; bottom: px(580px); }
 .cream{position:absolute; top: px(84px); left: px(94px); width: px(145px); height: px(146px);}
-.mtxt{width: 646px; height: px(200px); margin: px(170px) auto; margin-bottom: 0px; text-align: center; overflow: hidden;}
+.mtxt{/* width: 646px; */ height: px(200px); margin: px(170px) auto; margin-bottom: 0px; text-align: center; overflow: hidden;}
 .bgtext{display: inline-block; width: px(392px); height: px(198px); margin-right: 28px; color: #fff; font-size: px(48px); background: url("../img/bgtxt.png")no-repeat; line-height: px(192px);}
 .hbmg{display: inline-block; width: px(392px); height: px(198px); color: #bbdfbf; font-size: px(48px); background: url("../img/hbmg.png")no-repeat; line-height: px(192px);}
 .mgnt{margin-top: px(475px); height: px(331px);}

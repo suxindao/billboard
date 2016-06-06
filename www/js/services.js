@@ -66,15 +66,16 @@ angular.module('starter.services', [])
 
       $http({
         url: requestUrl,
-        method: 'GET'
+        method: 'GET',
+        timeout: 30000 //30秒无响应超时
       }).success(function (data) {
 
         console.log("httpGetData successData = " + JSON.stringify(data));
         if (data.result == 0)
         {
           deferred.resolve(data);
-        }
-        if (data.result == -2 || data.result == -3 || data.result == -4)
+        } 
+        else if (data.result == -2 || data.result == -3 || data.result == -4)
         {
           $rootScope.user = {};
           locals.setObject("user", $rootScope.user);
