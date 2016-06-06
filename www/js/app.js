@@ -128,7 +128,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
   .config(function ($httpProvider, $stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
     //禁用全局缓存
-    $ionicConfigProvider.views.maxCache(0);
+//    $ionicConfigProvider.views.maxCache(0);
 
     // Ionic uses AngularUI Router which uses the concept of states
     // Learn more here: https://github.com/angular-ui/ui-router
@@ -164,7 +164,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
       })
 
       .state('makeVideo', {
-        cache: false,
+//        cache: false,
         url: '/makeVideo',
         templateUrl: 'templates/makeVideo.html',
         controller: 'makeVideoCtrl',
@@ -172,7 +172,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
       })
 
       .state('admin', {
-        cache: false,
+//        cache: false,
         url: '/admin',
         templateUrl: 'templates/admin.html',
         controller: 'AdminCtrl'
@@ -191,7 +191,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
       })
 
       .state('clientList', {
-        cache: false,
+//        cache: false,
         url: '/clientList',
         templateUrl: 'templates/clientList.html',
         controller: 'ClientCtrl'
