@@ -22,7 +22,8 @@ $ionicons-font-path: "ionic/fonts" !default;
 @import "ionic/ionic";
 
 @function px($number){
-  @return $number/3;
+  /*@return ($number*0.70)/3;*/
+  @return $number/2;
 }     
 
 html{ font-family: "微软雅黑", Microsoft YaHei, sans-serif;}
@@ -70,7 +71,7 @@ body{overflow: hidden;}
   background-attachment: fixed;
 
   /* 让背景图基于容器大小伸缩 */
-  background-size: cover;
+  background-size: 100% 100%;
 
   /* 设置背景颜色，背景图加载过程中会显示背景色 */
   background-color: #565353;
@@ -281,10 +282,10 @@ html,body{width: 100%; height: 100%}
 .videon{display: table-cell; width: px(678px); height: px(550px); border-radius: px(2px); text-align: center; vertical-align: middle; background-color: #3f3d3e;}
 .tplay{width: px(128px)!important; height: px(128px)!important; top: 50%; left: 50%; margin-top: px(-64px); margin-left: px(-64px);}
 .bvmg{width: px(680px); height: px(550px);}
-.vptxt{bottom: px(0px); left: px(0px); width: px(608px); height: px(72px); background: rgba(39,74,69,0.8); font-size: px(24px);
+.vptxt{bottom: px(0px); left: px(0px); width: px(598px); height: px(72px); background: rgba(39,74,69,0.8); font-size: px(24px);
        text-align: center; line-height: px(72px); color: #b6b4b4; padding: 0 px(35px);}
 .vsmg{height: px(228px); border-top: px(2px) solid #3f3d3e; border-bottom: px(2px) solid #3f3d3e; padding: px(29px) px(47px); background: #565454; margin-top: px(86px);
-overflow: scroll;}
+      overflow: scroll;}
 .fsmg{width: px(180px); height: px(100px); border: px(2px) solid #000; margin-right: px(67px); margin-bottom: px(24px);}
 .asmg{width: px(180px); height: px(100px);}
 .boclo{border-color: #f8ef03}
@@ -371,15 +372,15 @@ body{-webkit-font-smoothing: subpixel-antialiased;}
 }
 
 .swiper-slide {
-  width: 341px !important;
+  /*width: 341px !important;*/
   height: 309.5px;
 
 }
 
 .swiper-slide img {
 
-/*  width: auto;
-  height: auto; */
+  /*  width: auto;
+    height: auto; */
   /* max-width: 100%; */
   max-height: 100%;
   vertical-align: middle;

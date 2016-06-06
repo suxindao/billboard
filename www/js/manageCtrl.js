@@ -10,15 +10,21 @@ angular.module('starter.controllers')
 
     $scope.swiper_options = {
       loop: false,
-      effect: 'slide',
+      effect: 'coverflow',
       speed: 500,
       showPager: false,
       spaceBetween: 100,
       keyboardControl: true,
       mousewheelControl: true,
       slidesPerView: 2, //这个很关键
-      centeredSlides: true
-
+      centeredSlides: true,
+      coverflow: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true
+      }
     };
 
     $scope.$on("$ionicSlides.sliderInitialized", function (event, data) {

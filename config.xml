@@ -1,55 +1,51 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.starter" version="0.0.1" xmlns:android="http://schemas.android.com/apk/res/android" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>广告牌</name>
-  <description>
-    An Ionic Framework and Cordova project.
-  </description>
-  <author email="you@example.com" href="http://example.com.com/">
-    Your Name Here
-  </author>
-  <content src="index.html"/> 
-  <access origin="*"/>
-  <preference name="orientation" value="portrait" />
-  <preference name="webviewbounce" value="false"/>
-  <preference name="UIWebViewBounce" value="false"/>
-  <preference name="DisallowOverscroll" value="true"/>
-  <preference name="SplashScreenDelay" value="5000"/>
-  <preference name="FadeSplashScreenDuration" value="0000"/>
-  <preference name="android-minSdkVersion" value="16"/>
-  <preference name="BackupWebStorage" value="none"/>
-  <preference name="SplashScreen" value="screen"/>
-  <!--<preference name="AndroidPersistentFileLocation" value="Compatibility"/>-->
-  <feature name="StatusBar">
-    <param name="ios-package" value="CDVStatusBar" onload="true"/>
-  </feature>
-  <platform name="android">
-   
-     <config-file platform="android" parent="/manifest" mode="add">
-        <uses-permission
-        android:name="android.permission.READ_EXTERNAL_STORAGE">
-       </uses-permission>
-     </config-file>
-    
-    <icon src="resources/android/icon/icon.png" density="ldpi"/>
-    <icon src="resources/android/icon/icon.png" density="mdpi"/>
-    <icon src="resources/android/icon/icon.png" density="hdpi"/>
-    <icon src="resources/android/icon/icon.png" density="xhdpi"/>
-    <icon src="resources/android/icon/icon.png" density="xxhdpi"/>
-    <icon src="resources/android/icon/icon.png" density="xxxhdpi"/>
-    <splash src="resources/android/splash/wel.png" density="land-ldpi"/>
-    <splash src="resources/android/splash/wel.png" density="land-mdpi"/>
-    <splash src="resources/android/splash/wel.png" density="land-hdpi"/>
-    <splash src="resources/android/splash/wel.png" density="land-xhdpi"/>
-    <splash src="resources/android/splash/wel.png" density="land-xxhdpi"/>
-    <splash src="resources/android/splash/wel.png" density="land-xxxhdpi"/>
-    <splash src="resources/android/splash/wel.png" density="port-ldpi"/>
-    <splash src="resources/android/splash/wel.png" density="port-mdpi"/>
-    <splash src="resources/android/splash/wel.png" density="port-hdpi"/>
-    <splash src="resources/android/splash/wel.png" density="port-xhdpi"/>
-    <splash src="resources/android/splash/wel.png" density="port-xxhdpi"/>
-    <splash src="resources/android/splash/wel.png" density="port-xxxhdpi"/>
-
-  </platform>   
-  <allow-intent href="*" />
-  <allow-navigation href="*" />
+    <name>广告牌</name>
+    <description>
+        An Ionic Framework and Cordova project.
+    </description>
+    <author email="you@example.com" href="http://example.com.com/">
+        Your Name Here
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="orientation" value="portrait" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="UIWebViewBounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="SplashScreenDelay" value="5000" />
+    <preference name="FadeSplashScreenDuration" value="0000" />
+    <preference name="android-minSdkVersion" value="16" />
+    <preference name="BackupWebStorage" value="none" />
+    <preference name="SplashScreen" value="screen" />
+    <!--<preference name="AndroidPersistentFileLocation" value="Compatibility"/>-->
+    <feature name="StatusBar">
+        <param name="ios-package" value="CDVStatusBar" onload="true" />
+    </feature>
+    <platform name="android">
+        <config-file platform="android" parent="/manifest" mode="add">
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE">
+            </uses-permission>
+        </config-file>
+        <icon src="resources/android/icon/icon.png" density="ldpi" />
+        <icon src="resources/android/icon/icon.png" density="mdpi" />
+        <icon src="resources/android/icon/icon.png" density="hdpi" />
+        <icon src="resources/android/icon/icon.png" density="xhdpi" />
+        <icon src="resources/android/icon/icon.png" density="xxhdpi" />
+        <icon src="resources/android/icon/icon.png" density="xxxhdpi" />
+        <splash src="resources/android/splash/wel.png" density="land-ldpi" />
+        <splash src="resources/android/splash/wel.png" density="land-mdpi" />
+        <splash src="resources/android/splash/wel.png" density="land-hdpi" />
+        <splash src="resources/android/splash/wel.png" density="land-xhdpi" />
+        <splash src="resources/android/splash/wel.png" density="land-xxhdpi" />
+        <splash src="resources/android/splash/wel.png" density="land-xxxhdpi" />
+        <splash src="resources/android/splash/wel.png" density="port-ldpi" />
+        <splash src="resources/android/splash/wel.png" density="port-mdpi" />
+        <splash src="resources/android/splash/wel.png" density="port-hdpi" />
+        <splash src="resources/android/splash/wel.png" density="port-xhdpi" />
+        <splash src="resources/android/splash/wel.png" density="port-xxhdpi" />
+        <splash src="resources/android/splash/wel.png" density="port-xxxhdpi" />
+    </platform>
+    <allow-intent href="*" />
+    <allow-navigation href="*" />
 </widget>
