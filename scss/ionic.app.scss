@@ -22,7 +22,7 @@ $ionicons-font-path: "ionic/fonts" !default;
 @import "ionic/ionic";
 
 @function px($number){
-  @return ($number*(1200/1560))/3;
+  @return ($number*(1200/1536))/3;
   /*@return $number/2;*/
 }     
 
@@ -85,7 +85,11 @@ body{overflow: hidden;}*/
 
 .logo_txt{margin: 0 auto; padding-top: px(160px); width: auto; height: auto; color: #fff; text-align: center; font-size: px(36px);}
 
-.whmg{width:px(132px); height: px(129px); margin-bottom: px(26px);}
+.whmg{
+  width:px(132px); 
+  height: px(129px); 
+  margin-bottom: px(26px);
+}
 /*登录错误提示*/
 .psdeor{width: 100%; font-size: px(36px); color:#fff; text-align: center; position: absolute; top: px(696px); }
 .login_txt{width: px(904px); margin: px(328px) auto; margin-bottom: px(20px); background: #fff; font-size: px(30px); border-radius:px(10px);  box-shadow: px(2px) px(2px) px(3px) #3b8e38;}
