@@ -29,6 +29,8 @@ angular.module('starter.controllers')
       }else
       {
          $ionicHistory.goBack();
+        // alert("goBack");
+         
       }
 
     });
