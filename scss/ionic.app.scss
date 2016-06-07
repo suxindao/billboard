@@ -22,7 +22,7 @@ $ionicons-font-path: "ionic/fonts" !default;
 @import "ionic/ionic";
 
 @function px($number){
-  @return ($number*(1200/1560))/3;
+  @return ($number*(1200/1536))/3;
   /*@return $number/2;*/
 }     
 
