@@ -1,6 +1,16 @@
-<ion-view view-title="应用主页面" name="account-view" hide-nav-bar="true">
-  <ion-content class="" overflow-scroll="true" scroll="false"> 
-    <div class="app_bg bgstyle">
+<ion-view view-title="应用主页面" name="account-view">
+  <ion-header-bar align-title="center" class="bar-positive">
+    <div class="buttons">
+      <button class="button" ng-click="doSomething()">Left Button</button>
+    </div>
+    <h1 class="title">Title!</h1>
+    <div class="buttons">
+      <button class="button">Right Button</button>
+    </div>
+  </ion-header-bar>
+  
+  <ion-content class="has-header" overflow-scroll="true" scroll="false"> 
+<!--    <div class="app_bg bgstyle">
       <img class="cream none" src="img/cream.png">
       <div class="logo_txt mars">
         <img class="whmg" src="img/logo.png"><br>
@@ -9,15 +19,25 @@
       <div class="mtxt">
         <a href="#" class="bgtext bkmg" ng-click="clickPost()">节目制作</a>
         <a ui-sref="manage"  class="bgtext bkmg">节目管理</a>
-        <a href="#" class="hbmg marr bkmg">海报制作</a><!--点击效果 zcok-->
+        <a href="#" class="hbmg marr bkmg">海报制作</a>点击效果 zcok
       </div>
       <div class="mgnt">
 
-        <!--<a href="#" class="agt marag" ng-click="clickPost()"><img src="img/bmg.png" class="mbmg mbtl"><span>系统设置</span></a>-->
+        <a href="#" class="agt marag" ng-click="clickPost()"><img src="img/bmg.png" class="mbmg mbtl"><span>系统设置</span></a>
         <a ui-sref="clientList" class="agt marbg"><img src="img/amg.png" class="mamg mbtl"><span>设备管理</span></a>           
 
       </div>
       <p class="txtlogo">Copyright © MagicPoster</p>
-    </div>
+    </div>-->
   </ion-content>
+  
+  <ion-footer-bar align-title="center" class="bar-assertive">
+  <div class="buttons">
+    <button class="button">Left Button</button>
+  </div>
+  <h1 class="title"> Footer Title!</h1>
+  <div class="buttons" ng-click="doSomething()">
+    <button class="button">Right Button</button>
+  </div>
+</ion-footer-bar>
 </ion-view>

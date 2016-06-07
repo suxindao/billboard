@@ -20,9 +20,9 @@ $ionicons-font-path: "ionic/fonts" !default;
 
 // Include all of Ionic
 @import "ionic/ionic";
-
+/*
 @function px($number){
-  /*@return ($number*(1200/1536))/3;*/
+  @return ($number*(1200/1536))/3;
   @return $number/2;
 }     
 
@@ -37,7 +37,7 @@ body{overflow: hidden;}
 .line_k{display: inline-block;}
 .absol{position: absolute;}
 .real{position: relative;}
-/*:-webkit-input-placeholder {  WebKit browsers 
+:-webkit-input-placeholder {  WebKit browsers 
 　　color:#a8a8aa;
 　　}
 　　:-moz-placeholder { /* Mozilla Firefox 4 to 18 
@@ -48,7 +48,7 @@ body{overflow: hidden;}
 　　}
 　　:-ms-input-placeholder { /* Internet Explorer 10+ 
 　　color:#a8a8aa;
-　　}*/
+　　}
 .putbor{ border-bottom: px(2px) solid #f6f6f6;}
 .wel{
   background-image: url("../img/wel.png");
@@ -64,20 +64,20 @@ body{overflow: hidden;}
 .bgstyle
 {
   background-position: center center;
-  /* 背景图不平铺 */
+   背景图不平铺 
   background-repeat: no-repeat;
 
-  /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
+   当内容高度大于图片高度时，背景图像的位置相对于viewport固定 
   background-attachment: fixed;
 
-  /* 让背景图基于容器大小伸缩 */
+   让背景图基于容器大小伸缩 
   background-size: 100% 100%;
 
-  /* 设置背景颜色，背景图加载过程中会显示背景色 */
+   设置背景颜色，背景图加载过程中会显示背景色 
   background-color: #565353;
 }
 
-/*html,body{width: 100%; height: 100%}*/
+html,body{width: 100%; height: 100%}
 .heade{position: fixed; width: 100%; height: px(145px); color: #fff; text-align: center; font-size: px(44px); line-height: px(145px);
        background: #565353; overflow: hidden;}
 
@@ -90,7 +90,7 @@ body{overflow: hidden;}
   height: px(129px); 
   margin-bottom: px(26px);
 }
-/*登录错误提示*/
+登录错误提示
 .psdeor{width: 100%; font-size: px(36px); color:#fff; text-align: center; position: absolute; top: px(696px); }
 .login_txt{width: px(904px); margin: px(328px) auto; margin-bottom: px(20px); background: #fff; font-size: px(30px); border-radius:px(10px);  box-shadow: px(2px) px(2px) px(3px) #3b8e38;}
 
@@ -109,9 +109,9 @@ body{overflow: hidden;}
 
 .agtime{background: #fdf3d2; border-color: #f1d44e; color: #000;}
 
-/*点击验证码*/
+点击验证码
 .timec{color: #f65607;} 
-/*注册成功*/
+注册成功
 
 .lab_tel{
   position: absolute;
@@ -160,7 +160,7 @@ body{overflow: hidden;}
 .yzmg{display: inline-block; width: px(138px); height: px(69px);}
 .denlu{display: block; margin: 0 auto; margin-bottom: px(261px); border-radius: px(10px); width: px(906px); height: px(100px); margin-top: px(20px); background: #c5c5c5; 
        box-shadow: px(2px) px(2px) px(3px) #3b8e38; text-align: center; color: #fff; font-size: px(46px); line-height: px(94px);}
-/*点击登录*/
+点击登录
 .dltn{background: #f65607;}  
 .lick{background: #e60c01;}
 .denlu p{float: left;} 
@@ -177,7 +177,7 @@ body{overflow: hidden;}
   overflow: hidden;
 }
 
-/*点击注册/忘记密码*/
+点击注册/忘记密码
 .loglick{color:#fbf803; border-color: #fbf803;}
 .txtlogo{text-align: center; font-size: px(32px); color:#fff;}
 
@@ -225,7 +225,7 @@ body{overflow: hidden;}
 
 .matok{ font-size:px(36px); width: 100%; text-align: center; position: absolute; bottom: px(580px); }
 .cream{position:absolute; top: px(84px); left: px(94px); width: px(145px); height: px(146px);}
-.mtxt{/* width: 646px; */ height: px(200px); margin: px(170px) auto; margin-bottom: 0px; text-align: center; overflow: hidden;}
+.mtxt{ width: 646px;  height: px(200px); margin: px(170px) auto; margin-bottom: 0px; text-align: center; overflow: hidden;}
 .bgtext{display: inline-block; width: px(392px); height: px(198px); margin-right: 28px; color: #fff; font-size: px(48px); background: url("../img/bgtxt.png")no-repeat; line-height: px(192px);}
 .hbmg{display: inline-block; width: px(392px); height: px(198px); color: #bbdfbf; font-size: px(48px); background: url("../img/hbmg.png")no-repeat; line-height: px(192px);}
 .mgnt{margin-top: px(475px); height: px(331px);}
@@ -242,7 +242,7 @@ body{overflow: hidden;}
 
 
 .clhm{font-size: px(36px); width: px(72px);  line-height: px(80px); padding-left: px(80px);}
-/**/
+
 .cloh{width: px(45px); height: px(44px); position: absolute; top: px(15px); left: 10px;}
 .maul{ height:px(900px); padding-top:px(67px); padding-left: px(55px); padding-right: px(55px);}
 .mali{position: relative; width: px(421px); height: px(381px); border:px(2px) solid #3b9b5d; margin-right: px(75px); margin-bottom: px(64px);}
@@ -305,10 +305,10 @@ body{overflow: hidden;}
 .addp{width: px(68px); height: px(68px);}
 .martp{margin-top: px(22px);}
 
-.trf{ width: 206.3px !important; height: 275px !important;}/*3:4水平*/
-.ftr{ width: 339px !important; height: 254.3px !important;}/*4:3垂直*/
-.sixnie{ width: 339px !important; height: 190.7px !important;}/*16:9垂直*/
-.niesix{ width: 154.7px !important; height: 275px !important;}/*9:19水平*/
+.trf{ width: 206.3px !important; height: 275px !important;}3:4水平
+.ftr{ width: 339px !important; height: 254.3px !important;}4:3垂直
+.sixnie{ width: 339px !important; height: 190.7px !important;}16:9垂直
+.niesix{ width: 154.7px !important; height: 275px !important;}9:19水平
 
 
 
@@ -322,7 +322,7 @@ body{overflow: hidden;}
 
 
 
-/*后效果样式*/
+后效果样式
 .none{ display:none;}
 *, *:before, *:after {
   -webkit-box-sizing: initial !important; 
@@ -364,7 +364,7 @@ body{-webkit-font-smoothing: subpixel-antialiased;}
 
 .ion-slides {
   width: 2000px;
-  /* height: 100%;*/ 
+   height: 100%; 
   display: block;
 }
 
@@ -376,16 +376,16 @@ body{-webkit-font-smoothing: subpixel-antialiased;}
 }
 
 .swiper-slide {
-  /*width: 341px !important;*/
+  width: 341px !important;
   height: 309.5px;
 
 }
 
 .swiper-slide img {
 
-  /*  width: auto;
-    height: auto; */
-  /* max-width: 100%; */
+    width: auto;
+    height: auto; 
+   max-width: 100%; 
   max-height: 100%;
   vertical-align: middle;
 }
@@ -394,7 +394,7 @@ body{-webkit-font-smoothing: subpixel-antialiased;}
   display: none;
 }
 
-/**/
+
 .popup-container.active .popup{
   border-radius: 5px;
 }
@@ -419,4 +419,4 @@ body{-webkit-font-smoothing: subpixel-antialiased;}
 }
 .marg{margin-top: px(18px);}
 .kunb{width: 100%; height: px(192px);}
-.padnone{ padding-left: 0;}
+.padnone{ padding-left: 0;}*/
