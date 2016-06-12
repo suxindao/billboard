@@ -8,10 +8,19 @@ angular.module('starter.controllers')
 
   .controller('MatchCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $state) {
 
-    $scope.data = {
-      showMessage: false,
-      showNextButton: false
-    };
+
+
+    $scope.$on('$ionicView.beforeEnter', function () {
+            // update campaigns everytime the view becomes active
+            // (on first time added to DOM and after the view becomes active after cached
+             $scope.data = {
+                showMessage: false,
+                showNextButton: false
+              };
+  
+    });
+        
+ 
 
     //设备配对
     $scope.clientBind = function () {
