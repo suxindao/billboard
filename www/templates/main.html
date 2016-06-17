@@ -1,45 +1,33 @@
-
-
-<ion-view view-title="用户登录" class="bcbg minht">
+<ion-view view-title="设备匹配" class="bcbg">
 
   <ion-header-bar align-title="center" class="bar bar-header a_bar">
-    <h1 class="title mtit">用户登录</h1>
-  </ion-header-bar>  
+      <div class="buttons mgft">
+        <a class="button btnbg"></a>
+      </div>
+      <h1 class="title mtit">设备匹配</h1>
+      <div class="buttons mgrt">
+        <a class="button btnmr"></a>
+      </div>
+  </ion-header-bar>
+
   <ion-content class="scroll-content tophet" overflow-scroll="true" scroll="false">
-    <div class="logof">
-        <img class="logob" src="img/logo.png">
-    </div>
-    <p class="error">输入的验证码有误！请重新输入！</p>
-    <div class="adipt">
-        <label class="fl real labpt" for="admin">
-            <img class="absol adico" src="img/admin.png">
-        </label>
-        <input class="fl" id="admin" type="tel" placeholder="用户名">
-        <img class="fr xamg" src="img/xa.png">
-        <img class="fr xamg hide" src="img/xb.png">
-    </div>
-    <div class="adipt">
-        <label class="fl real labpt" for="yzm">
-            <img class="absol telico" src="img/tel.png">
-        </label>
-        <input class="fl" id="yzm" type="password" placeholder="请输入验证码"> 
-        <div class="fr yzmbtn">
-            <img class="fl clock" src="img/clocka.png">
-            <img class="fl clock hide" src="img/clockb.png">
-            <span class="fr yzmtit">获取验证码</span>
-        </div>     
-    </div>
-    <div class="logbtnf">
-        <span class="inblo logbtn">登<span class="inblo wthd"></span>录</span>
-    </div>
-    <div class="join">
-        <img class="fl jomg" src="img/join.png">
-        <span class="fr inblo jotit">立即注册</span>
-    </div>
+    <div class="fr jump">跳过</div>
+    <img class="disblok matmg" src="img/matchg.png">
+    <p class="loding">
+      <ion-spinner icon="android" class="spinner spinner-android hide">
+        <svg viewBox="0 0 64 64">
+          <g transform="rotate(278.7999999999999,32,32)">
+            <circle stroke-width="6" stroke-dasharray="182.5639086317706" stroke-dashoffset="164.9419201893491" r="26" cx="32" cy="32" fill="none" transform="scale(1,1) translate(0,0) rotate(0,32,32)">
+              
+            </circle>
+          </g>
+        </svg>
+      </ion-spinner>
+    </p>
   </ion-content>
-  <ion-footer-bar align-title="center" class="bar bar-footer f_bar bcbg overf">
+  <ion-footer-bar align-title="center" class="bar bar-footer f_bar overf bcbg">
     
-    <h1 class="title bcbg" id="ftit">Copyright © MagicPoster</h1>
+    <h1 class="title" id="ftit">Copyright © MagicPoster</h1>
     
   </ion-footer-bar>
 </ion-view>
