@@ -14,20 +14,21 @@ angular.module('starter.controllers')
                 hashnav: true
             };
 //
-            $scope.$on("$ionicSlides.sliderInitialized", function (event, data) {
-                // data.slider is the instance of Swiper
-                $scope.slider = data.slider;
-            });
-
-            $scope.$on("$ionicSlides.slideChangeStart", function (event, data) {
-                console.log('Slide change is beginning');
-            });
-
-            $scope.$on("$ionicSlides.slideChangeEnd", function (event, data) {
-                // note: the indexes are 0-based
-                $scope.activeIndex = data.activeIndex;
-                $scope.previousIndex = data.previousIndex;
-            });
+//            $scope.$on("$ionicSlides.sliderInitialized", function (event, data) {
+//                // data.slider is the instance of Swiper
+//                $scope.slider = data.slider;
+//            });
+//
+//            $scope.$on("$ionicSlides.slideChangeStart", function (event, data) {
+//                console.log('Slide change is beginning, activeIndex = ' + data.slider.activeIndex);
+//            });
+//
+//            $scope.$on("$ionicSlides.slideChangeEnd", function (event, data) {
+//                console.log('Slide change is ending, activeIndex = ' + data.slider.activeIndex);
+//                // note: the indexes are 0-based
+//                $scope.activeIndex = data.activeIndex;
+//                $scope.previousIndex = data.previousIndex;
+//            });
 
 
 //            var slider = new ionic.views.Swiper('.swiper-container', $scope.options, $scope, null);
@@ -38,7 +39,10 @@ angular.module('starter.controllers')
             var galleryTop = new ionic.views.Swiper('.gallery-top', {
                 nextButton: '.swiper-button-next',
                 prevButton: '.swiper-button-prev',
-                spaceBetween: 10
+                spaceBetween: 10,
+                onSlideChangeEnd: function (s) {
+//                    alert(s.activeIndex);
+                }
             }, $scope, null);
 
             var galleryThumbs = new ionic.views.Swiper('.gallery-thumbs', {
@@ -48,6 +52,7 @@ angular.module('starter.controllers')
                 touchRatio: 0.2,
                 slideToClickedSlide: true
             }, $scope, null);
+
 
             galleryTop.params.control = galleryThumbs;
             galleryThumbs.params.control = galleryTop;
