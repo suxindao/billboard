@@ -46,8 +46,7 @@ angular.module('starter.controllers')
             }, $scope, null);
 
             var galleryThumbs = new ionic.views.Swiper('.gallery-thumbs', {
-                spaceBetween: 10,
-                centeredSlides: true,
+                centeredSlides: false,
                 slidesPerView: 'auto',
                 touchRatio: 0.2,
                 slideToClickedSlide: true
