@@ -13,16 +13,23 @@
   <ion-content class="scroll-content tophet" overflow-scroll="true" scroll="false">
     <div class="fr jump">跳过</div>
     <img class="disblok matmg" src="img/matchg.png">
-    <p class="loding">
-      <ion-spinner icon="android" class="spinner spinner-android hide">
-        <svg viewBox="0 0 64 64">
-          <g transform="rotate(278.7999999999999,32,32)">
-            <circle stroke-width="6" stroke-dasharray="182.5639086317706" stroke-dashoffset="164.9419201893491" r="26" cx="32" cy="32" fill="none" transform="scale(1,1) translate(0,0) rotate(0,32,32)">
-              
+    <p class="loding real">
+      <img class="absol quan" src="img/quan.png">
+      <img class="absol loud" src="img/loud.png">
+        <ion-spinner icon="crescent" class="spinner-royal spinner spinner-crescent">
+         <svg viewBox="0 0 64 64">
+          <g>
+            <circle stroke-width="4" stroke-dasharray="128" stroke-dashoffset="82" r="26" cx="32" cy="32" fill="none" transform="rotate(52.7728 32 32)">
+            <animateTransform values="0,32,32;360,32,32" attributeName="transform" type="rotate" 
+              repeatCount="indefinite" dur="750ms">
+            </animateTransform>
             </circle>
           </g>
-        </svg>
-      </ion-spinner>
+         </svg>
+        </ion-spinner>
+    </p>
+    <p class="matit">
+      配对失败！
     </p>
   </ion-content>
   <ion-footer-bar align-title="center" class="bar bar-footer f_bar overf bcbg">

@@ -114,22 +114,31 @@ font-size: 1em; line-height: 1.9em;}
 /*设备匹配*/
 .jump{width:10%; height: 4.5%; font-size: 0.8em; text-align: center; color: #fff; background: #02d4c3; border-radius: 100px; 
   margin-top: 2.6%; margin-right: 4.2%; line-height: 1.9em;}
-.matmg{width: 42%; height: 26%; border: 1px solid #ebebeb; margin: 10% auto; border-radius: 3px; margin-bottom:6.7%; }
-
-body {
-  cursor: url('http://www.runob.com/try/demo_source/finger.png'), auto;
-}    
+.matmg{width: 55%; height: 30%; border: 1px solid #ebebeb; margin: 10% auto; border-radius: 3px; margin-bottom:6.7%; }
+ 
 .loding{
   text-align: center;
   margin-bottom: 40px !important;
 }
 .spinner svg {
-  width: 19% !important;
-  height: 85px !important;
+  width: 40% !important;
+  height: 68px !important;
 }
-.spinner-android{
-  stroke:#fb2d5c;
+.spinner.spinner-royal {
+    stroke: #fb2d5c;
+    fill: #fb2d5c;
 }
+.matit{width: 100%; text-align: center; font-size: 0.8em; color: #7e7d7d;}
+.loud{width: 7%; height: 26%; left: 46.6%; top:31%;}
+.quan{width: 14.8%; height: 79.3%; z-index: -1; left: 42.8%; top: 5.5%;}
+
+
+
+
+
+
+
+
 
 /*swiper*/
 .gallery-top {
