@@ -15,6 +15,13 @@ angular.module('starter.services')
         return true;
     };
 
+    this.checkSMSCode = function (code) {
+      if (!(/\d{4}/.test(code))) {
+        return false;
+      } else
+        return true;
+    };
+
     this.getFileMD5 = function (filePath, callback)
     {
       cordova.require("com.billboard.md5.MD5forFile").file_md5(filePath, function (md5)
@@ -27,9 +34,6 @@ angular.module('starter.services')
           callback(undefined)
       });
     };
-
-
-
 
     this.selectImage = function (callback)
     {
