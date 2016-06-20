@@ -159,7 +159,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
 
       .state('main', {
         url: '/main',
-        templateUrl: 'templates/loginn.html',
+        templateUrl: 'templates/jmlist.html',
         controller: 'MainCtrl'
       })
 
