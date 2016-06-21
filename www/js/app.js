@@ -60,6 +60,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
       if (window.StatusBar) {
         StatusBar.styleDefault();
       }
+      
+     
     });
 
     $rootScope.defaultPage = "main";

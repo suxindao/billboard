@@ -91,16 +91,31 @@ angular.module('starter.directives', [])
 //          alert(_scope.aurl);
 //          $cordovaInAppBrowser.open(_scope.aurl, '_blank', 'location=yes,hidden=yes');
 
+
           document.addEventListener('deviceready', function () {
 
             var options = {
               location: "no"
             };
 
-            $cordovaInAppBrowser.open(_scope.aurl, '_blank', options).then(function () {
+           
+            var inAppBrowserRef = $cordovaInAppBrowser.open(_scope.aurl, '_blank', options).then(function () {
               console.log("InAppBrowser opened " + _scope.aurl + " successfully");
+              
             }, function (error) {
               console.log("Error: " + error);
+            });
+            
+            
+            inAppBrowserRef.addEventListener("loadstart", function()
+            {
+                alert("hehe")
+                 StatusBar.hide();
+            });
+            
+            inAppBrowserRef.addEventListener("exit", function()
+            {
+                StatusBar.show();
             });
 
           }, function () {
