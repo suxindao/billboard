@@ -105,7 +105,8 @@ input{padding: 0; margin: 0; border: none; width: 60%;}
 .joindj{color: #02d4c3;}/*点击加入字体颜色*/
 .logbtnf{width: 100%; height: 5.6%; text-align: center; margin-top: 5.5%; margin-bottom: 19%;}
 .logbtn{width: 52%; height: 100%; background: #fe9d04; border: 1px solid #eb8702; border-radius: 3px; color: #fff; 
-        font-size: 1em; line-height: 1.9em;}
+font-size: 1em; line-height: 1.9em;}
+
 .clkbg{background: #fe7404;}
 .wthd{width: 6%;}
 .join{margin: 0 auto; width: 21%; height: 4.2%; color: #777575; font-size: 0.6em;}
@@ -118,8 +119,8 @@ input{padding: 0; margin: 0; border: none; width: 60%;}
 .matmg{width: 55%; height: 30%; border: 1px solid #ebebeb; margin: 10% auto; border-radius: 3px; margin-bottom:6.7%; }
 
 .loding{
-    text-align: center;
-    margin-bottom: 40px !important;
+  text-align: center;
+  margin-bottom: 3%;
 }
 .spinner svg {
     width: 40% !important;
@@ -129,16 +130,48 @@ input{padding: 0; margin: 0; border: none; width: 60%;}
     stroke: #fb2d5c;
     fill: #fb2d5c;
 }
-.matit{width: 100%; text-align: center; font-size: 0.8em; color: #7e7d7d;}
+.matit{width: 100%; text-align: center; font-size: 0.8em; color: #7e7d7d; margin-bottom: 5%;}
 .loud{width: 7%; height: 26%; left: 46.6%; top:31%;}
-.quan{width: 14.8%; height: 79.3%; z-index: -1; left: 42.8%; top: 5.5%;}
+.quan{width: 14.8%; height: 79.3%; z-index: -1; left: 42.6%; top: 5.6%;}
+#matid{height: 100%; width: 70%; font-size: 0.8em;}
 
-
-
-
-
-
-
+/*设备列表*/
+.n_bar{background: #019a8e; height: 7.2%;}
+.bar #stitb{font-size: 1.2em; padding-top:0; line-height: 2.5em;}
+.bar #titr{font-size: 0.8em; width: 9%; color: #fff;}
+.bar #titlf{width: 20%; color: #fff; font-size: 0.8em;}
+#titlf .stmgb{background: url("../img/home.png")no-repeat; width: 40%;height: 55%;background-position: 28% 27%;background-size: 63% 50%;}
+#insy{line-height: 2.2em;}
+.stopb{top:7.2%; padding-top: 5.5%;}
+#smgbs{padding: 0 4% 3.8% 4%; height: 24%;}
+#smrb{margin-right: 6%; height: 100%;}
+.col-275 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 29.3%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 29.3%;
+    -ms-flex: 0 0 29.3%;
+    flex: 0 0 29.3%;
+    max-width: 29.3%;
+    height: 100%;
+}
+.sgmg{width: 100%; height: 100%;}
+.sgrmg{border:1px solid #d3d1d1;    border-radius:2px; }
+.spbt{width:100%; height: 16%; background: rgba(255,255,255,.7); top: 0; left: 0;}
+.smag{width: 10%; height: 75%; left: 3%; top: 13%;}
+.sptbt{height:100%; color: #8a8a8a; font-size: 0.8em; line-height: 1.4em; margin-left: 18%;}
+.spbb{width: 100%; height: 15%; bottom: 0; left: 0; background: rgba(255,255,255,.7); font-size: 0.8em; line-height: 1.3em;}
+#spbn{color: #5d5b5b; font-size: 0.6em !important;}
+.tim{color: #fd5e60;}
+.fbjm{top: 65%;}
+.fbky{color: #fe7404}/*点击发布节目*/
+.fbnky{color: #dddfe0; border-color: #d7d3d4;}
+.camera{width: 12%; height: 12%; left: 6%; top: 3%;}
+.spjm{width: 100%; height: 20%; bottom: 0; left: 0; background: rgba(255,255,255,.7); font-size: 0.8em; line-height: 1.5em;}
+.fyuan{width: 15%; height: 85%; background: #fc4aaa; border-radius: 50%; color: #fff; font-size: 0.8em; text-align: center;
+margin-top: 1%; margin-right: 2%;}
+.stypl{width: 13%; height: 4%; background: #41aedb; color: #fff; text-align: center; border-radius: 100px; margin-right: 3%;}
+.mysty{width: 16%; height: 4%; background: #41aedb; color: #fff; text-align: center; border-radius: 100px; margin-right: 5%;}
 
 
 /*swiper*/
