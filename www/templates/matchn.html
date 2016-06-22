@@ -31,9 +31,7 @@
          </svg>
         </ion-spinner>
     </p>
-    <p class="matit">
-      配对失败！
-    </p>
+    <p class="matit" ng-show="data.showMessage" ng-bind="data.message"/>
     <div class="adipt fxcen">
         <label class="fl real labpt" for="matid">
             <img class="absol adico" src="img/sdie.png">
@@ -42,9 +40,7 @@
         <img class="fr xamg marauto" src="img/xa.png">
         <img class="fr xamg marauto hide" src="img/xb.png">
     </div>
-    <div class="logbtnf logbtn textcen" >
-            完成操作
-    </div>
+    <div class="logbtnf logbtn textcen">完成操作</div>
   </ion-content>
   <ion-footer-bar align-title="center" class="bar bar-footer f_bar overf bcbg">
     
