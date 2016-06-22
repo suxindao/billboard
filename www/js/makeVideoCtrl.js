@@ -19,6 +19,8 @@ angular.module('starter.controllers')
 
     utilService.selectImage(function (results)
     {
+         results=[{"filePath":"img/camera.png"}];
+         
       if (results)
       {
         //$state.go("makeVideo",{"data":results});
@@ -37,7 +39,7 @@ angular.module('starter.controllers')
 
     var init = function (results)
     {
-
+        
       $scope.programData = {};
 
       $scope.programData.totaltime = 10;
