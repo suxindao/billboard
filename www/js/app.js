@@ -153,13 +153,13 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
       .state('manage', {
         cache: false,
         url: '/manage',
-        templateUrl: 'templates/manage.html',
+        templateUrl: 'templates/managen.html',
         controller: 'ManageCtrl'
       })
 
       .state('main', {
         url: '/main',
-        templateUrl: 'templates/maken.html',
+        templateUrl: 'templates/main.html',
         controller: 'MainCtrl'
       })
 
