@@ -140,13 +140,13 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
 
       .state('login', {
         url: '/login',
-        templateUrl: 'templates/matchn.html',
+        templateUrl: 'templates/loginn.html',
         controller: 'LoginCtrl'
       })
 
       .state('match', {
         url: '/match',
-        templateUrl: 'templates/match.html',
+        templateUrl: 'templates/matchn.html',
         controller: 'MatchCtrl'
       })
 
@@ -159,7 +159,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
 
       .state('main', {
         url: '/main',
-        templateUrl: 'templates/matchn.html',
+        templateUrl: 'templates/maken.html',
         controller: 'MainCtrl'
       })
 
