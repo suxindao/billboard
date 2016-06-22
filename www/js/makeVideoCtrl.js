@@ -15,29 +15,38 @@ angular.module('starter.controllers')
 
   .controller('makeVideoCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $ionicLoading, $state, $stateParams,$ionicHistory) {
 
-    $scope.programData = {"items": []};
 
-    utilService.selectImage(function (results)
-    {
-      if (results)
-      {
-        //$state.go("makeVideo",{"data":results});
 
-        init(results);
+    $scope.$on('$ionicView.beforeEnter', function () {
+            // update campaigns everytime the view becomes active
+            // (on first time added to DOM and after the view becomes active after cached
+             $scope.programData = {"items": []};
 
-        console.log(JSON.stringify(results));
-      }else
-      {
-         $ionicHistory.goBack();
-        // alert("goBack");
-         
-      }
+            utilService.selectImage(function (results)
+            {
+                results=[{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"}];
+              if (results)
+              {
+                //$state.go("makeVideo",{"data":results});
 
+                init(results);
+
+                console.log(JSON.stringify(results));
+              }else
+              {
+                 $ionicHistory.goBack();
+                // alert("goBack");
+
+              }
+
+            });
+  
     });
+   
 
     var init = function (results)
     {
-
+        
       $scope.programData = {};
 
       $scope.programData.totaltime = 10;
