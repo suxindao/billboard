@@ -8,10 +8,7 @@ angular.module('starter.controllers')
 
   .controller('MatchCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $state) {
 
-    $scope.data = {
-      showMessage: false,
-      showNextButton: false
-    };
+    init();
 
     //设备配对
     $scope.clientBind = function () {
@@ -28,7 +25,7 @@ angular.module('starter.controllers')
           if (data.result === 0) {
             $scope.data.showNextButton = true;
             $scope.data.message = "绑定成功";
-          }else{
+          } else {
             $scope.data.message = data.msgc;
           }
 

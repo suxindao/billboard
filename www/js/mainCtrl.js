@@ -6,13 +6,13 @@
 
 angular.module('starter.controllers')
 
-        .controller('MainCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $state) {
+  .controller('MainCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $state) {
 
-            $scope.options = {
-                loop: false,
-                speed: 500,
-                hashnav: true
-            };
+    $scope.options = {
+      loop: false,
+      speed: 500,
+      hashnav: true
+    };
 //
 //            $scope.$on("$ionicSlides.sliderInitialized", function (event, data) {
 //                // data.slider is the instance of Swiper
@@ -36,30 +36,30 @@ angular.module('starter.controllers')
 //            $scope.$emit("$ionicSlides.sliderInitialized", {slider: slider});
 
 
-            var galleryTop = new ionic.views.Swiper('.gallery-top', {
-                nextButton: '.swiper-button-next',
-                prevButton: '.swiper-button-prev',
-                spaceBetween: 10,
-                onSlideChangeEnd: function (s) {
+    var galleryTop = new ionic.views.Swiper('.gallery-top', {
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev',
+      spaceBetween: 10,
+      onSlideChangeEnd: function (s) {
 //                    alert(s.activeIndex);
-                }
-            }, $scope, null);
+      }
+    }, $scope, null);
 
-            var galleryThumbs = new ionic.views.Swiper('.gallery-thumbs', {
-                centeredSlides: true,
+    var galleryThumbs = new ionic.views.Swiper('.gallery-thumbs', {
+      centeredSlides: true,
 //                loop: true,
 //                loopedSlides: 10, //looped slides should be the same
-                slidesPerView: 'auto',
-                touchRatio: 0.2,
-                slideToClickedSlide: true
-            }, $scope, null);
+      slidesPerView: 'auto',
+      touchRatio: 0.2,
+      slideToClickedSlide: true
+    }, $scope, null);
 
 
-            galleryTop.params.control = galleryThumbs;
-            galleryThumbs.params.control = galleryTop;
+    galleryTop.params.control = galleryThumbs;
+    galleryThumbs.params.control = galleryTop;
 
-            $scope.clickPost = function ()
-            {
+    $scope.clickPost = function ()
+    {
 
 //                var resutls=[{"filePath":"img/jmmg.png","md5":"875EFC59FBDF6B27477DD222CAA46D89"},{"filePath":"img/jmmg.png","md5":"840436C562495B115A88E153A37696BD"},{"filePath":"img/jmmg.png","md5":"840436C562495B115A88E153A37696BD"},{"filePath":"img/jmmg.png","md5":"840436C562495B115A88E153A37696BD"},{"filePath":"img/jmmg.png","md5":"840436C562495B115A88E153A37696BD"},{"filePath":"img/jmmg.png","md5":"840436C562495B115A88E153A37696BD"}];
 //                
@@ -67,7 +67,7 @@ angular.module('starter.controllers')
 //                
 
 
-                $state.go("makeVideo");
-            };
+      $state.go("makeVideo");
+    };
 
-        });
+  });

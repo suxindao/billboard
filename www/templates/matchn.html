@@ -1,15 +1,15 @@
 <ion-view view-title="设备匹配" class="bcbg">
 
   <ion-header-bar align-title="center" class="bar bar-header a_bar fxcen">
-      <div class="mgft fxcen">       
-            <img class="marauto btnbg" src="img/user.png">
-            <img class="marauto btnbg hide" src="img/userkb.png">
-        </div>
-        <h1 class="title mtit">设备匹配</h1>
-        <div class="buttons mgrt fxcen">
-            <img class="marauto btnmr" src="img/mcon.png">
-            <img class="marauto btnmr hide" src="img/czkb.png">
-        </div>
+    <div class="mgft fxcen">       
+      <img class="marauto btnbg" src="img/user.png">
+      <img class="marauto btnbg hide" src="img/userkb.png">
+    </div>
+    <h1 class="title mtit">设备匹配</h1>
+    <div class="buttons mgrt fxcen">
+      <img class="marauto btnmr" src="img/mcon.png">
+      <img class="marauto btnmr hide" src="img/czkb.png">
+    </div>
   </ion-header-bar>
 
   <ion-content class="scroll-content tophet" overflow-scroll="true" scroll="false">
@@ -19,32 +19,34 @@
       <img class="absol quan " src="img/quan.png">
       <img class="absol quan hide" src="img/rquan.png">
       <img class="absol loud" src="img/loud.png">
-        <ion-spinner icon="crescent" class="spinner-royal spinner spinner-crescent hide">
-         <svg viewBox="0 0 64 64">
-          <g>
-            <circle stroke-width="4" stroke-dasharray="128" stroke-dashoffset="82" r="26" cx="32" cy="32" fill="none" transform="rotate(52.7728 32 32)">
-            <animateTransform values="0,32,32;360,32,32" attributeName="transform" type="rotate" 
-              repeatCount="indefinite" dur="750ms">
-            </animateTransform>
-            </circle>
-          </g>
-         </svg>
-        </ion-spinner>
+    <ion-spinner icon="crescent" class="spinner-royal spinner spinner-crescent hide">
+      <svg viewBox="0 0 64 64">
+      <g>
+      <circle stroke-width="4" stroke-dasharray="128" stroke-dashoffset="82" r="26" cx="32" cy="32" fill="none" transform="rotate(52.7728 32 32)">
+      <animateTransform values="0,32,32;360,32,32" attributeName="transform" type="rotate" 
+                        repeatCount="indefinite" dur="750ms">
+      </animateTransform>
+      </circle>
+      </g>
+      </svg>
+    </ion-spinner>
     </p>
     <p class="matit" ng-show="data.showMessage" ng-bind="data.message"/>
     <div class="adipt fxcen">
-        <label class="fl real labpt" for="matid">
-            <img class="absol adico" src="img/sdie.png">
-        </label>
-        <input class="fl" id="matid" type="text" placeholder="请输入设备ID">
-        <img class="fr xamg marauto" src="img/xa.png">
-        <img class="fr xamg marauto hide" src="img/xb.png">
+      <label class="fl real labpt" for="matid">
+        <img class="absol adico" src="img/sdie.png">
+      </label>
+      <input class="fl" id="matid" type="number" placeholder="请输入设备ID" ng-model="data.clientID" auto-focus>
+      <img class="fr xamg marauto" src="img/xa.png">
+      <img class="fr xamg marauto hide" src="img/xb.png">
     </div>
-    <div class="logbtnf logbtn textcen">完成操作</div>
+    <div class="logbtnf logbtn textcen" ng-show="!data.showNextButton" ng-click="clientBind()">配对</div>
+    <div class="logbtnf logbtn textcen" ng-show="data.showNextButton" ng-click="goMain()">下一步</div>
   </ion-content>
-  <ion-footer-bar align-title="center" class="bar bar-footer f_bar overf bcbg">
-    
-    <h1 class="title" id="ftit">Copyright © MagicPoster</h1>
-    
-  </ion-footer-bar>
+
+  <!--  <ion-footer-bar align-title="center" class="bar bar-footer f_bar overf bcbg">
+      <h1 class="title" id="ftit">Copyright © MagicPoster</h1>
+    </ion-footer-bar>-->
+  <div ng-include="'templates/footer.html'"></div>
+
 </ion-view>

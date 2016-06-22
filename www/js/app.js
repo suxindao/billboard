@@ -159,8 +159,10 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
 
       .state('main', {
         url: '/main',
-        templateUrl: 'templates/main.html',
-        controller: 'MainCtrl'
+//        templateUrl: 'templates/main.html',
+//        controller: 'MainCtrl'
+        templateUrl: 'templates/managen.html',
+        controller: 'ManageCtrl'
       })
 
       .state('makeVideo', {

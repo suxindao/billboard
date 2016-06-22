@@ -1,107 +1,90 @@
 
 <ion-view view-title="节目制作">
 
-    <ion-header-bar align-title="center" class="bar bar-header a_bar fxcen">
-        <div class="mgft fxcen">       
-            <img class="marauto btnbg" src="img/user.png">
-        </div>
-        <h1 class="title mtit">节目制作</h1>
-        <div class="buttons mgrt fxcen">
-            <img class="marauto btnmr" src="img/mcon.png">
-        </div>
-    </ion-header-bar>
-    <ion-content class="scroll-content tophet" overflow-scroll="true" scroll="false">
+  <ion-header-bar align-title="center" class="bar bar-header a_bar fxcen">
+    <div class="mgft fxcen">       
+      <a class="marauto" ui-sref="admin"><img class="btnbg" src="img/user.png"></a>
+    </div>
+    <h1 class="title mtit">节目制作</h1>
+    <div class="buttons mgrt fxcen" ng-click="menu()">
+      <img class="marauto btnmr" src="img/mcon.png">
+    </div>
+  </ion-header-bar>
+  <ion-content class="scroll-content tophet" overflow-scroll="true" scroll="false">
 
-            <div class="swiper-container gallery-top">
-                <div class="swiper-wrapper">                   
-                    <div class="swiper-slide">
-                      <div class="row btop">
-                        <div class="col real"></div>
-                          <div class="col col-45 pmzero">
-                              <div class="borclo tabcel real">
-                                  <img class="whmg" src="img/vmbg_03.png">
-                                  <div class="mesg absol fxcen">
-                                      <img class="fl mpg marauto" src="img/ptn.png">
-                                      <div class="fr vpsg textcen">
-                                          <span class="inblo mfr">2016-06-01</span>
-                                          <span>未发布</span>
-                                      </div>
-                                  </div>                                                                   
-                              </div>
-                              <p class="jmtit">节目标题</p> 
-                          </div>
-                        <div class="col real"></div>
-                      </div>  
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="row btop">
-                        <div class="col real"></div>
-                          <div class="col col-45 pmzero">
-                              <div class="borclo tabcel real">
-                                  <img class="whmg" src="img/vmbg_03.png">
-                                  <div class="mesg absol">
-                                      <img class="fl mpg" src="img/ptn.png">
-                                      <div class="fr vpsg" id="fos">
-                                          <span class="inblo mfr">2016-06-01</span>
-                                          <span>未发布</span>
-                                      </div>
-                                  </div>                                                                    
-                              </div>
-                              <p class="jmtit">节目标题</p>
-                          </div>
-                        <div class="col real"></div>
-                      </div>  
-                    </div>
-                </div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+
+    <div class="swiper-container gallery-top">
+      <div class="swiper-wrapper">
+        <!--
+        <div class="swiper-slide">
+          <div class="row btop">
+            <div class="col real"></div>
+            <div class="col col-45 pmzero">
+              <div class="borclo tabcel real">
+                <img class="whmg" src="img/vmbg_03.png">
+                <div class="mesg absol fxcen">
+                  <img class="fl mpg marauto" src="img/ptn.png">
+                  <div class="fr vpsg textcen">
+                    <span class="inblo mfr">2016-06-01</span>
+                    <span>未发布</span>
+                  </div>
+                </div>  ß                                                                 
+              </div>
+              <p class="jmtit">节目标题</p> 
             </div>
-
+            <div class="col real"></div>
+          </div>  
+        </div>
+        -->
         
-
-        <!-- gallery-thumbs -->
-        <div class="swiper-container gallery-thumbs row " id="svmg">
-
-            <!--            
-            <ul class="row" id="svmg">
-                <li class="col bgc"><img class="scmg" src="img/smg.png"></li>
-                <li class="col bgc"><img class="scmg" src="img/smg.png"></li>
-                <li class="col bgc"><img class="scmg" src="img/smg.png"></li>
-                <li class="col bgc"><img class="scmg" src="img/smg.png"></li>
-                <li class="col bgc"><img class="scmg" src="img/smg.png"></li>
-                <li class="col bgc"><img class="scmg" src="img/smg.png"></li>
-                <li class="col bgc pdro"><img class="scmg" src="img/smg.png"></li>
-            </ul>
-            -->
-
-
-            <div class="swiper-wrapper absro pmzero row">
-                <div class="swiper-slide bgc" id="widba"><img class="scmg" src="img/smg.png"></div>
-                <div class="swiper-slide bgc" id="widba"><img class="scmg" src="img/smg.png"></div>
+        <div class="swiper-slide" ng-repeat="photo in data.photos">
+          <div class="row btop">
+            <div class="col real"></div>
+            <div class="col col-45 pmzero">
+              <div class="borclo tabcel real">
+                <!--<img class="whmg" src="img/vmbg_03.png">-->
+                <img class="whmg" ng-src="{{photo.first_image}}" preview-url="{{photo.preview_url}}" inappbowser>
+                <div class="mesg absol fxcen">
+                  <img class="fl mpg marauto" src="img/ptn.png">
+                  <div class="fr vpsg textcen">
+                    <span class="inblo mfr">{{photo.update_date}}</span>
+                    <span>未发布</span>
+                  </div>
+                </div>
+              </div>
+              <p class="jmtit">{{photo.name}}</p> 
             </div>
-
+            <div class="col real"></div>
+          </div>  
         </div>
 
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
 
-        <!-- <div class="mofth">
-            <span class="inblo yebtn real">
-                <img class="absol stnmg" src="img/ptnly.png">
-                <span class="inblo fr txtn">节目制作</span>
-            </span>
-        </div> -->
-        <div class="absol mofth fbjm textcen">
-            <span class="yebtn fxcen">
-                <img class="stnmg marauto" src="img/ptnly.png">
-                <span class="fr txtn textcen">节目制作</span>
-            </span>
+    </div>
+
+    <!-- gallery-thumbs -->
+    <div class="swiper-container gallery-thumbs row " id="svmg">
+      <div class="swiper-wrapper absro pmzero row">
+        <div class="swiper-slide bgc" id="widba" ng-repeat="photo in data.photos" gallery-repeat-finish>
+          <!--<img class="scmg" src="img/smg.png">-->
+          <img class="scmg" ng-src="{{photo.preview_image}}">
         </div>
-    </ion-content>
-    <ion-footer-bar align-title="center" class="bar bar-footer f_bar overf">
+      </div>
+    </div>
 
-        <h1 class="title" id="ftit">Copyright © MagicPoster</h1>
 
-    </ion-footer-bar>
+    <div class="absol mofth fbjm textcen" ui-sref="makeVideo">
+      <span class="yebtn fxcen">
+        <img class="stnmg marauto" src="img/ptnly.png">
+        <span class="fr txtn textcen">节目制作</span>
+      </span>
+    </div>
 
+  </ion-content>
+
+  <div ng-include="'templates/footer.html'"></div>
 
 </ion-view>
 <!--ionic serve --address 192.168.51.77-->
