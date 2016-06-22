@@ -45,7 +45,7 @@ input{padding: 0; margin: 0; border: none; width: 60%;}
 .mgft {width: 11.8%;padding-left: 2%;height: 100%;}
 
 
-.mgrt{ width: 10%; height: 80%; top: 0;}
+.mgrt{ width: 10%; height: 95%; top: 0;}
 .tophet{top: 9.4%;}
 .bgstyle
 {
@@ -86,7 +86,7 @@ input{padding: 0; margin: 0; border: none; width: 60%;}
 .mofth{width: 100%; height: 7%; text-align: center; margin-top: 12%; }
 .yebtn{ width: 35%; height: 100%; background: #f9aa33; color: #fff; font-size: 0.9em; border: 1px solid #d56e00; border-radius: 100px;align-items:center;}
 .stnmg{ width: 15%; height: auto; margin-right: 5%; margin-left: 20%;}
-.txtn{margin-right: 21%}
+.txtn{margin-right: 21%;}
 
 
 /*login*/
@@ -94,7 +94,7 @@ input{padding: 0; margin: 0; border: none; width: 60%;}
 .logob{width: 19%; height: auto;}
 .adipt{margin: 0 auto; width: 52%; height: 7%; border:1px solid #e6e5e5; border-radius: 2%; background: #fff; margin-bottom: 2.2%;}
 .labpt{width: 14%; height:100%;}
-.adico{width: 50%; height: 42%; top: 25%; left: 28%;}
+.adico{width: 50%; height: auto; top: 25%; left: 28%;}
 .telico{width: 45%; height: 52%; top: 22%; left: 30%;}
 #user{height: 100%; width: 70%; font-size: 0.8em;}
 #yzm{height: 100%; width: 40%; font-size: 0.8em;} /*margin-right: 4%; margin-top: 5%;*/
@@ -137,7 +137,7 @@ color: #fff; font-size: 1em; margin: 5.5% auto 19% auto;}
 .loud{width: 7%; height: 26%; left: 46.6%; top:31%;}
 .quan{width: 14.8%; height: 79.3%; z-index: -1; left: 42.6%; top: 5.6%;}
 #matid{height: 100%; width: 70%; font-size: 0.8em;}
-
+.haet{height: 16%;}
 /*设备列表*/
 .n_bar{background: #019a8e; height: 7.2%;}
 .bar #stitb{font-size: 1.2em; padding-top:0; line-height: 2.5em;}
@@ -161,9 +161,10 @@ color: #fff; font-size: 1em; margin: 5.5% auto 19% auto;}
 .sgmg{width: 100%; height: 100%;}
 .sgrmg{border:1px solid #d3d1d1;    border-radius:2px; }
 .spbt{width:100%; height: 16%; background: rgba(255,255,255,.7); top: 0; left: 0;}
-.smag{width: 10%; height: 75%; left: 3%; top: 13%;}
-.sptbt{height:100%; color: #8a8a8a; font-size: 0.8em; line-height: 1.4em; margin-left: 18%;}
-.spbb{width: 100%; height: 15%; bottom: 0; left: 0; background: rgba(255,255,255,.7); font-size: 0.8em; line-height: 1.3em;}
+.smag{width: 10%; height: auto; left: 3%; top: 13%; margin-right: 3%;margin-left: 3%;}
+.sptbt{height:100%; color: #8a8a8a; font-size: 0.8em;}
+.spbb{width: 100%; height: 15%; bottom: 0; left: 0; background: rgba(255,255,255,.7); font-size: 0.8em; justify-content:flex-end;
+padding-right: 3%;}
 #spbn{color: #5d5b5b; font-size: 0.6em !important;}
 .tim{color: #fd5e60;}
 .fbjm{margin-top: 0; bottom: 20%;}
@@ -223,7 +224,7 @@ padding-top: 0.4%;}
 .minht{min-height: 560px;}
 .hide{display: none;}
 .absro{position: inherit;}
-
+.orgbg{background: #fe9d04;}
 
 
 
