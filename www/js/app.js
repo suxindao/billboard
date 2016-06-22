@@ -140,13 +140,13 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
 
       .state('login', {
         url: '/login',
-        templateUrl: 'templates/loginn.html',
-        controller: 'LoginCtrl'
+        templateUrl: 'templates/managen.html',
+        controller: 'MainCtrl'
       })
 
       .state('match', {
         url: '/match',
-        templateUrl: 'templates/matchn.html',
+        templateUrl: 'templates/match.html',
         controller: 'MatchCtrl'
       })
 
@@ -168,7 +168,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
       .state('makeVideo', {
 //        cache: false,
         url: '/makeVideo',
-        templateUrl: 'templates/makeVideo.html',
+        templateUrl: 'templates/jmlist.html',
         controller: 'makeVideoCtrl',
         params: {'data': null}
       })
