@@ -141,7 +141,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
       .state('login', {
         url: '/login',
         templateUrl: 'templates/managen.html',
-        controller: 'makeVideoCtrl'
+        controller: 'MainCtrl'
       })
 
       .state('match', {

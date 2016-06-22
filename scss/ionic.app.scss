@@ -20,7 +20,7 @@ $ionicons-font-path: "ionic/fonts" !default;
 
 // Include all of Ionic
 @import "ionic/ionic";
-
+a{text-decoration:none;}
 div,p{padding: 0; margin: 0;}
 input{padding: 0; margin: 0; border: none; width: 60%;}
 .fxcen{display: flex; text-align: center;}
