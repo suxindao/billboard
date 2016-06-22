@@ -24,7 +24,7 @@ angular.module('starter.controllers')
 
             utilService.selectImage(function (results)
             {
-                results=[{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"}];
+                results=[{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"}];
               if (results)
               {
                 //$state.go("makeVideo",{"data":results});
@@ -61,9 +61,9 @@ angular.module('starter.controllers')
         data.playtime = Math.round(data.playtime);
 
         if (i == 2 || i == 5)
-          data.line = true;
-        else
           data.line = false;
+        else
+          data.line = true;
 
         items.push(data);
       }
