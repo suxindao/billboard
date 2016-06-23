@@ -7,7 +7,7 @@
 angular.module('starter.controllers')
 
   .controller('MatchCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $state) {
-
+    
     init();
 
     //设备配对
