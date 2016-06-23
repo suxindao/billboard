@@ -140,7 +140,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
 
       .state('login', {
         url: '/login',
-        templateUrl: 'templates/loginn.html',
+        templateUrl: 'templates/nmain.html',
         controller: 'LoginCtrl'
       })
 
