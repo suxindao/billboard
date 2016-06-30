@@ -162,7 +162,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
         url: '/main',
 //        templateUrl: 'templates/main.html',
 //        controller: 'MainCtrl'
-        templateUrl: 'templates/main.html',
+        templateUrl: 'templates/loginn.html',
         controller: 'ManageCtrl'
       })
 
