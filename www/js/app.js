@@ -162,7 +162,10 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
         url: '/main',
 //        templateUrl: 'templates/main.html',
 //        controller: 'MainCtrl'
-        templateUrl: 'templates/loginn.html',
+//        templateUrl: 'templates/nmain.html', //设备管理,无关联
+//        templateUrl: 'templates/nmain.html', //设备管理,有关联,需要雷添加
+        templateUrl: 'templates/sendn.html', //发布内容,无设备
+//        templateUrl: 'templates/sendn.html', //发布内容,设备列表显示
         controller: 'ManageCtrl'
       })
 
@@ -177,7 +180,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
       .state('admin', {
 //        cache: false,
         url: '/admin',
-        templateUrl: 'templates/admin.html',
+        templateUrl: 'templates/adminn.html',
         controller: 'AdminCtrl'
       })
 
