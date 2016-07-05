@@ -164,8 +164,9 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
 //        controller: 'MainCtrl'
 //        templateUrl: 'templates/nmain.html', //设备管理,无关联
 //        templateUrl: 'templates/nmain.html', //设备管理,有关联,需要雷添加
-        templateUrl: 'templates/sendn.html', //发布内容,无设备
+//        templateUrl: 'templates/sendn.html', //发布内容,无设备
 //        templateUrl: 'templates/sendn.html', //发布内容,设备列表显示
+        templateUrl: 'templates/managen.html',
         controller: 'ManageCtrl'
       })
 
@@ -211,7 +212,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
 
       .state('choseClient', {
         url: '/choseClient/:contentid',
-        templateUrl: 'templates/choseClient.html',
+//        templateUrl: 'templates/choseClient.html',
+        templateUrl: 'templates/sendn.html',
         controller: 'ChoseClientCtrl'
       })
 

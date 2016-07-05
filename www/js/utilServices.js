@@ -193,7 +193,7 @@ angular.module('starter.services')
 
     };
 
-    this.showConfirm = function (title, template, okText, cancelText, callback)
+    this.showConfirm = function (title, template, okText, cancelText, callback, cancelCallback)
     {
       var confirmPopup = $ionicPopup.confirm({
         title: '<strong>' + title + '</strong>',
@@ -207,7 +207,7 @@ angular.module('starter.services')
           if (callback)
             callback(res);
         } else {
-          // Don't close  
+          cancelCallback(res);
         }
       });
 
