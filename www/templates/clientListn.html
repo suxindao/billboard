@@ -12,7 +12,7 @@
   <ion-content class="scroll-content stopb" overflow-scroll="true" scroll="false">
     <div class="row" id="smgbs">
 
-      <div class="col col-275 pmzero sgrmg real smrb" ng-class="{'borclo': client.chose}" ng-repeat="client in data.clients" ng-click="chose({{client.id}})">
+      <div class="col col-275 pmzero sgrmg real smrb" ng-class="{'borclo': client.chose}" ng-repeat="client in data.clients" ng-click="menu({{client.id}})">
         <div class="brav absol" ng-show="client.chose"></div>
         <!--<img class="sgmg" src="img/sgirl.png">-->
         <img class="sgmg" ng-src="{{client.first_image}}">
@@ -28,12 +28,7 @@
       </div>
 
     </div>
-    <div class="absol mofth fbjm textcen">
-      <span class="yebtn fxcen" ng-click="sendVideo()">
-        <img class="stnmg marauto" src="img/mai.png">
-        <span class="fr txtn textcen">发布节目</span>
-      </span>
-    </div>
+
   </ion-content>
   <ion-footer-bar align-title="center" class="bar bar-footer f_bar bcbg overf">  
     <h1 class="title bcbg" id="ftit">Copyright © MagicPoster</h1>  

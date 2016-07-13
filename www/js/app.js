@@ -198,7 +198,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
       })
 
       .state('clientList', {
-//        cache: false,
+        cache: false,
         url: '/clientList',
 //        templateUrl: 'templates/nmain.html', //设备管理,无关联
 //        templateUrl: 'templates/nmain.html', //设备管理,有关联,需要雷添加

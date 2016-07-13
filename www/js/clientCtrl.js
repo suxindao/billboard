@@ -31,6 +31,8 @@ angular.module('starter.controllers')
       } else {
         utilService.showConfirm('设备列表', '没有匹配设备,是否去匹配?', '确定', '取消', function () {
           $state.go("match");
+        }, function () {
+          $state.go("main");
         });
       }
     });
@@ -41,6 +43,14 @@ angular.module('starter.controllers')
 
     //页面右上角按钮
     $scope.menu = function (clientID) {
+
+      $scope.data.clients.forEach(function (client) {
+        if (client.id == clientID) {
+          client.chose = !client.chose;
+          console.log("clientID = " + clientID);
+          return;
+        }
+      });
 
       $scope.data.name = getLocalName(clientID);
 
@@ -65,7 +75,6 @@ angular.module('starter.controllers')
                     type: 'button-positive',
                     onTap: function (e) {
                       if (!$scope.data.name) {
-                        //don't allow the user to close unless he enters wifi password
                         e.preventDefault();
                       } else {
                         return $scope.data.name;
@@ -83,17 +92,23 @@ angular.module('starter.controllers')
                       });
                     })
                     .error(function (data) {
-                      utilService.showAlert('发布失败', data);
+                      utilService.showAlert('修改失败', data);
                     });
+                } else {
+                  console.log("放弃修改/名字未修改");
                 }
+                resetChose();
               });
 
               break;
             case 1: //解除绑定
-
               break;
           }
           return true;
+        },
+        cancel: function () {
+          console.log("Close Menu");
+          resetChose();
         }
       });
 
@@ -103,6 +118,12 @@ angular.module('starter.controllers')
 
     };
 
+    //充值选中列表
+    function resetChose() {
+      $scope.data.clients.forEach(function (client) {
+        client.chose = null;
+      });
+    }
 
     function updateLocalName(clientID, name) {
       $scope.data.clients.forEach(function (client) {
