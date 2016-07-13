@@ -35,10 +35,8 @@ angular.module('starter.controllers')
       }
     });
 
-
-    $scope.updateSlide = function (index) {
-      $scope.slider.slideTo(index, 500, null);
-      //      dataChangeHandler();
+    $scope.goMain = function () {
+      $state.go("main");
     };
 
     //页面右上角按钮

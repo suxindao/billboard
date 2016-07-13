@@ -43,9 +43,8 @@ angular.module('starter.controllers')
       }
     });
 
-    $scope.updateSlide = function (index) {
-      $scope.slider.slideTo(index, 500, null);
-//      dataChangeHandler();
+    $scope.goMain = function () {
+      $state.go("main");
     };
 
     //页面右上角按钮
@@ -82,16 +81,6 @@ angular.module('starter.controllers')
       }
 
     };
-
-
-    function updateLocalName(clientID, name) {
-      $scope.data.clients.forEach(function (client) {
-        if (client.id == clientID) {
-          client.name = name;
-          return;
-        }
-      });
-    }
 
     $scope.chose = function (clientID) {
       $scope.data.clients.forEach(function (client) {
