@@ -42,13 +42,13 @@ angular.module('starter.services')
 //            });
       if (!window.imagePicker)
       {
-          if(callback)
-          {
-              callback(undefined);
-          }
-            return;
+        if (callback)
+        {
+          callback(undefined);
+        }
+        return;
       }
-      
+
 
       var imageInfo = [];
 
@@ -96,7 +96,7 @@ angular.module('starter.services')
         }
 
       }
-      
+
       function errorCall()
       {
         if (callback)
@@ -104,11 +104,11 @@ angular.module('starter.services')
           callback(undefined);
         }
       }
-      
+
       function pickerFailure()
       {
         // $ionicLoading.hide();
-        
+
         console.log('Error: ' + error);
         errorCall();
       }
@@ -119,7 +119,7 @@ angular.module('starter.services')
 
         if (results.length == 0)
         {
-          
+
           errorCall();
           return;
         }
@@ -207,7 +207,8 @@ angular.module('starter.services')
           if (callback)
             callback(res);
         } else {
-          cancelCallback(res);
+          if (cancelCallback)
+            cancelCallback(res);
         }
       });
 

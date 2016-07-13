@@ -167,7 +167,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
 //        templateUrl: 'templates/sendn.html', //发布内容,无设备
 //        templateUrl: 'templates/sendn.html', //发布内容,设备列表显示
         templateUrl: 'templates/mast.html',
-        controller: 'ManageCtrl'
+        controller: 'MainCtrl'
       })
 
       .state('makeVideo', {
@@ -200,7 +200,9 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
       .state('clientList', {
 //        cache: false,
         url: '/clientList',
-        templateUrl: 'templates/clientList.html',
+        templateUrl: 'templates/nmain.html', //设备管理,无关联
+//        templateUrl: 'templates/nmain.html', //设备管理,有关联,需要雷添加        
+//        templateUrl: 'templates/clientList.html',
         controller: 'ClientCtrl'
       })
 
