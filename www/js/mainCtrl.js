@@ -8,56 +8,6 @@ angular.module('starter.controllers')
 
   .controller('MainCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $state) {
 
-    $scope.options = {
-      loop: false,
-      speed: 500,
-      hashnav: true
-    };
-//
-//            $scope.$on("$ionicSlides.sliderInitialized", function (event, data) {
-//                // data.slider is the instance of Swiper
-//                $scope.slider = data.slider;
-//            });
-//
-//            $scope.$on("$ionicSlides.slideChangeStart", function (event, data) {
-//                console.log('Slide change is beginning, activeIndex = ' + data.slider.activeIndex);
-//            });
-//
-//            $scope.$on("$ionicSlides.slideChangeEnd", function (event, data) {
-//                console.log('Slide change is ending, activeIndex = ' + data.slider.activeIndex);
-//                // note: the indexes are 0-based
-//                $scope.activeIndex = data.activeIndex;
-//                $scope.previousIndex = data.previousIndex;
-//            });
-
-
-//            var slider = new ionic.views.Swiper('.swiper-container', $scope.options, $scope, null);
-
-//            $scope.$emit("$ionicSlides.sliderInitialized", {slider: slider});
-
-
-    var galleryTop = new ionic.views.Swiper('.gallery-top', {
-      nextButton: '.swiper-button-next',
-      prevButton: '.swiper-button-prev',
-      spaceBetween: 10,
-      onSlideChangeEnd: function (s) {
-//                    alert(s.activeIndex);
-      }
-    }, $scope, null);
-
-    var galleryThumbs = new ionic.views.Swiper('.gallery-thumbs', {
-      centeredSlides: true,
-//                loop: true,
-//                loopedSlides: 10, //looped slides should be the same
-      slidesPerView: 'auto',
-      touchRatio: 0.2,
-      slideToClickedSlide: true
-    }, $scope, null);
-
-
-    galleryTop.params.control = galleryThumbs;
-    galleryThumbs.params.control = galleryTop;
-
     $scope.clickPost = function ()
     {
 
@@ -69,5 +19,14 @@ angular.module('starter.controllers')
 
       $state.go("makeVideo");
     };
+
+    $scope.goManage = function () {
+      $state.go("manage");
+    };
+
+    $scope.goDevice = function () {
+      $state.go("clientList");
+    };
+
 
   });
