@@ -1,0 +1,92 @@
+<ion-view view-title="个人设置" class="bcbg minht">
+  <ion-header-bar align-title="center" class="bar bar-header n_bar fxcen">
+    <div class="mgft fxcen" id="titlf" ng-click="toMainPage()">
+        <img class="marauto fl stmgb" src="img/home.png">
+        <span class="inbol fr" id="insy">首页</span>
+    </div>
+    <h1 class="title mtit" id="stitb">个人设置</h1>
+    <div class="buttons mgrt textcen" id="exit" ng-click="logout()">
+        退出登录
+    </div>
+  </ion-header-bar>  
+  <ion-content class="scroll-content stopb" overflow-scroll="true" scroll="false">
+    <div class="grbox">
+      <div class="grtem textbetwn">
+        <P class="pf fxcen">
+          <img class="marauto fimg" src="img/grad.png">
+          <span class="textcen">用户名：</span>
+        </P>
+        <P class="pr fxcen fenld">
+          <span class="textcen">{{user.name}}</span>
+          <img class="marauto rnext marten" src="img/grnx.png">
+        </P>
+      </div>
+      <div class="grtem textbetwn borwid">
+        <P class="pf fxcen">
+          <img class="marauto fimg" src="img/grvo.png">
+          <span class="textcen">已制作节目：</span>
+        </P>
+        <P class="pr fxcen fenld">
+          <span class="textcen">{{user.program}}</span>
+          <img class="marauto rnext marten" src="img/grnx.png">
+        </P>
+      </div>
+      <div class="grtem textbetwn">
+        <P class="pf fxcen">
+          <img class="marauto fimg" src="img/grnt.png">
+          <span class="textcen">已发布节目：</span>
+        </P>
+        <P class="pr fxcen fenld">
+          <span class="textcen">{{user.publish}}</span>
+          <img class="marauto rnext marten" src="img/grnx.png">
+        </P>
+      </div>
+      <div class="grtem textbetwn bornoe">
+        <P class="pf fxcen">
+          <img class="marauto fimg" src="img/grsz.png">
+          <span class="textcen">已配对设备：</span>
+        </P>
+        <P class="pr fxcen fenld">
+          <span class="textcen">{{user.client}}</span>
+          <img class="marauto rnext marten" src="img/grnx.png">
+        </P>
+      </div>
+    </div>
+    <!--    
+        <div class="grbox secondi">
+          <div class="grtem textbetwn chrdh borwid">
+            <P class="pf fxcen">
+              <img class="marauto fimg" src="img/grmga.png">
+              <span class="textcen">消息推送</span>
+            </P>
+            <P class="pr fxcen fenld">
+              
+            </P>
+          </div>
+          <div class="grtem textbetwn chrdh borwid">
+            <P class="pf fxcen">
+              <img class="marauto fimg" src="img/grmgb.png">
+              <span class="textcen">意见反馈</span>
+            </P>
+            <P class="pr fxcen fenld">
+              <span class="textcen"></span>
+              <img class="marauto rnext marten" src="img/grnx.png">
+            </P>
+          </div>
+          <div class="grtem textbetwn chrdh bornoe">
+            <P class="pf fxcen">
+              <img class="marauto fimg" src="img/grmgc.png">
+              <span class="textcen">关于XXXX</span>
+            </P>
+            <P class="pr fxcen fenld">
+              <span class="textcen"></span>
+              <img class="marauto rnext marten" src="img/grnx.png">
+            </P>
+          </div>
+        </div>
+    -->
+  </ion-content>
+  <ion-footer-bar align-title="center" class="bar bar-footer f_bar bcbg overf">  
+    <h1 class="title bcbg" id="ftit">Copyright © MagicPoster</h1>  
+  </ion-footer-bar>
+</ion-view>

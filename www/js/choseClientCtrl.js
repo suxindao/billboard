@@ -32,15 +32,19 @@ angular.module('starter.controllers')
         $scope.data.showContent = true;
         $scope.data.clients = data;
       } else {
-        utilService.showConfirm('设备列表', '没有匹配设备,是否去匹配?', '确定', '取消', function () {
-          $state.go("match");
-        });
+        utilService.showConfirm('设备列表', '没有匹配设备,是否去匹配?', '确定', '取消',
+          function () {
+            $state.go("match");
+          },
+          function () {
+            $state.go("main");
+          }
+        );
       }
     });
 
-    $scope.updateSlide = function (index) {
-      $scope.slider.slideTo(index, 500, null);
-//      dataChangeHandler();
+    $scope.goMain = function () {
+      $state.go("main");
     };
 
     //页面右上角按钮
@@ -76,18 +80,7 @@ angular.module('starter.controllers')
         utilService.showAlert('内容发布', '请选择设备');
       }
 
-
     };
-
-
-    function updateLocalName(clientID, name) {
-      $scope.data.clients.forEach(function (client) {
-        if (client.id == clientID) {
-          client.name = name;
-          return;
-        }
-      });
-    }
 
     $scope.chose = function (clientID) {
       $scope.data.clients.forEach(function (client) {
@@ -110,5 +103,27 @@ angular.module('starter.controllers')
       return ids.substring(0, ids.length - 1);
     }
 
+
+    //页面右上角按钮
+    $scope.sendVideo = function () {
+      var ids = getChoseClientids();
+
+      if (ids.length > 0) {
+
+        contentService.publishContents($scope.contentid, ids)
+          .success(function () {
+            utilService.showAlert('发布成功', '发布成功', function () {
+              $state.go("main");
+            });
+          })
+          .error(function (data) {
+            utilService.showAlert('发布失败', data);
+          });
+
+      } else {
+        utilService.showAlert('内容发布', '请选择设备');
+      }
+
+    };
 
   });

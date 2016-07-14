@@ -33,5 +33,9 @@ angular.module('starter.controllers')
 
     };
 
+    $scope.toMainPage = function () {
+      $state.go("main");
+    };
+
 
   });

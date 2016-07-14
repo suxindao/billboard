@@ -1,0 +1,44 @@
+<ion-view view-title="Magic Poster">
+
+  <ion-header-bar align-title="center" class="bar bar-header a_bar fxcen">
+    <div class="mgft">       
+      <a class="fxcen newH" ui-sref="admin">
+        <img class="btnbg marauto wmgn" src="img/cama.png">
+      </a>
+    </div>
+    <h1 class="title mtit">Magic Poster</h1>
+    
+  </ion-header-bar>
+  <ion-content class="scroll-content tophet" overflow-scroll="true" scroll="false">
+    <div class="logof">
+      <img class="logob" src="img/logo.png">
+    </div>
+    <div class="magauto magsty magbtn fxcen" ng-click="clickPost()">
+      <img class="magmg marauto" src="img/manpl.png">
+      <span class="magsp textcen">节目制作</span>
+    </div>
+    <div class="magauto magsty manag fxcen" ng-click="goManage()">
+      <img class="magmg marauto" src="img/manag.png">
+      <span class="magsp textcen">节目管理</span>
+    </div>
+    <div class="magauto magsty hbz fxcen">
+      <img class="magmg marauto" src="img/hbz.png">
+      <span class="magsp textcen">海报制作</span>
+    </div>
+    <div class="magauto mansz fxcen">
+      <div class="flbtn fxcen" ng-click="goDevice()">
+        <img class="sbfl marauto" src="img/sbfl.png">
+        <span class="textcen">设备设置</span>
+        <img class="marauto swidth" src="img/rsan.png">
+      </div>
+      <div class="flbtn fxcen">
+        <img class="sbfl marauto" src="img/gnfr.png">
+        <span class="textcen">系统设置</span>
+        <img class="marauto swidth" src="img/rsan.png">
+      </div>
+    </div>
+  </ion-content>
+  <ion-footer-bar align-title="center" class="bar bar-footer f_bar overf">  
+    <h1 class="title" id="ftit">Copyright © MagicPoster</h1>  
+  </ion-footer-bar>
+</ion-view>

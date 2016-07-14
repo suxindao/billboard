@@ -2,49 +2,47 @@
 
 <ion-view view-title="用户登录" class="bcbg minht">
 
-    <ion-header-bar align-title="center" class="bar bar-header a_bar fxcen">
-        <h1 class="title mtit">用户登录</h1>
-    </ion-header-bar>  
-    <ion-content class="scroll-content tophet" overflow-scroll="true" scroll="false">
-        <div class="logof">
-            <img class="logob" src="img/logo.png">
-        </div>
-        <p class="error" ng-class="{'hide':!data.showMessage}" ng-bind="data.message"></p>
-        <div class="adipt fxcen">
-            <label class="fl real labpt" for="user">
-                <img class="absol adico" src="img/admin.png">
-            </label>
-            <input class="fl" id="user" type="tel" placeholder="用户名" ng-model="data.mobile">
-            <img class="fr xamg marauto" src="img/xa.png">
-            <img class="fr xamg marauto hide" src="img/xb.png">
-        </div>
-        <div class="adipt real">
-            <label class="fl real labpt" for="yzm">
-                <img class="absol telico" src="img/tel.png">
-            </label>
-            <input class="fl" id="yzm" type="number" maxlength="4" placeholder="请输入验证码" ng-model="data.code">        
-            <div class="fr yzmbtn fxcen" ng-show="!data.showCountNumber" ng-click="loginSendSMSCode()">
-                <img class="fl clock marauto" src="img/clocka.png">
-                <span class="fr yzmtit textcen" flash-button flash-css="yzmcol">获取验证码</span>
-            </div>
-            <div class="fr yzmbtn" ng-show="data.showCountNumber">
-                <img class="fl clock" src="img/clocka.png">
-                <img class="fl clock hide" src="img/clockb.png">
-                <span class="fr yzmtit">{{data.countdown}}秒后重新获取</span>
-            </div>
+  <ion-header-bar align-title="center" class="bar bar-header a_bar fxcen">
+    <h1 class="title mtit">用户登录</h1>
+  </ion-header-bar>  
+  <ion-content class="scroll-content tophet" overflow-scroll="true" scroll="false">
+    <div class="logof">
+      <img class="logob" src="img/logo.png">
+    </div>
+    <p class="error" ng-bind="data.message"></p>
+    <div class="adipt fxcen">
+      <label class="fl real labpt" for="user">
+        <img class="absol adico" src="img/admin.png">
+      </label>
+      <input class="fl" id="user" type="tel" placeholder="用户名" ng-model="data.mobile">
+      <img class="fr xamg marauto" src="img/xa.png" ng-if="!(data.mobile.length > 0)">
+      <img class="fr xamg marauto" src="img/xb.png" ng-if="data.mobile.length > 0" ng-click="clearPhone()">
+    </div>
+    <div class="adipt real">
+      <label class="fl real labpt" for="yzm">
+        <img class="absol telico" src="img/tel.png">
+      </label>
+      <input class="fl" id="yzm" type="number" maxlength="4" placeholder="请输入验证码" ng-model="data.code">        
+      <div class="fr yzmbtn fxcen" ng-show="!data.showCountNumber" ng-click="loginSendSMSCode()">
+        <img class="fl clock marauto" src="img/clocka.png">
+        <span class="fr yzmtit textcen" flash-button flash-css="yzmcol">获取验证码</span>
+      </div>
+      <div class="fr yzmbtn" ng-show="data.showCountNumber">
+        <span class="fr yzmtit bultxt">{{data.countdown}}秒后重新获取</span>
+      </div>
 
-        </div>
-        
-        <div class="logbtnf logbtn textcen" ng-click="loginWithSMSCode()" flash-button flash-css="clkbg">
-            登<span class="inblo wthd"></span>录
-        </div>
-      
-        <!-- <div class="join">
-            <img class="fl jomg" src="img/join.png">
-            <span class="fr inblo jotit">立即注册</span>
-        </div> -->
-    </ion-content>
-    <ion-footer-bar align-title="center" class="bar bar-footer f_bar bcbg overf">
-        <h1 class="title bcbg" id="ftit">Copyright © MagicPoster</h1>
-    </ion-footer-bar>
+    </div>
+
+    <div class="logbtnf logbtn textcen" ng-click="loginWithSMSCode()" flash-button flash-css="clkbg">
+      登<span class="inblo wthd"></span>录
+    </div>
+
+    <!-- <div class="join">
+        <img class="fl jomg" src="img/join.png">
+        <span class="fr inblo jotit">立即注册</span>
+    </div> -->
+  </ion-content>
+  <ion-footer-bar align-title="center" class="bar bar-footer f_bar bcbg overf">
+    <h1 class="title bcbg" id="ftit">Copyright © MagicPoster</h1>
+  </ion-footer-bar>
 </ion-view>

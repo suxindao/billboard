@@ -25,6 +25,7 @@ div,p{padding: 0; margin: 0;}
 input{padding: 0; margin: 0; border: none; width: 60%;}
 .fxcen{display: flex; text-align: center;}
 .textcen{display: flex; justify-content:center; align-items:center;}
+.textbetwn{display: flex; justify-content:space-between; align-items:center;}
 .marauto{margin: auto;}
 .has-header { top: 0px;}
 .bar{background-image: none;}
@@ -115,7 +116,7 @@ color: #fff; font-size: 1em; margin: 5.5% auto 19% auto;}
 .join{margin: 0 auto; width: 21%; height: 4.2%; color: #777575; font-size: 0.6em;}
 .jomg{width: 25%; height: 97%; margin-right: 2%;}
 .jotit{margin-right: 10%;}
-.error{margin:0 auto; color: #767575; font-size: 0.8em; text-align: center; margin-bottom: 4%;}
+.error{margin:0 auto; color: #767575; font-size: 0.8em; text-align: center; margin-bottom: 4%; height: 20px;}
 /*设备匹配*/
 .jump{width:10%; height: 4.5%; font-size: 0.8em; text-align: center; color: #fff; background: #02d4c3; border-radius: 100px; 
       margin-top: 2.6%; margin-right: 4.2%;}
@@ -190,14 +191,45 @@ padding-top: 0.4%;}
 .hbz{background: #dddfe0; border: 1px solid #d7d2d3; border-radius: 3px;}
 .magmg{width: 11%; height: auto; margin-right: 8%; margin-left: 30%;}
 .magsp{font-size: 0.8em; color: #fff;}
-.tophet .mansz{width: 55.7%; height: 6.2%; justify-content:space-between; margin-top: 25%}
+.tophet .mansz{width: 55.7%; height: 6.2%; justify-content:space-between; margin-top: 22%}
 .flbtn{width: 45%;height: 100%; border:1px solid #e2e2e2; color: #868585; font-size: 0.8em; }
 .sbfl{width: 18%; height: auto; margin-right: 10%; margin-left: 10%;}
 .hetgt{height: 95%;}
 .namap{margin: 26% auto 14% auto; font-size: 1em; color: #5d5b5b; text-align: center;}
 
+.newH{height: 100%;}
+.wmgn{width: 80%;}
+/*个人设置*/
+.bar #exit{width: 15%; font-size: 0.8em; color: #fff; top: 0;}
+.grbox{width: 89%; height: 35%; border: 2px solid #6ae6dc; border-radius: 3px; margin: 0 auto; margin-top: 7%;
+background: #fff;}
+.grtem{width: 100%; height: 25%; border-bottom: 1px solid #b3f2ed; font-size: 0.8em; color: #767575;}
+.pf{height: 100%; width: 100%;}
+.fimg{width: 4%; margin-left: 5%; margin-right: 5%;}
+.pr{width: 30%; height: 100%;}
+.rnext{width: 7%;}
+.pfw{width: 32%;}
+.fenld{justify-content:flex-end;}
+.marten{margin-right: 10%; margin-left: 10%;}
+.secondi{margin-top: 5%; height: 25%;}
+.chrdh{height: 33.5%;}
 
-
+/*节目名称*/
+.jname{width: 91.7%; height: 51%; background: #fff; border: 1px solid #93ece4; margin: 0 auto; border-radius: 3px;
+padding:5% 5.7%;flex-wrap:wrap;}
+.col-177 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 21.2%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 21.2%;
+    -ms-flex: 0 0 21.2%;
+    flex: 0 0 21.2%;
+    max-width: 21.2%;
+    height: 100%;
+}
+.jnwh{height: 47.3%; margin-right:5%; padding: 0; font-size: 0.8em;}
+.jnmgh{width: 100%; height: 80%; border: 1px solid #b5ebe7;}
+.jnpan{bottom: 0; left: 0; width: 100%; text-align: center; color: #696969; margin-bottom: -5%;}
 
 /*swiper*/
 .gallery-top {
@@ -243,12 +275,13 @@ padding-top: 0.4%;}
 .hide{display: none;}
 .absro{position: inherit;}
 .orgbg{background: #fe9d04;}
-
-
-
-
-
-
+.bornoe{border-bottom: none;}
+.borwid{border-width: 2px;}
+ .bar .title + .buttons {top: 0;}
+.martopy{margin-top: 3%;}
+.newW{margin-left: 16%;}
+.swidth{width: 5%;}
+.bultxt{color: #89ddd6;}
 
 
 
