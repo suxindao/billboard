@@ -39,6 +39,7 @@ $ ionic platform add android
 Update Android project
 ```bash
 $ ionic platform update android
+$ ionic run android
 ```
 
 More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/getting-started) page and the [Ionic CLI](https://github.com/driftyco/ionic-cli) repo.
