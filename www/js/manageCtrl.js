@@ -6,7 +6,7 @@
 
 angular.module('starter.controllers')
 
-  .controller('ManageCtrl', function ($scope, $state, $timeout, $ionicActionSheet, $ionicLoading, contentService, utilService) {
+  .controller('ManageCtrl', function ($scope, $state, $timeout, $ionicActionSheet, $ionicLoading, contentService, utilService, $cordovaInAppBrowser) {
 
     $scope.options = {
       loop: false,
@@ -51,6 +51,7 @@ angular.module('starter.controllers')
 
       var hideSheet = $ionicActionSheet.show({
         buttons: [
+          {text: "预览节目"},
           {text: "立即发布"},
           {text: "删除节目"}
         ],
@@ -58,12 +59,26 @@ angular.module('starter.controllers')
         buttonClicked: function (index) {
           var slideIndex = $scope.data.galleryTop.activeIndex;
           var content_ID = $scope.data.photos[slideIndex].id;
+          var previewUrl = $scope.data.photos[slideIndex].preview_url;
 
           switch (index) {
-            case 0: //立即发布
+            case 0: //预览
+
+              var options = {
+                location: "no"
+              };
+              $cordovaInAppBrowser.open(previewUrl, '_blank', options).then(function () {
+                console.log("InAppBrowser opened " + previewUrl + " successfully");
+              }, function (error) {
+                console.log("Error: " + error);
+              });
+
+
+              break;
+            case 1: //立即发布
               $state.go('choseClient', {contentid: content_ID});
               break;
-            case 1: //删除节目
+            case 2: //删除节目
 
               contentService.removeContents(content_ID)
                 .success(function () {

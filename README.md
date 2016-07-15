@@ -25,15 +25,23 @@ Setup saaa
 $ ionic setup sass
 ```
 
-Then run: 
+Run on bower
 
 ```bash
 $ ionic serve
 ```
 
 Add Android platform
+
 ```bash
 $ ionic platform add android
+```
+
+Add cordova plugin
+```bash
+ionic plugin add cordova-plugin-crosswalk-webview
+...
+...
 ```
 
 Update Android project
