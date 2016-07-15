@@ -76,8 +76,8 @@ input{padding: 0; margin: 0; border: none; width: 60%;}
 .thag{width: 12%; height: 20%; top: 21%; left: 53.5%; background: url("../img/iona.png")no-repeat;background-position: center center;background-size: 100% 41%;}
 .thagn{width: 12%; height: 20%; top: 21%; right: 53.5%; background: url("../img/ionb.png")no-repeat;background-position: center center;background-size: 100% 41%;}
 .mesg{width:100%; height: 16%; background: rgba(149,147,147,0.7); bottom: 0px; left: 0px; overflow: hidden;}
-.mpg{width: 10%; height: auto; margin-left: 2.7%; margin-top: 2.2%;}
-.vpsg{margin-right: 6%; width: 73%; height: 100%; color: #fff; text-align: right; font-size:1em; justify-content: flex-end;}
+.mpg{width: 13%; height: auto; margin-left: 2.7%; margin-top: 2.2%;}
+.vpsg{margin-right: 6%; width: 73%; height: 100%; color: #fff; text-align: right; font-size:0.7em; justify-content: flex-end;}
 .mfr{margin-right: 2%;}
 .jmtit{width: 100%; text-align: center; font-size: 0.9em; line-height: 4em; color: #5d5b5b;}
 .bar #ftit{color: #797777; font-size: 0.5em;}
@@ -167,7 +167,7 @@ input{padding: 0; margin: 0; border: none; width: 60%;}
 .sptbt{height:100%; color: #8a8a8a; font-size: 0.8em;}
 .spbb{width: 100%; height: 15%; bottom: 0; left: 0; background: rgba(255,255,255,.7); font-size: 0.8em; justify-content:flex-end;
       padding-right: 3%;}
-#spbn{color: #5d5b5b; font-size: 0.6em !important;}
+#spbn{color: #5d5b5b; font-size: 0.8em !important;}
 .tim{color: #fd5e60;}
 .fbjm{margin-top: 0; bottom: 20%;}
 .fbky{color: #fe7404}/*点击发布节目*/
@@ -175,12 +175,10 @@ input{padding: 0; margin: 0; border: none; width: 60%;}
 .camera{width: 12%; height: auto; left: 6%; top: 3%;}
 .spjm{width: 100%; height: 20%; bottom: 0; left: 0; background: rgba(255,255,255,.7); font-size: 0.8em; line-height: 1.5em;
       justify-content: space-between; padding-left: 3%; }
-.fyuan{width: 15%; height: 85%; background: #fc4aaa; border-radius: 50%; color: #fff; font-size: 0.8em; text-align: center;
+.fyuan{width: 20%; height: 85%; background: #fc4aaa; border-radius: 50%; color: #fff; font-size: 0.8em; text-align: center;
        margin-top: 1%; margin-right: 2%;display: flex; justify-content:center; align-items:center;}
-.stypl{width: 13%; height: 4%; background: #41aedb; color: #fff; text-align: center; border-radius: 100px; margin-right: 3%;
-       padding-top: 0.4%;}
-.mysty{width: 16%; height: 4%; background: #41aedb; color: #fff; text-align: center; border-radius: 100px; margin-right: 5%;
-       padding-top: 0.4%;}
+.stypl{width: 13%; height: 4%; background: #41aedb; color: #fff; text-align: center; border-radius: 100px; margin-right: 3%;}
+.mysty{width: 16%; height: 4%; background: #41aedb; color: #fff; text-align: center; border-radius: 100px; margin-right: 5%;}
 .brav{width:100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 50;}
 .borclo{border-color: #019a8e;}
 /*主页面*/
@@ -284,5 +282,18 @@ input{padding: 0; margin: 0; border: none; width: 60%;}
 .swidth{width: 5%;}
 .bultxt{color: #89ddd6;}
 .wborw{width: 100%;}
+.rgwid{margin-left: 30%;}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
