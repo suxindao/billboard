@@ -42,6 +42,11 @@ $ ionic platform update android
 $ ionic run android
 ```
 
+Crosswalk with Cordova
+```bash
+ionic plugin add cordova-plugin-crosswalk-webview
+```
+
 More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/getting-started) page and the [Ionic CLI](https://github.com/driftyco/ionic-cli) repo.
 
 ## Issues

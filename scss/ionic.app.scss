@@ -20,6 +20,7 @@ $ionicons-font-path: "ionic/fonts" !default;
 
 // Include all of Ionic
 @import "ionic/ionic";
+body{font-size:87.5%;}
 a{text-decoration:none;}
 div,p{padding: 0; margin: 0;}
 input{padding: 0; margin: 0; border: none; width: 60%;}
@@ -50,18 +51,18 @@ input{padding: 0; margin: 0; border: none; width: 60%;}
 .tophet{top: 9.4%;}
 .bgstyle
 {
-    background-position: center center;
-    /* 背景图不平铺 */
-    background-repeat: no-repeat;
+  background-position: center center;
+  /* 背景图不平铺 */
+  background-repeat: no-repeat;
 
-    /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 
-    background-attachment: fixed;*/
+  /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 
+  background-attachment: fixed;*/
 
-    /* 让背景图基于容器大小伸缩 */
-    background-size: 100% 100%;
+  /* 让背景图基于容器大小伸缩 */
+  background-size: 100% 100%;
 
-    /* 设置背景颜色，背景图加载过程中会显示背景色 */
-    background-color: #fff;
+  /* 设置背景颜色，背景图加载过程中会显示背景色 */
+  background-color: #fff;
 }
 
 .camg{width: 100%; position: absolute; top: 0; left: 0; z-index: -1;} 
@@ -101,7 +102,7 @@ input{padding: 0; margin: 0; border: none; width: 60%;}
 #yzm{height: 100%; width: 40%; font-size: 0.8em;} /*margin-right: 4%; margin-top: 5%;*/
 .xamg{width: 6%; }
 .yzmbtn{width: 44%; height: 72%; background: #f0fefd; border: 1px solid #defbf8; color: #68aca5; height:72%;  
-overflow: auto; margin: auto; position: absolute; top: 0; bottom: 0; right: 2%;}
+        overflow: auto; margin: auto; position: absolute; top: 0; bottom: 0; right: 2%;}
 .clock{width: 17%; margin-left: 5%; margin-right: 6%;}
 .yzmtit{font-size: 0.8em}
 .yzmcol{color: #fab17d;}/*点击字体颜色*/
@@ -109,7 +110,7 @@ overflow: auto; margin: auto; position: absolute; top: 0; bottom: 0; right: 2%;}
 .joindj{color: #02d4c3;}/*点击加入字体颜色*/
 
 .logbtn{width: 52%; height: 5.6%; background: #fe9d04; text-align: center; border: 1px solid #eb8702; border-radius: 3px; 
-color: #fff; font-size: 1em; margin: 5.5% auto 19% auto;}
+        color: #fff; font-size: 1em; margin: 5.5% auto 19% auto;}
 
 .clkbg{background: #fe7404;}
 .wthd{width: 6%;}
@@ -127,12 +128,12 @@ color: #fff; font-size: 1em; margin: 5.5% auto 19% auto;}
   margin-bottom: 1.5%;
 }
 .spinner svg {
-    width: 40% !important;
-    height: 68px !important;
+  width: 40% !important;
+  height: 68px !important;
 }
 .spinner.spinner-royal {
-    stroke: #fb2d5c;
-    fill: #fb2d5c;
+  stroke: #fb2d5c;
+  fill: #fb2d5c;
 }
 .matit{width: 100%; text-align: center; font-size: 0.8em; color: #7e7d7d; margin-bottom: 3%;}
 .loud{width: 7%; height: 26%; left: 46.6%; top:31%;}
@@ -150,14 +151,14 @@ color: #fff; font-size: 1em; margin: 5.5% auto 19% auto;}
 #smgbs{padding: 0 4% 3.8% 4%; height: 57%; flex-wrap: wrap;}
 #smgbs .smrb{margin-right: 6%;}
 .col-275 {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 29.3%;
-    -moz-box-flex: 0;
-    -moz-flex: 0 0 29.3%;
-    -ms-flex: 0 0 29.3%;
-    flex: 0 0 29.3%;
-    max-width: 29.3%;
-    height: 100%;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 29.3%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 29.3%;
+  -ms-flex: 0 0 29.3%;
+  flex: 0 0 29.3%;
+  max-width: 29.3%;
+  height: 100%;
 }
 .sgmg{width: 100%; height: 100%;}
 .sgrmg{border:1px solid #d3d1d1; border-radius:2px; height: 43.5%;}
@@ -165,7 +166,7 @@ color: #fff; font-size: 1em; margin: 5.5% auto 19% auto;}
 .smag{width: 10%; height: auto; margin-right: 3%;margin-left: 3%;}
 .sptbt{height:100%; color: #8a8a8a; font-size: 0.8em;}
 .spbb{width: 100%; height: 15%; bottom: 0; left: 0; background: rgba(255,255,255,.7); font-size: 0.8em; justify-content:flex-end;
-padding-right: 3%;}
+      padding-right: 3%;}
 #spbn{color: #5d5b5b; font-size: 0.6em !important;}
 .tim{color: #fd5e60;}
 .fbjm{margin-top: 0; bottom: 20%;}
@@ -173,13 +174,13 @@ padding-right: 3%;}
 .fbnky{color: #dddfe0; border-color: #d7d3d4;}
 .camera{width: 12%; height: auto; left: 6%; top: 3%;}
 .spjm{width: 100%; height: 20%; bottom: 0; left: 0; background: rgba(255,255,255,.7); font-size: 0.8em; line-height: 1.5em;
-justify-content: space-between; padding-left: 3%; }
+      justify-content: space-between; padding-left: 3%; }
 .fyuan{width: 15%; height: 85%; background: #fc4aaa; border-radius: 50%; color: #fff; font-size: 0.8em; text-align: center;
-margin-top: 1%; margin-right: 2%;display: flex; justify-content:center; align-items:center;}
+       margin-top: 1%; margin-right: 2%;display: flex; justify-content:center; align-items:center;}
 .stypl{width: 13%; height: 4%; background: #41aedb; color: #fff; text-align: center; border-radius: 100px; margin-right: 3%;
-padding-top: 0.4%;}
+       padding-top: 0.4%;}
 .mysty{width: 16%; height: 4%; background: #41aedb; color: #fff; text-align: center; border-radius: 100px; margin-right: 5%;
-padding-top: 0.4%;}
+       padding-top: 0.4%;}
 .brav{width:100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 50;}
 .borclo{border-color: #019a8e;}
 /*主页面*/
@@ -202,7 +203,7 @@ padding-top: 0.4%;}
 /*个人设置*/
 .bar #exit{width: 15%; font-size: 0.8em; color: #fff; top: 0;}
 .grbox{width: 89%; height: 35%; border: 2px solid #6ae6dc; border-radius: 3px; margin: 0 auto; margin-top: 7%;
-background: #fff;}
+       background: #fff;}
 .grtem{width: 100%; height: 25%; border-bottom: 1px solid #b3f2ed; font-size: 0.8em; color: #767575;}
 .pf{height: 100%; width: 100%;}
 .fimg{width: 4%; margin-left: 5%; margin-right: 5%;}
@@ -216,16 +217,16 @@ background: #fff;}
 
 /*节目名称*/
 .jname{width: 91.7%; height: 51%; background: #fff; border: 1px solid #93ece4; margin: 0 auto; border-radius: 3px;
-padding:5% 5.7%;flex-wrap:wrap;}
+       padding:5% 5.7%;flex-wrap:wrap;}
 .col-177 {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 21.2%;
-    -moz-box-flex: 0;
-    -moz-flex: 0 0 21.2%;
-    -ms-flex: 0 0 21.2%;
-    flex: 0 0 21.2%;
-    max-width: 21.2%;
-    height: 100%;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 21.2%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 21.2%;
+  -ms-flex: 0 0 21.2%;
+  flex: 0 0 21.2%;
+  max-width: 21.2%;
+  height: 100%;
 }
 .jnwh{height: 47.3%; margin-right:5%; padding: 0; font-size: 0.8em;}
 .jnmgh{width: 100%; height: 80%; border: 1px solid #b5ebe7;}
@@ -233,35 +234,35 @@ padding:5% 5.7%;flex-wrap:wrap;}
 
 /*swiper*/
 .gallery-top {
-    height: 52.3%;
-    padding-top: 9.3%
+  height: 52.3%;
+  padding-top: 9.3%
 }
 .swiper-button-prev{
-    width: 15%;
-    height: 20%;
-    top: 41%;
-    left: 10.5%;
-    background: url("../img/iona.png") no-repeat;
-    background-position: center center;
-    background-size: 30% 41%;
+  width: 15%;
+  height: 20%;
+  top: 41%;
+  left: 10.5%;
+  background: url("../img/iona.png") no-repeat;
+  background-position: center center;
+  background-size: 30% 41%;
 }
 .swiper-button-next{
-    width: 15%;
-    height: 20%;
-    top: 41%;
-    right: 10.5%;
-    background: url("../img/ionb.png") no-repeat;
-    background-position: center center;
-    background-size: 30% 41%;
+  width: 15%;
+  height: 20%;
+  top: 41%;
+  right: 10.5%;
+  background: url("../img/ionb.png") no-repeat;
+  background-position: center center;
+  background-size: 30% 41%;
 }
 .ascmg{height: 100%;}
 #widba{width: 13%;}
 .row .swiper-slide-active{
-    border-radius: 2px;
-    border:2px solid #02d4c3;
-    width: 14%;
-    height: 105%;
-    margin-top: -0.1%;
+  border-radius: 2px;
+  border:2px solid #02d4c3;
+  width: 14%;
+  height: 105%;
+  margin-top: -0.1%;
 
 }
 
@@ -277,7 +278,7 @@ padding:5% 5.7%;flex-wrap:wrap;}
 .orgbg{background: #fe9d04;}
 .bornoe{border-bottom: none;}
 .borwid{border-width: 2px;}
- .bar .title + .buttons {top: 0;}
+.bar .title + .buttons {top: 0;}
 .martopy{margin-top: 3%;}
 .newW{margin-left: 16%;}
 .swidth{width: 5%;}
