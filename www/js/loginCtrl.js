@@ -83,10 +83,14 @@ angular.module('starter.controllers', ['ionic'])
         if ($scope.data.countdown === 0) {
           countdownInit();
           $interval.cancel(timePromise);
-//                        $scope.data.showMessage = false;
+//          $scope.data.showMessage = false;
         }
-//                    $scope.$digest(); // 通知视图模型的变化
+//        $scope.$digest(); // 通知视图模型的变化
       }, 1000);
+    };
+
+    $scope.clearPhone = function () {
+      $scope.data.mobile = "";
     };
 
 

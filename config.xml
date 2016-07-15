@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.starter" version="0.0.1" xmlns:android="http://schemas.android.com/apk/res/android" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.ionicframework.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>广告牌</name>
     <description>
         An Ionic Framework and Cordova project.
@@ -18,34 +18,37 @@
     <preference name="android-minSdkVersion" value="16" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="SplashScreen" value="screen" />
-    <!--<preference name="AndroidPersistentFileLocation" value="Compatibility"/>-->
     <feature name="StatusBar">
-        <param name="ios-package" value="CDVStatusBar" onload="true" />
+        <param name="ios-package" onload="true" value="CDVStatusBar" />
     </feature>
     <platform name="android">
-        <config-file platform="android" parent="/manifest" mode="add">
+        <config-file mode="add" parent="/manifest" platform="android">
             <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE">
             </uses-permission>
         </config-file>
-        <icon src="resources/android/icon/icon.png" density="ldpi" />
-        <icon src="resources/android/icon/icon.png" density="mdpi" />
-        <icon src="resources/android/icon/icon.png" density="hdpi" />
-        <icon src="resources/android/icon/icon.png" density="xhdpi" />
-        <icon src="resources/android/icon/icon.png" density="xxhdpi" />
-        <icon src="resources/android/icon/icon.png" density="xxxhdpi" />
-        <splash src="resources/android/splash/wel.png" density="land-ldpi" />
-        <splash src="resources/android/splash/wel.png" density="land-mdpi" />
-        <splash src="resources/android/splash/wel.png" density="land-hdpi" />
-        <splash src="resources/android/splash/wel.png" density="land-xhdpi" />
-        <splash src="resources/android/splash/wel.png" density="land-xxhdpi" />
-        <splash src="resources/android/splash/wel.png" density="land-xxxhdpi" />
-        <splash src="resources/android/splash/wel.png" density="port-ldpi" />
-        <splash src="resources/android/splash/wel.png" density="port-mdpi" />
-        <splash src="resources/android/splash/wel.png" density="port-hdpi" />
-        <splash src="resources/android/splash/wel.png" density="port-xhdpi" />
-        <splash src="resources/android/splash/wel.png" density="port-xxhdpi" />
-        <splash src="resources/android/splash/wel.png" density="port-xxxhdpi" />
+        <icon density="ldpi" src="resources/android/icon/icon.png" />
+        <icon density="mdpi" src="resources/android/icon/icon.png" />
+        <icon density="hdpi" src="resources/android/icon/icon.png" />
+        <icon density="xhdpi" src="resources/android/icon/icon.png" />
+        <icon density="xxhdpi" src="resources/android/icon/icon.png" />
+        <icon density="xxxhdpi" src="resources/android/icon/icon.png" />
+        <splash density="land-ldpi" src="resources/android/splash/wel.png" />
+        <splash density="land-mdpi" src="resources/android/splash/wel.png" />
+        <splash density="land-hdpi" src="resources/android/splash/wel.png" />
+        <splash density="land-xhdpi" src="resources/android/splash/wel.png" />
+        <splash density="land-xxhdpi" src="resources/android/splash/wel.png" />
+        <splash density="land-xxxhdpi" src="resources/android/splash/wel.png" />
+        <splash density="port-ldpi" src="resources/android/splash/wel.png" />
+        <splash density="port-mdpi" src="resources/android/splash/wel.png" />
+        <splash density="port-hdpi" src="resources/android/splash/wel.png" />
+        <splash density="port-xhdpi" src="resources/android/splash/wel.png" />
+        <splash density="port-xxhdpi" src="resources/android/splash/wel.png" />
+        <splash density="port-xxxhdpi" src="resources/android/splash/wel.png" />
     </platform>
     <allow-intent href="*" />
     <allow-navigation href="*" />
+    <preference name="xwalkVersion" value="19+" />
+    <preference name="xwalkCommandLine" value="--disable-pull-to-refresh-effect" />
+    <preference name="xwalkMode" value="embedded" />
+    <preference name="xwalkMultipleApk" value="true" />
 </widget>
