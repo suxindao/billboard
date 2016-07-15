@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=0"> 
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=0">
     <!--<script src="lib/utils.js"></script>
     <meta name="apple-mobile-web-app-capable" content="yes" />  -->
     <title>Magic Poster</title>
@@ -42,15 +42,32 @@
     <script src='js/sample.js'></script>-->
   </head>
   <body ng-app="starter">
-    
+
   <ion-nav-view animation="slide-in-up"></ion-nav-view>
 
   <script>
 //      alert("屏幕宽度=" + window.document.documentElement.getBoundingClientRect().width);
 //      alert("屏幕高度=" + window.document.documentElement.getBoundingClientRect().height);
-      // alert("屏幕宽度=" + screen.width);
-      // alert("屏幕高度=" + screen.height);
-      // alert("Dpr=" + window.devicePixelRatio);
-   </script>
+//    alert("屏幕宽度=" + screen.width);
+//    alert("屏幕高度=" + screen.height);
+//    alert("Dpr=" + window.devicePixelRatio);
+//    alert("当前屏幕DPI " + js_getDPI());
+//
+//    function js_getDPI() {
+//      var arrDPI = new Array();
+//      if (window.screen.deviceXDPI != undefined) {
+//        arrDPI[0] = window.screen.deviceXDPI;
+//        arrDPI[1] = window.screen.deviceYDPI;
+//      } else {
+//        var tmpNode = document.createElement("DIV");
+//        tmpNode.style.cssText = "width:1in;height:1in;position:absolute;left:0px;top:0px;z-index:99;visibility:hidden";
+//        document.body.appendChild(tmpNode);
+//        arrDPI[0] = parseInt(tmpNode.offsetWidth);
+//        arrDPI[1] = parseInt(tmpNode.offsetHeight);
+//        tmpNode.parentNode.removeChild(tmpNode);
+//      }
+//      return arrDPI;
+//    }
+  </script>
 </body>
 </html>
