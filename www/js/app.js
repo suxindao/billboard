@@ -7,7 +7,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
 
   .run(function ($ImageCacheFactory, $ionicPlatform, $location, $ionicPopup, $rootScope, $state, $stateParams, $ionicHistory, locals) {
 
-    //主页面显示退出提示框  
+    //主页面显示退出提示框
     $ionicPlatform.registerBackButtonAction(function (e) {
 
       e.preventDefault();
@@ -24,20 +24,20 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
           if (res) {
             ionic.Platform.exitApp();
           } else {
-            // Don't close  
+            // Don't close
           }
         });
       }
 
-      // Is there a page to go back to?  
+      // Is there a page to go back to?
       if ($location.path() == '/main' || $location.path() == '/login') {
         showConfirm();
       } else if ($ionicHistory.backView) {
-        // console.log('currentView:', $ionicHistory.currentView);  
-        // Go back in history  
+        // console.log('currentView:', $ionicHistory.currentView);
+        // Go back in history
         $ionicHistory.goBack();
       } else {
-        // This is the last page: Show confirmation popup  
+        // This is the last page: Show confirmation popup
         showConfirm();
       }
 
@@ -200,8 +200,6 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
       .state('clientList', {
         cache: false,
         url: '/clientList',
-//        templateUrl: 'templates/nmain.html', //设备管理,无关联
-//        templateUrl: 'templates/nmain.html', //设备管理,有关联,需要雷添加
         templateUrl: 'templates/clientListn.html',
         controller: 'ClientCtrl'
       })

@@ -1,4 +1,4 @@
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -19,11 +19,7 @@ angular.module('starter.controllers')
 
     // Setup the loader
     $ionicLoading.show({
-      content: '内容加载中',
-      animation: 'fade-in',
-      showBackdrop: true,
-      maxWidth: 200,
-      showDelay: 0
+      content: '设备列表加载中'
     });
 
     clientService.getClients(function (data) {

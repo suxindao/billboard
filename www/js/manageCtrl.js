@@ -1,4 +1,4 @@
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -18,22 +18,21 @@ angular.module('starter.controllers')
       galleryTop: null,
       galleryThumbs: null,
       photos: null,
-      showContent: 0 //0:初始值, 1:获取正确内容, 2:获取无内容,或者删除后无内容 
+      showContent: 0 //0:初始值, 1:获取正确内容, 2:获取无内容,或者删除后无内容
     };
 
     //首次加载,获取服务器数据
     if ($scope.data.photos === null) {
       // Setup the loader
       $ionicLoading.show({
-        content: '内容加载中',
-        animation: 'fade-in',
-        showBackdrop: true,
-        maxWidth: 200,
-        showDelay: 0
+        content: '内容加载中'
+        // animation: 'fade-in',
+        // showBackdrop: true,
+        // maxWidth: 200,
+        // showDelay: 0
       });
 
       contentService.getOnlineContents(function (data) {
-        $ionicLoading.hide();
         if (data !== null && data.length > 0) {
           $scope.data.showContent = 1;
           $scope.data.photos = data;
@@ -42,6 +41,8 @@ angular.module('starter.controllers')
           $scope.data.showContent = 2;
           utilService.showAlert('获取失败', '获取内容失败');
         }
+        $ionicLoading.hide();
+        $ionicLoading.hide();
       });
     }
 
