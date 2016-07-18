@@ -39,12 +39,12 @@
       <label class="fl real labpt" for="matid">
         <img class="absol adico" src="img/sdie.png">
       </label>
-      <input class="fl" id="matid" type="number" placeholder="请输入设备ID333" ng-model="data.clientID" auto-focus>
+      <input class="fl x-input-el" id="matid" type="number" placeholder="请输入设备ID" ng-model="data.clientID">
       <img class="fr xamg marauto" src="img/xa.png">
       <img class="fr xamg marauto hide" src="img/xb.png">
     </div>
     <div class="logbtnf logbtn textcen" ng-show="!data.showNextButton" ng-click="clientBind()">配对</div>
-    <div class="logbtnf logbtn textcen" ng-show="data.showNextButton" ng-click="goMain()">下一步</div>
+    <div class="logbtnf logbtn textcen" ng-show="data.showNextButton" ng-click="goList()">下一步</div>
   </ion-content>
 
   <!--
