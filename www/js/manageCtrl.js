@@ -51,11 +51,12 @@ angular.module('starter.controllers')
 
       var hideSheet = $ionicActionSheet.show({
         buttons: [
-          {text: "预览节目"},
-          {text: "立即发布"},
-          {text: "删除节目"}
+        {text: "<i class='qukdel'>预览节目</i>"},
+        {text: "<i class='qukdel'>立即发布</i>"},
+        {text: "<i>删除节目</i>"}
         ],
         cancelText: "关闭菜单",
+        cssClass: 'bton_style',
         buttonClicked: function (index) {
           var slideIndex = $scope.data.galleryTop.activeIndex;
           var content_ID = $scope.data.photos[slideIndex].id;

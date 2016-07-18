@@ -264,6 +264,30 @@ input{padding: 0; margin: 0; border: none; width: 60%;}
 
 }
 
+/*提示框*/
+.button.button-positive {   
+  background-color: #049c90;
+  border-radius: 5px;
+}
+
+.button.button-positive.activated{   
+  background-color: #049c90;
+  border-radius: 5px;
+}
+
+.popup-container .popup {
+  border-radius: 5px;
+}
+
+.bton_style {border-radius: 4px;}
+.bton_style .action-sheet .button
+{
+    font-size: 1.2em;    
+    color: #0a847a;
+    border: 1px solid #02d4c3;
+    background: #f9fefe; 
+}
+ .bton_style .action-sheet .qukdel{border-bottom: none !important;}
 /*公用css*/
 .pdro{margin-right: 0;}
 .magauto{margin: 0 auto;}
