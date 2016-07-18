@@ -24,7 +24,7 @@ angular.module('starter.controllers')
 
             utilService.selectImage(function (results)
             {
-                //results=[{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"}];
+                // results=[{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"}];
               if (results)
               {
                 //$state.go("makeVideo",{"data":results});
