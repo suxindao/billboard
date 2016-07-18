@@ -19,27 +19,27 @@
       <img class="absol quan " src="img/quan.png">
       <img class="absol quan hide" src="img/rquan.png">
       <img class="absol loud" src="img/loud.png">
-<!--
-      <ion-spinner icon="crescent" class="spinner-royal spinner spinner-crescent ">
-        <svg viewBox="0 0 64 64">
-          <g>
-            <circle stroke-width="4" stroke-dasharray="128" stroke-dashoffset="82" r="26" cx="32" cy="32" fill="none"
-                    transform="rotate(52.7728 32 32)">
-              <animateTransform values="0,32,32;360,32,32" attributeName="transform" type="rotate"
-                                repeatCount="indefinite" dur="750ms">
-              </animateTransform>
-            </circle>
-          </g>
-        </svg>
-      </ion-spinner>
--->
+      <!--
+            <ion-spinner icon="crescent" class="spinner-royal spinner spinner-crescent ">
+              <svg viewBox="0 0 64 64">
+                <g>
+                  <circle stroke-width="4" stroke-dasharray="128" stroke-dashoffset="82" r="26" cx="32" cy="32" fill="none"
+                          transform="rotate(52.7728 32 32)">
+                    <animateTransform values="0,32,32;360,32,32" attributeName="transform" type="rotate"
+                                      repeatCount="indefinite" dur="750ms">
+                    </animateTransform>
+                  </circle>
+                </g>
+              </svg>
+            </ion-spinner>
+      -->
     </p>
     <p class="matit" ng-show="data.showMessage" ng-bind="data.message"/>
     <div class="adipt fxcen">
       <label class="fl real labpt" for="matid">
         <img class="absol adico" src="img/sdie.png">
       </label>
-      <input class="fl" id="matid" type="number" placeholder="请输入设备ID" ng-model="data.clientID" auto-focus>
+      <input class="fl" id="matid" type="number" placeholder="请输入设备ID333" ng-model="data.clientID" auto-focus>
       <img class="fr xamg marauto" src="img/xa.png">
       <img class="fr xamg marauto hide" src="img/xb.png">
     </div>
@@ -47,9 +47,13 @@
     <div class="logbtnf logbtn textcen" ng-show="data.showNextButton" ng-click="goMain()">下一步</div>
   </ion-content>
 
-  <!--    <ion-footer-bar align-title="center" class="bar bar-footer f_bar overf ">
-        <h1 class="title" id="ftit">Copyright © MagicPoster</h1>
-      </ion-footer-bar>-->
+  <!--
+    <ion-footer-bar align-title="center" class="bar bar-footer f_bar overf ">
+      <h1 class="title" id="ftit">Copyright © MagicPoster</h1>
+    </ion-footer-bar>
+  -->
+
   <div ng-include="'templates/footer.html'" class="bcbg"></div>
+
 
 </ion-view>
