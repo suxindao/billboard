@@ -51,9 +51,9 @@ angular.module('starter.controllers')
 
       var hideSheet = $ionicActionSheet.show({
         buttons: [
-        {text: "<i class='qukdel'>预览节目</i>"},
-        {text: "<i class='qukdel'>立即发布</i>"},
-        {text: "<i>删除节目</i>"}
+        {text: "<div class='qukdel topquck'>预览节目</div>"},
+        {text: "<div class='conquck'>立即发布</div>"},
+        {text: "<div class='qukdel btmquck'>删除节目</div>"}
         ],
         cancelText: "关闭菜单",
         cssClass: 'bton_style',
