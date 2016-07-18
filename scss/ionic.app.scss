@@ -1055,6 +1055,17 @@ input {
 .bton_style .action-sheet .button .btmquck{   
     border-bottom: none;
 }
+.popup-body{
+    padding-bottom: 0;
+}
+.popup-container input{
+    font-size: 1.2em;
+    padding-top: 5px;
+    height: 100%;
+    padding-bottom: 5px;
+    padding-left: 10px;
+}
+
  
 /*公用css*/
 .pdro{margin-right: 0;}
