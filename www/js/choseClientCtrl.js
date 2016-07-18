@@ -23,7 +23,6 @@ angular.module('starter.controllers')
     });
 
     clientService.getClients(function (data) {
-      $ionicLoading.hide();
       if (data !== null && data.length > 0) {
         $scope.data.showContent = true;
         $scope.data.clients = data;
@@ -37,6 +36,7 @@ angular.module('starter.controllers')
           }
         );
       }
+      $ionicLoading.hide();
     });
 
     $scope.goMain = function () {

@@ -211,6 +211,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
       })
 
       .state('choseClient', {
+        cache: false,
         url: '/choseClient/:contentid',
 //        templateUrl: 'templates/choseClient.html',
         templateUrl: 'templates/sendn.html',

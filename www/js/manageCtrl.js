@@ -102,9 +102,11 @@ angular.module('starter.controllers')
         }
       });
 
+/*
       $timeout(function () {
         hideSheet();
       }, 3000);
+*/
 
     };
 

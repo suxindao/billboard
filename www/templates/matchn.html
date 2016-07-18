@@ -40,8 +40,8 @@
         <img class="absol adico" src="img/sdie.png">
       </label>
       <input class="fl x-input-el" id="matid" type="number" placeholder="请输入设备ID" ng-model="data.clientID">
-      <img class="fr xamg marauto" src="img/xa.png">
-      <img class="fr xamg marauto hide" src="img/xb.png">
+      <img class="fr xamg marauto" src="img/xa.png" ng-if="!((''+data.clientID).length > 0)">
+      <img class="fr xamg marauto" src="img/xb.png" ng-if="((''+data.clientID).length > 0)" ng-click="data.clientID=''">
     </div>
     <div class="logbtnf logbtn textcen" ng-show="!data.showNextButton" ng-click="clientBind()">配对</div>
     <div class="logbtnf logbtn textcen" ng-show="data.showNextButton" ng-click="goList()">下一步</div>
