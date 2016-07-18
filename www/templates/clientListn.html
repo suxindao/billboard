@@ -13,7 +13,7 @@
 
       <div class="col col-275 pmzero sgrmg real" ng-class="{'smrb': ($index+1)%3!=0}" ng-class="{'borclo': client.chose}" ng-repeat="client in data.clients" ng-click="menu({{client.id}})">
         <div class="brav absol" ng-show="client.chose"></div>
-        <!--<img class="sgmg" src="img/sgirl.png">-->
+        <!-- <img class="sgmg" src="img/sgirl.png"> -->
         <img class="sgmg" ng-src="{{client.first_image}}">
 
         <p class="absol spbt fxcen">
@@ -27,6 +27,7 @@
       </div>
 
     </div>
+    
 
   </ion-content>
   <ion-footer-bar align-title="center" class="bar bar-footer f_bar bcbg overf">
