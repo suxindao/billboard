@@ -53,7 +53,7 @@
                 <div class="mesg absol fxcen">
                   <!-- <img class="fl mpg marauto" src="img/ptn.png"> class="inblo mfr"-->
                   <div class="fr vpsg textcen txt-cent">
-                    <span >{{photo.update_date}}</span>
+                    <span >{{photo.update_date | formatdate}}</span>
                     <!--<span>未发布</span>-->
                   </div>
                 </div>
@@ -81,6 +81,7 @@
       </div>
     </div>
 
+    <!--<swiper-loop></swiper-loop>-->
 
     <!-- <div class="absol mofth fbjm textcen" ui-sref="makeVideo">
       <span class="yebtn fxcen">

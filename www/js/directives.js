@@ -97,30 +97,17 @@ angular.module('starter.directives', [])
     };
   })
 
-  .directive('galleryRepeatFinish', function () {
+  .directive('galleryRepeatFinish', function ($timeout) {
     return {
+      restrict: 'A',
       link: function (scope, element, attr) {
-//        console.log(scope.$index)
-        if (scope.$last == true) {
-          console.log('ng-repeat执行完毕');
-          scope.data.galleryTop = new ionic.views.Swiper('.gallery-top', {
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev',
-            spaceBetween: 10
-          }, scope, null);
-
-          scope.data.galleryThumbs = new ionic.views.Swiper('.gallery-thumbs', {
-            centeredSlides: false,
-            slidesPerView: 'auto',
-            touchRatio: 0.2,
-            slideToClickedSlide: true
-          }, scope, null);
-
-          scope.data.galleryTop.params.control = scope.data.galleryThumbs;
-          scope.data.galleryThumbs.params.control = scope.data.galleryTop;
+        if (scope.$last === true) {
+          $timeout(function () {
+            scope.$emit('ngRepeatFinished');
+          });
         }
       }
-    }
+    };
   })
 
   .directive('inappbowser', function ($cordovaInAppBrowser) {
