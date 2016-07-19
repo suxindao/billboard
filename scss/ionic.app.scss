@@ -179,18 +179,18 @@ input {
 }
 
 .btop {
-  padding-top: 9.3%;
+  padding-top: 10.3%;
   height: 100%;
 }
 
-.col-45 {
+.col-50 {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 45%;
+  -webkit-flex: 0 0 50%;
   -moz-box-flex: 0;
-  -moz-flex: 0 0 45%;
-  -ms-flex: 0 0 45%;
-  flex: 0 0 45%;
-  max-width: 45%;
+  -moz-flex: 0 0 50%;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  max-width: 50%;
 }
 
 .borclo {
@@ -255,7 +255,7 @@ input {
   height: 100%;
   color: #fff;
   text-align: right;
-  font-size: 0.7em;
+  font-size: 0.9em;
   justify-content: flex-end;
 }
 
@@ -266,7 +266,7 @@ input {
 .jmtit {
   width: 100%;
   text-align: center;
-  font-size: 0.9em;
+  font-size: 1.2em;
   line-height: 4em;
   color: #5d5b5b;
 }
@@ -278,14 +278,14 @@ input {
 
 #svmg {
   width: 100%;
-  height: 15%;
+  height: 18%;
   border-top: 1px solid #e6e5e5;
   border-bottom: 1px solid #e6e5e5;
   background: #f3f3f3;
-  padding-top: 2.2%;
-  padding-bottom: 2.2%;
-  padding-left: 2%;
-  padding-right: 2%;
+  padding-top: 3.2%;
+  padding-bottom: 3.2%;
+  padding-left: 3%;
+  padding-right: 3%;
   margin-top: 0;
 }
 
@@ -293,7 +293,7 @@ input {
   height: 100%;
   padding: 0;
   text-align: center;
-  margin-right: 2%;
+  margin-right: 3%;
   border: 1px solid #c1c0c0;
   border-radius: 2%;
 }
@@ -956,15 +956,15 @@ input {
 
 /*swiper*/
 .gallery-top {
-  height: 52.3%;
-  padding-top: 9.3%
+  height: 58.3%;
+  padding-top: 10.3%
 }
 
 .swiper-button-prev {
   width: 15%;
   height: 20%;
   top: 41%;
-  left: 10.5%;
+  left: 5.5%;
   background: url("../img/iona.png") no-repeat;
   background-position: center center;
   background-size: 30% 41%;
@@ -974,7 +974,7 @@ input {
   width: 15%;
   height: 20%;
   top: 41%;
-  right: 10.5%;
+  right: 5.5%;
   background: url("../img/ionb.png") no-repeat;
   background-position: center center;
   background-size: 30% 41%;
@@ -985,14 +985,14 @@ input {
 }
 
 #widba {
-  width: 13%;
+  width: 16%;
 }
 
 .row .swiper-slide-active {
   border-radius: 2px;
   border: 2px solid #02d4c3;
   width: 14%;
-  height: 105%;
+  height: 102%;
   margin-top: -0.1%;
 
 }
