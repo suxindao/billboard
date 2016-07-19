@@ -1,8 +1,12 @@
 <ion-view view-title="节目制作">
 
   <ion-header-bar align-title="center" class="bar bar-header a_bar fxcen">
-    <div class="mgft fxcen">
+    <!-- <div class="mgft fxcen">
       <a class="marauto" ui-sref="admin"><img class="btnbg" src="img/user.png"></a>
+    </div> -->
+    <div class="mgft fxcen" id="titlf" ng-click="toMainPage()">
+        <img class="marauto fl stmgb" src="img/home.png">
+        <span class="inbol fr" id="insy">首页</span>
     </div>
     <h1 class="title mtit">节目管理</h1>
     <div class="buttons mgrt fxcen" ng-click="menu()">
@@ -47,9 +51,9 @@
                 <div ng-click="menu()"><img class="whmg" ng-src="{{photo.first_image}}"
                                             preview-url="{{photo.preview_url}}"></div>
                 <div class="mesg absol fxcen">
-                  <img class="fl mpg marauto" src="img/ptn.png">
-                  <div class="fr vpsg textcen">
-                    <span class="inblo mfr">{{photo.update_date}}</span>
+                  <!-- <img class="fl mpg marauto" src="img/ptn.png"> class="inblo mfr"-->
+                  <div class="fr vpsg textcen txt-cent">
+                    <span >{{photo.update_date}}</span>
                     <!--<span>未发布</span>-->
                   </div>
                 </div>
@@ -78,12 +82,12 @@
     </div>
 
 
-    <div class="absol mofth fbjm textcen" ui-sref="makeVideo">
+    <!-- <div class="absol mofth fbjm textcen" ui-sref="makeVideo">
       <span class="yebtn fxcen">
         <img class="stnmg marauto" src="img/ptnly.png">
         <span class="fr txtn textcen">节目制作</span>
       </span>
-    </div>
+    </div> -->
 
   </ion-content>
 
