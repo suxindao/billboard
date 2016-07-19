@@ -19,7 +19,7 @@ Start a project
 $ ionic start myApp blank
 ```
 
-Setup saaa
+Setup sass
 
 ```bash
 $ ionic setup sass

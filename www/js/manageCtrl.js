@@ -143,4 +143,28 @@ angular.module('starter.controllers')
       return m - n;
     }
 
+    $scope.$on('ngRepeatFinished', function () {
+
+      var galleryTop = new Swiper('.gallery-top', {
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        loop: true,
+        loopedSlides: 5, //looped slides should be the same
+        spaceBetween: 10
+      });
+
+      var galleryThumbs = new Swiper('.gallery-thumbs', {
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        loop: true,
+        loopedSlides: 5, //looped slides should be the same
+        touchRatio: 0.2,
+        slideToClickedSlide: true
+      });
+
+      galleryTop.params.control = galleryThumbs;
+      galleryThumbs.params.control = galleryTop;
+
+    });
+
   });
