@@ -110,7 +110,7 @@ angular.module('starter.directives', [])
           }, scope, null);
 
           scope.data.galleryThumbs = new ionic.views.Swiper('.gallery-thumbs', {
-            centeredSlides: true,
+            centeredSlides: false,
             slidesPerView: 'auto',
             touchRatio: 0.2,
             slideToClickedSlide: true

@@ -42,7 +42,6 @@ angular.module('starter.controllers')
           utilService.showAlert('获取失败', '获取内容失败');
         }
         $ionicLoading.hide();
-        $ionicLoading.hide();
       });
     }
 
@@ -51,9 +50,9 @@ angular.module('starter.controllers')
 
       var hideSheet = $ionicActionSheet.show({
         buttons: [
-        {text: "<div class='qukdel topquck'>预览节目</div>"},
-        {text: "<div class='conquck'>立即发布</div>"},
-        {text: "<div class='qukdel btmquck'>删除节目</div>"}
+          {text: "<div class='qukdel topquck'>预览节目</div>"},
+          {text: "<div class='conquck'>立即发布</div>"},
+          {text: "<div class='qukdel btmquck'>删除节目</div>"}
         ],
         cancelText: "关闭菜单",
         cssClass: 'bton_style',
@@ -102,11 +101,11 @@ angular.module('starter.controllers')
         }
       });
 
-/*
-      $timeout(function () {
-        hideSheet();
-      }, 3000);
-*/
+      /*
+       $timeout(function () {
+       hideSheet();
+       }, 3000);
+       */
 
     };
 

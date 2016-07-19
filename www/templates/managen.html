@@ -13,6 +13,7 @@
       <img class="marauto btnmr" src="img/mcon.png">
     </div>
   </ion-header-bar>
+
   <ion-content class="scroll-content tophet" overflow-scroll="true" scroll="false">
 
 
@@ -31,7 +32,7 @@
                     <span class="inblo mfr">2016-06-01</span>
                     <span>未发布</span>
                   </div>
-                </div>  ß
+                </div>
               </div>
               <p class="jmtit">节目标题</p>
             </div>
@@ -47,7 +48,8 @@
               <div class="borclo tabcel real">
                 <!--<img class="whmg" src="img/vmbg_03.png">-->
                 <!--<img class="whmg" ng-src="{{photo.first_image}}" preview-url="{{photo.preview_url}}" inappbowser>-->
-                <div ng-click="menu()"><img class="whmg" ng-src="{{photo.first_image}}" preview-url="{{photo.preview_url}}"></div>
+                <div ng-click="menu()"><img class="whmg" ng-src="{{photo.first_image}}"
+                                            preview-url="{{photo.preview_url}}"></div>
                 <div class="mesg absol fxcen">
                   <!-- <img class="fl mpg marauto" src="img/ptn.png"> class="inblo mfr"-->
                   <div class="fr vpsg textcen txt-cent">
@@ -71,6 +73,7 @@
     <!-- gallery-thumbs -->
     <div class="swiper-container gallery-thumbs row " id="svmg">
       <div class="swiper-wrapper absro pmzero row">
+
         <div class="swiper-slide bgc" id="widba" ng-repeat="photo in data.photos" gallery-repeat-finish>
           <!--<img class="scmg" src="img/smg.png">-->
           <img class="scmg" ng-src="{{photo.preview_image}}">
