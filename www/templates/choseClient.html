@@ -2,7 +2,7 @@
   <ion-content class="" overflow-scroll="true" scroll="false">
     <header class="heade header">
       <a class="abtn marg" ng-click="menu({{contentid}})">
-        <img class="cztn" src="img/sider.png">       
+        <img class="cztn" src="img/sider.png">
       </a>
       <span>发布设备选择</span>
       <a class="bbtn clhm wdlog"></a>
@@ -32,7 +32,7 @@
           </a>
           <p class="map">
             <span class="utit">{{client.id}}</span>
-            <span class="uqu vtime">{{client.create_date}}</span>
+            <span class="uqu vtime">{{client.create_date | formatdate}}</span>
           </p>
 
         </li>
@@ -40,4 +40,4 @@
       </ul>
     </div>
   </ion-content>
-</ion-view>  
+</ion-view>
