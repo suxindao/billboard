@@ -69,37 +69,6 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
 
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
 
-//      if (fromState.name == "" && ($rootScope.user && $rootScope.user.token)) {
-//
-//        event.preventDefault(); // 取消默认跳转行为
-//        fromState.name = $rootScope.defaultPage;
-//        $state.go($rootScope.defaultPage);
-//        return;
-//      }
-//
-//      if (fromState.name == "")
-//        return;
-//      // 如果用户不存在
-//      if (!$rootScope.user || !$rootScope.user.token) {
-//
-//        if (fromState.name != "login")
-//
-//        {
-//          event.preventDefault(); // 取消默认跳转行为
-//          fromState.name = "login";
-//          $state.go("login", {from: "login", w: 'notLogin'}); //跳转到登录界面
-//        }
-//
-//      } else {
-//        if (toState.url == '/login') {
-//          if (fromState.name != "") {
-//            event.preventDefault(); // 取消默认跳转行为
-//          }
-//
-//
-//        } // 如果是进入登录界面则允许
-//      }
-
       if ($rootScope.user.token) {
         if (fromState.url == "^" && toState.url != "/main") {
           event.preventDefault(); // 取消默认跳转行为
@@ -117,8 +86,6 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
           return;
         }
       }
-
-
 
     });
 
