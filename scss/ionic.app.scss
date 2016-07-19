@@ -317,7 +317,7 @@ input {
   color: #fff;
   font-size: 0.9em;
   border: 1px solid #d56e00;
-  border-radius: 100px;
+  border-radius: 10px;
   align-items: center;
 }
 
@@ -750,7 +750,7 @@ input {
 }
 
 .borclo {
-  border-color: #019a8e;
+  border: 1px solid #019a8e;
 }
 
 /*主页面*/
@@ -1012,7 +1012,6 @@ input {
   border-radius: 5px;
 }
 
-
 .bton_style .action-sheet .qukdel
 {
     color: #0a847a;
@@ -1095,124 +1094,27 @@ input {
 .bultxt{color: #89ddd6;}
 .wborw{width: 100%; text-align:center;}
 .rgwid{margin-left: 30%;}
+.txt-cent{width: 100%; text-align: center; justify-content: center; margin-right: 0;}
 
-/* =======
-.bton_style .action-sheet .button {
-  font-size: 1.2em;
-  color: #0a847a;
-  background: #f9fefe;
-  border: none;
-  padding: 0;
-  margin: 0;
-}
 
-.bton_style .action-sheet .button .qukdel {
-  color: #0a847a;
-  border: none;
-  width: 100%;
-  height: 100%;
-  border: 1px solid #02d4c3;
-  margin: 0;
-  padding: 0;
-}
 
-.bton_style .action-sheet .button .conquck {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  border-right: 1px solid #02d4c3;
-  border-left: 1px solid #02d4c3;
-}
 
-.bton_style .action-sheet .button .topquck {
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-}
 
-.bton_style .action-sheet .button .btmquck {
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
 
-.bton_style .action-sheet .qukdel{border-bottom: none !important;}
-/*公用css
-.pdro {
-  margin-right: 0;
-}
 
-.magauto {
-  margin: 0 auto;
-}
 
-.pmzero {
-  padding: 0;
-  margin: 0;
-}
 
-.overf {
-  overflow: hidden;
-}
 
-.flex {
-  position: fixed;
-}
 
-.minht {
-  min-height: 590px;
-}
 
-.hide {
-  display: none;
-}
 
-.absro {
-  position: inherit;
-}
 
-.orgbg {
-  background: #fe9d04;
-}
 
-.bornoe {
-  border-bottom: none;
-}
 
-.borwid {
-  border-width: 2px;
-}
 
-.bar .title + .buttons {
-  top: 0;
-}
 
-.martopy {
-  margin-top: 3%;
-}
 
-.newW {
-  margin-left: 16%;
-}
 
-.swidth {
-  width: 5%;
-}
 
-.bultxt {
-  color: #89ddd6;
-}
-
-.wborw {
-  width: 100%;
-  text-align: center;
-}
-
-.rgwid {
-  margin-left: 30%;
-}
-
-.x-input-el {
-  -webkit-user-modify: read-write-plaintext-only;
-}
- */
 
 
