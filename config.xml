@@ -30,7 +30,7 @@
         <icon density="hdpi" src="resources/android/icon/96_96_320.png" />
         <icon density="xhdpi" src="resources/android/icon/96_96_320.png" />
         <icon density="xxhdpi" src="resources/android/icon/144_144_480.png" />
-        <icon density="xxxhdpi" src="resources/android/icon/144_144_480.png" />
+        <icon density="xxxhdpi" src="resources/android/icon/196_196_320.png" />
         <splash density="land-ldpi" src="resources/android/splash/wel.png" />
         <splash density="land-mdpi" src="resources/android/splash/wel.png" />
         <splash density="land-hdpi" src="resources/android/splash/wel.png" />
