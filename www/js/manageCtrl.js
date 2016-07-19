@@ -57,7 +57,7 @@ angular.module('starter.controllers')
         cancelText: "关闭菜单",
         cssClass: 'bton_style',
         buttonClicked: function (index) {
-          var slideIndex = $scope.data.galleryTop.activeIndex;
+          var slideIndex = $scope.data.galleryTop.activeIndex - $scope.data.photos.length; //Note, that in loop mode active index value will be always shifted on a number of looped/duplicated slides
           var content_ID = $scope.data.photos[slideIndex].id;
           var previewUrl = $scope.data.photos[slideIndex].preview_url;
 
@@ -145,7 +145,7 @@ angular.module('starter.controllers')
 
     $scope.$on('ngRepeatFinished', function () {
 
-      var galleryTop = new Swiper('.gallery-top', {
+      $scope.data.galleryTop = new Swiper('.gallery-top', {
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
         loop: true,
@@ -153,7 +153,7 @@ angular.module('starter.controllers')
         spaceBetween: 10
       });
 
-      var galleryThumbs = new Swiper('.gallery-thumbs', {
+      $scope.data.galleryThumbs = new Swiper('.gallery-thumbs', {
         centeredSlides: true,
         slidesPerView: 'auto',
         loop: true,
@@ -162,8 +162,8 @@ angular.module('starter.controllers')
         slideToClickedSlide: true
       });
 
-      galleryTop.params.control = galleryThumbs;
-      galleryThumbs.params.control = galleryTop;
+      $scope.data.galleryTop.params.control = $scope.data.galleryThumbs;
+      $scope.data.galleryThumbs.params.control = $scope.data.galleryTop;
 
     });
 
