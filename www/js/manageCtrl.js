@@ -9,9 +9,7 @@ angular.module('starter.controllers')
   .controller('ManageCtrl', function ($scope, $state, $timeout, $ionicActionSheet, $ionicLoading, contentService, utilService, $cordovaInAppBrowser) {
 
     $scope.options = {
-      loop: false,
-      speed: 500,
-      hashnav: true
+      loopSize: 4
     };
 
     $scope.data = {
@@ -20,6 +18,11 @@ angular.module('starter.controllers')
       photos: null,
       showContent: 0 //0:初始值, 1:获取正确内容, 2:获取无内容,或者删除后无内容
     };
+
+    $scope.toMainPage = function () {
+      $state.go("main");
+    };
+
 
     //首次加载,获取服务器数据
     if ($scope.data.photos === null) {
@@ -39,7 +42,15 @@ angular.module('starter.controllers')
 //          dataInit($scope.data.photos); //计算图片的分别率,选择CSS
         } else {
           $scope.data.showContent = 2;
-          utilService.showAlert('获取失败', '获取内容失败');
+          utilService.showConfirm('内容管理', '没有节目内容,是否去创建?', '确定', '取消',
+            function () {
+              $state.go("makeVideo", {getPremission: true});
+              return;
+            },
+            function () {
+              $state.go("main");
+            }
+          );
         }
         $ionicLoading.hide();
       });
@@ -57,7 +68,7 @@ angular.module('starter.controllers')
         cancelText: "关闭菜单",
         cssClass: 'bton_style',
         buttonClicked: function (index) {
-          var slideIndex = $scope.data.galleryTop.activeIndex - $scope.data.photos.length; //Note, that in loop mode active index value will be always shifted on a number of looped/duplicated slides
+          var slideIndex = $scope.galleryActiveIndex();
           var content_ID = $scope.data.photos[slideIndex].id;
           var previewUrl = $scope.data.photos[slideIndex].preview_url;
 
@@ -84,8 +95,7 @@ angular.module('starter.controllers')
                 .success(function () {
                   utilService.showAlert('删除成功', '删除成功', function () {
                     $scope.data.photos.splice(slideIndex, 1);
-                    $scope.data.galleryTop.removeSlide(slideIndex);
-                    $scope.data.galleryThumbs.removeSlide(slideIndex);
+                    galleryInit();
                     if ($scope.data.photos.length === 0) {
                       $scope.data.showContent = 2;
                     }
@@ -144,27 +154,68 @@ angular.module('starter.controllers')
     }
 
     $scope.$on('ngRepeatFinished', function () {
+      galleryInit();
+    });
 
-      $scope.data.galleryTop = new Swiper('.gallery-top', {
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
-        loop: true,
-        loopedSlides: 5, //looped slides should be the same
-        spaceBetween: 10
-      });
+    var galleryInit = function () {
+      if ($scope.data.photos.length > $scope.options.loopSize) {
 
-      $scope.data.galleryThumbs = new Swiper('.gallery-thumbs', {
-        centeredSlides: true,
-        slidesPerView: 'auto',
-        loop: true,
-        loopedSlides: 5, //looped slides should be the same
-        touchRatio: 0.2,
-        slideToClickedSlide: true
-      });
+        $scope.data.galleryTop = new Swiper('.gallery-top', {
+          nextButton: '.swiper-button-next',
+          prevButton: '.swiper-button-prev',
+          loop: true,
+          loopedSlides: $scope.data.photos.length, //looped slides should be the same
+          spaceBetween: 10
+        });
+
+        $scope.data.galleryThumbs = new Swiper('.gallery-thumbs', {
+          centeredSlides: false,
+          loop: true,
+          loopedSlides: $scope.data.photos.length, //looped slides should be the same
+          slidesPerView: 'auto',
+          touchRatio: 0.2,
+          slideToClickedSlide: true
+        });
+
+      } else {
+
+        $scope.data.galleryTop = new Swiper('.gallery-top', {
+          nextButton: '.swiper-button-next',
+          prevButton: '.swiper-button-prev',
+          spaceBetween: 10
+        });
+
+        $scope.data.galleryThumbs = new Swiper('.gallery-thumbs', {
+          centeredSlides: true,
+          slidesPerView: 'auto',
+          touchRatio: 0.2,
+          slideToClickedSlide: true
+        });
+
+        document.getElementById("galleryThumbs").className = "swiper-wrapper absro pmzero row alignedCSS";
+      }
+
 
       $scope.data.galleryTop.params.control = $scope.data.galleryThumbs;
       $scope.data.galleryThumbs.params.control = $scope.data.galleryTop;
 
-    });
+      // Add one more handler for this event
+      $scope.data.galleryTop.on('slideChangeEnd', function () {
+        console.log('galleryTop activeIndex = ' + $scope.galleryActiveIndex());
+      });
 
+      $scope.data.galleryThumbs.on('slideChangeEnd', function () {
+        console.log('galleryThumbs activeIndex = ' + $scope.data.galleryThumbs.activeIndex);
+      });
+
+    }
+
+    $scope.galleryActiveIndex = function () {
+      var activeIndex = $scope.data.galleryTop.activeIndex;
+      if ($scope.data.photos.length > $scope.options.loopSize) {
+        activeIndex -= $scope.data.galleryTop.loopedSlides;
+      }
+      // alert(activeIndex);
+      return activeIndex;
+    }
   });

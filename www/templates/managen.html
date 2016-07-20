@@ -5,8 +5,8 @@
       <a class="marauto" ui-sref="admin"><img class="btnbg" src="img/user.png"></a>
     </div> -->
     <div class="mgft fxcen" id="titlf" ng-click="toMainPage()">
-        <img class="marauto fl stmgb" src="img/home.png">
-        <span class="inbol fr" id="insy">首页</span>
+      <img class="marauto fl stmgb" src="img/home.png">
+      <span class="inbol fr" id="insy">首页</span>
     </div>
     <h1 class="title mtit">节目管理</h1>
     <div class="buttons mgrt fxcen" ng-click="menu()">
@@ -53,7 +53,7 @@
                 <div class="mesg absol fxcen">
                   <!-- <img class="fl mpg marauto" src="img/ptn.png"> class="inblo mfr"-->
                   <div class="fr vpsg textcen txt-cent">
-                    <span >{{photo.update_date | formatdate}}</span>
+                    <span>{{photo.update_date | formatdate}}</span>
                     <!--<span>未发布</span>-->
                   </div>
                 </div>
@@ -71,10 +71,11 @@
     </div>
 
     <!-- gallery-thumbs -->
-    <div class="swiper-container gallery-thumbs row " id="svmg">
-      <div class="swiper-wrapper absro pmzero row">
+    <div class="swiper-container gallery-thumbs row" id="svmg">
+      <div class="swiper-wrapper absro pmzero row" id="galleryThumbs">
 
-        <div class="swiper-slide bgc" id="widba" ng-repeat="photo in data.photos" gallery-repeat-finish>
+        <div class="swiper-slide bgc" id="widba"
+             ng-repeat="photo in data.photos" gallery-repeat-finish>
           <!--<img class="scmg" src="img/smg.png">-->
           <img class="scmg" ng-src="{{photo.preview_image}}">
         </div>

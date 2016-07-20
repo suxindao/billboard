@@ -70,14 +70,14 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
 
       if ($rootScope.user.token) {
-          
-        if(fromState.url == "/manage" && toState.url == "/makeVideo")
-        {
-             event.preventDefault(); // 取消默认跳转行为
-             $state.go($rootScope.defaultPage);
-             return;
-        }else
-        if (fromState.url == "^" && toState.url != "/main") {
+
+        if (fromState.url == "/manage" && toState.url == "/makeVideo") {
+          if (toParams.getPremission != true) {
+            event.preventDefault(); // 取消默认跳转行为
+            $state.go($rootScope.defaultPage);
+            return;
+          }
+        } else if (fromState.url == "^" && toState.url != "/main") {
           event.preventDefault(); // 取消默认跳转行为
           fromState.name = $rootScope.defaultPage;
           $state.go($rootScope.defaultPage);
@@ -86,7 +86,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
           event.preventDefault(); // 取消默认跳转行为
           return;
         }
-        
+
       } else {
         if (toState.url != "/login") {
           event.preventDefault(); // 取消默认跳转行为
@@ -150,7 +150,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
         url: '/makeVideo',
         templateUrl: 'templates/jmlist.html',
         controller: 'makeVideoCtrl',
-        params: {'data': null}
+        params: {'data': null, 'getPremission': null}
       })
 
       .state('admin', {
