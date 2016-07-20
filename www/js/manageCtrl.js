@@ -9,7 +9,7 @@ angular.module('starter.controllers')
   .controller('ManageCtrl', function ($scope, $state, $timeout, $ionicActionSheet, $ionicLoading, contentService, utilService, $cordovaInAppBrowser) {
 
     $scope.options = {
-      loopSize: 4
+      loopSize: 5
     };
 
     $scope.data = {

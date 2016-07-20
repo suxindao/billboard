@@ -533,7 +533,13 @@ input {
   top: 31%;
 }
 
-.quan{width: 14.8%; height: 75%; z-index: -1; left: 42.6%; top: 5.6%;}
+.quan {
+  width: 14.8%;
+  height: 75%;
+  z-index: -1;
+  left: 42.6%;
+  top: 5.6%;
+}
 
 #matid {
   height: 100%;
@@ -594,13 +600,14 @@ input {
   height: 74%;
   flex-wrap: wrap;
 }
+
 #smgbsn {
   padding: 0 4% 3.8% 4%;
   height: 64%;
   flex-wrap: wrap;
 }
 
-#smgbs .smrb, #smgbsn .smrb{
+#smgbs .smrb, #smgbsn .smrb {
   margin-right: 6%;
 }
 
@@ -625,11 +632,13 @@ input {
   border-radius: 2px;
   height: 30.5%;
 }
+
 .sgrmgn {
   border: 1px solid #d3d1d1;
   border-radius: 2px;
   height: 38.5%;
 }
+
 .spbt {
   width: 100%;
   height: 16%;
@@ -1012,40 +1021,39 @@ input {
   border-radius: 5px;
 }
 
-.bton_style .action-sheet .qukdel
-{
-    color: #0a847a;
-    background: #f9fefe; 
-    border: none;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}    
-
-.bton_style .action-sheet .conquck{
-    margin: 0;
-    padding: 0;
-    height: 100%; 
+.bton_style .action-sheet .qukdel {
+  color: #0a847a;
+  background: #f9fefe;
+  border: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.bton_style .action-sheet .button
-{
-    font-size: 1.2em;    
-    color: #0a847a;   
-    background: #f9fefe; 
-    padding: 0;
-    margin: 0;
-    border: 1px solid #02d4c3;
+.bton_style .action-sheet .conquck {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
-.bton_style .action-sheet .button:nth-child(1){
+
+.bton_style .action-sheet .button {
+  font-size: 1.2em;
+  color: #0a847a;
+  background: #f9fefe;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #02d4c3;
+}
+
+.bton_style .action-sheet .button:nth-child(1) {
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
   border-bottom-right-radius: none !important;
   border-bottom-left-radius: none !important;
 }
 
-.bton_style .action-sheet .button:nth-child(2){
+.bton_style .action-sheet .button:nth-child(2) {
   padding: 0;
   margin: 0;
   border-bottom: none !important;
@@ -1053,49 +1061,130 @@ input {
   border-radius: none !important;
 }
 
-.bton_style .action-sheet .button:nth-child(3){
+.bton_style .action-sheet .button:nth-child(3) {
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
   border-top-right-radius: none !important;
   border-top-left-radius: none !important;
 }
 
-.bton_style .action-sheet .button .btmquck{   
-    border-bottom: none;
-}
-.popup-body{
-    padding-bottom: 0;
-}
-.popup-container input{
-    font-size: 1.2em;
-    padding-top: 5px;
-    height: 100%;
-    padding-bottom: 5px;
-    padding-left: 10px;
+.bton_style .action-sheet .button .btmquck {
+  border-bottom: none;
 }
 
- 
+.popup-body {
+  padding-bottom: 0;
+}
+
+.popup-container input {
+  font-size: 1.2em;
+  padding-top: 5px;
+  height: 100%;
+  padding-bottom: 5px;
+  padding-left: 10px;
+}
+
 /*公用css*/
-.pdro{margin-right: 0;}
-.magauto{margin: 0 auto;}
-.pmzero{padding: 0; margin: 0;}
-.overf{overflow: hidden;}
-.flex{position: fixed;}
-.minht{min-height: 598px;}
-.hide{display: none;}
-.absro{position: inherit;}
-.orgbg{background: #fe9d04;}
-.bornoe{border-bottom: none;}
-.borwid{border-width: 2px;}
-.bar .title + .buttons {top: 0;}
-.martopy{margin-top: 3%;}
-.newW{margin-left: 16%;}
-.swidth{width: 5%;}
-.bultxt{color: #89ddd6;}
-.wborw{width: 100%; text-align:center;}
-.rgwid{margin-left: 30%;}
-.txt-cent{width: 100%; text-align: center; justify-content: center; margin-right: 0;}
-.mcbrav{left: 0; top: 0; z-index: 100;}
+.pdro {
+  margin-right: 0;
+}
+
+.magauto {
+  margin: 0 auto;
+}
+
+.pmzero {
+  padding: 0;
+  margin: 0;
+}
+
+.overf {
+  overflow: hidden;
+}
+
+.flex {
+  position: fixed;
+}
+
+.minht {
+  min-height: 598px;
+}
+
+.hide {
+  display: none;
+}
+
+.absro {
+  position: inherit;
+}
+
+.orgbg {
+  background: #fe9d04;
+}
+
+.bornoe {
+  border-bottom: none;
+}
+
+.borwid {
+  border-width: 2px;
+}
+
+.bar .title + .buttons {
+  top: 0;
+}
+
+.martopy {
+  margin-top: 3%;
+}
+
+.newW {
+  margin-left: 16%;
+}
+
+.swidth {
+  width: 5%;
+}
+
+.bultxt {
+  color: #89ddd6;
+}
+
+.wborw {
+  width: 100%;
+  text-align: center;
+}
+
+.rgwid {
+  margin-left: 30%;
+}
+
+.txt-cent {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  margin-right: 0;
+}
+
+.mcbrav {
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.alignedCSS{
+  transform: translate3d(0px, 0px, 0px) !important;
+  -ms-transform:translate3d(0px, 0px, 0px) !important; 	/* IE 9 */
+  -moz-transform:translate3d(0px, 0px, 0px) !important; 	/* Firefox */
+  -webkit-transform:translate3d(0px, 0px, 0px) !important; /* Safari 和 Chrome */
+  -o-transform:translate3d(0px, 0px, 0px) !important;	/* Opera */
+
+  transition-duration: 0ms !important;
+  -ms-transition-duration: 0ms !important; /* Firefox 4 */
+  -moz-transition-duration: 0ms !important; /* Firefox 4 */
+  -webkit-transition-duration: 0ms !important; /* Safari 和 Chrome */
+  -o-transition-duration: 0ms !important; /* Opera */
+}
 
 
 
