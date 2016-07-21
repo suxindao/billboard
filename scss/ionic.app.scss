@@ -1068,6 +1068,18 @@ input {
   border-top-left-radius: none !important;
 }
 
+/*.popup-container .popup {
+  position: absolute;
+  width:217px;
+  top:10%;
+  left:98px;
+}*/
+
+.popup-container{
+  bottom: auto;
+  top:10%;
+}
+
 .bton_style .action-sheet .button .btmquck {
   border-bottom: none;
 }
