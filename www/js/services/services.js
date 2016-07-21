@@ -1,4 +1,4 @@
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -74,7 +74,7 @@ angular.module('starter.services', [])
         if (data.result == 0)
         {
           deferred.resolve(data);
-        } 
+        }
         else if (data.result == -2 || data.result == -3 || data.result == -4)
         {
           $rootScope.user = {};
@@ -497,7 +497,8 @@ angular.module('starter.services', [])
 
     };
 
-    this.removeContents = function (index) {
+    this.removeContents = function (index, clientDel) {
+
       var deferred = $q.defer();
       var promise = deferred.promise;
 
@@ -511,7 +512,7 @@ angular.module('starter.services', [])
         return promise;
       };
 
-      var requestUrl = "?cmd=programDelete&token=" + aJaxService.getToken() + "&id=" + index;
+      var requestUrl = "?cmd=programDelete&token=" + aJaxService.getToken() + "&id=" + index + "&clientDel=" + clientDel;
 //      var requestUrl = "?cmd=programDelete&token=ac7851a74504be7c4bde5da8c41261ec&id=" + index;
       aJaxService.httpGetData(requestUrl)
         .success(function (data) {

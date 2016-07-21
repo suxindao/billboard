@@ -1,4 +1,4 @@
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -193,11 +193,12 @@ angular.module('starter.services')
 
     };
 
-    this.showConfirm = function (title, template, okText, cancelText, callback, cancelCallback)
+    this.showConfirm = function (title, template, okText, cancelText, callback, cancelCallback, scope)
     {
       var confirmPopup = $ionicPopup.confirm({
         title: '<strong>' + title + '</strong>',
         template: template,
+        scope: scope,
         okText: okText,
         cancelText: cancelText
       });
