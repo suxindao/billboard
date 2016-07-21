@@ -164,15 +164,15 @@ angular.module('starter.controllers')
           nextButton: '.swiper-button-next',
           prevButton: '.swiper-button-prev',
           loop: true,
-          loopedSlides: $scope.data.photos.length, //looped slides should be the same
+          loopedSlides: 5, //looped slides should be the same
           spaceBetween: 10
         });
 
         $scope.data.galleryThumbs = new Swiper('.gallery-thumbs', {
-          centeredSlides: false,
+          // centeredSlides: true,
           loop: true,
-          loopedSlides: $scope.data.photos.length, //looped slides should be the same
-          slidesPerView: 'auto',
+          loopedSlides: 5, //looped slides should be the same
+          slidesPerView: 8,
           touchRatio: 0.2,
           slideToClickedSlide: true
         });
@@ -212,9 +212,9 @@ angular.module('starter.controllers')
 
     $scope.galleryActiveIndex = function () {
       var activeIndex = $scope.data.galleryTop.activeIndex;
-      if ($scope.data.photos.length > $scope.options.loopSize) {
-        activeIndex -= $scope.data.galleryTop.loopedSlides;
-      }
+      // if ($scope.data.photos.length > $scope.options.loopSize) {
+      //   activeIndex -= $scope.data.galleryTop.loopedSlides;
+      // }
       // alert(activeIndex);
       return activeIndex;
     }

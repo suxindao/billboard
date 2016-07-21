@@ -197,6 +197,12 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
         url: '/jmang',
         templateUrl: 'templates/jmang.html',
         controller: ''
+      })
+
+      .state('test', {
+        url: '/test',
+        templateUrl: 'templates/test.html',
+        controller: 'testCtrl'
       });
 
     // if none of the above states are matched, use this as the fallback
