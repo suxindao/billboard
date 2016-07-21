@@ -188,12 +188,14 @@ angular.module('starter.controllers')
 
         $scope.data.galleryThumbs = new Swiper('.gallery-thumbs', {
           centeredSlides: true,
-          slidesPerView: 'auto',
+          slidesPerView: 5,
           touchRatio: 0.2,
-          slideToClickedSlide: true
+          slideToClickedSlide: true,
+          spaceBetween: 13
         });
 
         document.getElementById("galleryThumbs").className = "swiper-wrapper absro pmzero row alignedCSS";
+        document.getElementById("widba").className = "swiper-slide bgc widbat";
       }
 
 
