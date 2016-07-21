@@ -163,66 +163,20 @@ angular.module('starter.controllers')
     });
 
     var galleryInit = function () {
-      if ($scope.data.photos.length > $scope.options.loopSize) {
 
-        $scope.data.galleryTop = new Swiper('.gallery-top', {
-          nextButton: '.swiper-button-next',
-          prevButton: '.swiper-button-prev',
-          loop: true,
-          loopedSlides: $scope.options.loopedSlides, //looped slides should be the same
-          spaceBetween: $scope.options.topSpaceBetween
-        });
 
-        $scope.data.galleryThumbs = new Swiper('.gallery-thumbs', {
-          // centeredSlides: true,
-          loop: true,
-          loopedSlides: $scope.options.loopedSlides, //looped slides should be the same
-          slidesPerView: $scope.options.slidesPerView,
-          touchRatio: 0.2,
-          slideToClickedSlide: true,
-          spaceBetween: $scope.options.thumbsSpaceBetween
-        });
-
-      } else {
-
-        $scope.data.galleryTop = new Swiper('.gallery-top', {
-          nextButton: '.swiper-button-next',
-          prevButton: '.swiper-button-prev',
+        $scope.data.galleryTop = new Swiper('.swiper-container', {
+          slidesPerView: 3,
+          centeredSlides: true,
+          paginationClickable: true,
           spaceBetween: 10
         });
 
-        $scope.data.galleryThumbs = new Swiper('.gallery-thumbs', {
-          centeredSlides: true,
-          slidesPerView: 'auto',
-          touchRatio: 0.2,
-          slideToClickedSlide: true
-        });
-
-        // document.getElementById("galleryThumbs").className = "swiper-wrapper absro pmzero row alignedCSS";
-        document.getElementById("galleryThumbs").className += " alignedCSS";
-      }
-
-
-      $scope.data.galleryTop.params.control = $scope.data.galleryThumbs;
-      $scope.data.galleryThumbs.params.control = $scope.data.galleryTop;
-
       // Add one more handler for this event
-      // $scope.data.galleryTop.on('slideChangeEnd', function () {
-      //   console.log('galleryTop activeIndex = ' + $scope.galleryActiveIndex());
-      // });
-      //
-      // $scope.data.galleryThumbs.on('slideChangeEnd', function () {
-      //   console.log('galleryThumbs activeIndex = ' + $scope.data.galleryThumbs.activeIndex);
-      // });
+      $scope.data.galleryTop.on('slideChangeEnd', function () {
+        console.log('galleryTop activeIndex = ' + $scope.data.galleryTop.activeIndex);
+      });
 
     }
 
-    $scope.galleryActiveIndex = function () {
-      var activeIndex = $scope.data.galleryTop.activeIndex;
-      if ($scope.data.photos.length > $scope.options.loopSize) {
-        activeIndex -= $scope.data.galleryTop.loopedSlides;
-      }
-      // alert(activeIndex);
-      return activeIndex;
-    }
   });
