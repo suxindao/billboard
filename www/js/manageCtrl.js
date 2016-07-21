@@ -172,9 +172,10 @@ angular.module('starter.controllers')
           // centeredSlides: true,
           loop: true,
           loopedSlides: 5, //looped slides should be the same
-          slidesPerView: 8,
+          slidesPerView: 5,
           touchRatio: 0.2,
-          slideToClickedSlide: true
+          slideToClickedSlide: true,
+          spaceBetween: 13
         });
 
       } else {
