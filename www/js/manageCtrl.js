@@ -9,7 +9,11 @@ angular.module('starter.controllers')
   .controller('ManageCtrl', function ($scope, $state, $timeout, $ionicActionSheet, $ionicLoading, contentService, utilService, $cordovaInAppBrowser) {
 
     $scope.options = {
-      loopSize: 5
+      loopSize: 5, //多少个节目以后开始循环显示
+      loopedSlides: 5, //缩略列表循环显示的节目个数
+      slidesPerView: 5,  //缩略列表循环显示的前置个数
+      topSpaceBetween: 10, //节目间距
+      thumbsSpaceBetween: 13
     };
 
     $scope.data = {
@@ -39,6 +43,7 @@ angular.module('starter.controllers')
         if (data !== null && data.length > 0) {
           $scope.data.showContent = 1;
           $scope.data.photos = data;
+          console.log("节目长度" + $scope.data.photos.length);
 //          dataInit($scope.data.photos); //计算图片的分别率,选择CSS
         } else {
           $scope.data.showContent = 2;
@@ -158,67 +163,20 @@ angular.module('starter.controllers')
     });
 
     var galleryInit = function () {
-      if ($scope.data.photos.length > $scope.options.loopSize) {
 
-        $scope.data.galleryTop = new Swiper('.gallery-top', {
-          nextButton: '.swiper-button-next',
-          prevButton: '.swiper-button-prev',
-          loop: true,
-          loopedSlides: 5, //looped slides should be the same
-          spaceBetween: 10
-        });
 
-        $scope.data.galleryThumbs = new Swiper('.gallery-thumbs', {
-          // centeredSlides: true,
-          loop: true,
-          loopedSlides: 5, //looped slides should be the same
-          slidesPerView: 5,
-          touchRatio: 0.2,
-          slideToClickedSlide: true,
-          spaceBetween: 13
-        });
-
-      } else {
-
-        $scope.data.galleryTop = new Swiper('.gallery-top', {
-          nextButton: '.swiper-button-next',
-          prevButton: '.swiper-button-prev',
-          spaceBetween: 10
-        });
-
-        $scope.data.galleryThumbs = new Swiper('.gallery-thumbs', {
+        $scope.data.galleryTop = new Swiper('.swiper-container', {
+          slidesPerView: 3,
           centeredSlides: true,
-          slidesPerView: 5,
-          touchRatio: 0.2,
-          slideToClickedSlide: true,
-          spaceBetween: 13
+          paginationClickable: true,
+          spaceBetween: 10
         });
-
-        document.getElementById("galleryThumbs").className = "swiper-wrapper absro pmzero row alignedCSS";
-        document.getElementById("widba").className = "swiper-slide bgc widbat";
-      }
-
-
-      $scope.data.galleryTop.params.control = $scope.data.galleryThumbs;
-      $scope.data.galleryThumbs.params.control = $scope.data.galleryTop;
 
       // Add one more handler for this event
       $scope.data.galleryTop.on('slideChangeEnd', function () {
-        console.log('galleryTop activeIndex = ' + $scope.galleryActiveIndex());
-      });
-
-      $scope.data.galleryThumbs.on('slideChangeEnd', function () {
-        console.log('galleryThumbs activeIndex = ' + $scope.data.galleryThumbs.activeIndex);
+        console.log('galleryTop activeIndex = ' + $scope.data.galleryTop.activeIndex);
       });
 
     }
 
-    $scope.galleryActiveIndex = function () {
-      var activeIndex = $scope.data.galleryTop.activeIndex;
-      // if ($scope.data.photos.length > $scope.options.loopSize) {
-      //   activeIndex -= $scope.data.galleryTop.loopedSlides;
-      // }
-      // alert(activeIndex);
-      return activeIndex;
-    }
   });

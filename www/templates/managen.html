@@ -17,36 +17,14 @@
   <ion-content class="scroll-content tophet" overflow-scroll="true" scroll="false">
 
 
-    <div class="swiper-container gallery-top">
+    <div class="swiper-container">
       <div class="swiper-wrapper">
-        <!--
-        <div class="swiper-slide">
-          <div class="row btop">
-            <div class="col real"></div>
-            <div class="col col-45 pmzero">
-              <div class="borclo tabcel real">
-                <img class="whmg" src="img/vmbg_03.png">
-                <div class="mesg absol fxcen">
-                  <img class="fl mpg marauto" src="img/ptn.png">
-                  <div class="fr vpsg textcen">
-                    <span class="inblo mfr">2016-06-01</span>
-                    <span>未发布</span>
-                  </div>
-                </div>
-              </div>
-              <p class="jmtit">节目标题</p>
-            </div>
-            <div class="col real"></div>
-          </div>
-        </div>
-        -->
 
-        <div class="swiper-slide" ng-repeat="photo in data.photos">
+        <div class="swiper-slide" ng-repeat="photo in data.photos" gallery-repeat-finish>
           <div class="row btop">
             <div class="col real"></div>
             <div class="col col-50 pmzero">
               <div class="borclo tabcel real">
-                <!--<img class="whmg" src="img/vmbg_03.png">-->
                 <!--<img class="whmg" ng-src="{{photo.first_image}}" preview-url="{{photo.preview_url}}" inappbowser>-->
                 <div ng-click="menu()"><img class="whmg" ng-src="{{photo.first_image}}"
                                             preview-url="{{photo.preview_url}}"></div>
@@ -58,38 +36,15 @@
                   </div>
                 </div>
               </div>
-              <p class="jmtit">{{photo.name}}</p>
+              <p class="jmtit">{{photo.name}} ({{$index+1}}/{{data.photos.length}})</p>
             </div>
             <div class="col real"></div>
           </div>
         </div>
 
       </div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
 
     </div>
-
-    <!-- gallery-thumbs -->
-    <div class="swiper-container gallery-thumbs row" id="svmg">
-      <div class="swiper-wrapper absro pmzero row" id="galleryThumbs">
-
-        <div class="swiper-slide bgc" id="widba"
-             ng-repeat="photo in data.photos" gallery-repeat-finish>
-          <!--<img class="scmg" src="img/smg.png">-->
-          <img class="scmg" ng-src="{{photo.preview_image}}">
-        </div>
-      </div>
-    </div>
-
-    <!--<swiper-loop></swiper-loop>-->
-
-    <!-- <div class="absol mofth fbjm textcen" ui-sref="makeVideo">
-      <span class="yebtn fxcen">
-        <img class="stnmg marauto" src="img/ptnly.png">
-        <span class="fr txtn textcen">节目制作</span>
-      </span>
-    </div> -->
 
   </ion-content>
 
