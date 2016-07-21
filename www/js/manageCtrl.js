@@ -9,7 +9,11 @@ angular.module('starter.controllers')
   .controller('ManageCtrl', function ($scope, $state, $timeout, $ionicActionSheet, $ionicLoading, contentService, utilService, $cordovaInAppBrowser) {
 
     $scope.options = {
-      loopSize: 5
+      loopSize: 5, //多少个节目以后开始循环显示
+      loopedSlides: 5, //缩略列表循环显示的节目个数
+      slidesPerView: 5,  //缩略列表循环显示的前置个数
+      topSpaceBetween: 10, //节目间距
+      thumbsSpaceBetween: 13
     };
 
     $scope.data = {
@@ -39,6 +43,7 @@ angular.module('starter.controllers')
         if (data !== null && data.length > 0) {
           $scope.data.showContent = 1;
           $scope.data.photos = data;
+          console.log("节目长度" + $scope.data.photos.length);
 //          dataInit($scope.data.photos); //计算图片的分别率,选择CSS
         } else {
           $scope.data.showContent = 2;
@@ -164,18 +169,18 @@ angular.module('starter.controllers')
           nextButton: '.swiper-button-next',
           prevButton: '.swiper-button-prev',
           loop: true,
-          loopedSlides: 5, //looped slides should be the same
-          spaceBetween: 10
+          loopedSlides: $scope.options.loopedSlides, //looped slides should be the same
+          spaceBetween: $scope.options.topSpaceBetween
         });
 
         $scope.data.galleryThumbs = new Swiper('.gallery-thumbs', {
           // centeredSlides: true,
           loop: true,
-          loopedSlides: 5, //looped slides should be the same
-          slidesPerView: 5,
+          loopedSlides: $scope.options.loopedSlides, //looped slides should be the same
+          slidesPerView: $scope.options.slidesPerView,
           touchRatio: 0.2,
           slideToClickedSlide: true,
-          spaceBetween: 13
+          spaceBetween: $scope.options.thumbsSpaceBetween
         });
 
       } else {
@@ -193,7 +198,8 @@ angular.module('starter.controllers')
           slideToClickedSlide: true
         });
 
-        document.getElementById("galleryThumbs").className = "swiper-wrapper absro pmzero row alignedCSS";
+        // document.getElementById("galleryThumbs").className = "swiper-wrapper absro pmzero row alignedCSS";
+        document.getElementById("galleryThumbs").className += " alignedCSS";
       }
 
 
@@ -201,21 +207,21 @@ angular.module('starter.controllers')
       $scope.data.galleryThumbs.params.control = $scope.data.galleryTop;
 
       // Add one more handler for this event
-      $scope.data.galleryTop.on('slideChangeEnd', function () {
-        console.log('galleryTop activeIndex = ' + $scope.galleryActiveIndex());
-      });
-
-      $scope.data.galleryThumbs.on('slideChangeEnd', function () {
-        console.log('galleryThumbs activeIndex = ' + $scope.data.galleryThumbs.activeIndex);
-      });
+      // $scope.data.galleryTop.on('slideChangeEnd', function () {
+      //   console.log('galleryTop activeIndex = ' + $scope.galleryActiveIndex());
+      // });
+      //
+      // $scope.data.galleryThumbs.on('slideChangeEnd', function () {
+      //   console.log('galleryThumbs activeIndex = ' + $scope.data.galleryThumbs.activeIndex);
+      // });
 
     }
 
     $scope.galleryActiveIndex = function () {
       var activeIndex = $scope.data.galleryTop.activeIndex;
-      // if ($scope.data.photos.length > $scope.options.loopSize) {
-      //   activeIndex -= $scope.data.galleryTop.loopedSlides;
-      // }
+      if ($scope.data.photos.length > $scope.options.loopSize) {
+        activeIndex -= $scope.data.galleryTop.loopedSlides;
+      }
       // alert(activeIndex);
       return activeIndex;
     }
