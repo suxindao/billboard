@@ -166,8 +166,8 @@ angular.module('starter.controllers')
 
 
         $scope.data.galleryTop = new Swiper('.swiper-container', {
-          slidesPerView: 3,
-          centeredSlides: true,
+          slidesPerView: 2,
+          centeredSlides: 10,
           paginationClickable: true,
           spaceBetween: 10
         });
