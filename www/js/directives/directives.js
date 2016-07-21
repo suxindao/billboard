@@ -110,6 +110,27 @@ angular.module('starter.directives', [])
     };
   })
 
+  // .directive('galleryRepeatFinish', function () {
+  //   return {
+  //     link: function (scope, element, attr) {
+  //      console.log(scope.$index + "|" + scope.$last)
+  //       if (scope.$last == true) {
+  //         console.log('ng-repeat执行完毕');
+  //         scope.data.galleryTop = new Swiper('.swiper-container', {
+  //           slidesPerView: 3,
+  //           centeredSlides: true,
+  //           spaceBetween: 10
+  //         });
+  //
+  //         // Add one more handler for this event
+  //         scope.data.galleryTop.on('slideChangeEnd', function () {
+  //           console.log('galleryTop activeIndex = ' + scope.data.galleryTop.activeIndex);
+  //         });
+  //       }
+  //     }
+  //   }
+  // })
+
   .directive('inappbowser', function ($cordovaInAppBrowser) {
     return {
       restrict: 'AC',

@@ -8,14 +8,6 @@ angular.module('starter.controllers')
 
   .controller('ManageCtrl', function ($scope, $state, $timeout, $ionicActionSheet, $ionicLoading, contentService, utilService, $cordovaInAppBrowser) {
 
-    $scope.options = {
-      loopSize: 5, //多少个节目以后开始循环显示
-      loopedSlides: 5, //缩略列表循环显示的节目个数
-      slidesPerView: 5,  //缩略列表循环显示的前置个数
-      topSpaceBetween: 10, //节目间距
-      thumbsSpaceBetween: 13
-    };
-
     $scope.data = {
       galleryTop: null,
       galleryThumbs: null,
@@ -43,7 +35,7 @@ angular.module('starter.controllers')
         if (data !== null && data.length > 0) {
           $scope.data.showContent = 1;
           $scope.data.photos = data;
-          console.log("节目长度" + $scope.data.photos.length);
+          console.log("节目长度:" + $scope.data.photos.length);
 //          dataInit($scope.data.photos); //计算图片的分别率,选择CSS
         } else {
           $scope.data.showContent = 2;
@@ -73,7 +65,7 @@ angular.module('starter.controllers')
         cancelText: "关闭菜单",
         cssClass: 'bton_style',
         buttonClicked: function (index) {
-          var slideIndex = $scope.galleryActiveIndex();
+          var slideIndex = $scope.data.galleryTop.activeIndex;
           var content_ID = $scope.data.photos[slideIndex].id;
           var previewUrl = $scope.data.photos[slideIndex].preview_url;
 
@@ -100,7 +92,8 @@ angular.module('starter.controllers')
                 .success(function () {
                   utilService.showAlert('删除成功', '删除成功', function () {
                     $scope.data.photos.splice(slideIndex, 1);
-                    galleryInit();
+                    // $scope.$emit('ngRepeatFinished');
+                    $scope.data.galleryTop.removeSlide(slideIndex);
                     if ($scope.data.photos.length === 0) {
                       $scope.data.showContent = 2;
                     }
@@ -159,24 +152,17 @@ angular.module('starter.controllers')
     }
 
     $scope.$on('ngRepeatFinished', function () {
-      galleryInit();
-    });
-
-    var galleryInit = function () {
-
-
-        $scope.data.galleryTop = new Swiper('.swiper-container', {
-          slidesPerView: 2,
-          centeredSlides: 10,
-          paginationClickable: true,
-          spaceBetween: 10
-        });
-
-      // Add one more handler for this event
-      $scope.data.galleryTop.on('slideChangeEnd', function () {
-        console.log('galleryTop activeIndex = ' + $scope.data.galleryTop.activeIndex);
+      $scope.data.galleryTop = new Swiper('.swiper-container', {
+        slidesPerView: 2,
+        centeredSlides: true,
+        spaceBetween: 10
       });
 
-    }
+      // Add one more handler for this event
+      // $scope.data.galleryTop.on('slideChangeEnd', function () {
+      //   console.log('galleryTop activeIndex = ' + $scope.data.galleryTop.activeIndex);
+      // });
+    });
+
 
   });
