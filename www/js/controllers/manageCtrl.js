@@ -154,7 +154,6 @@ angular.module('starter.controllers')
     }
 
     $scope.$on('ngRepeatFinished', function () {
-
       $scope.data.galleryTop = new Swiper('.swiper-container', {
         slidesPerView: 2,
         centeredSlides: true,
