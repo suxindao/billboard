@@ -64,6 +64,7 @@ angular.module('starter.controllers')
             case 0: //修改设备名称
 
               $ionicPopup.show({
+                cssClass: 'iptTop',
                 template: '<input type="text" ng-model="data.name">',
                 title: '修改设备名',
                 subTitle: '请输入新设备名',
