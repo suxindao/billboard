@@ -171,9 +171,9 @@ angular.module('starter.controllers')
       });
 
       // Add one more handler for this event
-      $scope.data.galleryTop.on('slideChangeEnd', function () {
-        console.log('galleryTop activeIndex = ' + $scope.data.galleryTop.activeIndex);
-      });
+      // $scope.data.galleryTop.on('slideChangeEnd', function () {
+      //   console.log('galleryTop activeIndex = ' + $scope.data.galleryTop.activeIndex);
+      // });
     });
 
     $scope.noContentConfirm = function () {
@@ -190,7 +190,4 @@ angular.module('starter.controllers')
 
     };
 
-    $scope.isSelectedaaaa = function () {
-      alert($scope.data.deleteAll);
-    }
   });
