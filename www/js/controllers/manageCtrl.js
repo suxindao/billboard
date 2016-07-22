@@ -82,7 +82,6 @@ angular.module('starter.controllers')
             case 2: //删除节目
 
               var confirmOk = function (res) {
-                alert($scope.data.deleteAll);
                 contentService.removeContents(content_ID, $scope.data.deleteAll)
                   .success(function () {
                     utilService.showAlert('删除成功', '删除成功', function () {
@@ -155,6 +154,8 @@ angular.module('starter.controllers')
 
     $scope.$on('ngRepeatFinished', function () {
       $scope.data.galleryTop = new Swiper('.swiper-container', {
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
         slidesPerView: 2,
         centeredSlides: true,
         spaceBetween: 50
@@ -188,7 +189,4 @@ angular.module('starter.controllers')
 
     };
 
-    $scope.isSelectedaaaa = function () {
-      alert($scope.data.deleteAll);
-    }
   });
