@@ -155,6 +155,8 @@ angular.module('starter.controllers')
 
     $scope.$on('ngRepeatFinished', function () {
       $scope.data.galleryTop = new Swiper('.swiper-container', {
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
         slidesPerView: 2,
         centeredSlides: true,
         spaceBetween: 20
@@ -169,9 +171,9 @@ angular.module('starter.controllers')
       });
 
       // Add one more handler for this event
-      // $scope.data.galleryTop.on('slideChangeEnd', function () {
-      //   console.log('galleryTop activeIndex = ' + $scope.data.galleryTop.activeIndex);
-      // });
+      $scope.data.galleryTop.on('slideChangeEnd', function () {
+        console.log('galleryTop activeIndex = ' + $scope.data.galleryTop.activeIndex);
+      });
     });
 
     $scope.noContentConfirm = function () {
