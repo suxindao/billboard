@@ -157,7 +157,7 @@ angular.module('starter.controllers')
       $scope.data.galleryTop = new Swiper('.swiper-container', {
         slidesPerView: 2,
         centeredSlides: true,
-        spaceBetween: 10,
+        spaceBetween: 20,
         effect: 'coverflow',
         coverflow: {
           rotate: 50,
