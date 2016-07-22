@@ -164,7 +164,7 @@ input {
 }
 
 .btop {
-  padding-top: 10.3%;
+  padding-top: 0;
   height: 100%;
 }
 
@@ -180,7 +180,7 @@ input {
 
 .borclo {
   border: 1px solid #c9c2c1;
-  height: 78%;
+  height: 30%;
   text-align: center;
   overflow: hidden;
 }
@@ -246,6 +246,14 @@ input {
 
 .mfr {
   margin-right: 2%;
+}
+
+.jmtia {
+  width: 100%;
+  text-align: center;
+  font-size: 1.2em;
+  line-height: 3em;
+  color: #2a837c;
 }
 
 .jmtit {
@@ -320,10 +328,9 @@ input {
 /*login*/
 .logoh {
   width: 100%;
-  height: 25%;
+  height: 20%;
   text-align: center;
   margin-top: 10%;
-  padding-bottom: 8%;
   margin-bottom: 5%;
 }
 
@@ -846,6 +853,9 @@ input {
   width: 80%;
 }
 
+.bgman{
+  background: url(../img/colbg.png);
+}
 /*个人设置*/
 .bar #exit {
   width: 15%;
@@ -962,7 +972,7 @@ input {
 /*swiper*/
 .swiper-container {
   width: 100%;
-  height: 50%;
+  height: 77.8%;
   padding: 0;
   overflow: hidden;
 }
