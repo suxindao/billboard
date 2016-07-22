@@ -2,6 +2,7 @@
   "name": "guanggao",
   "app_id": "",
   "gulpStartupTasks": [
+    "cpjs",
     "sass",
     "watch"
   ],
