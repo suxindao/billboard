@@ -20,11 +20,11 @@
         <div class="swiper-slide" ng-repeat="photo in data.photos" gallery-repeat-finish>
           <div class="row btop">
             <!--<div class="col real"></div>-->
-            <div class="col col-50 pmzero">
+            <div class="col col-50 pmzero real">
               <div class="jmtia">{{photo.name}}</div>
               <div class="borclo tabcel real">
                 <!--<img class="whmg" ng-src="{{photo.first_image}}" preview-url="{{photo.preview_url}}" inappbowser>-->
-                <div ng-click="menu()"><img class="whmg" ng-src="{{photo.first_image}}"
+                <div ng-click="menu()" class="scmg"><img class="whmg" ng-src="{{photo.first_image}}"
                                             preview-url="{{photo.preview_url}}"></div>
                 <!--<div class="mesg absol fxcen">
                   &lt;!&ndash; <img class="fl mpg marauto" src="img/ptn.png"> class="inblo mfr"&ndash;&gt;
@@ -34,6 +34,7 @@
                   </div>
                 </div>-->
               </div>
+              <div class="absol glmgb"></div>
               <p class="jmtit">({{$index+1}}/{{data.photos.length}})</p>
             </div>
             <!--<div class="col real"></div>-->
