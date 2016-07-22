@@ -122,14 +122,14 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
 
       .state('match', {
         url: '/match',
-        templateUrl: 'templates/matchn.html',
+        templateUrl: 'templates/matchN.html',
         controller: 'MatchCtrl'
       })
 
       .state('manage', {
         cache: false,
         url: '/manage',
-        templateUrl: 'templates/managen.html',
+        templateUrl: 'templates/manageN.html',
         controller: 'ManageCtrl'
       })
 
@@ -157,12 +157,6 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
       .state('aboutme', {
         url: '/aboutme',
         templateUrl: 'templates/aboutme.html',
-        controller: ''
-      })
-
-      .state('sendV', {
-        url: '/sendV',
-        templateUrl: 'templates/sendV.html',
         controller: ''
       })
 
