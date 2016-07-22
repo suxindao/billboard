@@ -1,4 +1,4 @@
-<ion-view view-title="节目制作">
+<ion-view view-title="节目管理">
 
   <ion-header-bar align-title="center" class="bar bar-header a_bar fxcen">
     <!-- <div class="mgft fxcen">
@@ -14,42 +14,36 @@
     </div>
   </ion-header-bar>
 
-  <ion-content class="scroll-content tophet" overflow-scroll="true" scroll="false">
-
-
+  <ion-content class="scroll-content tophet bgman bgstyle" overflow-scroll="true" scroll="false">
     <div class="swiper-container">
       <div class="swiper-wrapper">
-
         <div class="swiper-slide" ng-repeat="photo in data.photos" gallery-repeat-finish>
           <div class="row btop">
             <!--<div class="col real"></div>-->
             <div class="col col-50 pmzero">
+              <div class="jmtia">{{photo.name}}</div>
               <div class="borclo tabcel real">
                 <!--<img class="whmg" ng-src="{{photo.first_image}}" preview-url="{{photo.preview_url}}" inappbowser>-->
                 <div ng-click="menu()"><img class="whmg" ng-src="{{photo.first_image}}"
                                             preview-url="{{photo.preview_url}}"></div>
-                <div class="mesg absol fxcen">
-                  <!-- <img class="fl mpg marauto" src="img/ptn.png"> class="inblo mfr"-->
+                <!--<div class="mesg absol fxcen">
+                  &lt;!&ndash; <img class="fl mpg marauto" src="img/ptn.png"> class="inblo mfr"&ndash;&gt;
                   <div class="fr vpsg textcen txt-cent">
                     <span>{{photo.update_date | formatdate}}</span>
-                    <!--<span>未发布</span>-->
+                    &lt;!&ndash;<span>未发布</span>&ndash;&gt;
                   </div>
-                </div>
+                </div>-->
               </div>
-              <p class="jmtit">{{photo.name}} ({{$index+1}}/{{data.photos.length}})</p>
+              <p class="jmtit">({{$index+1}}/{{data.photos.length}})</p>
             </div>
             <!--<div class="col real"></div>-->
           </div>
         </div>
-
       </div>
-
     </div>
-
+    <ion-footer-bar align-title="center" class="bar bar-footer f_bar overf" style="background: none;">
+      <h1 class="title" id="ftit">Copyright © MagicPoster</h1>
+    </ion-footer-bar>
   </ion-content>
-
-  <ion-footer-bar align-title="center" class="bar bar-footer f_bar overf">
-    <h1 class="title" id="ftit">Copyright © MagicPoster</h1>
-  </ion-footer-bar>
 
 </ion-view>
