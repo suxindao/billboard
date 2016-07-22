@@ -6,12 +6,13 @@
 
 angular.module('starter.controllers')
 
-  .controller('ManageCtrl', function ($scope, $state, $timeout, $ionicActionSheet, $ionicLoading, contentService, utilService, $cordovaInAppBrowser) {
+  .controller('ManageCtrl', function ($scope, $state, $timeout, $ionicActionSheet, $ionicLoading, contentService, utilService, $cordovaInAppBrowser, $ionicPopup) {
 
     $scope.data = {
       galleryTop: null,
       galleryThumbs: null,
       photos: null,
+      deleteAll: '0',
       showContent: 0 //0:初始值, 1:获取正确内容, 2:获取无内容,或者删除后无内容
     };
 
@@ -39,15 +40,7 @@ angular.module('starter.controllers')
 //          dataInit($scope.data.photos); //计算图片的分别率,选择CSS
         } else {
           $scope.data.showContent = 2;
-          utilService.showConfirm('内容管理', '没有节目内容,是否去创建?', '确定', '取消',
-            function () {
-              $state.go("makeVideo", {getPremission: true});
-              return;
-            },
-            function () {
-              $state.go("main");
-            }
-          );
+          $scope.noContentConfirm();
         }
         $ionicLoading.hide();
       });
@@ -80,28 +73,37 @@ angular.module('starter.controllers')
               }, function (error) {
                 console.log("Error: " + error);
               });
-
-
               break;
+
             case 1: //立即发布
               $state.go('choseClient', {contentid: content_ID});
               break;
+
             case 2: //删除节目
 
-              contentService.removeContents(content_ID)
-                .success(function () {
-                  utilService.showAlert('删除成功', '删除成功', function () {
-                    $scope.data.photos.splice(slideIndex, 1);
-                    // $scope.$emit('ngRepeatFinished');
-                    $scope.data.galleryTop.removeSlide(slideIndex);
-                    if ($scope.data.photos.length === 0) {
-                      $scope.data.showContent = 2;
-                    }
+              var confirmOk = function (res) {
+                alert($scope.data.deleteAll);
+                contentService.removeContents(content_ID, $scope.data.deleteAll)
+                  .success(function () {
+                    utilService.showAlert('删除成功', '删除成功', function () {
+                      $scope.data.photos.splice(slideIndex, 1);
+                      // $scope.$emit('ngRepeatFinished');
+                      $scope.data.galleryTop.removeSlide(slideIndex);
+                      if ($scope.data.photos.length === 0) {
+                        $scope.data.showContent = 2;
+                        $scope.noContentConfirm();
+                      }
+                    });
+                  })
+                  .error(function (data) {
+                    utilService.showAlert('删除失败', '删除失败');
                   });
-                })
-                .error(function (data) {
-                  utilService.showAlert('删除失败', '删除失败');
-                });
+              };
+
+              utilService.showConfirm('删除节目',
+                '<input type="checkbox" ng-model="data.deleteAll" ng-true-value="1" ng-false-value="0"/>' +
+                '是否同时删除设备上的该节目?',
+                '确定', '取消', confirmOk, null, $scope);
 
               break;
           }
@@ -172,5 +174,21 @@ angular.module('starter.controllers')
       // });
     });
 
+    $scope.noContentConfirm = function () {
 
+      var noContentConfirm = utilService.showConfirm('内容管理', '没有节目内容,是否去创建?', '确定', '取消',
+        function () {
+          $state.go("makeVideo", {getPremission: true});
+          return;
+        },
+        function () {
+          $state.go("main");
+        }
+      );
+
+    };
+
+    $scope.isSelectedaaaa = function () {
+      alert($scope.data.deleteAll);
+    }
   });
