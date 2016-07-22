@@ -247,9 +247,9 @@ input {
 
 .glmgb{
   right: 0;
-  bottom: 15.8%;
+  bottom: 18.3%;
   width: 96%;
-  height: 71.3%;
+  height: 68.3%;
   background: rgba(213,216,216,0.4);
   border:1px solid rgba(195,198,198,0.4);
   z-index: -10;
@@ -264,7 +264,7 @@ input {
   text-align: center;
   font-size: 1.2em;
   line-height: 3em;
-  color: #2a837c;
+  /*color: #2a837c;*/
 }
 
 .jmtit {
@@ -272,7 +272,7 @@ input {
   text-align: center;
   font-size: 1.2em;
   line-height: 4em;
-  color: #5d5b5b;
+  /*color: #5d5b5b;*/
 }
 
 .bar #ftit {
@@ -1027,7 +1027,19 @@ input {
   width: 14%;
   height: 102%;
   margin-top: -0.1%;
+}
 
+.swiper-slide.swiper-slide-active .jmtia{
+  color: #2a837c;
+}
+
+.swiper-slide.swiper-slide-active .jmtit {
+  color: #5d5b5b;
+}
+
+.swiper-slide.swiper-slide-next .jmtia,.swiper-slide.swiper-slide-next .jmtit,
+.swiper-slide.swiper-slide-prev .jmtia,.swiper-slide.swiper-slide-prev .jmtit{
+  color: transparent;
 }
 
 .swiper-container-3d .swiper-slide-shadow-left {
