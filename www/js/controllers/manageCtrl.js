@@ -82,7 +82,6 @@ angular.module('starter.controllers')
             case 2: //删除节目
 
               var confirmOk = function (res) {
-                alert($scope.data.deleteAll);
                 contentService.removeContents(content_ID, $scope.data.deleteAll)
                   .success(function () {
                     utilService.showAlert('删除成功', '删除成功', function () {
