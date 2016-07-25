@@ -24,17 +24,16 @@ angular.module('starter.controllers')
       .error(function (data) {
         $ionicLoading.hide();
         utilService.showAlert('获取信息失败', '获取用户信息失败！请重新获取！');
+        $state.go("main");
       });
 
     $scope.logout = function () {
 
       utilService.showConfirm('取消登录', '确认登出吗?', '确定', '取消', function () {
-
         aJaxService.logout()
           .success(function (data) {
             $state.go("login");
           });
-
       });
 
     };
