@@ -164,8 +164,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
         cache: false,
         url: '/clientList',
         templateUrl: 'templates/clientListNn.html',
-        controller: ''
-        //controller: 'ClientCtrl'
+        controller: 'ClientCtrl'
       })
 
       .state('make', {
