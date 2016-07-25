@@ -1,17 +1,19 @@
 <ion-view view-title="设备列表" class="bcbg minht">
   <ion-header-bar align-title="center" class="bar bar-header n_bar fxcen">
     <div class="mgft fxcen" id="titlf" ui-sref="match">
-      <img class="marauto fl stmgb" src="img/pcli.png">
+      <img class="marauto fl stmgb" src="img/add.png">
     </div>
     <h1 class="title mtit" id="stitb">设备列表</h1>
     <div class="buttons mgrt textcen" id="titr" ng-click="goMain()">
       返回
     </div>
   </ion-header-bar>
+
   <ion-content class="scroll-content stopb pmzero" overflow-scroll="true" scroll="true">
 
     <div class="jqlist fxcen" ng-repeat="client in data.clients">
-      <img class="marauto jqmg" src="img/boad.png">
+      <img ng-if="(client.status == '0')" class="marauto jqmg" src="img/vboad.png">
+      <img ng-if="(client.status == '1')" class="marauto jqmg" src="img/boad.png">
       <ul class="marauto jqul">
         <li class="jqlia">
           <p class="jqlip inblo"><span class="jqspc">ID </span>: {{client.id}}</p>
@@ -20,7 +22,7 @@
         <li class="jqlia"><span class="jqspc">名称 </span>: {{client.name}}</li>
         <li class="jqlia"><span class="jqspc">创建时间 </span>: {{client.create_date}}</li>
       </ul>
-      <div class="jqdel marauto" ng-click="changeName({{client.id}})">改名</div>
+      <div class="jqdel marauto" ng-click="changeName({{client.id}})">修改名称</div>
     </div>
 
   </ion-content>

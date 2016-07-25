@@ -10,13 +10,12 @@ angular.module('starter.controllers')
 
     $scope.user = {};
 
-    var requestUrl = "?cmd=customDetail&token=" + aJaxService.getToken();
-
     // Setup the loader
     $ionicLoading.show({
       content: '加载中'
     });
 
+    var requestUrl = "?cmd=customDetail&token=" + aJaxService.getToken();
     aJaxService.httpGetData(requestUrl)
       .success(function (data) {
         $scope.user = data.data;

@@ -760,13 +760,13 @@ input {
 }
 
 .jqdel{
-  width:11%;
+  width:13%;
   height:42.5%;
   background: #12dfe7;
   color: #ffffff;
   font-size: 1.2em;
-  line-height: 3em;
   border-radius: 10px;
+  padding: 1.5% 1%;
 }
 
 /*点击发布节目*/
@@ -1363,6 +1363,10 @@ input {
 
 .redcol{
   color: #ec6941;
+}
+
+.jcbet{
+  justify-content: space-between;
 }
 
 .alignedCSS{

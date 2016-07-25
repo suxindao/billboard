@@ -7,37 +7,37 @@
 angular.module('starter.services', [])
 
   .factory('$ImageCacheFactory', ['$q', function ($q) {
-      return {
-        Cache: function (urls) {
-          if (!(urls instanceof Array))
-            return $q.reject('Input is not an array');
+    return {
+      Cache: function (urls) {
+        if (!(urls instanceof Array))
+          return $q.reject('Input is not an array');
 
-          var promises = [];
+        var promises = [];
 
-          for (var i = 0; i < urls.length; i++) {
-            var deferred = $q.defer();
-            var img = new Image();
+        for (var i = 0; i < urls.length; i++) {
+          var deferred = $q.defer();
+          var img = new Image();
 
-            img.onload = (function (deferred) {
-              return function () {
-                deferred.resolve();
-              }
-            })(deferred);
+          img.onload = (function (deferred) {
+            return function () {
+              deferred.resolve();
+            }
+          })(deferred);
 
-            img.onerror = (function (deferred, url) {
-              return function () {
-                deferred.reject(url);
-              }
-            })(deferred, urls[i]);
+          img.onerror = (function (deferred, url) {
+            return function () {
+              deferred.reject(url);
+            }
+          })(deferred, urls[i]);
 
-            promises.push(deferred.promise);
-            img.src = urls[i];
-          }
-
-          return $q.all(promises);
+          promises.push(deferred.promise);
+          img.src = urls[i];
         }
+
+        return $q.all(promises);
       }
-    }])
+    }
+  }])
 
   .service('aJaxService', function ($http, $q, $rootScope, $state, locals) {
     var _baseUrl = "http://www.zettaly.com.cn/billboard_app/ajax.php";
@@ -53,7 +53,6 @@ angular.module('starter.services', [])
       var promise = deferred.promise;
 
       promise.success = function (fn) {
-
         promise.then(fn);
         return promise;
       };
@@ -71,18 +70,15 @@ angular.module('starter.services', [])
       }).success(function (data) {
 
         console.log("httpGetData successData = " + JSON.stringify(data));
-        if (data.result == 0)
-        {
+        if (data.result == 0) {
           deferred.resolve(data);
         }
-        else if (data.result == -2 || data.result == -3 || data.result == -4)
-        {
+        else if (data.result == -2 || data.result == -3 || data.result == -4) {
           $rootScope.user = {};
           locals.setObject("user", $rootScope.user);
           $state.go("login");
           deferred.reject(data);
-        } else
-        {
+        } else {
           deferred.reject(data);
         }
 
@@ -166,17 +162,14 @@ angular.module('starter.services', [])
       return promise;
     };
 
-    this.createProgram = function (programData, callback)
-    {
+    this.createProgram = function (programData, callback) {
       var items = programData.items;
 
       var fileMD5s = "";
       var times = "";
 
-      for (var i = 0; i < items.length; i++)
-      {
-        if (i != 0)
-        {
+      for (var i = 0; i < items.length; i++) {
+        if (i != 0) {
           fileMD5s += ",";
           times += ",";
         }
@@ -191,35 +184,29 @@ angular.module('starter.services', [])
         .success(function (data) {
           console.log("Data = " + JSON.stringify(data));
           if (data.result === 0) {
-            if (callback)
-            {
+            if (callback) {
               callback(data);
             }
           } else {
-            if (callback)
-            {
+            if (callback) {
               callback(undefined);
             }
           }
         })
         .error(function (data) {
 
-          if (callback)
-          {
+          if (callback) {
             callback(undefined);
           }
         });
     };
 
-    this.existFileMD5s = function (files, callback)
-    {
+    this.existFileMD5s = function (files, callback) {
 
       var fileMD5s = "";
 
-      for (var i = 0; i < files.length; i++)
-      {
-        if (i != 0)
-        {
+      for (var i = 0; i < files.length; i++) {
+        if (i != 0) {
           fileMD5s += ",";
         }
 
@@ -235,28 +222,24 @@ angular.module('starter.services', [])
           var info = JSON.stringify(data);
           console.log("Data = " + JSON.stringify(data));
           if (data.result === 0) {
-            if (callback)
-            {
+            if (callback) {
               callback(data);
             }
           } else {
-            if (callback)
-            {
+            if (callback) {
               callback(undefined);
             }
           }
         })
         .error(function (data) {
 
-          if (callback)
-          {
+          if (callback) {
             callback(undefined);
           }
         });
     };
 
-    this.postImage = function (imageInfo, callback)
-    {
+    this.postImage = function (imageInfo, callback) {
 
       var options = new FileUploadOptions();
       options.fileKey = "file";
@@ -288,24 +271,22 @@ angular.module('starter.services', [])
 
         if (resp.result == 0) {
 
-          if (callback)
-          {
+          if (callback) {
             callback(resp);
           }
 
         } else {
 
-          if (callback)
-          {
+          if (callback) {
             callback(undefined);
           }
         }
       }
+
       //upload失败的话
       function uploadError(error) {
 
-        if (callback)
-        {
+        if (callback) {
           callback(undefined);
         }
       }
@@ -529,7 +510,6 @@ angular.module('starter.services', [])
       return promise;
 
     };
-
 
 
   });
