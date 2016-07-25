@@ -203,8 +203,7 @@ angular.module('starter.controllers')
       };
 
       utilService.showConfirm('删除节目',
-        '<input type="checkbox" ng-model="data.deleteAll" ng-true-value="1" ng-false-value="0"/>' +
-        '是否同时删除设备上的该节目?',
+        '<p class="fxcen"><input class="delput" type="checkbox" ng-model="data.deleteAll" ng-true-value="1" ng-false-value="0"/><span class="textcen">是否同时删除设备上的该节目?</span></p>',
         '确定', '取消', confirmOk, null, $scope);
     }
 
