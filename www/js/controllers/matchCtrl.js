@@ -21,22 +21,25 @@ angular.module('starter.controllers')
         .success(function (data) {
           console.log("Data = " + JSON.stringify(data));
 
-          $scope.data.showMessage = true;
-
-          if (data.result === 0) {
-            $timeout(function () {
-              $scope.data.showNextButton = true;
-              $scope.data.showGif = false;
-              $scope.data.message = "绑定成功";
-            }, 2000)
-          } else {
+          $timeout(function () {
             $scope.data.showMessage = true;
-            $scope.data.message = data.msgc;
-          }
+            $scope.data.showGif = false;
+            if (data.result === 0) {
+              $scope.data.showNextButton = true;
+              $scope.data.message = "绑定成功";
+            } else {
+              $scope.data.message = data.msgc;
+            }
+          }, 2000)
 
         })
         .error(function (data) {
-          utilService.showAlert('配对设备', '配对失败' + data.msgc);
+          // utilService.showAlert('配对设备', '配对失败' + data.msgc);
+          $timeout(function () {
+            $scope.data.showGif = false;
+            $scope.data.showMessage = true;
+            $scope.data.message = "设备配对失败";
+          }, 2000)
         });
     };
 
