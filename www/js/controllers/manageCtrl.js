@@ -6,7 +6,7 @@
 
 angular.module('starter.controllers')
 
-  .controller('ManageCtrl', function ($scope, $state, $timeout, $ionicActionSheet, $ionicLoading, contentService, utilService, $cordovaInAppBrowser) {
+  .controller('ManageCtrl', function ($scope, $state, $timeout, $ionicActionSheet, $ionicLoading, contentService, utilService, $cordovaInAppBrowser, $ionicPopup) {
 
     $scope.data = {
       galleryTop: null,
@@ -198,4 +198,14 @@ angular.module('starter.controllers')
         '确定', '取消', confirmOk, null, $scope);
     }
 
+    $scope.showClientList = function () {
+      var myPopup = $ionicPopup.show({
+        template: '<ul class="jmtit"><li class="jmtitli">DR145645544</li><li class="jmtitli">DR145645544</li><li class="jmtitli">DR145645544</li></ul>',
+        title: '发布设备列表',
+        subTitle: '已发布设备',
+        scope: $scope
+      });
+
+
+    }
   });
