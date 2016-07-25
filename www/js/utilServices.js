@@ -99,27 +99,30 @@ angular.module('starter.services')
 
       function errorCall()
       {
+        alertTimeout('图像文件处理失败！',2000);
+        
+       
         if (callback)
         {
+            
           callback(undefined);
         }
+        
       }
 
-      function pickerFailure()
+      function pickerFailure(info)
       {
-        // $ionicLoading.hide();
-
-        console.log('Error: ' + error);
-        errorCall();
+        
+         errorCall(); 
+        
       }
 
       function pickerSuccess(results)
       {
         //$ionicLoading.hide();
-
+       // alert("success");
         if (results.length == 0)
         {
-
           errorCall();
           return;
         }
@@ -140,12 +143,44 @@ angular.module('starter.services')
       }
 
       window.imagePicker.getPictures(pickerSuccess, pickerFailure, {
-        maximumImagesCount: 6
+        maximumImagesCount: 6,
+        width:1080,
+        height:1920,
+        quality:60
       });
 
 
     };
+    
+    function alertTimeout(message,timeout)
+    {
+        if(timeout == undefined)
+        {
+            timeout=2000;
+        }
+        
+       $ionicLoading.show({
+             template: message,
+             duration:timeout
+         });
+    }
+    this.alertTimeout=function(message,timeout)
+    {
+        alertTimeout(message,timeout);
+    }
 
+    this.showLoading=function(message)
+    {
+        $ionicLoading.show({
+        template: '<p>'+message+'</p><br><ion-spinner icon="spiral"></ion-spinner>'
+      });
+    }
+    
+    this.hideLoading=function(template)
+    {
+         $ionicLoading.hide();
+    }
+    
     this.showAlert = function (title, template, callback)
     {
       var alertPopup = $ionicPopup.alert({
