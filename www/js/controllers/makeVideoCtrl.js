@@ -35,7 +35,7 @@ angular.module('starter.controllers')
               }else
               {
                  $ionicHistory.goBack();
-                
+
 
               }
 
@@ -108,11 +108,11 @@ angular.module('starter.controllers')
     $scope.clickCustom = function ()
     {
       if ($scope.currentIndex == undefined)
-      {  
+      {
         utilService.alertTimeout('请选择图片进行设置！',2000);
         return;
       }
-      
+
       utilService.showPopup("提示", "请输入播放时间(秒)", function (t)
       {
         if (!t || t < 0)
@@ -192,7 +192,7 @@ angular.module('starter.controllers')
     var createProgram = function (name)
     {
       utilService.showLoading("节目制作中，请稍候...");
-      
+
       $scope.programData.name = name;
 
       aJaxService.existFileMD5s($scope.programData.items, function (data) {
