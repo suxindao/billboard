@@ -100,21 +100,21 @@ angular.module('starter.services')
       function errorCall()
       {
         alertTimeout('图像文件处理失败！',2000);
-        
-       
+
+
         if (callback)
         {
-            
+
           callback(undefined);
         }
-        
+
       }
 
       function pickerFailure(info)
       {
-        
-         errorCall(); 
-        
+
+         errorCall();
+
       }
 
       function pickerSuccess(results)
@@ -151,14 +151,14 @@ angular.module('starter.services')
 
 
     };
-    
+
     function alertTimeout(message,timeout)
     {
         if(timeout == undefined)
         {
             timeout=2000;
         }
-        
+
        $ionicLoading.show({
              template: message,
              duration:timeout
@@ -175,12 +175,12 @@ angular.module('starter.services')
         template: '<p>'+message+'</p><br><ion-spinner icon="spiral"></ion-spinner>'
       });
     }
-    
+
     this.hideLoading=function(template)
     {
          $ionicLoading.hide();
     }
-    
+
     this.showAlert = function (title, template, callback)
     {
       var alertPopup = $ionicPopup.alert({
@@ -205,6 +205,7 @@ angular.module('starter.services')
       var myPopup = $ionicPopup.show({
         template: '<input type="' + inputType + '" ng-model="data.value" autoFocus>',
         title: '<strong>' + title + '</strong>',
+        cssClass: 'iptTop',
         subTitle: subtitle,
         scope: scope,
         buttons: [
