@@ -223,7 +223,7 @@ angular.module('starter.controllers')
         })
         templates += '</ul>';
       } else {
-        templates = "内容未发布";
+        templates = "未发布";
       }
 
       var myPopup = $ionicPopup.show({

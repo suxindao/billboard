@@ -325,7 +325,7 @@ input {
   background: #f9aa33;
   color: #fff;
   font-size: 0.9em;
-  border: 1px solid #d56e00;
+  /*border: 1px solid #d56e00;*/
   border-radius: 10px;
   align-items: center;
 }
@@ -1131,6 +1131,7 @@ input {
 }
 .sList .popup-body{
   padding-bottom:10px;
+  text-align: center;
 }
 
 .sList .popup-buttons,.sList .button{
