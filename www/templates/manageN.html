@@ -24,7 +24,8 @@
               <div class="jmtia">{{photo.name}}</div>
               <div class="borclo tabcel real">
                 <!--<img class="whmg" ng-src="{{photo.first_image}}" preview-url="{{photo.preview_url}}" inappbowser>-->
-                <div ng-click="($index == data.galleryTop.activeIndex)?menu():null" class="scmg">
+                <!--<div ng-click="($index == data.galleryTop.activeIndex)?menu():null" class="scmg">-->
+                <div class="scmg">
                   <img class="whmg" ng-src="{{photo.first_image}}" preview-url="{{photo.preview_url}}">
                 </div>
                 <!--<div class="mesg absol fxcen">
@@ -38,8 +39,8 @@
               <div class="absol glmgb"></div>
               <ul class="jmtit">
                 <li class="jmtitli">({{$index+1}}/{{data.photos.length}})</li>
-                <li class="jmtitli">2016-06-27 19:26</li>
-                <li class="jmtitli" ng-click="showClientList()">DR145645544</li>
+                <li class="jmtitli">{{photo.update_date | formatdate}}</li>
+                <li class="jmtitli" ng-click="showClientList()">发布设备列表</li>
               </ul>
             </div>
             <!--<div class="col real"></div>-->
@@ -51,19 +52,19 @@
       <div class="swiper-button-prev swiper-button-white"></div>
     </div>
     <div class="row rowhet">
-      <div class="col col-33 pmzero pdeight" ng-click="">
+      <div class="col col-33 pmzero pdeight" ng-click="preViewUrl()">
         <span class="yebtn fxcen pf cbgol">
         <img class="stnmg marauto newPg" src="img/yla.png">
         <span class="fr textcen">预览</span>
         </span>
       </div>
-      <div class="col col-33 pmzero pdeight" ng-click="">
+      <div class="col col-33 pmzero pdeight" ng-click="publishContent()">
         <span class="yebtn fxcen pf cbgol">
         <img class="stnmg marauto newPg" src="img/fbb.png">
         <span class="fr textcen">发布</span>
         </span>
       </div>
-      <div class="col col-33 pmzero pdeight" ng-click="">
+      <div class="col col-33 pmzero pdeight" ng-click="removeContent()">
         <span class="yebtn fxcen pf cbgol">
         <img class="stnmg marauto newPg" src="img/delc.png">
         <span class="fr textcen">删除</span>
