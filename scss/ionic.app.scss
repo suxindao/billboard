@@ -325,7 +325,7 @@ input {
   background: #f9aa33;
   color: #fff;
   font-size: 0.9em;
-  border: 1px solid #d56e00;
+  /*border: 1px solid #d56e00;*/
   border-radius: 10px;
   align-items: center;
 }
@@ -1129,7 +1129,42 @@ input {
   border-top-right-radius: none !important;
   border-top-left-radius: none !important;
 }
+.sList .popup-body{
+  padding-bottom:10px;
+  text-align: center;
+}
 
+.sList .popup-buttons,.sList .button{
+  padding:0;
+  min-width:0;
+  min-height:0;
+}
+
+.sList .button{
+  background-image: url("../img/xb.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 50%;
+  width:22px;
+  height:35px;
+}
+
+.sList .jmtit{
+  width:100%;
+  min-height: 120px;
+  padding-top:0;
+  max-height: 120px;
+}
+
+.sList .popup-buttons{
+  position: absolute;
+  right:10px;
+  top:0;
+}
+.sList .button.activated{
+  border-color: transparent;
+  background-color: transparent;
+}
 /*.popup-container .popup {
   position: absolute;
   width:217px;
@@ -1268,6 +1303,10 @@ input {
 .newPg{
   width:17%;
   margin-right: 11%;
+}
+
+.redcol{
+  color: #ec6941;
 }
 
 .alignedCSS{
