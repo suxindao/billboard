@@ -54,4 +54,9 @@ angular.module('starter.controllers')
     }
     ;
 
+    $scope.goMain = function () {
+      init();
+      $state.go('main');
+    };
+
   });
