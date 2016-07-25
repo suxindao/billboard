@@ -1,99 +1,69 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version='1.0' encoding='utf-8'?>
 <widget id="com.ionicframework.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <preference name="loglevel" value="DEBUG"/>
-  <preference name="webView" value="org.crosswalk.engine.XWalkWebViewEngine"/>
-  <preference default="19+" name="xwalkVersion"/>
-  <preference default="xwalk_core_library_canary:17+" name="xwalkLiteVersion"/>
-  <preference default="--disable-pull-to-refresh-effect" name="xwalkCommandLine"/>
-  <preference default="embedded" name="xwalkMode"/>
-  <preference default="true" name="xwalkMultipleApk"/>
-  <preference name="loadUrlTimeoutValue" value="60000"/>
-  <preference name="orientation" value="portrait"/>
-  <preference name="webviewbounce" value="false"/>
-  <preference name="UIWebViewBounce" value="false"/>
-  <preference name="DisallowOverscroll" value="true"/>
-  <preference name="SplashScreenDelay" value="5000"/>
-  <preference name="FadeSplashScreenDuration" value="0000"/>
-  <preference name="android-minSdkVersion" value="16"/>
-  <preference name="BackupWebStorage" value="none"/>
-  <preference name="SplashScreen" value="screen"/>
-  <feature name="MD5forFile">
-    <param name="android-package" value="com.billboard.md5.MD5forFile"/>
-  </feature>
-  <feature name="HotCodePushLocalDevMode">
-    <param name="android-package" value="com.nordnetab.chcp.localdev.HotCodePushLocalDevPlugin"/>
-    <param name="onload" value="true"/>
-  </feature>
-  <feature name="HotCodePush">
-    <param name="android-package" value="com.nordnetab.chcp.main.HotCodePushPlugin"/>
-    <param name="onload" value="true"/>
-  </feature>
-  <feature name="Device">
-    <param name="android-package" value="org.apache.cordova.device.Device"/>
-  </feature>
-  <feature name="File">
-    <param name="android-package" value="org.apache.cordova.file.FileUtils"/>
-    <param name="onload" value="true"/>
-  </feature>
-  <feature name="FileTransfer">
-    <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer"/>
-  </feature>
-  <feature name="InAppBrowser">
-    <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser"/>
-  </feature>
-  <feature name="SplashScreen">
-    <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen"/>
-    <param name="onload" value="true"/>
-  </feature>
-  <feature name="StatusBar">
-    <param name="android-package" value="org.apache.cordova.statusbar.StatusBar"/>
-    <param name="onload" value="true"/>
-  </feature>
-  <feature name="Whitelist">
-    <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin"/>
-    <param name="onload" value="true"/>
-  </feature>
-  <feature name="Keyboard">
-    <param name="android-package" value="io.ionic.keyboard.IonicKeyboard"/>
-    <param name="onload" value="true"/>
-  </feature>
-  <feature name="ImagePicker">
-    <param name="android-package" value="com.synconset.ImagePicker"/>
-  </feature>
-  <config-file mode="add" parent="/manifest" platform="android">
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-  </config-file>
-  <icon density="ldpi" src="resources/android/icon/96_96_320.png"/>
-  <icon density="mdpi" src="resources/android/icon/96_96_320.png"/>
-  <icon density="hdpi" src="resources/android/icon/96_96_320.png"/>
-  <icon density="xhdpi" src="resources/android/icon/96_96_320.png"/>
-  <icon density="xxhdpi" src="resources/android/icon/144_144_480.png"/>
-  <icon density="xxxhdpi" src="resources/android/icon/196_196_320.png"/>
-  <splash density="land-ldpi" src="resources/android/splash/wel.png"/>
-  <splash density="land-mdpi" src="resources/android/splash/wel.png"/>
-  <splash density="land-hdpi" src="resources/android/splash/wel.png"/>
-  <splash density="land-xhdpi" src="resources/android/splash/wel.png"/>
-  <splash density="land-xxhdpi" src="resources/android/splash/wel.png"/>
-  <splash density="land-xxxhdpi" src="resources/android/splash/wel.png"/>
-  <splash density="port-ldpi" src="resources/android/splash/wel.png"/>
-  <splash density="port-mdpi" src="resources/android/splash/wel.png"/>
-  <splash density="port-hdpi" src="resources/android/splash/wel.png"/>
-  <splash density="port-xhdpi" src="resources/android/splash/wel.png"/>
-  <splash density="port-xxhdpi" src="resources/android/splash/wel.png"/>
-  <splash density="port-xxxhdpi" src="resources/android/splash/wel.png"/>
-  <name>广告牌</name>
-  <description>
+    <preference name="loglevel" value="DEBUG" />
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="InAppBrowser">
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    </feature>
+    <feature name="ImagePicker">
+        <param name="android-package" value="com.synconset.ImagePicker" />
+    </feature>
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="FileTransfer">
+        <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
+    </feature>
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="MD5forFile">
+        <param name="android-package" value="com.billboard.md5.MD5forFile" />
+    </feature>
+    <config-file mode="add" parent="/manifest" platform="android">
+        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    </config-file>
+    <icon density="ldpi" src="resources/android/icon/96_96_320.png" />
+    <icon density="mdpi" src="resources/android/icon/96_96_320.png" />
+    <icon density="hdpi" src="resources/android/icon/96_96_320.png" />
+    <icon density="xhdpi" src="resources/android/icon/96_96_320.png" />
+    <icon density="xxhdpi" src="resources/android/icon/144_144_480.png" />
+    <icon density="xxxhdpi" src="resources/android/icon/196_196_320.png" />
+    <splash density="land-ldpi" src="resources/android/splash/wel.png" />
+    <splash density="land-mdpi" src="resources/android/splash/wel.png" />
+    <splash density="land-hdpi" src="resources/android/splash/wel.png" />
+    <splash density="land-xhdpi" src="resources/android/splash/wel.png" />
+    <splash density="land-xxhdpi" src="resources/android/splash/wel.png" />
+    <splash density="land-xxxhdpi" src="resources/android/splash/wel.png" />
+    <splash density="port-ldpi" src="resources/android/splash/wel.png" />
+    <splash density="port-mdpi" src="resources/android/splash/wel.png" />
+    <splash density="port-hdpi" src="resources/android/splash/wel.png" />
+    <splash density="port-xhdpi" src="resources/android/splash/wel.png" />
+    <splash density="port-xxhdpi" src="resources/android/splash/wel.png" />
+    <splash density="port-xxxhdpi" src="resources/android/splash/wel.png" />
+    <name>广告牌</name>
+    <description>
         An Ionic Framework and Cordova project.
     </description>
-  <author email="you@example.com" href="http://example.com.com/">
+    <author email="you@example.com" href="http://example.com.com/">
         Your Name Here
     </author>
-  <content src="index.html"/>
-  <access origin="*"/>
-  <allow-intent href="*"/>
-  <allow-navigation href="*"/>
-  <chcp>
-    <local-development enabled="true"/>
-    <config-file url="https://d6293bba.ngrok.io/chcp.json"/>
-  </chcp>
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="orientation" value="portrait" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="UIWebViewBounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="SplashScreenDelay" value="5000" />
+    <preference name="FadeSplashScreenDuration" value="0000" />
+    <preference name="android-minSdkVersion" value="16" />
+    <preference name="BackupWebStorage" value="none" />
+    <preference name="SplashScreen" value="screen" />
+    <allow-intent href="*" />
+    <allow-navigation href="*" />
 </widget>

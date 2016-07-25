@@ -144,8 +144,8 @@ angular.module('starter.services')
 
       window.imagePicker.getPictures(pickerSuccess, pickerFailure, {
         maximumImagesCount: 6,
-        width:0,
-        height:0,
+        width:1080,
+        height:1920,
         quality:60
       });
 
