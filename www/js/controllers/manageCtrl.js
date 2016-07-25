@@ -58,21 +58,17 @@ angular.module('starter.controllers')
         cancelText: "关闭菜单",
         cssClass: 'bton_style',
         buttonClicked: function (index) {
-          var slideIndex = $scope.data.galleryTop.activeIndex;
-          var content_ID = $scope.data.photos[slideIndex].id;
-          var previewUrl = $scope.data.photos[slideIndex].preview_url;
-
           switch (index) {
             case 0: //预览
-              $scope.preViewUrl(previewUrl);
+              $scope.preViewUrl();
               break;
 
             case 1: //立即发布
-              $scope.publishContent(content_ID);
+              $scope.publishContent();
               break;
 
             case 2: //删除节目
-              $scope.removeContent(slideIndex, content_ID);
+              $scope.removeContent();
               break;
           }
           return true;
@@ -158,22 +154,36 @@ angular.module('starter.controllers')
 
     };
 
-    $scope.preViewUrl = function (previewUrl) {
+    $scope.preViewUrl = function () {
+
+      var slideIndex = $scope.data.galleryTop.activeIndex;
+      var previewUrl = $scope.data.photos[slideIndex].preview_url;
       var options = {
         location: "no"
       };
+
       $cordovaInAppBrowser.open(previewUrl, '_blank', options).then(function () {
         console.log("InAppBrowser opened " + previewUrl + " successfully");
       }, function (error) {
         console.log("Error: " + error);
       });
+
     }
 
     $scope.publishContent = function (content_ID) {
+
+      var slideIndex = $scope.data.galleryTop.activeIndex;
+      var content_ID = $scope.data.photos[slideIndex].id;
+
       $state.go('choseClient', {contentid: content_ID});
+
     }
 
-    $scope.removeContent = function (slideIndex, content_ID) {
+    $scope.removeContent = function () {
+
+      var slideIndex = $scope.data.galleryTop.activeIndex;
+      var content_ID = $scope.data.photos[slideIndex].id;
+
       var confirmOk = function (res) {
         contentService.removeContents(content_ID, $scope.data.deleteAll)
           .success(function () {
@@ -199,8 +209,25 @@ angular.module('starter.controllers')
     }
 
     $scope.showClientList = function () {
+
+      var slideIndex = $scope.data.galleryTop.activeIndex;
+      var clients = $scope.data.photos[slideIndex].client;
+
+      var templates = "";
+      if (clients.length > 0) {
+        var clients = clients.split(",");
+
+        templates = '<ul class="jmtit">';
+        clients.forEach(function (client) {
+          templates += '<li class="jmtitli">' + client + '</li>';
+        })
+        templates += '</ul>';
+      } else {
+        templates = "内容未发布";
+      }
+
       var myPopup = $ionicPopup.show({
-        template: '<ul class="jmtit"><li class="jmtitli">DR145645544</li><li class="jmtitli">DR145645544</li><li class="jmtitli">DR145645544</li></ul>',
+        template: templates,
         title: '发布设备列表',
         subTitle: '已发布设备',
         scope: $scope,
