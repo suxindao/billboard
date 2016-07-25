@@ -64,46 +64,15 @@ angular.module('starter.controllers')
 
           switch (index) {
             case 0: //预览
-
-              var options = {
-                location: "no"
-              };
-              $cordovaInAppBrowser.open(previewUrl, '_blank', options).then(function () {
-                console.log("InAppBrowser opened " + previewUrl + " successfully");
-              }, function (error) {
-                console.log("Error: " + error);
-              });
+              $scope.preViewUrl(previewUrl);
               break;
 
             case 1: //立即发布
-              $state.go('choseClient', {contentid: content_ID});
+              $scope.publishContent(content_ID);
               break;
 
             case 2: //删除节目
-
-              var confirmOk = function (res) {
-                contentService.removeContents(content_ID, $scope.data.deleteAll)
-                  .success(function () {
-                    utilService.showAlert('删除成功', '删除成功', function () {
-                      $scope.data.photos.splice(slideIndex, 1);
-                      // $scope.$emit('ngRepeatFinished');
-                      $scope.data.galleryTop.removeSlide(slideIndex);
-                      if ($scope.data.photos.length === 0) {
-                        $scope.data.showContent = 2;
-                        $scope.noContentConfirm();
-                      }
-                    });
-                  })
-                  .error(function (data) {
-                    utilService.showAlert('删除失败', '删除失败');
-                  });
-              };
-
-              utilService.showConfirm('删除节目',
-                '<input type="checkbox" ng-model="data.deleteAll" ng-true-value="1" ng-false-value="0"/>' +
-                '是否同时删除设备上的该节目?',
-                '确定', '取消', confirmOk, null, $scope);
-
+              $scope.removeContent(slideIndex, content_ID);
               break;
           }
           return true;
@@ -188,5 +157,45 @@ angular.module('starter.controllers')
       );
 
     };
+
+    $scope.preViewUrl = function (previewUrl) {
+      var options = {
+        location: "no"
+      };
+      $cordovaInAppBrowser.open(previewUrl, '_blank', options).then(function () {
+        console.log("InAppBrowser opened " + previewUrl + " successfully");
+      }, function (error) {
+        console.log("Error: " + error);
+      });
+    }
+
+    $scope.publishContent = function (content_ID) {
+      $state.go('choseClient', {contentid: content_ID});
+    }
+
+    $scope.removeContent = function (slideIndex, content_ID) {
+      var confirmOk = function (res) {
+        contentService.removeContents(content_ID, $scope.data.deleteAll)
+          .success(function () {
+            utilService.showAlert('删除成功', '删除成功', function () {
+              $scope.data.photos.splice(slideIndex, 1);
+              // $scope.$emit('ngRepeatFinished');
+              $scope.data.galleryTop.removeSlide(slideIndex);
+              if ($scope.data.photos.length === 0) {
+                $scope.data.showContent = 2;
+                $scope.noContentConfirm();
+              }
+            });
+          })
+          .error(function (data) {
+            utilService.showAlert('删除失败', '删除失败');
+          });
+      };
+
+      utilService.showConfirm('删除节目',
+        '<input type="checkbox" ng-model="data.deleteAll" ng-true-value="1" ng-false-value="0"/>' +
+        '是否同时删除设备上的该节目?',
+        '确定', '取消', confirmOk, null, $scope);
+    }
 
   });
