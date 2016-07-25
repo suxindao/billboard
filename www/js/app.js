@@ -116,39 +116,33 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
       .state('login', {
         url: '/login',
 
-        templateUrl: 'templates/loginn.html',
+        templateUrl: 'templates/loginN.html',
         controller: 'LoginCtrl'
       })
 
       .state('match', {
         url: '/match',
-        templateUrl: 'templates/matchn.html',
+        templateUrl: 'templates/matchN.html',
         controller: 'MatchCtrl'
       })
 
       .state('manage', {
         cache: false,
         url: '/manage',
-        templateUrl: 'templates/managen.html',
+        templateUrl: 'templates/manageN.html',
         controller: 'ManageCtrl'
       })
 
       .state('main', {
         url: '/main',
-//        templateUrl: 'templates/main.html',
-//        controller: 'MainCtrl'
-//        templateUrl: 'templates/nmain.html', //设备管理,无关联
-//        templateUrl: 'templates/nmain.html', //设备管理,有关联,需要雷添加
-//        templateUrl: 'templates/sendn.html', //发布内容,无设备
-//        templateUrl: 'templates/sendn.html', //发布内容,设备列表显示
-        templateUrl: 'templates/mast.html',
+        templateUrl: 'templates/main.html',
         controller: 'MainCtrl'
       })
 
       .state('makeVideo', {
 //        cache: false,
         url: '/makeVideo',
-        templateUrl: 'templates/jmlist.html',
+        templateUrl: 'templates/makeVideoN.html',
         controller: 'makeVideoCtrl',
         params: {'data': null, 'getPremission': null}
       })
@@ -156,7 +150,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
       .state('admin', {
 //        cache: false,
         url: '/admin',
-        templateUrl: 'templates/adminn.html',
+        templateUrl: 'templates/adminN.html',
         controller: 'AdminCtrl'
       })
 
@@ -166,16 +160,10 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
         controller: ''
       })
 
-      .state('sendV', {
-        url: '/sendV',
-        templateUrl: 'templates/sendV.html',
-        controller: ''
-      })
-
       .state('clientList', {
         cache: false,
         url: '/clientList',
-        templateUrl: 'templates/clientListn.html',
+        templateUrl: 'templates/clientListN.html',
         controller: 'ClientCtrl'
       })
 
@@ -188,8 +176,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
       .state('choseClient', {
         cache: false,
         url: '/choseClient/:contentid',
-//        templateUrl: 'templates/choseClient.html',
-        templateUrl: 'templates/sendn.html',
+        templateUrl: 'templates/sendN.html',
         controller: 'ChoseClientCtrl'
       })
 
@@ -197,6 +184,12 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
         url: '/jmang',
         templateUrl: 'templates/jmang.html',
         controller: ''
+      })
+
+      .state('test', {
+        url: '/test',
+        templateUrl: 'templates/test.html',
+        controller: 'testCtrl'
       });
 
     // if none of the above states are matched, use this as the fallback

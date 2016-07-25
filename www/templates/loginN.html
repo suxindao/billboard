@@ -5,15 +5,15 @@
   </ion-header-bar>
 
   <ion-content class="scroll-content tophet" overflow-scroll="true" scroll="false">
-    <div class="logof">
-      <img class="logob" src="img/logo.png">
+    <div class="logoh fxcen">
+      <img class="logop marauto" src="img/logo1.png">
     </div>
     <p class="error" ng-bind="data.message"></p>
     <div class="adipt fxcen">
       <label class="fl real labpt" for="user">
         <img class="absol adico" src="img/admin.png">
       </label>
-      <input class="fl" id="user" type="tel" placeholder="用户名" ng-model="data.mobile">
+      <input class="fl" id="user" type="number" placeholder="用户名" ng-model="data.mobile">
       <img class="fr xamg marauto" src="img/xa.png" ng-if="!(data.mobile.length > 0)">
       <img class="fr xamg marauto" src="img/xb.png" ng-if="data.mobile.length > 0" ng-click="clearPhone()">
     </div>
