@@ -270,10 +270,10 @@ input {
 .jmtit {
   width: 95%;
   text-align: center;
-  font-size: 1.2em;
+  font-size: 0.8em;
   line-height: 2em;
   /*color: #5d5b5b;*/
-  padding-top: 8%;
+  padding-top: 7%;
 }
 
 .jmtitli{
@@ -1043,8 +1043,11 @@ input {
 }
 
 .swiper-slide.swiper-slide-next .jmtia,.swiper-slide.swiper-slide-next .jmtit,
-.swiper-slide.swiper-slide-prev .jmtia,.swiper-slide.swiper-slide-prev .jmtit{
+.swiper-slide.swiper-slide-prev .jmtia,.swiper-slide.swiper-slide-prev .jmtit,
+.swiper-slide.swiper-slide-next .jmtia,.swiper-slide.swiper-slide-next .jmtitli,
+.swiper-slide.swiper-slide-prev .jmtia,.swiper-slide.swiper-slide-prev .jmtitli{
   color: transparent;
+  border-color:transparent;
 }
 
 .swiper-container-3d .swiper-slide-shadow-left {
@@ -1158,6 +1161,15 @@ input {
 }
 
 /*公用css*/
+
+.rowhet{
+  height:6%;
+  padding:0;
+  padding-left: 12%;
+  margin-top: 3%;
+  padding-right: 7%;
+}
+
 .pdro {
   margin-right: 0;
 }
@@ -1243,6 +1255,21 @@ input {
   left: 0;
   top: 0;
   z-index: 100;
+}
+
+.pdeight{
+  padding-right:5%;
+  height: 100%;
+}
+
+.cbgol{
+  background: #ec6941;
+  border:none;
+}
+
+.newPg{
+  width:17%;
+  margin-right: 11%;
 }
 
 .alignedCSS{
