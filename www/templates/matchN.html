@@ -6,34 +6,14 @@
       <img class="marauto btnbg hide" src="img/userkb.png">
     </div>
     <h1 class="title mtit">设备匹配</h1>
-    <div class="buttons mgrt fxcen">
-      <img class="marauto btnmr" src="img/mcon.png">
-      <img class="marauto btnmr hide" src="img/czkb.png">
+    <div class="buttons mgrt textcen" id="titr" ng-click="goMain()">
+      返回
     </div>
   </ion-header-bar>
 
   <ion-content class="scroll-content tophet" overflow-scroll="true" scroll="false">
-    <div class="fr jump textcen">跳过</div>
-    <img class="disblok matmg" src="img/matchg.png">
-    <p class="loding real haet">
-      <img class="absol quan " src="img/quan.png">
-      <img class="absol quan hide" src="img/rquan.png">
-      <img class="absol loud" src="img/loud.png">
-      <!--
-            <ion-spinner icon="crescent" class="spinner-royal spinner spinner-crescent ">
-              <svg viewBox="0 0 64 64">
-                <g>
-                  <circle stroke-width="4" stroke-dasharray="128" stroke-dashoffset="82" r="26" cx="32" cy="32" fill="none"
-                          transform="rotate(52.7728 32 32)">
-                    <animateTransform values="0,32,32;360,32,32" attributeName="transform" type="rotate"
-                                      repeatCount="indefinite" dur="750ms">
-                    </animateTransform>
-                  </circle>
-                </g>
-              </svg>
-            </ion-spinner>
-      -->
-    </p>
+    <img class="disblok matmg hide" src="img/nnn.png">
+    <img class="disblok matmg" src="img/dhp.gif">
     <p class="matit" ng-show="data.showMessage" ng-bind="data.message"/>
     <div class="adipt fxcen">
       <label class="fl real labpt" for="matid">
