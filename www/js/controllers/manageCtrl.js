@@ -203,7 +203,10 @@ angular.module('starter.controllers')
         template: '<ul class="jmtit"><li class="jmtitli">DR145645544</li><li class="jmtitli">DR145645544</li><li class="jmtitli">DR145645544</li></ul>',
         title: '发布设备列表',
         subTitle: '已发布设备',
-        scope: $scope
+        scope: $scope,
+        buttons: [
+          { text: 'Cancel' },
+        ]
       });
 
 
