@@ -3,7 +3,10 @@
 
 bower_components/
 node_modules/
-platforms/
+/platforms/android/*
+/platforms/platforms.json
+!/platforms/android/src
+!/platforms/android/res
 nbproject/
 www/lib/
 www/css/
