@@ -12,8 +12,8 @@
   </ion-header-bar>
 
   <ion-content class="scroll-content tophet" overflow-scroll="true" scroll="false">
-    <img class="disblok matmg" src="img/nnn.png">
-    <img class="disblok matmg hide" src="img/dhp.gif">
+    <img ng-if="!data.showGif" class="disblok matmg" src="img/nnn.png">
+    <img ng-if="data.showGif" class="disblok matmg" src="img/dhp.gif">
     <p class="matit" ng-show="data.showMessage" ng-bind="data.message"/>
     <div class="adipt fxcen">
       <label class="fl real labpt" for="matid">

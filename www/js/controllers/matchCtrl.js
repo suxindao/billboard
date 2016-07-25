@@ -6,15 +6,16 @@
 
 angular.module('starter.controllers')
 
-  .controller('MatchCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $state) {
+  .controller('MatchCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $state, $timeout) {
 
     init();
 
     //设备配对
     $scope.clientBind = function () {
 
+      $scope.data.showGif = true;
+
       var requestUrl = "?cmd=clientBind&token=" + aJaxService.getToken() + "&id=" + $scope.data.clientID + "&name=" + $scope.data.clientID;
-//      var requestUrl = "?cmd=clientBind&token=ac7851a74504be7c4bde5da8c41261ec&id=" + $scope.data.clientID + "&name=" + $scope.data.clientID;
 
       aJaxService.httpGetData(requestUrl)
         .success(function (data) {
@@ -23,9 +24,13 @@ angular.module('starter.controllers')
           $scope.data.showMessage = true;
 
           if (data.result === 0) {
-            $scope.data.showNextButton = true;
-            $scope.data.message = "绑定成功";
+            $timeout(function () {
+              $scope.data.showNextButton = true;
+              $scope.data.showGif = false;
+              $scope.data.message = "绑定成功";
+            }, 2000)
           } else {
+            $scope.data.showMessage = true;
             $scope.data.message = data.msgc;
           }
 
@@ -43,7 +48,8 @@ angular.module('starter.controllers')
     function init() {
       $scope.data = {
         showMessage: false,
-        showNextButton: false
+        showNextButton: false,
+        showGif: false
       };
     }
     ;
