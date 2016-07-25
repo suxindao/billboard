@@ -271,8 +271,13 @@ input {
   width: 95%;
   text-align: center;
   font-size: 1.2em;
-  line-height: 4em;
+  line-height: 2em;
   /*color: #5d5b5b;*/
+  padding-top: 8%;
+}
+
+.jmtitli{
+  border-bottom: 1px solid #c9cfcf;
 }
 
 .bar #ftit {
