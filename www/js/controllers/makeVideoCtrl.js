@@ -35,7 +35,7 @@ angular.module('starter.controllers')
               }else
               {
                  $ionicHistory.goBack();
-                // alert("goBack");
+                
 
               }
 
@@ -108,10 +108,11 @@ angular.module('starter.controllers')
     $scope.clickCustom = function ()
     {
       if ($scope.currentIndex == undefined)
-      {
-        utilService.showAlert("请选择图片进行设置");
+      {  
+        utilService.alertTimeout('请选择图片进行设置！',2000);
         return;
       }
+      
       utilService.showPopup("提示", "请输入播放时间(秒)", function (t)
       {
         if (!t || t < 0)
@@ -190,10 +191,8 @@ angular.module('starter.controllers')
 
     var createProgram = function (name)
     {
-      $ionicLoading.show({
-        template: '节目制作中，请稍后...'
-      });
-
+      utilService.showLoading("节目制作中，请稍候...");
+      
       $scope.programData.name = name;
 
       aJaxService.existFileMD5s($scope.programData.items, function (data) {
@@ -224,7 +223,7 @@ angular.module('starter.controllers')
                 utilService.showAlert("","制作节目失败！");
               }
 
-              $ionicLoading.hide();
+               utilService.hideLoading();
             });
             return;
           }
@@ -254,13 +253,13 @@ angular.module('starter.controllers')
                       utilService.showAlert("","制作节目失败！");
                     }
 
-                    $ionicLoading.hide();
+                   utilService.hideLoading();
                   });
                 }
 
               } else
               {
-                $ionicLoading.hide();
+                 utilService.hideLoading();
                 console.log("上传图片失败");
               }
 
@@ -269,7 +268,7 @@ angular.module('starter.controllers')
           }//
         } else
         {
-          $ionicLoading.hide();
+          utilService.hideLoading();
           utilService.showAlert("上传图失败！");
         }
 
