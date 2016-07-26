@@ -97,10 +97,12 @@ angular.module('starter.services')
 
       }
 
-      function errorCall()
+      function errorCall(info)
       {
-        alertTimeout('图像文件处理失败！',2000);
 
+        if(info != undefined)
+           alertTimeout('图像文件处理失败！',2000);
+        
 
         if (callback)
         {
@@ -113,7 +115,7 @@ angular.module('starter.services')
       function pickerFailure(info)
       {
 
-         errorCall();
+         errorCall(info);
 
       }
 
@@ -123,7 +125,7 @@ angular.module('starter.services')
        // alert("success");
         if (results.length == 0)
         {
-          errorCall();
+          errorCall(undefined);
           return;
         }
         for (var i = 0; i < results.length; i++) {
