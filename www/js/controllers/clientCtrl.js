@@ -98,20 +98,20 @@ angular.module('starter.controllers')
     }
 
     function getLocalName(clientID) {
-      // var name;
-      //
-      // $scope.data.clients.forEach(function (client) {
-      //   console.log(client.name);
-      //   if (client.id == clientID) {
-      //     name = client.name;
-      //   }
-      // });
-      //
-      // return name;
+      var name;
 
-      var client;
-      var res = $scope.data.clients.find(client => client.id == clientID);
-      return res ? res.name : res;
+      $scope.data.clients.forEach(function (client) {
+        console.log(client.name);
+        if (client.id == clientID) {
+          name = client.name;
+        }
+      });
+
+      return name;
+
+      // var client;
+      // var res = $scope.data.clients.find(client => client.id == clientID);
+      // return res ? res.name : res;
     }
 
     $scope.changeName = function (clientID) {
@@ -155,5 +155,6 @@ angular.module('starter.controllers')
         // resetChose();
       });
 
-    }
+    };
+
   });

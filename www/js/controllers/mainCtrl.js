@@ -25,7 +25,6 @@ angular.module('starter.controllers')
     };
 
     $scope.goDevice = function () {
-      alert("aaaaa");
       $state.go("clientList");
     };
 
