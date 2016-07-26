@@ -27,4 +27,7 @@ angular.module('starter.controllers')
     galleryTop.params.control = galleryThumbs;
     galleryThumbs.params.control = galleryTop;
 
+
+
+
   });
