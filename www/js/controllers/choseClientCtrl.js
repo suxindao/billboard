@@ -39,8 +39,8 @@ angular.module('starter.controllers')
       $ionicLoading.hide();
     });
 
-    $scope.goMain = function () {
-      $state.go("main");
+    $scope.goManage = function () {
+      $state.go("manage");
     };
 
     //页面右上角按钮
@@ -123,7 +123,8 @@ angular.module('starter.controllers')
             });
           })
           .error(function (data) {
-            utilService.showAlert('发布失败', data);
+            utilService.hideLoading();
+            utilService.showAlert('发布失败');
           });
 
       } else {
