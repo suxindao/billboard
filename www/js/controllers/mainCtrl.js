@@ -8,8 +8,7 @@ angular.module('starter.controllers')
 
   .controller('MainCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $state) {
 
-    $scope.clickPost = function ()
-    {
+    $scope.clickPost = function () {
 
 //                var resutls=[{"filePath":"img/jmmg.png","md5":"875EFC59FBDF6B27477DD222CAA46D89"},{"filePath":"img/jmmg.png","md5":"840436C562495B115A88E153A37696BD"},{"filePath":"img/jmmg.png","md5":"840436C562495B115A88E153A37696BD"},{"filePath":"img/jmmg.png","md5":"840436C562495B115A88E153A37696BD"},{"filePath":"img/jmmg.png","md5":"840436C562495B115A88E153A37696BD"},{"filePath":"img/jmmg.png","md5":"840436C562495B115A88E153A37696BD"}];
 //
@@ -30,6 +29,10 @@ angular.module('starter.controllers')
 
     $scope.goAdmin = function () {
       $state.go("admin");
+    };
+
+    $scope.goTest = function () {
+      utilService.showLoading("节目发布中，请稍候...");
     };
 
   });
