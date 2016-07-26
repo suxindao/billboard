@@ -123,7 +123,8 @@ angular.module('starter.controllers')
             });
           })
           .error(function (data) {
-            utilService.showAlert('发布失败', data);
+            utilService.hideLoading();
+            utilService.showAlert('发布失败');
           });
 
       } else {

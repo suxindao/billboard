@@ -6,7 +6,7 @@
 
 angular.module('starter.services')
 
-  .service('utilService', function ($http, $q, $ionicLoading, $ionicPopup) {
+  .service('utilService', function ($http, $q, $ionicLoading, $ionicPopup, $timeout) {
 
     this.checkMobile = function (mobileNumber) {
       if (!(/^1[3|4|5|7|8][0-9]\d{4,8}$/.test(mobileNumber))) {
@@ -139,15 +139,20 @@ angular.module('starter.services')
 
       if (callback) {
         $ionicLoading.show({
-          template: message,
-          duration: timeout
-        }).then(callback);
+          template: message
+        });
+        $timeout(function () {
+          $ionicLoading.hide().then(callback);
+        }, 2000);
+
       } else {
         $ionicLoading.show({
           template: message,
           duration: timeout
-        })
+        });
       }
+
+
     }
 
     this.alertTimeout = function (message, timeout, callback) {
@@ -169,7 +174,8 @@ angular.module('starter.services')
     this.showAlert = function (title, template, callback) {
       var alertPopup = $ionicPopup.alert({
         title: '<strong>' + title + '</strong>',
-        template: template
+        template: template,
+        okText: '确定'
       });
       alertPopup.then(function (res) {
         if (callback)
