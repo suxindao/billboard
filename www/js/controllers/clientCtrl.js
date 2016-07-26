@@ -142,12 +142,16 @@ angular.module('starter.controllers')
         if (res) {
           clientService.rename(clientID, res)
             .success(function () {
-              utilService.showAlert('修改成功', '修改成功', function () {
-                updateLocalName(clientID, res);
-              });
+              // utilService.showAlert('修改成功', '修改成功', function () {
+              //   updateLocalName(clientID, res);
+              // });
+              updateLocalName(clientID, res);
+              utilService.alertTimeout('修改成功！', 2000);
+
             })
             .error(function (data) {
-              utilService.showAlert('修改失败', data);
+              // utilService.showAlert('修改失败');
+              utilService.alertTimeout('修改失败', 2000);
             });
         } else {
           console.log("放弃修改/名字未修改");

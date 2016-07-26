@@ -68,7 +68,7 @@ angular.module('starter.controllers')
                     });
                   })
                   .error(function (data) {
-                    utilService.showAlert('发布失败', data);
+                    utilService.showAlert('发布失败');
                   });
                 break;
             }
