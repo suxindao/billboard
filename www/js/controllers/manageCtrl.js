@@ -187,18 +187,33 @@ angular.module('starter.controllers')
       var confirmOk = function (res) {
         contentService.removeContents(content_ID, $scope.data.deleteAll)
           .success(function () {
-            utilService.showAlert('删除成功', '删除成功', function () {
+
+            // utilService.showAlert('删除成功', '删除成功', function () {
+            //   $scope.data.photos.splice(slideIndex, 1);
+            //   // $scope.$emit('ngRepeatFinished');
+            //   $scope.data.galleryTop.removeSlide(slideIndex);
+            //   $scope.data.deleteAll = '0';
+            //   if ($scope.data.photos.length === 0) {
+            //     $scope.data.showContent = 2;
+            //     $scope.noContentConfirm();
+            //   }
+            // });
+
+            utilService.alertTimeout('删除成功', 2000, function () {
               $scope.data.photos.splice(slideIndex, 1);
               // $scope.$emit('ngRepeatFinished');
               $scope.data.galleryTop.removeSlide(slideIndex);
+              $scope.data.deleteAll = '0';
               if ($scope.data.photos.length === 0) {
                 $scope.data.showContent = 2;
                 $scope.noContentConfirm();
               }
             });
+
           })
           .error(function (data) {
-            utilService.showAlert('删除失败', '删除失败');
+            // utilService.showAlert('删除失败', '删除失败');
+            utilService.alertTimeout('删除失败', 2000);
           });
       };
 
@@ -230,9 +245,9 @@ angular.module('starter.controllers')
         title: '发布设备列表',
         subTitle: '已发布设备',
         scope: $scope,
-        cssClass:"sList",
+        cssClass: "sList",
         buttons: [
-          { text: "" },
+          {text: ""},
         ]
       });
 
