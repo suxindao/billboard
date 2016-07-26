@@ -14,26 +14,30 @@ angular.module('starter.controllers')
     };
 
 
-    // Setup the loader
-    $ionicLoading.show({
-      content: '设备列表加载中'
-    });
+    var getClientList = function () {
 
-    clientService.getClients(function (data) {
+      $ionicLoading.show({
+        template: '设备列表加载中'
+      });
 
-      if (data !== null && data.length > 0) {
-        $scope.data.showContent = true;
-        $scope.data.clients = data;
-      } else {
-        utilService.showConfirm('设备列表', '没有匹配设备,是否去匹配?', '确定', '取消', function () {
-          $state.go("match");
-        }, function () {
-          $state.go("main");
-        });
-      }
-      $ionicLoading.hide();
+      clientService.getClients(function (data) {
 
-    });
+        if (data !== null && data.length > 0) {
+          $scope.data.showContent = true;
+          $scope.data.clients = data;
+          $scope.$broadcast('scroll.refreshComplete');
+        } else {
+          utilService.showConfirm('设备列表', '没有匹配设备,是否去匹配?', '确定', '取消', function () {
+            $state.go("match");
+          }, function () {
+            $state.go("main");
+          });
+        }
+        $ionicLoading.hide();
+      });
+    };
+
+    getClientList();
 
     $scope.goMain = function () {
       $state.go("main");
@@ -160,5 +164,10 @@ angular.module('starter.controllers')
       });
 
     };
+
+    $scope.doRefresh = function () {
+      getClientList();
+    }
+
 
   });

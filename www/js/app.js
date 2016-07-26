@@ -163,7 +163,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
       .state('clientList', {
         cache: false,
         url: '/clientList',
-        templateUrl: 'templates/clientListNn.html',
+        templateUrl: 'templates/clientListN.html',
         controller: 'ClientCtrl'
       })
 
@@ -189,7 +189,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
       .state('test', {
         url: '/test',
         templateUrl: 'templates/test.html',
-        controller: 'testCtrl'
+        controller: 'ClientCtrl'
       });
 
     // if none of the above states are matched, use this as the fallback
