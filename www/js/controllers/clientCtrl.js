@@ -120,7 +120,7 @@ angular.module('starter.controllers')
 
       $ionicPopup.show({
         cssClass: 'iptTop',
-        template: '<input type="text" ng-model="data.name">',
+        template: '<input type="text" ng-model="data.name" auto-focus>',
         title: '修改设备名',
         subTitle: '请输入新设备名',
         scope: $scope,
