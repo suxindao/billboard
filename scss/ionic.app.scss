@@ -142,7 +142,7 @@ input {
 
 .mgrt {
   width: 10%;
-  height: 95%;
+  height: 100%;
   top: 0;
 }
 
@@ -1210,8 +1210,9 @@ input {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 100% 50%;
-  width:22px;
-  height:35px;
+  width:19px;
+  height:32px;
+  background-color: transparent;
 }
 
 .sList .jmtit{
@@ -1265,6 +1266,13 @@ input {
 }
 
 /*公用css*/
+.btlft{
+  position: absolute;
+  top: 0;
+  left: 5px;
+  bottom: 5px;
+  z-index:100;
+}
 
 .rowhet{
   height:6%;
