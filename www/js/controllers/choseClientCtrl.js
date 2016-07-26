@@ -39,6 +39,10 @@ angular.module('starter.controllers')
       $ionicLoading.hide();
     });
 
+    $scope.goMain = function () {
+      $state.go('main');
+    };
+
     $scope.goManage = function () {
       $state.go("manage");
     };
