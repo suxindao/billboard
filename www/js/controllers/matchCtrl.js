@@ -22,7 +22,6 @@ angular.module('starter.controllers')
           console.log("Data = " + JSON.stringify(data));
 
           $timeout(function () {
-            $scope.data.showMessage = true;
             $scope.data.showGif = false;
             if (data.result === 0) {
               $scope.data.showNextButton = true;
@@ -37,7 +36,6 @@ angular.module('starter.controllers')
           // utilService.showAlert('配对设备', '配对失败' + data.msgc);
           $timeout(function () {
             $scope.data.showGif = false;
-            $scope.data.showMessage = true;
             $scope.data.message = "设备配对失败";
           }, 2000)
         });
@@ -50,7 +48,7 @@ angular.module('starter.controllers')
 
     function init() {
       $scope.data = {
-        showMessage: false,
+        message: "",
         showNextButton: false,
         showGif: false
       };

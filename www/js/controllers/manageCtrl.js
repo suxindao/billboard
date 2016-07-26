@@ -25,7 +25,7 @@ angular.module('starter.controllers')
     if ($scope.data.photos === null) {
       // Setup the loader
       $ionicLoading.show({
-        content: '内容加载中',
+        template: '内容加载中',
         // animation: 'fade-in',
         // showBackdrop: true,
         // maxWidth: 200,
