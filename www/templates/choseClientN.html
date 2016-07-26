@@ -1,5 +1,5 @@
 <ion-view view-title="发布设备选择" class="bcbg minht">
-  <ion-header-bar align-title="center" class="bar bar-header n_bar fxcen">
+  <ion-header-bar align-title="center" class="bar bar-header a_bar fxcen">
     <div class="mgft fxcen" id="titlf" ng-click="goMain()">
       <img class="marauto fl stmgb" src="img/home.png">
       <span class="inbol fr" id="insy">首页</span>
@@ -9,7 +9,8 @@
       取消
     </div>
   </ion-header-bar>
-  <ion-content class="scroll-content stopb" overflow-scroll="true" scroll="false">
+
+  <ion-content class="scroll-content stopb theit" overflow-scroll="true" scroll="false">
     <div class="row" id="smgbs">
 
       <div class="col col-275 pmzero sgrmg real smrb" ng-class="{'borclo': client.chose}" ng-repeat="client in data.clients" ng-click="chose({{client.id}})">
