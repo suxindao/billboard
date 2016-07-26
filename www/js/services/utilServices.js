@@ -163,7 +163,7 @@ angular.module('starter.services')
 
     this.showLoading = function (message) {
       $ionicLoading.show({
-        template: '<p>' + message + '</p><br><ion-spinner icon="spiral"></ion-spinner>'
+        template: '<ion-spinner icon="spiral" class="quwdt"></ion-spinner><p class="textcen">' + message + '</p>'
       });
     }
 

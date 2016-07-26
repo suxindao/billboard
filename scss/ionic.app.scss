@@ -530,10 +530,10 @@ input {
   margin-bottom: 1.5%;
 }
 
-.spinner svg {
+/*.spinner svg {
   width: 40% !important;
   height: 68px !important;
-}
+}*/
 
 .spinner.spinner-royal {
   stroke: #fb2d5c;
@@ -1435,7 +1435,10 @@ input {
   /* 设置背景颜色，背景图加载过程中会显示背景色 */
   background-color: #fff;
 }
-
+.quwet svg{
+  width:auto;
+  height:auto;
+}
 
 
 
