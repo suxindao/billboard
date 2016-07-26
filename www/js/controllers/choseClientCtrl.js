@@ -60,7 +60,10 @@ angular.module('starter.controllers')
 
                 contentService.publishContents($scope.contentid, ids)
                   .success(function () {
-                    utilService.showAlert('发布成功', '发布成功', function () {
+                    // utilService.showAlert('发布成功', '发布成功', function () {
+                    //   $state.go("manage");
+                    // });
+                    utilService.alertTimeout('发布成功！', 2000, function () {
                       $state.go("manage");
                     });
                   })
@@ -102,14 +105,21 @@ angular.module('starter.controllers')
 
     //页面右上角按钮
     $scope.sendVideo = function () {
+
+      utilService.showLoading("节目发布中，请稍候...");
+
       var ids = getChoseClientids();
 
       if (ids.length > 0) {
 
         contentService.publishContents($scope.contentid, ids)
           .success(function () {
-            utilService.showAlert('发布成功', '发布成功', function () {
-              $state.go("main");
+            // utilService.showAlert('发布成功', '发布成功', function () {
+            //   $state.go("main");
+            // });
+            utilService.hideLoading();
+            utilService.alertTimeout('发布成功！', 2000, function () {
+              $state.go("manage");
             });
           })
           .error(function (data) {

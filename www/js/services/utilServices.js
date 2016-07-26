@@ -22,10 +22,8 @@ angular.module('starter.services')
         return true;
     };
 
-    this.getFileMD5 = function (filePath, callback)
-    {
-      cordova.require("com.billboard.md5.MD5forFile").file_md5(filePath, function (md5)
-      {
+    this.getFileMD5 = function (filePath, callback) {
+      cordova.require("com.billboard.md5.MD5forFile").file_md5(filePath, function (md5) {
         if (callback)
           callback(md5);
 
@@ -35,15 +33,12 @@ angular.module('starter.services')
       });
     };
 
-    this.selectImage = function (callback)
-    {
+    this.selectImage = function (callback) {
 //            $ionicLoading.show({
 //                template: '<ion-spinner icon="spiral"></ion-spinner>'
 //            });
-      if (!window.imagePicker)
-      {
-        if (callback)
-        {
+      if (!window.imagePicker) {
+        if (callback) {
           callback(undefined);
         }
         return;
@@ -52,10 +47,8 @@ angular.module('starter.services')
 
       var imageInfo = [];
 
-      getFileMD5 = function (filePath, callback)
-      {
-        cordova.require("com.billboard.md5.MD5forFile").file_md5(filePath, function (md5)
-        {
+      getFileMD5 = function (filePath, callback) {
+        cordova.require("com.billboard.md5.MD5forFile").file_md5(filePath, function (md5) {
           if (callback)
             callback(filePath, md5);
 
@@ -65,10 +58,8 @@ angular.module('starter.services')
         });
       };
 
-      function getMD5s(results, callback)
-      {
-        if (results.length == 0)
-        {
+      function getMD5s(results, callback) {
+        if (results.length == 0) {
           callback([]);
           return;
         }
@@ -77,8 +68,7 @@ angular.module('starter.services')
 
         for (var i = 0; i < results.length; i++) {
 
-          getFileMD5(results[i], function (filePath, md5)
-          {
+          getFileMD5(results[i], function (filePath, md5) {
             console.log("md5s is" + md5.toString());
             console.log("filePath is" + filePath);
             imageInfo.push({"filePath": filePath, "md5": md5});
@@ -86,8 +76,7 @@ angular.module('starter.services')
 
             index++;
 
-            if (index == results.length)
-            {
+            if (index == results.length) {
               console.log("imageinfo is " + imageInfo);
               callback(imageInfo);
 
@@ -97,32 +86,25 @@ angular.module('starter.services')
 
       }
 
-      function errorCall()
-      {
-        alertTimeout('图像文件处理失败！',2000);
+      function errorCall() {
+        alertTimeout('图像文件处理失败！', 2000);
 
-
-        if (callback)
-        {
-
+        if (callback) {
           callback(undefined);
         }
 
       }
 
-      function pickerFailure(info)
-      {
+      function pickerFailure(info) {
 
-         errorCall();
+        errorCall();
 
       }
 
-      function pickerSuccess(results)
-      {
+      function pickerSuccess(results) {
         //$ionicLoading.hide();
-       // alert("success");
-        if (results.length == 0)
-        {
+        // alert("success");
+        if (results.length == 0) {
           errorCall();
           return;
         }
@@ -130,10 +112,8 @@ angular.module('starter.services')
           console.log('Image URI: ' + results[i]);
         }
 
-        getMD5s(results, function (infos)
-        {
-          if (callback)
-          {
+        getMD5s(results, function (infos) {
+          if (callback) {
             callback(infos);
           }
 
@@ -144,45 +124,49 @@ angular.module('starter.services')
 
       window.imagePicker.getPictures(pickerSuccess, pickerFailure, {
         maximumImagesCount: 6,
-        width:1080,
-        height:1920,
-        quality:60
+        width: 1080,
+        height: 1920,
+        quality: 60
       });
 
 
     };
 
-    function alertTimeout(message,timeout)
-    {
-        if(timeout == undefined)
-        {
-            timeout=2000;
-        }
+    function alertTimeout(message, timeout, callback) {
+      if (timeout == undefined) {
+        timeout = 2000;
+      }
 
-       $ionicLoading.show({
-             template: message,
-             duration:timeout
-         });
-    }
-    this.alertTimeout=function(message,timeout)
-    {
-        alertTimeout(message,timeout);
-    }
-
-    this.showLoading=function(message)
-    {
+      if (callback) {
         $ionicLoading.show({
-        template: '<p>'+message+'</p><br><ion-spinner icon="spiral"></ion-spinner>'
+          template: message,
+          duration: timeout
+        }).then(callback);
+      } else {
+        $ionicLoading.show({
+          template: message,
+          duration: timeout
+        })
+      }
+    }
+
+    this.alertTimeout = function (message, timeout, callback) {
+
+      alertTimeout(message, timeout, callback);
+
+    }
+
+    this.showLoading = function (message) {
+      $ionicLoading.show({
+        template: '<p>' + message + '</p><br><ion-spinner icon="spiral"></ion-spinner>'
       });
     }
 
-    this.hideLoading=function(template)
-    {
-         $ionicLoading.hide();
+    this.hideLoading = function () {
+      $ionicLoading.hide();
     }
 
-    this.showAlert = function (title, template, callback)
-    {
+    this.showAlert = function (title, template, callback) {
       var alertPopup = $ionicPopup.alert({
         title: '<strong>' + title + '</strong>',
         template: template
@@ -197,8 +181,7 @@ angular.module('starter.services')
 
       scope.data = {};
 
-      if (inputType == undefined)
-      {
+      if (inputType == undefined) {
         inputType = "number";
       }
       // 自定义弹窗
@@ -229,8 +212,7 @@ angular.module('starter.services')
 
     };
 
-    this.showConfirm = function (title, template, okText, cancelText, callback, cancelCallback, scope)
-    {
+    this.showConfirm = function (title, template, okText, cancelText, callback, cancelCallback, scope) {
       var confirmPopup = $ionicPopup.confirm({
         title: '<strong>' + title + '</strong>',
         template: template,
