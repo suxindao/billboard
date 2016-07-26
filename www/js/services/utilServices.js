@@ -86,8 +86,13 @@ angular.module('starter.services')
 
       }
 
-      function errorCall() {
-        alertTimeout('图像文件处理失败！', 2000);
+
+      function errorCall(info)
+      {
+
+        if(info != undefined)
+           alertTimeout('图像文件处理失败！',2000);
+        
 
         if (callback) {
           callback(undefined);
@@ -97,15 +102,20 @@ angular.module('starter.services')
 
       function pickerFailure(info) {
 
-        errorCall();
+
+         errorCall(info);
+
 
       }
 
       function pickerSuccess(results) {
         //$ionicLoading.hide();
-        // alert("success");
-        if (results.length == 0) {
-          errorCall();
+
+       // alert("success");
+        if (results.length == 0)
+        {
+          errorCall(undefined);
+
           return;
         }
         for (var i = 0; i < results.length; i++) {
