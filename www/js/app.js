@@ -148,7 +148,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
       })
 
       .state('admin', {
-//        cache: false,
+        cache: false,
         url: '/admin',
         templateUrl: 'templates/adminN.html',
         controller: 'AdminCtrl'
