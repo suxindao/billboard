@@ -138,12 +138,14 @@ input {
   width: 11.8%;
   padding-left: 2%;
   height: 100%;
+  background: red;
 }
 
 .mgrt {
   width: 10%;
   height: 100%;
   top: 0;
+  background: red;
 }
 
 .tophet {
@@ -189,13 +191,13 @@ input {
   /*display: table-cell;*/
   vertical-align: middle;
   width: 96%;
-  height:auto;
+  height:66%;
 }
 
 .whmg {
   vertical-align: middle;
   width: 100%;/*auto*/
-  height: 100%;
+  height: 68%;
   max-width: 100%;
 }
 
@@ -1194,6 +1196,11 @@ input {
   border-top-right-radius: none !important;
   border-top-left-radius: none !important;
 }
+
+.sList .popup{
+  position: relative;
+}
+
 .sList .popup-body{
   padding-bottom:10px;
   text-align: center;
