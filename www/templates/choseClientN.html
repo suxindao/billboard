@@ -1,29 +1,29 @@
 <ion-view view-title="发布设备选择" class="bcbg minht">
-  <ion-header-bar align-title="center" class="bar bar-header n_bar fxcen">
+  <ion-header-bar align-title="center" class="bar bar-header a_bar fxcen">
     <div class="mgft fxcen" id="titlf" ng-click="goMain()">
       <img class="marauto fl stmgb" src="img/home.png">
       <span class="inbol fr" id="insy">首页</span>
     </div>
     <h1 class="title mtit" id="stitb">设备列表</h1>
-    <div class="buttons mgrt textcen" id="titr" ng-click="goMain()">
+    <div class="buttons mgrt textcen" id="titr" ng-click="goManage()">
       取消
     </div>
-  </ion-header-bar> 
-  <ion-content class="scroll-content stopb" overflow-scroll="true" scroll="false">
+  </ion-header-bar>
+
+  <ion-content class="scroll-content stopb theit" overflow-scroll="true" scroll="false">
     <div class="row" id="smgbs">
 
       <div class="col col-275 pmzero sgrmg real smrb" ng-class="{'borclo': client.chose}" ng-repeat="client in data.clients" ng-click="chose({{client.id}})">
         <div class="brav absol" ng-show="client.chose"></div>
         <!--<img class="sgmg" src="img/sgirl.png">-->
         <img class="sgmg" ng-src="{{client.first_image}}">
-        
+
         <p class="absol spbt fxcen">
           <img class="marauto smag " src="img/sma.png">
           <span class="textcen sptbt " id="">{{client.name}}</span>
         </p>
-        <p class="absol spbb fxcen">
-          <span class="fl spbn"></span>
-          <span class="textcen tim">{{client.create_date}}</span>
+        <p class="absol spbb justar">
+          <span class="tim">{{client.create_date | formatdate}}</span>
         </p>
       </div>
 
@@ -35,7 +35,7 @@
       </span>
     </div>
   </ion-content>
-  <ion-footer-bar align-title="center" class="bar bar-footer f_bar bcbg overf">  
-    <h1 class="title bcbg" id="ftit">Copyright © MagicPoster</h1>  
+  <ion-footer-bar align-title="center" class="bar bar-footer f_bar bcbg overf">
+    <h1 class="title bcbg" id="ftit">Copyright © MagicPoster</h1>
   </ion-footer-bar>
 </ion-view>

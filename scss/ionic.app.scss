@@ -142,7 +142,7 @@ input {
 
 .mgrt {
   width: 10%;
-  height: 95%;
+  height: 100%;
   top: 0;
 }
 
@@ -188,14 +188,14 @@ input {
 .tabcel {
   /*display: table-cell;*/
   vertical-align: middle;
-  width: 96%;
-  height:50%;
+  width: 168px;
+  height:66%;
 }
 
 .whmg {
   vertical-align: middle;
   width: 100%;/*auto*/
-  height: 100%;
+  height: 68%;
   max-width: 100%;
 }
 
@@ -530,10 +530,10 @@ input {
   margin-bottom: 1.5%;
 }
 
-.spinner svg {
+/*.spinner svg {
   width: 40% !important;
   height: 68px !important;
-}
+}*/
 
 .spinner.spinner-royal {
   stroke: #fb2d5c;
@@ -1194,6 +1194,11 @@ input {
   border-top-right-radius: none !important;
   border-top-left-radius: none !important;
 }
+
+.sList .popup{
+  position: relative;
+}
+
 .sList .popup-body{
   padding-bottom:10px;
   text-align: center;
@@ -1210,8 +1215,9 @@ input {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 100% 50%;
-  width:22px;
-  height:35px;
+  width:19px;
+  height:32px;
+  background-color: transparent;
 }
 
 .sList .jmtit{
@@ -1265,6 +1271,23 @@ input {
 }
 
 /*公用css*/
+.justar{
+  text-align: center;
+  padding-left: 3%;
+  line-height: 1.5em;
+}
+
+.theit{
+  top:9.2%;
+}
+
+.btlft{
+  position: absolute;
+  top: 0;
+  left: 5px;
+  bottom: 5px;
+  z-index:100;
+}
 
 .rowhet{
   height:6%;
@@ -1296,7 +1319,7 @@ input {
 }
 
 .minht {
-  min-height: 598px;
+  min-height: 500px;
 }
 
 .hide {
@@ -1412,7 +1435,10 @@ input {
   /* 设置背景颜色，背景图加载过程中会显示背景色 */
   background-color: #fff;
 }
-
+.quwet svg{
+  width:auto;
+  height:auto;
+}
 
 
 

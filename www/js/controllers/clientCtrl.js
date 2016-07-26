@@ -98,20 +98,20 @@ angular.module('starter.controllers')
     }
 
     function getLocalName(clientID) {
-      // var name;
-      //
-      // $scope.data.clients.forEach(function (client) {
-      //   console.log(client.name);
-      //   if (client.id == clientID) {
-      //     name = client.name;
-      //   }
-      // });
-      //
-      // return name;
+      var name;
 
-      var client;
-      var res = $scope.data.clients.find(client => client.id == clientID);
-      return res ? res.name : res;
+      $scope.data.clients.forEach(function (client) {
+        console.log(client.name);
+        if (client.id == clientID) {
+          name = client.name;
+        }
+      });
+
+      return name;
+
+      // var client;
+      // var res = $scope.data.clients.find(client => client.id == clientID);
+      // return res ? res.name : res;
     }
 
     $scope.changeName = function (clientID) {
@@ -120,7 +120,7 @@ angular.module('starter.controllers')
 
       $ionicPopup.show({
         cssClass: 'iptTop',
-        template: '<input type="text" ng-model="data.name">',
+        template: '<input type="text" ng-model="data.name" auto-focus>',
         title: '修改设备名',
         subTitle: '请输入新设备名',
         scope: $scope,
@@ -142,12 +142,16 @@ angular.module('starter.controllers')
         if (res) {
           clientService.rename(clientID, res)
             .success(function () {
-              utilService.showAlert('修改成功', '修改成功', function () {
-                updateLocalName(clientID, res);
-              });
+              // utilService.showAlert('修改成功', '修改成功', function () {
+              //   updateLocalName(clientID, res);
+              // });
+              updateLocalName(clientID, res);
+              utilService.alertTimeout('修改成功！', 2000);
+
             })
             .error(function (data) {
-              utilService.showAlert('修改失败', data);
+              // utilService.showAlert('修改失败');
+              utilService.alertTimeout('修改失败', 2000);
             });
         } else {
           console.log("放弃修改/名字未修改");
@@ -155,5 +159,6 @@ angular.module('starter.controllers')
         // resetChose();
       });
 
-    }
+    };
+
   });
