@@ -189,7 +189,7 @@ input {
   /*display: table-cell;*/
   vertical-align: middle;
   width: 96%;
-  height:auto;
+  height:50%;
 }
 
 .whmg {
@@ -1094,10 +1094,21 @@ input {
   color: #5d5b5b;
 }
 
+.swiper-slide.swiper-slide-active .jmtitli {
+  color: #5d5b5b;
+  border-color: #c9cfcf;
+}
+
+.swiper-slide.swiper-slide-active .redcol {
+  color: #ec6941;
+  border-color: #c9cfcf;
+}
+
 .swiper-slide.swiper-slide-next .jmtia,.swiper-slide.swiper-slide-next .jmtit,
 .swiper-slide.swiper-slide-prev .jmtia,.swiper-slide.swiper-slide-prev .jmtit,
 .swiper-slide.swiper-slide-next .jmtia,.swiper-slide.swiper-slide-next .jmtitli,
-.swiper-slide.swiper-slide-prev .jmtia,.swiper-slide.swiper-slide-prev .jmtitli{
+.swiper-slide.swiper-slide-prev .jmtia,.swiper-slide.swiper-slide-prev .jmtitli,
+.swiper-slide .jmtia,.swiper-slide .jmtit,.swiper-slide .redcol,.swiper-slide .jmtitli{
   color: transparent;
   border-color:transparent;
 }
