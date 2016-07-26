@@ -25,15 +25,12 @@
     "cordova-plugin-statusbar",
     "ionic-plugin-keyboard",
     "cordova-plugin-file-transfer",
-    {
-      "locator": "https://github.com/wymsee/cordova-imagePicker.git",
-      "id": "cordova-plugin-image-picker"
-    },
     "cordova-plugin-file",
     "MD5forFile",
     "cordova-plugin-inappbrowser",
     "cordova-hot-code-push-plugin",
-    "cordova-hot-code-push-local-dev-addon"
+    "cordova-hot-code-push-local-dev-addon",
+    "cordova-imagePicker"
   ],
   "cordovaPlatforms": [
     "android"
