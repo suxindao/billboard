@@ -42,5 +42,12 @@ angular.module('starter.controllers')
       $state.go("main");
     };
 
+    $scope.goManage = function () {
+      $state.go("manage");
+    };
+
+    $scope.goClientList = function () {
+      $state.go("clientList");
+    };
 
   });
