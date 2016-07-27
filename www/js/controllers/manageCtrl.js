@@ -33,16 +33,23 @@ angular.module('starter.controllers')
       });
 
       contentService.getOnlineContents(function (data) {
-        if (data !== null && data.length > 0) {
-          $scope.data.showContent = 1;
-          $scope.data.photos = data;
-          console.log("节目长度:" + $scope.data.photos.length);
-//          dataInit($scope.data.photos); //计算图片的分别率,选择CSS
-        } else {
-          $scope.data.showContent = 2;
-          $scope.noContentConfirm();
-        }
+
         $ionicLoading.hide();
+
+        if (data !== null) {
+          if (data.length > 0) {
+            $scope.data.showContent = 1;
+            $scope.data.photos = data;
+            console.log("节目长度:" + $scope.data.photos.length);
+//          dataInit($scope.data.photos); //计算图片的分别率,选择CSS
+          } else { //没有节目内容
+            $scope.data.showContent = 2;
+            $scope.noContentConfirm();
+          }
+        } else { //网络错误
+          utilService.showAlert('内容获取失败');
+        }
+
       });
     }
 

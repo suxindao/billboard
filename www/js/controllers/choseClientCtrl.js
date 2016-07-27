@@ -110,11 +110,11 @@ angular.module('starter.controllers')
     //页面右上角按钮
     $scope.sendVideo = function () {
 
-      utilService.showLoading("节目发布中，请稍候...");
-
       var ids = getChoseClientids();
 
       if (ids.length > 0) {
+
+        utilService.showLoading("节目发布中，请稍候...");
 
         contentService.publishContents($scope.contentid, ids)
           .success(function () {
