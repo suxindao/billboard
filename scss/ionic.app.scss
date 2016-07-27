@@ -188,7 +188,7 @@ input {
 .tabcel {
   /*display: table-cell;*/
   vertical-align: middle;
-  width: 168px;
+  width: 96%;/*168*/
   height:66%;
 }
 
@@ -620,7 +620,7 @@ input {
 #smgbs {
   padding: 0 8.4% 3.8% 8.4%;
   min-height: 79.6%;
-  max-height: 79.6%;
+  height: 79.6%;
   flex-wrap: wrap;
 }
 
@@ -653,7 +653,7 @@ input {
 .sgrmg {
   border: 1px solid #d3d1d1;
   border-radius: 2px;
-  height: 30.5%;
+  height: 38.5%;
 }
 
 .sgrmgn {
@@ -671,7 +671,7 @@ input {
 }
 
 .smag {
-  width: 10%;
+  width: 17%;
   height: auto;
   margin-right: 3%;
   margin-left: 3%;
@@ -689,8 +689,7 @@ input {
   bottom: 0;
   left: 0;
   background: rgba(255, 255, 255, .7);
-  font-size: 0.8em;
-  justify-content: flex-end;
+  font-size: 0.7em;
   padding-right: 3%;
 }
 
@@ -1274,7 +1273,6 @@ input {
 .justar{
   text-align: center;
   padding-left: 3%;
-  line-height: 1.5em;
 }
 
 .theit{
