@@ -1,31 +1,35 @@
 <ion-view view-title="设备列表" class="bcbg minht">
   <ion-header-bar align-title="center" class="bar bar-header a_bar fxcen">
     <div class="mgft fxcen" id="titlf" ng-click="toMainPage()">
-        <img class="marauto fl stmgb" src="img/home.png">
-        <span class="inbol fr" id="insy">首页</span>
+      <img class="marauto fl stmgb" src="img/home.png">
+      <span class="inbol fr" id="insy">首页</span>
     </div>
     <h1 class="title mtit" id="stitb">节目列表</h1>
     <div class="buttons mgrt textcen" id="titr" ng-click="toMainPage()">
-        取消
+      取消
     </div>
   </ion-header-bar>
   <ion-content class="scroll-content stopb theit jmbgnn" overflow-scroll="true" scroll="false">
     <div class="row" id="smgbsn">
-      <div class="col col-275 pmzero sgrmgn real " ng-repeat="item in programData.items" ng-class="{'borclo': item.selected,'smrb': item.line}" ng-click="clickItem($index, $event)">
-          <div class="bgstyle pf" ng-class="{'absol':item.selected}"
-          style="background-image: url({{item.filePath}});"></div>
-            <img ng-show="item.selected" class="absol sgmg mcbrav" src="img/01.png" >
+      <div class="col col-275 pmzero sgrmgn real "
+           ng-repeat="item in programData.items"
+           ng-class="{'borclo': item.selected,'smrb': item.line}"
+           ng-click="clickItem($index, $event)"
+      >
+        <div class="bgstyle pf" ng-class="{'absol':item.selected}"
+             style="background-image: url({{item.filePath}});"></div>
+        <img ng-show="item.selected" class="absol sgmg mcbrav" src="img/01.png">
 
-            <img class="absol camera" src="img/greca.png">
+        <img class="absol camera" src="img/greca.png">
 
-          <p class="absol spjm fxcen">
-              <span class="fl textcen" id="spbn">{{item.playtime}}.sec</span>
-              <span class="fr fyuan">{{$index + 1}}</span>
-          </p>
+        <p class="absol spjm fxcen">
+          <span class="fl textcen" id="spbn">{{item.playtime}}.sec</span>
+          <span class="fr fyuan">{{$index + 1}}</span>
+        </p>
       </div>
       <div class="Njmlist fxcen jcbet">
         <!--<div class="fr mysty textcen" ng-click="clickCustom()">-->
-          <!--自定义-->
+        <!--自定义-->
         <!--</div>-->
         <div class="mofth fbjm textcen nbottm jumot">
             <span class="yebtn fxcen sgmg" ng-click="startMaking()" style="background:#00a0e9; border-radius: 5px;">
@@ -42,12 +46,12 @@
       </div>
     </div>
 
-        <div class="absol mofth fbjm textcen nbottm">
+    <div class="absol mofth fbjm textcen nbottm">
             <span class="yebtn fxcen cbgol" ng-click="startMaking()">
                 <img class="stnmg marauto rgwid" src="img/nexto.png">
                 <span class="fl textcen">下一步</span>
             </span>
-        </div>
+    </div>
 
   </ion-content>
   <ion-footer-bar align-title="center" class="bar bar-footer f_bar bcbg overf">

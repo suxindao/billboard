@@ -39,10 +39,6 @@ $ ionic platform add android
 
 Add cordova plugin
 ```bash
-ionic browser add crosswalk
-
-or
-
 ionic plugin add cordova-plugin-crosswalk-webview
 ...
 ...
