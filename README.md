@@ -39,6 +39,10 @@ $ ionic platform add android
 
 Add cordova plugin
 ```bash
+ionic browser add crosswalk
+
+or
+
 ionic plugin add cordova-plugin-crosswalk-webview
 ...
 ...
@@ -59,3 +63,10 @@ More info on this can be found on the Ionic [Getting Started](http://ionicframew
 
 ## Issues
 Issues have been disabled on this repo, if you do find an issue or have a question consider posting it on the [Ionic Forum](http://forum.ionicframework.com/).  Or else if there is truly an error, follow our guidelines for [submitting an issue](http://ionicframework.com/submit-issue/) to the main Ionic repository.
+
+
+## Difference between crosswalk
+
+"Mozilla/5.0 (Linux; Android 4.4.2; Coolpad 9976D Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0 Mobile Safari/537.36"
+
+"Mozilla/5.0 (Linux; Android 4.4.2; Coolpad 9976D Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Crosswalk/19.49.514.5 Mobile Safari/537.36"

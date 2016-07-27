@@ -13,12 +13,15 @@ angular.module('starter.controllers')
     //设备配对
     $scope.clientBind = function () {
 
+      utilService.showLoading("设备匹配中，请稍候...");
+
       $scope.data.showGif = true;
 
       var requestUrl = "?cmd=clientBind&token=" + aJaxService.getToken() + "&id=" + $scope.data.clientID + "&name=" + $scope.data.clientID;
 
       aJaxService.httpGetData(requestUrl)
         .success(function (data) {
+
           console.log("Data = " + JSON.stringify(data));
 
           $timeout(function () {
@@ -29,14 +32,17 @@ angular.module('starter.controllers')
             } else {
               $scope.data.message = data.msgc;
             }
+            utilService.hideLoading();
           }, 2000)
 
         })
         .error(function (data) {
           // utilService.showAlert('配对设备', '配对失败' + data.msgc);
+
           $timeout(function () {
             $scope.data.showGif = false;
             $scope.data.message = "设备配对失败";
+            utilService.hideLoading();
           }, 2000)
         });
     };
