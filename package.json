@@ -30,7 +30,8 @@
     "cordova-plugin-inappbrowser",
     "cordova-hot-code-push-plugin",
     "cordova-hot-code-push-local-dev-addon",
-    "cordova-imagePicker"
+    "cordova-imagePicker",
+    "cordova-plugin-crosswalk-webview"
   ],
   "cordovaPlatforms": [
     "android"

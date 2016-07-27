@@ -16,13 +16,14 @@
       <div class="col col-275 pmzero sgrmgn real" ng-class="{'borclo': client.chose}" ng-repeat="client in data.clients" ng-click="chose({{client.id}})">
         <div class="bgstyle pf" ng-show="client.chose"></div>
         <!--<img class="sgmg" src="img/sgirl.png">-->
-        <img class="sgmg" ng-src="{{client.first_image}}">
-
+        <div class="tabcel sgmg" style="display: inline-block;">
+          <img class="sgmg" ng-src="{{client.first_image}}">
+        </div>
         <p class="absol spbt fxcen">
           <img class="marauto smag " src="img/sma.png">
           <span class="textcen sptbt " id="">{{client.name}}</span>
         </p>
-        <p class="absol spbb justar">
+        <p class="absol spbb justar textcen">
           <span class="tim">{{client.create_date | formatdate}}</span>
         </p>
       </div>
