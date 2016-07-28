@@ -32,6 +32,7 @@ angular.module('starter.controllers')
               $scope.data.showNextButton = true;
               $scope.data.message = "绑定成功";
 
+              //以下两行直接跳转回设备列表
               utilService.alertTimeout('绑定成功', 2000, function () {
                 $state.go("clientList");
               });
