@@ -12,7 +12,7 @@
   </ion-header-bar>
 
   <ion-content class="scroll-content tophet" overflow-scroll="true" scroll="false">
-    <div class="bgpp fxcen">
+    <div class="bgpp fxcen" ng-class="{'fmartop' : data.focusInput}">
       <img ng-if="!data.showGif" class="disblok matmg" style="width: 20%; margin: auto;" src="img/nnn.png">
       <img ng-if="data.showGif" class="disblok matmg" style="width: 20%; margin: auto;" src="img/dhp.gif">
     </div>
@@ -21,7 +21,11 @@
       <label class="fl real labpt" for="matid">
         <img class="absol adico" src="img/sdie.png">
       </label>
-      <input class="fl x-input-el" id="matid" type="number" placeholder="请输入设备ID" ng-model="data.clientID">
+      <input class="fl x-input-el" id="matid" type="number" placeholder="请输入设备ID"
+             ng-model="data.clientID"
+             ng-focus="data.focusInput = true"
+             ng-blur="data.focusInput = false"
+      >
       <img class="fr xamg marauto" src="img/xa.png" ng-if="!((''+data.clientID).length > 0)">
       <img class="fr xamg marauto" src="img/xb.png" ng-if="((''+data.clientID).length > 0)" ng-click="data.clientID=''">
     </div>
