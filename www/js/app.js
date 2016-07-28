@@ -154,11 +154,11 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
         controller: 'AdminCtrl'
       })
 
-      .state('aboutme', {
-        url: '/aboutme',
-        templateUrl: 'templates/aboutme.html',
-        controller: ''
-      })
+      // .state('aboutme', {
+      //   url: '/aboutme',
+      //   templateUrl: 'templates/aboutme.html',
+      //   controller: ''
+      // })
 
       .state('clientList', {
         cache: false,
@@ -180,11 +180,11 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
         controller: 'ChoseClientCtrl'
       })
 
-      .state('jmang', {
-        url: '/jmang',
-        templateUrl: 'templates/jmang.html',
-        controller: ''
-      })
+      // .state('jmang', {
+      //   url: '/jmang',
+      //   templateUrl: 'templates/jmang.html',
+      //   controller: ''
+      // })
 
       .state('test', {
         url: '/test',
