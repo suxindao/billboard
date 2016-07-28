@@ -26,13 +26,18 @@ angular.module('starter.controllers')
 
           $timeout(function () {
             $scope.data.showGif = false;
+            utilService.hideLoading();
+
             if (data.result === 0) {
               $scope.data.showNextButton = true;
               $scope.data.message = "绑定成功";
+
+              utilService.alertTimeout('绑定成功', 2000, function () {
+                $state.go("clientList");
+              });
             } else {
               $scope.data.message = data.msgc;
             }
-            utilService.hideLoading();
           }, 2000)
 
         })
