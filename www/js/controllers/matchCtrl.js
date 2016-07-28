@@ -30,10 +30,10 @@ angular.module('starter.controllers')
 
             if (data.result === 0) {
               $scope.data.showNextButton = true;
-              $scope.data.message = "绑定成功";
+              $scope.data.message = "配对成功";
 
               //以下两行直接跳转回设备列表
-              utilService.alertTimeout('绑定成功', 2000, function () {
+              utilService.alertTimeout('配对成功', 2000, function () {
                 $state.go("clientList");
               });
             } else {
@@ -47,7 +47,7 @@ angular.module('starter.controllers')
 
           $timeout(function () {
             $scope.data.showGif = false;
-            $scope.data.message = "设备配对失败";
+            $scope.data.message = "配对失败";
             utilService.hideLoading();
           }, 2000)
         });
