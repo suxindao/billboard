@@ -1468,8 +1468,18 @@ input {
   background-size: 100% 80%;
 }
 
+.bgtran{
+  background-color: transparent;
+}
 
-
+.bgpp{
+  width: 100%;
+  height: 50%;
+  background-image: url("../img/bgpp.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% 100%;
+}
 
 
 

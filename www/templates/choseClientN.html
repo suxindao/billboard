@@ -18,7 +18,8 @@
            ng-class="{'borclo': client.chose, 'smrb': ($index+1) % 3 !== 0}"
            ng-click="chose({{client.id}})"
       >
-        <div class="bgstyle pf" ng-show="client.chose"></div>
+        <div class="bgstyle pf absol bgtran" ng-show="client.chose"></div>
+        <img ng-show="client.chose" class="absol sgmg mcbrav" src="img/01.png">
         <!--<img class="sgmg" src="img/sgirl.png">-->
         <div class="tabcel sgmg" style="display: inline-block;">
           <img class="sgmg" ng-src="{{client.first_image}}">

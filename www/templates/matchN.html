@@ -12,9 +12,11 @@
   </ion-header-bar>
 
   <ion-content class="scroll-content tophet" overflow-scroll="true" scroll="false">
-    <img ng-if="!data.showGif" class="disblok matmg" src="img/nnn.png">
-    <img ng-if="data.showGif" class="disblok matmg" src="img/dhp.gif">
-    <p class="matit" ng-bind="data.message"/>
+    <div class="bgpp fxcen">
+      <img ng-if="!data.showGif" class="disblok matmg" style="width: 20%; margin: auto;" src="img/nnn.png">
+      <img ng-if="data.showGif" class="disblok matmg" style="width: 20%; margin: auto;" src="img/dhp.gif">
+    </div>
+    <p class="matit" style="height: 20px;margin-top: 3%;" ng-bind="data.message"/>
     <div class="adipt fxcen">
       <label class="fl real labpt" for="matid">
         <img class="absol adico" src="img/sdie.png">
