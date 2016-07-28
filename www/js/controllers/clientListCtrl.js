@@ -43,10 +43,6 @@ angular.module('starter.controllers')
       $state.go("main");
     };
 
-    $scope.goClientList = function () {
-      $state.go("clientList");
-    };
-
     //页面右上角按钮
     $scope.menu = function (clientID) {
 

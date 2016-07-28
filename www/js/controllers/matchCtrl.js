@@ -34,7 +34,7 @@ angular.module('starter.controllers')
 
               //以下两行直接跳转回设备列表
               utilService.alertTimeout('配对成功', 2000, function () {
-                $state.go("clientList");
+                $state.goClientList();
               });
             } else {
               $scope.data.message = data.msgc;
@@ -70,6 +70,11 @@ angular.module('starter.controllers')
     $scope.goMain = function () {
       init();
       $state.go('main');
+    };
+
+    $scope.goClientList = function () {
+      init();
+      $state.go('clientList');
     };
 
   });
