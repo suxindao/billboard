@@ -54,12 +54,12 @@ angular.module('starter.controllers')
 
     function init() {
       $scope.data = {
+        focusInput: false,
         message: "",
         showNextButton: false,
         showGif: false
       };
     }
-    ;
 
     $scope.goMain = function () {
       init();
