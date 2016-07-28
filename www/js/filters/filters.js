@@ -10,4 +10,10 @@ angular.module('starter.filters', [])
     return function (input) {
       return input.substring(0, input.lastIndexOf(":"));
     }
+  })
+
+  .filter("setLength", function () {
+    return function (input, length) {
+      return input.substring(0, length) + "..";
+    }
   });
