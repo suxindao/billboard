@@ -4,7 +4,7 @@
       <img class="marauto fl stmgb" src="img/home.png">
       <span class="inbol fr" id="insy">首页</span>
     </div>
-    <h1 class="title mtit" id="stitb">节目列表</h1>
+    <h1 class="title mtit" id="stitb">节目制作</h1>
     <div class="buttons mgrt textcen" id="titr" ng-click="toMainPage()">
       取消
     </div>
@@ -18,7 +18,8 @@
       >
         <div class="bgstyle pf" ng-class="{'absol':item.selected}"
              style="background-image: url({{item.filePath}});"></div>
-        <img ng-show="item.selected" class="absol sgmg mcbrav" src="img/01.png">
+        <div class="absol brav " ng-show="item.selected"></div>
+        <!--<img ng-show="item.selected" class="absol sgmg mcbrav" src="img/01.png">-->
 
         <img class="absol camera" src="img/greca.png">
 
