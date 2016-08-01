@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 angular.module('starter.controllers')
 
   .controller('ClientCtrl', function ($scope, $state, $ionicActionSheet, $ionicLoading, clientService, utilService, $ionicPopup) {
@@ -105,12 +99,12 @@ angular.module('starter.controllers')
       var name;
 
       $scope.data.clients.forEach(function (client) {
-        console.log(client.name);
         if (client.id == clientID) {
           name = client.name;
         }
       });
 
+      console.log(name);
       return name;
 
       // var client;
@@ -165,9 +159,41 @@ angular.module('starter.controllers')
 
     };
 
+    $scope.unbind = function (clientID) {
+      $scope.data.name = getLocalName(clientID);
+
+      var okConfirm = function (res) {
+        if (res) {
+          clientService.unbind(clientID)
+            .success(function () {
+
+              $scope.removeClient(clientID);
+              utilService.alertTimeout('解绑成功！', 2000);
+
+            })
+            .error(function (data) {
+              utilService.alertTimeout('解绑失败', 2000);
+            });
+        } else {
+          console.log("放弃解除绑定设备");
+        }
+      }
+
+      utilService.showConfirm("解除设备", "确定解除设备 " + $scope.data.name + "吗?", "确定", "取消", okConfirm, null, $scope);
+
+    };
+
     $scope.doRefresh = function () {
       getClientList();
     }
 
+    $scope.removeClient = function (clientID) {
+      var index = $scope.data.clients.findIndex(function (client) {
+        return client.id == clientID;
+      });
+
+      $scope.data.clients.splice(index, 1);
+    }
 
   });
+
