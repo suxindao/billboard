@@ -140,7 +140,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
       })
 
       .state('makeVideo', {
-//        cache: false,
+        cache: false,
         url: '/makeVideo',
         templateUrl: 'templates/makeVideoN.html',
         controller: 'makeVideoCtrl',

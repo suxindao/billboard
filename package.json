@@ -31,7 +31,8 @@
     "cordova-hot-code-push-plugin",
     "cordova-hot-code-push-local-dev-addon",
     "cordova-imagePicker",
-    "cordova-plugin-crosswalk-webview"
+    "cordova-plugin-crosswalk-webview",
+    "cordova-plugin-android-permissions@0.10.0"
   ],
   "cordovaPlatforms": [
     "android"

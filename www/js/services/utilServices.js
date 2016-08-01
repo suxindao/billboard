@@ -247,7 +247,62 @@ angular.module('starter.services')
         }
       });
 
-
     };
+
+      this.hasReadExternalStoragePermissions=function(callback)
+      { 
+          try
+          {
+              var temp=cordova;
+              
+          }catch(err)
+          {
+              if(callback)
+              {
+                  callback(0);
+              }
+              return;
+          }
+         
+          var permissions = cordova.plugins.permissions;
+          
+         
+          
+          permissions.hasPermission(permissions.READ_EXTERNAL_STORAGE, checkPermissionCallback, null);
+          
+
+         function checkPermissionCallback(status) {
+          if(!status.hasPermission) {
+            var errorCallback = function() {
+               console.log('Camera permission is not turned on');
+              if(callback)
+                  callback(0);
+            }
+
+            permissions.requestPermission(
+              permissions.READ_EXTERNAL_STORAGE,
+              function(status) {
+                if(!status.hasPermission) 
+                  errorCallback();
+                else
+                {
+                  if(callback)
+                    callback(1);
+                }
+
+              },
+              errorCallback);
+            }else
+            {
+                if(callback)
+                {
+                    callback(1);
+                }
+            }
+          }
+      };
+
+
+    
 
   });
