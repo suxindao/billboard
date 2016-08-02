@@ -169,11 +169,12 @@ angular.module('starter.controllers')
         location: "no"
       };
 
-      $cordovaInAppBrowser.open(previewUrl, '_blank', options).then(function () {
-        console.log("InAppBrowser opened " + previewUrl + " successfully");
-      }, function (error) {
-        console.log("Error: " + error);
-      });
+      $cordovaInAppBrowser.open(previewUrl, '_blank', options)
+        .then(function () {
+          console.log("InAppBrowser opened " + previewUrl + " successfully");
+        }, function (error) {
+          console.log("Error: " + error);
+        });
 
     }
 

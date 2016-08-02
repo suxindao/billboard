@@ -100,7 +100,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
 
   })
 
-  .config(function ($httpProvider, $stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+  .config(function ($httpProvider, $stateProvider, $urlRouterProvider, $ionicConfigProvider, $cordovaInAppBrowserProvider) {
 
     //禁用全局缓存
 //    $ionicConfigProvider.views.maxCache(0);
@@ -194,6 +194,18 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/login');
+
+    // set $cordovaInAppBrowserProvider
+    var defaultOptions = {
+      location: 'no',
+      clearcache: 'no',
+      toolbar: 'no'
+    };
+
+    document.addEventListener("deviceready", function () {
+      $cordovaInAppBrowserProvider.setDefaultOptions(defaultOptions)
+    }, false);
+
   })
   .factory('UserInterceptor', ["$q", "$rootScope", function ($q, $rootScope) {
     return {
