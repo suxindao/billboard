@@ -122,19 +122,17 @@ angular.module('starter.services')
       var requestUrl = "?cmd=clientUnbind&token=" + aJaxService.getToken() + "&id=" + clientID;
       console.log(requestUrl);
 
-      // aJaxService.httpGetData(requestUrl)
-      //   .success(function (data) {
-      //     if (data.result === 0) {
-      //       deferred.resolve();
-      //     } else {
-      //       deferred.reject(data.msgc);
-      //     }
-      //   })
-      //   .error(function (data) {
-      //     deferred.reject(data);
-      //   });
-
-      deferred.resolve();
+      aJaxService.httpGetData(requestUrl)
+        .success(function (data) {
+          if (data.result === 0) {
+            deferred.resolve();
+          } else {
+            deferred.reject(data.msgc);
+          }
+        })
+        .error(function (data) {
+          deferred.reject(data);
+        });
 
       return promise;
 

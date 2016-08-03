@@ -7,6 +7,13 @@ angular.module('starter.controllers')
       showContent: false
     };
 
+    var noClientConfirm = function () {
+      utilService.showConfirm('设备列表', '没有匹配设备,是否去匹配?', '确定', '取消', function () {
+        $state.go("match");
+      }, function () {
+        $state.go("main");
+      });
+    }
 
     var getClientList = function () {
 
@@ -21,11 +28,7 @@ angular.module('starter.controllers')
           $scope.data.clients = data;
           $scope.$broadcast('scroll.refreshComplete');
         } else {
-          utilService.showConfirm('设备列表', '没有匹配设备,是否去匹配?', '确定', '取消', function () {
-            $state.go("match");
-          }, function () {
-            $state.go("main");
-          });
+          noClientConfirm();
         }
         $ionicLoading.hide();
       });
@@ -168,7 +171,12 @@ angular.module('starter.controllers')
             .success(function () {
 
               $scope.removeClient(clientID);
-              utilService.alertTimeout('解绑成功！', 2000);
+
+              utilService.alertTimeout('解绑成功！', 2000, function () {
+                if ($scope.data.clients.length == 0) {
+                  noClientConfirm();
+                }
+              });
 
             })
             .error(function (data) {
