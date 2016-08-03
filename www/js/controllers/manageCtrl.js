@@ -251,7 +251,7 @@ angular.module('starter.controllers')
       var myPopup = $ionicPopup.show({
         template: templates,
         title: '发布设备列表',
-        subTitle: '已发布设备',
+        // subTitle: '已发布设备',
         scope: $scope,
         cssClass: "sList",
         buttons: [
