@@ -426,7 +426,7 @@ input {
 }
 
 .yzmbtn {
-  width: 28%;/*40*/
+  //width: 28%;/*40*/
   background: #f0fefd;
   border: 1px solid #defbf8;
   color: #68aca5;
@@ -1536,11 +1536,11 @@ input {
 }
 
 .mrret{
-  margin-right: 4%;
+  margin-right: 2%;
 }
 
 .newWht{
-  width: 43%;
+  width: 38%;
 }
 
 .sbtnls{
@@ -1572,6 +1572,11 @@ input {
 
 
 @media screen and (min-width: 768px) and (min-resolution: 2dpi) {
+
+  .bar .mtit {
+    font-size: 50px;
+  }
+
   .minht {
     min-height: 1280px;
   }
@@ -1593,20 +1598,20 @@ input {
   }
 
   #user{
-    font-size: 36px;
+    //font-size: 36px;
   }
 
   #yzm{
-    font-size: 36px;
-    width:46%;
+    //font-size: 36px;
+    width:35%;
   }
 
   .yzmbtn{
-    width:34%;
+    width:40%;
   }
 
   .yzmtit.textcen,.yzmtit.bultxt.textcen{
-    font-size: 28px;
+    //font-size: 28px;
   }
 
   .logbtn{
