@@ -130,7 +130,7 @@ angular.module('starter.controllers')
         prevButton: '.swiper-button-prev',
         slidesPerView: 2,
         centeredSlides: true,
-        spaceBetween: 50
+        spaceBetween: 80
         // effect: 'coverflow',
         // coverflow: {
         //   rotate: 50,
