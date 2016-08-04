@@ -5,29 +5,31 @@
   </ion-header-bar>
 
   <ion-content class="scroll-content tophet" overflow-scroll="true" scroll="false">
-    <div class="logoh fxcen">
-      <img class="logop marauto" src="img/logo1.png">
+    <div class="bgstyle fxcen logof bgtran agchge">
+      <img class="logop marauto" src="img/logoa.png">
     </div>
     <p class="error" ng-bind="data.message"></p>
     <div class="adipt fxcen">
-      <label class="fl real labpt" for="user">
-        <img class="absol adico" src="img/admin.png">
+      <label class="labpt fxcen" for="user"><!--absol adico-->
+        <img class="marauto newWht" src="img/admin.png">
+        <i class="borgtl"></i>
       </label>
-      <input class="fl" id="user" type="number" placeholder="用户名" ng-model="data.mobile">
-      <img class="fr xamg marauto" src="img/xa.png" ng-if="!(data.mobile.length > 0)">
-      <img class="fr xamg marauto" src="img/xb.png" ng-if="data.mobile.length > 0" ng-click="clearPhone()">
+      <input class="padlft" id="user" type="number" placeholder="用户名" ng-model="data.mobile">
+      <img class="fr xamg marauto mrret" src="img/xa.png" ng-if="!(data.mobile.length > 0)">
+      <img class="fr xamg marauto mrret" src="img/xb.png" ng-if="data.mobile.length > 0" ng-click="clearPhone()">
     </div>
-    <div class="adipt real">
-      <label class="fl real labpt" for="yzm">
-        <img class="absol telico" src="img/tel.png">
+    <div class="adipt fxcen">
+      <label class="labpt fxcen" for="yzm">
+        <img class="marauto newWht" src="img/tel.png">
+        <i class="borgtl"></i>
       </label>
-      <input class="fl" id="yzm" type="number" maxlength="4" placeholder="请输入验证码" ng-model="data.code">
-      <div class="fr yzmbtn fxcen" ng-show="!data.showCountNumber" ng-click="loginSendSMSCode()">
-        <img class="fl clock marauto" src="img/clocka.png">
-        <span class="fr yzmtit textcen" flash-button flash-css="yzmcol">获取验证码</span>
+      <input class="padlft" id="yzm" type="number" maxlength="4" placeholder="请输入验证码" ng-model="data.code">
+      <div class="yzmbtn fxcen mrret" ng-show="!data.showCountNumber" ng-click="loginSendSMSCode()">
+        <img class="clock marauto" src="img/clocka.png">
+        <span class="yzmtit textcen" flash-button flash-css="yzmcol">获取验证码</span>
       </div>
-      <div class="fr yzmbtn" ng-show="data.showCountNumber">
-        <span class="wborw yzmtit bultxt">{{data.countdown}}秒后重新获取</span>
+      <div class="yzmbtn fxcen mrret" ng-show="data.showCountNumber">
+        <span class="wborw yzmtit bultxt textcen">{{data.countdown}}秒后重新获取</span>
       </div>
 
     </div>
@@ -43,6 +45,6 @@
   </ion-content>
 
   <ion-footer-bar align-title="center" class="bar bar-footer f_bar bcbg overf">
-    <h1 class="title bcbg" id="ftit">Copyright © MagicPoster</h1>
+    <h1 class="title bcbg" id="ftit">Copyright(c) MagicBoard</h1>
   </ion-footer-bar>
 </ion-view>

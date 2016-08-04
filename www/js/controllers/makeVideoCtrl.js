@@ -21,19 +21,17 @@ angular.module('starter.controllers')
             // update campaigns everytime the view becomes active
             // (on first time added to DOM and after the view becomes active after cached
 
-            
               utilService.hasReadExternalStoragePermissions(function(ret)
               {
-
                 if(ret == 1)
                 {
-                  
+
                   $scope.programData = {"items": []};
 
                   utilService.selectImage(function (results)
                   {
                      // results=[{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/jnme.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"}];
-                    
+
                     if (results)
                     {
                       //$state.go("makeVideo",{"data":results});
@@ -57,7 +55,7 @@ angular.module('starter.controllers')
 
               });
 
-          
+
 
     });
 

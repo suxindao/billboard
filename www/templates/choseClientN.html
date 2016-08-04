@@ -1,25 +1,25 @@
 <ion-view view-title="发布设备选择" class="bcbg minht">
-  <ion-header-bar align-title="center" class="bar bar-header a_bar fxcen">
-    <div class="mgft fxcen" id="titlf" ng-click="goMain()">
-      <img class="marauto fl stmgb" src="img/home.png">
-      <span class="inbol fr" id="insy">首页</span>
+  <ion-header-bar align-title="center" class="bar bar-header a_bar fxcen mhgtn">
+    <div class="buttons mgft fxcen btlft towdp" ng-click="goMain()">
+      <img class="wborw marauto" src="img/hogo.png">
     </div>
     <h1 class="title mtit" id="stitb">设备列表</h1>
-    <div class="buttons mgrt textcen" id="titr" ng-click="goManage()">
-      取消
+    <div class="buttons mgrt fxcen mfr towdp" ng-click="goManage()">
+      <img class="marauto wborw" src="img/backg.png">
     </div>
   </ion-header-bar>
 
   <ion-content class="scroll-content stopb theit jmbgnn" overflow-scroll="true" scroll="false">
     <div class="row" id="smgbs">
 
-      <div class="col col-275 pmzero sgrmgn real"
+      <div class="col col-275 pmzero sgrmg real"
            ng-repeat="client in data.clients"
            ng-class="{'borclo': client.chose, 'smrb': ($index+1) % 3 !== 0}"
            ng-click="chose({{client.id}})"
       >
         <div class="bgstyle pf absol bgtran" ng-show="client.chose"></div>
-        <img ng-show="client.chose" class="absol sgmg mcbrav" src="img/01.png">
+        <div class="absol brav " ng-show="client.chose"></div>
+        <!--<img ng-show="client.chose" class="absol sgmg mcbrav" src="img/01.png">-->
         <!--<img class="sgmg" src="img/sgirl.png">-->
         <div class="tabcel sgmg" style="display: inline-block;">
           <img class="sgmg" ng-src="{{client.first_image}}">
@@ -29,7 +29,7 @@
           <span class="textcen sptbt " id="">{{client.name | setLength:4}}</span>
         </p>
         <p class="absol spbb justar textcen">
-          <span class="tim">{{client.create_date | formatdate}}</span>
+          <span class="tim slgth">{{client.create_date | formatdate}}</span>
         </p>
       </div>
     </div>
@@ -37,13 +37,13 @@
     <div class="absol mofth fbjm textcen nbottm">
       <span class="yebtn fxcen" ng-click="sendVideo()">
         <img class="stnmg marauto" src="img/mai.png">
-        <span class="fr txtn textcen">发布节目</span>
+        <span class="fr txtn textcen yelbtn">发布节目</span>
       </span>
     </div>
 
   </ion-content>
 
   <ion-footer-bar align-title="center" class="bar bar-footer f_bar bcbg overf">
-    <h1 class="title bcbg" id="ftit">Copyright © MagicPoster</h1>
+    <h1 class="title bcbg" id="ftit">Copyright(c) MagicBoard</h1>
   </ion-footer-bar>
 </ion-view>

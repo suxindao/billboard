@@ -32,8 +32,8 @@ angular.module('starter.controllers')
     };
 
     $scope.goTest = function () {
-      $state.go("test");
-      // utilService.showLoading("节目发布中，请稍候...");
+      utilService.showLoading("节目发布中，请稍候...");
     };
+
 
   });

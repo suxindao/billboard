@@ -12,8 +12,8 @@
       <div class="clear"></div>-->
       <div class="logo_txt">
         <img class="whmg" src="img/logo.png"><br>
-        <p>Magic Poster</p>
-      </div>  
+        <p>MagicManager</p>
+      </div>
       <!--登录错误-->
       <p class="psdeor" ng-class="{'none':!data.showMessage}" ng-bind="data.message"></p>
 
@@ -52,7 +52,7 @@
         <li class="login_li " id="yzm_li">
           <label for="yzm " class="lab_yzm bkmg"></label>
           <input type="number" class="txtput" id="yzm" maxlength="4" placeholder="输入手机验证码" ng-model="data.code">
-          <a href="" class="a_yzm" ng-show="!data.showCountNumber" ng-click="loginSendSMSCode()"><img class="yzmg none" src="#"><span>获取手机验证码</span></a> 
+          <a href="" class="a_yzm" ng-show="!data.showCountNumber" ng-click="loginSendSMSCode()"><img class="yzmg none" src="#"><span>获取手机验证码</span></a>
           <a class="zcyzcode agtime" ng-show="data.showCountNumber"><img class="clomg" src="img/clock.png"><span class="timec">{{data.countdown}}</span>秒后重新获取</a>
         </li>
       </ul>
@@ -61,6 +61,6 @@
       <!--<p class="logon" ng-click="logon();">立即注册</p>-->
       <p class="logon none">立即登录</p>
       <p class="txtlogo">Copyright © MagicPoster</p>
-    </div> 
+    </div>
   </ion-content>
 </ion-view>

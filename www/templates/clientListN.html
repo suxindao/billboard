@@ -1,5 +1,5 @@
 <ion-view view-title="设备列表" class="bcbg minht">
-  <ion-header-bar align-title="center" class="bar bar-header a_bar fxcen">
+  <ion-header-bar align-title="center" class="bar bar-header a_bar fxcen mhgtn">
     <!--<div class="mgft fxcen" id="titlf" ui-sref="match">-->
     <!--<img class="marauto fl stmgb" src="img/add.png">-->
     <!--</div>-->
@@ -7,13 +7,14 @@
     <!--<div class="buttons mgrt textcen" id="titr" ng-click="goMain()">-->
     <!--返回-->
     <!--</div>-->
-    <div class="mgft fxcen" id="titlf" ui-sref="match">
-      <img class="marauto fl stmgb" src="img/add.png">
+    <div class="buttons mgft fxcen btlft towdp" ng-click="goMain()">
+      <img class="wborw marauto" src="img/hogo.png">
     </div>
     <h1 class="title mtit" id="stitb">设备匹配</h1>
-    <div class="buttons mgrt textcen" id="titr" ng-click="goMain()">
-      返回
-    </div>
+    <!--<div class="buttons mgrt textcen" id="titr" ng-click="goMain()">
+      <img class="" src="img">
+    </div>-->
+
   </ion-header-bar>
 
   <ion-content class="scroll-content stopb pmzero" overflow-scroll="true" scroll="true" scrollbar-y="false">
@@ -31,13 +32,16 @@
         <li class="jqlia"><span class="jqspc">名称 </span>: {{client.name}}</li>
         <li class="jqlia"><span class="jqspc">创建时间 </span>: {{client.create_date}}</li>
       </ul>
-      <div class="jqdel marauto" ng-click="changeName({{client.id}})">修改名称</div>
-      <div class="jqdel marauto" ng-click="unbind({{client.id}})">解除绑定</div>
+
+      <div class="sbtnls">
+        <div class="jqdel marauto" ng-click="changeName({{client.id}})">修改名称</div><br>
+        <div class="jqdel marauto hbz" ng-click="unbind({{client.id}})">解除绑定</div>
+      </div>
     </div>
 
   </ion-content>
   <ion-footer-bar align-title="center" class="bar bar-footer f_bar bcbg overf">
-    <h1 class="title bcbg" id="ftit">Copyright © MagicPoster</h1>
+    <h1 class="title bcbg" id="ftit">Copyright(c) MagicBoard</h1>
   </ion-footer-bar>
 </ion-view>
 

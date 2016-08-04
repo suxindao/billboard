@@ -4,9 +4,8 @@
     <!-- <div class="mgft fxcen">
       <a class="marauto" ui-sref="admin"><img class="btnbg" src="img/user.png"></a>
     </div> -->
-    <div class="mgft fxcen" id="titlf" ng-click="toMainPage()">
-      <img class="marauto fl stmgb" src="img/home.png">
-      <span class="inbol fr" id="insy">首页</span>
+    <div class="buttons mgft fxcen btlft towdp" ng-click="toMainPage()">
+      <img class="wborw marauto" src="img/hogo.png">
     </div>
     <h1 class="title mtit">节目管理</h1>
     <!--<div class="buttons mgrt fxcen" ng-click="menu()">
@@ -36,7 +35,7 @@
                   </div>
                 </div>-->
               </div>
-              <div class="absol glmgb"></div>
+              <div class="absol glmgb sgally"></div>
               <ul class="jmtit">
                 <li class="jmtitli">({{$index+1}}/{{data.photos.length}})</li>
                 <li class="jmtitli">{{photo.update_date | formatdate}}</li>
@@ -53,26 +52,26 @@
     </div>
     <div class="row rowhet">
       <div class="col col-33 pmzero pdeight" ng-click="preViewUrl()">
-        <span class="yebtn fxcen pf cbgol">
+        <span class="yebtn fxcen pf cbgol magbtn">
         <img class="stnmg marauto newPg" src="img/yla.png">
         <span class="fr textcen">预览</span>
         </span>
       </div>
       <div class="col col-33 pmzero pdeight" ng-click="publishContent()">
-        <span class="yebtn fxcen pf cbgol">
+        <span class="yebtn fxcen pf cbgol manag">
         <img class="stnmg marauto newPg" src="img/fbb.png">
         <span class="fr textcen">发布</span>
         </span>
       </div>
       <div class="col col-33 pmzero pdeight" ng-click="removeContent()">
-        <span class="yebtn fxcen pf cbgol">
+        <span class="yebtn fxcen pf cbgol hbz">
         <img class="stnmg marauto newPg" src="img/delc.png">
         <span class="fr textcen">删除</span>
         </span>
       </div>
     </div>
     <ion-footer-bar align-title="center" class="bar bar-footer f_bar overf" style="background: none;">
-      <h1 class="title" id="ftit">Copyright © MagicPoster</h1>
+      <h1 class="title" id="ftit">Copyright(c) MagicBoard</h1>
     </ion-footer-bar>
   </ion-content>
 

@@ -92,7 +92,7 @@ angular.module('starter.services')
 
         if(info != undefined)
            alertTimeout('图像文件处理失败！',2000);
-        
+
 
         if (callback) {
           callback(undefined);
@@ -250,11 +250,11 @@ angular.module('starter.services')
     };
 
       this.hasReadExternalStoragePermissions=function(callback)
-      { 
+      {
           try
           {
               var temp=cordova;
-              
+
           }catch(err)
           {
               if(callback)
@@ -263,13 +263,13 @@ angular.module('starter.services')
               }
               return;
           }
-         
+
           var permissions = cordova.plugins.permissions;
-          
-         
-          
+
+
+
           permissions.hasPermission(permissions.READ_EXTERNAL_STORAGE, checkPermissionCallback, null);
-          
+
 
          function checkPermissionCallback(status) {
           if(!status.hasPermission) {
@@ -282,7 +282,7 @@ angular.module('starter.services')
             permissions.requestPermission(
               permissions.READ_EXTERNAL_STORAGE,
               function(status) {
-                if(!status.hasPermission) 
+                if(!status.hasPermission)
                   errorCallback();
                 else
                 {
@@ -303,6 +303,6 @@ angular.module('starter.services')
       };
 
 
-    
+
 
   });
