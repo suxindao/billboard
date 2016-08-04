@@ -6,7 +6,7 @@
 
 angular.module('starter.controllers')
 
-  .controller('MainCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $state) {
+  .controller('MainCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $state, $ionicLoading) {
 
     $scope.clickPost = function () {
 
