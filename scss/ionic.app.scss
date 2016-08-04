@@ -466,7 +466,7 @@ input {
 .logbtn {
   width: 72%;
   height: 8.6%;
-  background: #fe9d04;
+  background: #fba64c;
   text-align: center;
   /*border: 1px solid #eb8702;*/
   border-radius: 3px;
@@ -1354,7 +1354,7 @@ input {
 }
 
 .orgbg {
-  background: #fe9d04;
+  background: #fba64c;
 }
 
 .bornoe {
@@ -1548,7 +1548,9 @@ input {
   height:100%;
   margin-top: 6%;
 }
-
+.mtun{
+  padding-left: 5%;
+}
 @media screen and (max-width: 450px) {
   .slgth {
     line-height: 1.2em;
@@ -1684,6 +1686,7 @@ input {
 
   .swiper-slide-active .borclo{
     border-color: #ec6941;
+    border-width: 2px;
   }
 
   .bar.bar-footer.f_bar.bcbg.overf{
@@ -1756,10 +1759,10 @@ input {
   .nbebtn{
     width: 62%;
     height: 100%;
-    background: #f9aa33;
+    background: #fba64c;
     color: #fff;
     font-size: 0.9em;
-    border-radius: 10px;
+    border-radius: 3px;
     align-items: center;
   }
   .theit{
@@ -1771,7 +1774,44 @@ input {
   }
   .btnpos{
     position: absolute;
-    bottom: 25%;
+    bottom: 35%;
+  }
+  .newPg{
+    margin-left: 20%;
+  }
+  .marltg{
+    width: 12%;
+    margin-left: 12%;
+  }
+  .Njmlist{
+    width:100%;
+    justify-content: flex-end;
+    bottom:2.5%;
+  }
+  .jumot{
+    width: 24%;
+    font-size: 0.8em;
+  }
+  #smgbsn{
+    height:59.6%;
+  }
+  .rgwid{
+    width: 7%;
+    margin-left: 35%;
+  }
+  .bgpp{
+    height:40%;
+  }
+  .tophet{
+    top:6.9%;
+  }
+  .loading p{
+    font-size: 25px;
+  }
+  .spinner svg {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
   }
   /**/
   .mhgtn{

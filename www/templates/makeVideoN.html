@@ -1,12 +1,11 @@
 <ion-view view-title="设备列表" class="bcbg minht">
-  <ion-header-bar align-title="center" class="bar bar-header a_bar fxcen">
-    <div class="mgft fxcen" id="titlf" ng-click="toMainPage()">
-      <img class="marauto fl stmgb" src="img/home.png">
-      <span class="inbol fr" id="insy">首页</span>
+  <ion-header-bar align-title="center" class="bar bar-header a_bar fxcen mhgtn">
+    <div class="buttons mgft fxcen btlft towdp" ng-click="toMainPage()">
+      <img class="wborw marauto" src="img/hogo.png">
     </div>
     <h1 class="title mtit" id="stitb">节目制作</h1>
-    <div class="buttons mgrt textcen" id="titr" ng-click="toMainPage()">
-      取消
+    <div class="buttons mgrt fxcen mfr towdp" ng-click="goManage()">
+      <img class="marauto wborw" src="img/backg.png">
     </div>
   </ion-header-bar>
   <ion-content class="scroll-content stopb theit jmbgnn" overflow-scroll="true" scroll="false">
@@ -28,24 +27,24 @@
           <span class="fr fyuan">{{$index + 1}}</span>
         </p>
       </div>
-      <div class="Njmlist fxcen jcbet absol">
-        <div class="mofth fbjm textcen nbottm jumot newwth">
+      <div class="Njmlist fxcen jcbet">
+        <!--<div class="mofth fbjm textcen nbottm jumot newwth">
             <span class="yebtn fxcen sgmg" ng-click="clickPlayTurn()" style="background:#00a0e9; border-radius: 5px;">
                 <img class="stnmg marauto rgwid marltg" src="img/reface.png">
                 <span class="fl textcen">内容轮播</span>
             </span>
-        </div>
+        </div>-->
         <div class="mofth fbjm textcen nbottm jumot">
-            <span class="yebtn fxcen sgmg" ng-click="clickCustom()" style="background:#02d4c3; border-radius: 5px;">
-                <img class="stnmg marauto rgwid marltp" src="img/jmadm.png">
-                <span class="fl textcen">自定义</span>
+            <span class="yebtn fxcen sgmg" ng-click="clickPlayTurn()" style="background:#00a0e9; border-radius: 5px;">
+                <img class="stnmg marauto marltg" src="img/reface.png">
+                <span class="fl textcen">内容轮播</span>
             </span>
         </div>
       </div>
     </div>
 
-    <div class="absol mofth fbjm textcen nbottm">
-            <span class="yebtn fxcen cbgol" ng-click="startMaking()">
+    <div class="mofth fbjm textcen nbottm">
+            <span class="nbebtn fxcen cbgol" ng-click="startMaking()">
                 <img class="stnmg marauto rgwid" src="img/nexto.png">
                 <span class="fl textcen">下一步</span>
             </span>
