@@ -743,6 +743,7 @@ input {
   height: 60.9%;
   margin-left: 0;
   margin-right: 0;
+  font-size: 0.8em;
 }
 
 .jqlia {
@@ -1613,7 +1614,7 @@ input {
   }
 
   .magmg {
-    margin-left: 27%;
+    margin-left: 26%;
   }
 
   .popup-buttons .button {
@@ -1660,7 +1661,7 @@ input {
   .jqdel {
     width: 80%;
     height: 26%;
-    font-size: 1em;
+    font-size: 0.8em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1735,5 +1736,17 @@ input {
     padding-bottom: 7%;
   }
 
+  .bar #ftit {
+    font-size: 0.6em;
+  }
+
+  .nmargt{
+    margin-right: 4.5%;
+  }
+
+  /**/
+  .mhgtn{
+    height:6.99%;
+  }
 }
 

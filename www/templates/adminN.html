@@ -1,5 +1,5 @@
 <ion-view view-title="个人设置" class="bcbg minht">
-  <ion-header-bar align-title="center" class="bar bar-header a_bar fxcen">
+  <ion-header-bar align-title="center" class="bar bar-header a_bar fxcen mhgtn">
     <!--<div class="mgft fxcen" id="titlf" ng-click="toMainPage()">-->
         <!--<img class="marauto fl stmgb" src="img/home.png">-->
         <!--<span class="inbol fr" id="insy">首页</span>-->
@@ -7,12 +7,17 @@
     <div class="buttons mgft fxcen btlft towdp" ng-click="toMainPage()">
       <img class="wborw marauto" src="img/hogo.png">
     </div>
-    <h1 class="title mtit" id="stitb">个人设置</h1>
+    <h1 class="title mtit">个人设置</h1>
     <!--<div class="buttons mgrt textcen" id="exit" ng-click="logout()">-->
         <!--退出登录-->
     <!--</div>-->
-
   </ion-header-bar>
+  <!--<ion-header-bar align-title="center" class="bar bar-header a_bar fxcen jcbet">
+    <div class="buttons mgft fxcen btlft towdp" ng-click="goAdmin()">
+      <img class="wborw marauto" src="img/qadmin.png">
+    </div>
+    <h1 class="title mtit">个人设置</h1>
+  </ion-header-bar>-->
   <ion-content class="scroll-content stopb" overflow-scroll="true" scroll="false">
     <div class="grbox">
       <div class="grtem textbetwn">
@@ -27,7 +32,7 @@
       </div>
       <div class="grtem textbetwn borwid">
         <P class="pf fxcen">
-          <img class="marauto fimg" src="img/grvo.png">
+          <img class="marauto fimg nmargt" src="img/grvo.png">
           <span class="textcen">已制作节目：</span>
         </P>
         <P class="pr fxcen fenld" ng-click="goManage()">
@@ -93,4 +98,5 @@
   <ion-footer-bar align-title="center" class="bar bar-footer f_bar bcbg overf">
     <h1 class="title bcbg" id="ftit">Copyright(c) MagicBoard</h1>
   </ion-footer-bar>
+
 </ion-view>
