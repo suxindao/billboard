@@ -13,35 +13,49 @@
 
 angular.module('starter.controllers')
 
-  .controller('makeVideoCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $ionicLoading, $state, $stateParams,$ionicHistory) {
+  .controller('makeVideoCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $ionicLoading, $state, $stateParams,$ionicHistory,$timeout) {
 
 
 
     $scope.$on('$ionicView.beforeEnter', function () {
             // update campaigns everytime the view becomes active
             // (on first time added to DOM and after the view becomes active after cached
-             $scope.programData = {"items": []};
 
-            utilService.selectImage(function (results)
-            {
-               // results=[{"filePath":"img/home.png"},{"filePath":"img/ceshi.jpg"},{"filePath":"img/jnme.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"}];
-
-
-              if (results)
+              utilService.hasReadExternalStoragePermissions(function(ret)
               {
-                //$state.go("makeVideo",{"data":results});
+                if(ret == 1)
+                {
 
-                init(results);
+                  $scope.programData = {"items": []};
 
-                console.log(JSON.stringify(results));
-              }else
-              {
-                 $ionicHistory.goBack();
+                  utilService.selectImage(function (results)
+                  {
+                     // results=[{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/jnme.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"}];
+
+                    if (results)
+                    {
+                      //$state.go("makeVideo",{"data":results});
+
+                      init(results);
+
+                      console.log(JSON.stringify(results));
+                    }else
+                    {
+                       $ionicHistory.goBack();
 
 
-              }
+                    }
 
-            });
+                  });
+
+                }else
+                {
+                    $ionicHistory.goBack();
+                }
+
+              });
+
+
 
     });
 
@@ -103,7 +117,7 @@ angular.module('starter.controllers')
           return;
         }
         setTotalTime(t);
-      }, $scope);
+      }, $scope,"number");
 
     }
 
@@ -123,7 +137,7 @@ angular.module('starter.controllers')
           return;
         }
         setItemTime(t);
-      }, $scope);
+      }, $scope,"number");
     }
 
     $scope.startMaking = function ()

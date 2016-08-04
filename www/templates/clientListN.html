@@ -32,9 +32,10 @@
         <li class="jqlia"><span class="jqspc">名称 </span>: {{client.name}}</li>
         <li class="jqlia"><span class="jqspc">创建时间 </span>: {{client.create_date}}</li>
       </ul>
+
       <div class="sbtnls">
         <div class="jqdel marauto" ng-click="changeName({{client.id}})">修改名称</div><br>
-        <div class="jqdel marauto hbz" ng-click="changeName({{client.id}})">解除绑定</div>
+        <div class="jqdel marauto hbz" ng-click="unbind({{client.id}})">解除绑定</div>
       </div>
     </div>
 

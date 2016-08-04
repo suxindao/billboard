@@ -1,4 +1,4 @@
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -105,5 +105,37 @@ angular.module('starter.services')
 
     };
 
+    this.unbind = function (clientID, name) {
+      var deferred = $q.defer();
+      var promise = deferred.promise;
+
+      promise.success = function (fn) {
+        promise.then(fn);
+        return promise;
+      };
+
+      promise.error = function (fn) {
+        promise.then(null, fn);
+        return promise;
+      };
+
+      var requestUrl = "?cmd=clientUnbind&token=" + aJaxService.getToken() + "&id=" + clientID;
+      console.log(requestUrl);
+
+      aJaxService.httpGetData(requestUrl)
+        .success(function (data) {
+          if (data.result === 0) {
+            deferred.resolve();
+          } else {
+            deferred.reject(data.msgc);
+          }
+        })
+        .error(function (data) {
+          deferred.reject(data);
+        });
+
+      return promise;
+
+    };
 
   });
