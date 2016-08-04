@@ -13,15 +13,15 @@
     </div>-->
   </ion-header-bar>
 
-  <ion-content class="scroll-content tophet bgman bgstyle" overflow-scroll="true" scroll="false">
+  <ion-content class="scroll-content tophet bgman bgstyle ghbul" overflow-scroll="true" scroll="false">
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide" ng-repeat="photo in data.photos" gallery-repeat-finish>
           <div class="row btop">
             <!--<div class="col real"></div>-->
             <div class="col col-50 pmzero real">
-              <div class="jmtia">{{photo.name}}</div>
-              <div class="borclo tabcel real">
+              <div class="jmtia margut">{{photo.name}}</div>
+              <div class="borclo tabcel real margut">
                 <!--<img class="whmg" ng-src="{{photo.first_image}}" preview-url="{{photo.preview_url}}" inappbowser>-->
                 <!--<div ng-click="($index == data.galleryTop.activeIndex)?menu():null" class="scmg">-->
                 <div class="scmg">
@@ -35,8 +35,8 @@
                   </div>
                 </div>-->
               </div>
-              <div class="absol glmgb sgally"></div>
-              <ul class="jmtit">
+              <!--<div class="absol glmgb sgally"></div>-->
+              <ul class="jmtit margut">
                 <li class="jmtitli">({{$index+1}}/{{data.photos.length}})</li>
                 <li class="jmtitli">{{photo.update_date | formatdate}}</li>
                 <li class="jmtitli redcol" ng-click="showClientList()">运行设备详情</li>

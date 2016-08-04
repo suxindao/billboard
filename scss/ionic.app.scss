@@ -1678,9 +1678,9 @@ input {
   .col.col-50.pmzero.real {
     height: 100%;
     .tabcel {
-      display: inline-block;
-      width: 97%;
-      height: 59.8%;
+      /*display: inline-block;*/
+      width: 82%;
+      height: 66.8%;
     }
   }
 
@@ -1781,15 +1781,16 @@ input {
   }
   .marltg{
     width: 12%;
-    margin-left: 12%;
+    margin-left: 17%;
   }
   .Njmlist{
     width:100%;
     justify-content: flex-end;
     bottom:2.5%;
+    height:9%;
   }
   .jumot{
-    width: 24%;
+    width: 28%;
     font-size: 0.8em;
   }
   #smgbsn{
@@ -1812,6 +1813,35 @@ input {
     width: 50px;
     height: 50px;
     margin-bottom: 20px;
+  }
+  .loading span {
+    font-size: 25px;
+  }
+  .spbb{
+    font-size: 0.6em;
+  }
+  .jmtit{
+    width: 82%;
+    font-size: 0.6em;
+  }
+  .jmtia{
+    width:82%;
+  }
+  .glmgb {
+    right: 15%;
+    bottom: 19.6%;
+    width: 82.3%;
+    height: 66.8%;
+  }
+  .margut{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .ghbul{
+    top:9.2%;
+  }
+  .swiper-container{
+    height: 82%;
   }
   /**/
   .mhgtn {
