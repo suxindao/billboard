@@ -1574,44 +1574,57 @@ input {
   .minht {
     min-height: 1280px;
   }
+
   .towdp {
-    width: 7.8%;
+    width: 9.8%;
   }
+
   body {
     font-size: 200%;
   }
+
   .platform-android .bar .title {
     font-size: 40px;
   }
+
   .error{
     font-size: 28px;
   }
+
   #user{
     font-size: 36px;
   }
+
   #yzm{
     font-size: 36px;
     width:46%;
   }
+
   .yzmbtn{
     width:34%;
   }
+
   .yzmtit.textcen,.yzmtit.bultxt.textcen{
     font-size: 28px;
   }
+
   .logbtn{
     font-size: 36px;
   }
+
   .magmg {
-    margin-left: 31%;
+    margin-left: 27%;
   }
+
   .popup-buttons .button {
     min-height: 70px;
     font-size: 26px;
   }
+
   .popup-container .popup {
     width: 480px;
   }
+
   .popup-body {
     margin: 20px;
     span {
@@ -1619,18 +1632,22 @@ input {
       line-height: 52px;
     }
   }
+
   h3 {
     strong {
       font-weight: normal;
       font-size: 30px;
     }
   }
+
   .magsp.textcen{
     font-size: 36px;
   }
+
   .button.button-positive {
     background: #02d4c3;
   }
+
   .jqlia {
     line-height: 1.4em;
     font-size: 1em;
@@ -1649,6 +1666,7 @@ input {
     align-items: center;
     background: #4aa5de;
   }
+
   .col.col-50.pmzero.real{
     height:100%;
     .tabcel{
@@ -1657,9 +1675,11 @@ input {
       height: 59.8%;
     }
   }
+
   .swiper-slide-active .borclo{
     border-color: #ec6941;
   }
+
   .bar.bar-footer.f_bar.bcbg.overf{
     position: fixed;
     bottom:12%;
@@ -1672,23 +1692,48 @@ input {
     justify-content: center;
     align-items: center;
   }
+
   .popup-title{
     font-size: 0.8em;
   }
+
   .sList .button{
     width:28px;
     background-position:center 10px;
   }
+
   .popup-container .delput {
     margin: auto;
     margin-right: 0;
     margin-left: 0;
   }
+
   .fimg{
     width:8%;
+  }
+
+  .rowhet{
+    height:7%;
+  }
+
+  #smgbs{
+    height:69.6%;
+    min-height:69.6%;
+  }
+
+  .magbtn {
+    background: #fba64c;
+  }
+  .manag {
+    background: #4aa5de;
   }
   .hbz {
     background: #02d4c3;
   }
+
+  .f_bar{
+    padding-bottom: 7%;
+  }
+
 }
 
