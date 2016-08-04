@@ -13,13 +13,14 @@
   <ion-content class="scroll-content stopb theit jmbgnn" overflow-scroll="true" scroll="false">
     <div class="row" id="smgbs">
 
-      <div class="col col-275 pmzero sgrmgn real"
+      <div class="col col-275 pmzero sgrmg real"
            ng-repeat="client in data.clients"
            ng-class="{'borclo': client.chose, 'smrb': ($index+1) % 3 !== 0}"
            ng-click="chose({{client.id}})"
       >
         <div class="bgstyle pf absol bgtran" ng-show="client.chose"></div>
-        <img ng-show="client.chose" class="absol sgmg mcbrav" src="img/01.png">
+        <div class="absol brav " ng-show="client.chose"></div>
+        <!--<img ng-show="client.chose" class="absol sgmg mcbrav" src="img/01.png">-->
         <!--<img class="sgmg" src="img/sgirl.png">-->
         <div class="tabcel sgmg" style="display: inline-block;">
           <img class="sgmg" ng-src="{{client.first_image}}">
@@ -29,7 +30,7 @@
           <span class="textcen sptbt " id="">{{client.name | setLength:4}}</span>
         </p>
         <p class="absol spbb justar textcen">
-          <span class="tim">{{client.create_date | formatdate}}</span>
+          <span class="tim slgth">{{client.create_date | formatdate}}</span>
         </p>
       </div>
     </div>
@@ -37,13 +38,13 @@
     <div class="absol mofth fbjm textcen nbottm">
       <span class="yebtn fxcen" ng-click="sendVideo()">
         <img class="stnmg marauto" src="img/mai.png">
-        <span class="fr txtn textcen">发布节目</span>
+        <span class="fr txtn textcen yelbtn">发布节目</span>
       </span>
     </div>
 
   </ion-content>
 
   <ion-footer-bar align-title="center" class="bar bar-footer f_bar bcbg overf">
-    <h1 class="title bcbg" id="ftit">Copyright © MagicPoster</h1>
+    <h1 class="title bcbg" id="ftit">Copyright(c) MagicBoard</h1>
   </ion-footer-bar>
 </ion-view>
