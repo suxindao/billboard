@@ -14,9 +14,9 @@
         <img class="marauto newWht" src="img/admin.png">
         <i class="borgtl"></i>
       </label>
-      <input class="padlft" id="user" type="number" placeholder="用户名" ng-model="data.mobile">
-      <img class="fr xamg marauto mrret" src="img/xa.png" ng-if="!(data.mobile.length > 0)">
-      <img class="fr xamg marauto mrret" src="img/xb.png" ng-if="data.mobile.length > 0" ng-click="clearPhone()">
+      <input class="padlft" id="user" type="number" placeholder="手机号码" ng-model="data.mobile">
+      <img class="fr xamg marauto mrret" src="img/xa.png" ng-if="!((''+data.mobile).length > 0)">
+      <img class="fr xamg marauto mrret" src="img/xb.png" ng-if="((''+data.mobile).length > 0)" ng-click="clearPhone()">
     </div>
     <div class="adipt fxcen">
       <label class="labpt fxcen" for="yzm">

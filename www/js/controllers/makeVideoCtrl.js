@@ -110,7 +110,7 @@ angular.module('starter.controllers')
 
     $scope.clickPlayTurn = function ()
     {
-      utilService.showPopup("提示", "请输入轮播的总时长(秒)", function (t)
+      utilService.showPopup("请输入轮播的总时长(秒)", "", function (t)
       {
         if (!t || t < 0)
         {
@@ -129,7 +129,7 @@ angular.module('starter.controllers')
         return;
       }
 
-      utilService.showPopup("提示", "请输入播放时间(秒)", function (t)
+      utilService.showPopup("请输入播放时间(秒)", "", function (t)
       {
         if (!t || t < 0)
         {
@@ -142,7 +142,7 @@ angular.module('starter.controllers')
 
     $scope.startMaking = function ()
     {
-      utilService.showPopup("提示", "请输入节目名称", function (t)
+      utilService.showPopup("请输入节目名称", "", function (t)
       {
         if (t && t.length > 0)
         {
