@@ -1693,6 +1693,9 @@ input {
     position: fixed;
     bottom: 12%;
   }
+  .bar.bar-footer.f_bar.bcbg.overf.nbtomm{
+    bottom:24%;
+  }
 
   .jmtia {
     font-size: 1em;
@@ -1726,10 +1729,25 @@ input {
   }
 
   #smgbs {
-    height: 60.6%;
-    min-height: 60.6%;
+    height: 58.6%;
+    min-height: 58.6%;
     /*height:69.6%;
     min-height:69.6%;*/
+    padding: 0 4.4% 3.8% 4.4%;
+  }
+
+  #smgbs .smrb{
+    margin-right: 3.8%;
+    margin-bottom: 5%;
+  }
+
+  .sgrmg{
+    height: 60.61%;
+  }
+
+  .col-275{
+    flex: 30.8%;
+    max-width: 30.8%;
   }
 
   .magbtn {
@@ -1847,6 +1865,7 @@ input {
   .mhgtn {
     height: 8%;
   }
+
 
 }
 
