@@ -14,7 +14,7 @@ angular.module('starter.filters', [])
 
   .filter("setLength", function () {
     return function (input, length) {
-      if (input.length > 3) {
+      if (input.length > length) {
         return input.substring(0, length) + "..";
       } else {
         return input;

@@ -1479,6 +1479,7 @@ input {
 .jumot {
   width: 24%;
   height: 90%;
+  margin-right: 5%;
 }
 
 .marltg {
@@ -1540,7 +1541,7 @@ input {
 }
 
 .newWht {
-  width: 38%;
+  width: 35%;
 }
 
 .sbtnls {
@@ -1600,12 +1601,13 @@ input {
 
   #user {
     //font-size: 36px;
+    line-height: 110%;
   }
 
   #yzm {
     //font-size: 36px;
     width: 35%;
-    line-height: 1em;
+    line-height: 110%;
   }
 
   .yzmbtn {
@@ -1728,7 +1730,7 @@ input {
     height: 7%;
   }
 
-  #smgbs {
+  #smgbs,#smgbsn {
     height: 58.6%;
     min-height: 58.6%;
     /*height:69.6%;
@@ -1736,7 +1738,7 @@ input {
     padding: 0 4.4% 3.8% 4.4%;
   }
 
-  #smgbs .smrb{
+  #smgbs .smrb,#smgbsn .smrb{
     margin-right: 3.8%;
     margin-bottom: 5%;
   }
@@ -1805,14 +1807,18 @@ input {
     width:100%;
     justify-content: flex-end;
     bottom:2.5%;
-    height:9%;
+    height:6%;
+    margin-top: 3%;
   }
   .jumot{
     width: 28%;
     font-size: 0.8em;
   }
   #smgbsn{
-    height:59.6%;
+    height:53.6%;
+    min-height:53.6%;
+    max-height:53.6%;
+    overflow-y: scroll;
   }
   .rgwid{
     width: 7%;
@@ -1860,6 +1866,14 @@ input {
   }
   .swiper-container{
     height: 82%;
+  }
+
+  .iptTop input{
+    font-size: 0.9em;
+  }
+
+  #matid{
+    line-height: 110%;
   }
   /**/
   .mhgtn {

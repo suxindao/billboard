@@ -121,9 +121,9 @@ angular.module('starter.controllers')
 
       $ionicPopup.show({
         cssClass: 'iptTop',
-        template: '<input type="text" ng-model="data.name" auto-focus>',
-        title: '修改设备名',
-        subTitle: '请输入新设备名',
+        template: '<input type="text" maxlength="12" ng-model="data.name" auto-focus>',
+        title: '请输入新设备名',
+        /*subTitle: '请输入新设备名',*/
         scope: $scope,
         buttons: [
           {text: '取消'}, {
