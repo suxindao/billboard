@@ -46,7 +46,7 @@ gulp.task('cpjs', ['cleanJS'], function () {
 
 
 gulp.task('sass', ['cleanCSS'], function (done) {
-  gulp.src('./scss/ionic.*.scss')
+  gulp.src('./scss/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass())
     .on('error', sass.logError)
