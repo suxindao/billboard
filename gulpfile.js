@@ -8,6 +8,8 @@ var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
 var sourcemaps = require('gulp-sourcemaps');
+var uglify = require('gulp-uglify');
+var jshint = require('gulp-jshint');
 
 var paths = {
   sass: ['./scss/**/*.scss']
@@ -43,7 +45,7 @@ gulp.task('cpjs', ['cleanJS'], function () {
 });
 
 gulp.task('sass', ['cleanCSS'], function (done) {
-  gulp.src('./scss/ionic.app.scss')
+  gulp.src('./scss/ionic.*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass())
     .on('error', sass.logError)
@@ -55,6 +57,25 @@ gulp.task('sass', ['cleanCSS'], function (done) {
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./www/css/'))
     .on('end', done);
+});
+
+//压缩,合并 js
+gulp.task('minifyjs', function () {
+  return gulp.src('./www/js/controllers/*.js')      //需要操作的文件
+    // .pipe(sourcemaps.init())
+    .pipe(concat('controllers.js'))    //合并所有js到main.js
+    // .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('./www/jsa'))       //输出到文件夹
+    .pipe(rename({suffix: '.min'}))   //rename压缩后的文件名
+    .pipe(uglify())    //压缩
+    .pipe(gulp.dest('./www/jsa'));  //输出
+});
+
+//语法检查
+gulp.task('jshint', function () {
+  return gulp.src('js/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
 });
 
 gulp.task('watch', function () {
@@ -80,3 +101,4 @@ gulp.task('git-check', function (done) {
   }
   done();
 });
+

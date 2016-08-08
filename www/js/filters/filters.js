@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-angular.module('starter.filters', [])
+angular.module('starter.filters')
 
   .filter("formatdate", function () {
     return function (input) {
