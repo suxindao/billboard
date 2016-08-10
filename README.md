@@ -55,6 +55,8 @@ Crosswalk with Cordova
 ionic plugin add cordova-plugin-crosswalk-webview
 ```
 
+<preference name="xwalk64bit" value="xwalk64bit" />
+
 More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/getting-started) page and the [Ionic CLI](https://github.com/driftyco/ionic-cli) repo.
 
 ## Issues

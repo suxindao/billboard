@@ -1,5 +1,5 @@
-<ion-view view-title="设备匹配" class="bcbg minht">
-  <ion-header-bar align-title="center" class="bar bar-header a_bar fxcen mhgtn">
+<ion-view view-title="设备匹配" class="bcbg">
+  <ion-header-bar align-title="center" class="bar bar-header a_bar a_barc a_barb fxcen">
     <!--<div class="mgft fxcen" id="titlf" ui-sref="match">-->
     <!--<img class="marauto fl stmgb" src="img/add.png">-->
     <!--</div>-->
@@ -17,9 +17,9 @@
 
   </ion-header-bar>
 
-  <ion-content class="scroll-content stopb pmzero" overflow-scroll="true" scroll="true" scrollbar-y="true">
+  <ion-content class="scroll-content stopb pmzero theit" overflow-scroll="true" scroll="true">
 
-    <ion-refresher pulling-text="正在刷新..." on-refresh="doRefresh()"></ion-refresher>
+    <!--<ion-refresher pulling-text="正在刷新..." on-refresh="doRefresh()"></ion-refresher>-->
 
     <div class="jqlist fxcen" ng-repeat="client in data.clients">
       <img ng-if="(client.status == '0')" class="marauto jqmg" src="img/vboad.png">
@@ -34,47 +34,14 @@
       </ul>
 
       <div class="sbtnls">
-        <div class="jqdel marauto" ng-click="changeName({{client.id}})">修改名称</div><br>
+        <div class="jqdel marauto mbth" ng-click="changeName({{client.id}})">修改名称</div>
         <div class="jqdel marauto hbz" ng-click="unbind({{client.id}})">解除绑定</div>
       </div>
     </div>
-    <div class="jqlist fxcen" ng-repeat="client in data.clients">
-      <img ng-if="(client.status == '0')" class="marauto jqmg" src="img/vboad.png">
-      <img ng-if="(client.status == '1')" class="marauto jqmg" src="img/boad.png">
-      <ul class="marauto jqul">
-        <li class="jqlia">
-          <p class="jqlip inblo"><span class="jqspc">ID </span>: {{client.id}}</p>
-          <p class="jqliq inblo"><span class="jqspc">状态 </span>: {{(client.status == "0")? "离线" : "在线"}}</p>
-        </li>
-        <li class="jqlia"><span class="jqspc">名称 </span>: {{client.name}}</li>
-        <li class="jqlia"><span class="jqspc">创建时间 </span>: {{client.create_date}}</li>
-      </ul>
 
-      <div class="sbtnls">
-        <div class="jqdel marauto" ng-click="changeName({{client.id}})">修改名称</div><br>
-        <div class="jqdel marauto hbz" ng-click="unbind({{client.id}})">解除绑定</div>
-      </div>
-    </div>
-    <div class="jqlist fxcen" ng-repeat="client in data.clients">
-      <img ng-if="(client.status == '0')" class="marauto jqmg" src="img/vboad.png">
-      <img ng-if="(client.status == '1')" class="marauto jqmg" src="img/boad.png">
-      <ul class="marauto jqul">
-        <li class="jqlia">
-          <p class="jqlip inblo"><span class="jqspc">ID </span>: {{client.id}}</p>
-          <p class="jqliq inblo"><span class="jqspc">状态 </span>: {{(client.status == "0")? "离线" : "在线"}}</p>
-        </li>
-        <li class="jqlia"><span class="jqspc">名称 </span>: {{client.name}}</li>
-        <li class="jqlia"><span class="jqspc">创建时间 </span>: {{client.create_date}}</li>
-      </ul>
-
-      <div class="sbtnls">
-        <div class="jqdel marauto" ng-click="changeName({{client.id}})">修改名称</div><br>
-        <div class="jqdel marauto hbz" ng-click="unbind({{client.id}})">解除绑定</div>
-      </div>
-    </div>
 
   </ion-content>
-  <ion-footer-bar align-title="center" class="bar bar-footer f_bar bcbg overf nbtomm">
+  <ion-footer-bar align-title="center" class="bar bar-footer f_bar bcbg overf btozero">
     <h1 class="title bcbg" id="ftit">Copyright(c) MagicBoard</h1>
   </ion-footer-bar>
 </ion-view>

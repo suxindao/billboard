@@ -1,14 +1,18 @@
+<<<<<<< HEAD
 <ion-view view-title="设备列表" class="bcbg minht">
-  <ion-header-bar align-title="center" class="bar bar-header a_bar fxcen mhgtn">
+=======
+<ion-view view-title="设备列表" class="bcbg minhq minht">
+>>>>>>> 7ee863b674293fb5a333f553f436780280448748
+  <ion-header-bar align-title="center" class="bar bar-header a_bar a_barc fxcen">
     <!--<div class="buttons mgft fxcen btlft towdp" ng-click="toMainPage()">-->
       <!--<img class="wborw marauto" src="img/hogo.png">-->
     <!--</div>-->
-    <h1 class="title mtit" id="stitb">节目制作</h1>
+    <h1 class="title mtit">节目制作</h1>
     <div class="buttons mgrt fxcen mfr towdp" ng-click="toMainPage()">
       <img class="marauto wborw" src="img/backg.png">
     </div>
   </ion-header-bar>
-  <ion-content class="scroll-content stopb theit jmbgnn" overflow-scroll="true" scroll="false">
+  <ion-content class="scroll-content stopb theig jmbgnn" overflow-scroll="true" scroll="false">
     <div class="row real" id="smgbsn">
       <div class="col col-275 pmzero sgrmg real "
            ng-repeat="item in programData.items"
@@ -16,7 +20,9 @@
            ng-click="clickItem($index, $event)"
       >
         <div class="bgstyle pf bgtain" ng-class="{'absol':item.selected}"
-             style="background-image: url({{item.filePath}});"></div>
+             style="background-image: url({{item.filePath}});">
+          <!--<img src="img/bgan.png">-->
+        </div>
         <div class="absol brav " ng-show="item.selected"></div>
         <!--<img ng-show="item.selected" class="absol sgmg mcbrav" src="img/01.png">-->
 
@@ -29,7 +35,7 @@
       </div>
 
     </div>
-    <div class="Njmlist fxcen jcbet">
+    <div class="Njmlist fxcen fenld">
       <!--<div class="mofth fbjm textcen nbottm jumot newwth">
           <span class="yebtn fxcen sgmg" ng-click="clickPlayTurn()" style="background:#00a0e9; border-radius: 5px;">
               <img class="stnmg marauto rgwid marltg" src="img/reface.png">
@@ -38,14 +44,14 @@
       </div>-->
       <div class="mofth fbjm textcen nbottm jumot">
             <span class="yebtn fxcen sgmg" ng-click="clickPlayTurn()" style="background:#00a0e9; border-radius: 5px;">
-                <img class="stnmg marauto marltg" src="img/reface.png">
+                <img class="stnmg nwhtn" src="img/reface.png">
                 <span class="fl textcen">内容轮播</span>
             </span>
       </div>
     </div>
-    <div class="mofth fbjm textcen nbottm">
+    <div class="mofth fbjm textcen nbottm martot">
             <span class="nbebtn fxcen cbgol" ng-click="startMaking()">
-                <img class="stnmg marauto rgwid" src="img/nexto.png">
+                <img class="stnmg" src="img/nexto.png">
                 <span class="fl textcen">下一步</span>
             </span>
     </div>

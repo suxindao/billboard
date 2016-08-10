@@ -202,7 +202,7 @@ angular.module('starter.services')
       }
       // 自定义弹窗
       var myPopup = $ionicPopup.show({
-        template: '<input type="' + inputType + '" ng-model="data.value" autoFocus>',
+        template: '<input type="' + inputType + '" maxlength="11" ng-model="data.value" autoFocus>',
         title: '<strong>' + title + '</strong>',
         cssClass: 'iptTop',
         subTitle: subtitle,

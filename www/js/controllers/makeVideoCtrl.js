@@ -24,25 +24,25 @@ angular.module('starter.controllers')
 
       $scope.programData = {"items": []};
 
-      // utilService.selectImage(function (results)
-      // {
-      //   results=[{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/jnme.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"}];
-      //
-      //   if (results)
-      //   {
-      //     //$state.go("makeVideo",{"data":results});
-      //
-      //     init(results);
-      //
-      //     console.log(JSON.stringify(results));
-      //   }else
-      //   {
-      //     $ionicHistory.goBack();
-      //
-      //
-      //   }
-      //
-      // });
+      /*utilService.selectImage(function (results)
+      {
+        results=[{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/jnme.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"}];
+
+        if (results)
+        {
+          //$state.go("makeVideo",{"data":results});
+
+          init(results);
+
+          console.log(JSON.stringify(results));
+        }else
+        {
+          $ionicHistory.goBack();
+
+
+        }
+
+      });*/
 
       utilService.hasReadExternalStoragePermissions(function(ret)
               {
