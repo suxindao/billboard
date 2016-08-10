@@ -323,7 +323,7 @@ input {
 
 .mofth {
   width: 100%;
-  height: 7%;
+  height: 7.8%;
   text-align: center;
   margin-top: 12%;
 }
@@ -725,7 +725,7 @@ input {
 /*newList*/
 .jqlist {
   width: 100%;
-  height: 23.6%;
+  height: auto;
   background: #fcfaeb;
   border-bottom: 2px solid #f7c671;
   justify-content: flex-start;
@@ -748,13 +748,13 @@ input {
 
 .jqlia {
   width: 100%;
-  height: 30%;
+  height: auto;
   border-bottom: 2px solid #a7e1df;
   padding-left: 5px;
   text-align: left;
   font-size: 0.8em;
-  margin-bottom: 1%;
-  padding-bottom: 11%;
+  margin-bottom: 3%;
+  padding-bottom: 3%;
 }
 
 .jqlip {
@@ -777,6 +777,7 @@ input {
   color: #ffffff;
   font-size: 1.2em;
   border-radius: 10px;
+  line-height: 2em;
   padding: 1.5% 1%;
 }
 
@@ -1547,7 +1548,7 @@ input {
 .sbtnls {
   width: 20%;
   height: 100%;
-  margin-top: 6%;
+  margin-top: 7.5%;
 }
 .mtun{
   padding-left: 5%;
@@ -1691,12 +1692,16 @@ input {
     border-width: 2px;
   }
 
-  .bar.bar-footer.f_bar.bcbg.overf {
+  /*.bar.bar-footer.f_bar.bcbg.overf {
     position: fixed;
     bottom: 12%;
-  }
+  }*/
   .bar.bar-footer.f_bar.bcbg.overf.nbtomm{
-    bottom:24%;
+    bottom:21.5%;
+  }
+
+  .f_bar.bcbg.overf.nbtomm.btozero{
+    bottom:0;
   }
 
   .jmtia {
@@ -1731,7 +1736,7 @@ input {
   }
 
   #smgbs,#smgbsn {
-    height: 58.6%;
+    height: 78.6%;
     min-height: 58.6%;
     /*height:69.6%;
     min-height:69.6%;*/
@@ -1785,7 +1790,7 @@ input {
     border-radius: 3px;
     align-items: center;
   }
-  .theit {
+  .theig {
     top: 7%;
   }
   .stnmg {
@@ -1807,7 +1812,7 @@ input {
     width:100%;
     justify-content: flex-end;
     bottom:2.5%;
-    height:6%;
+    height:7%;
     margin-top: 3%;
   }
   .jumot{
@@ -1815,9 +1820,9 @@ input {
     font-size: 0.8em;
   }
   #smgbsn{
-    height:53.6%;
-    min-height:53.6%;
-    max-height:53.6%;
+    height:78.6%;
+    min-height:78.6%;
+    max-height:78.6%;
     overflow-y: scroll;
   }
   .rgwid{
@@ -1875,11 +1880,17 @@ input {
   #matid{
     line-height: 110%;
   }
-  /**/
+
   .mhgtn {
     height: 8%;
   }
 
+  .mbth{
+    margin-bottom: 5%;
+  }
 
+  .a_barc{
+    height:94px;
+  }
 }
 
