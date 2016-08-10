@@ -24,59 +24,59 @@ angular.module('starter.controllers')
 
       $scope.programData = {"items": []};
 
-      // utilService.selectImage(function (results)
-      // {
-      //   results=[{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/jnme.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"}];
+      utilService.selectImage(function (results)
+      {
+        results=[{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/jnme.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"}];
+
+        if (results)
+        {
+          //$state.go("makeVideo",{"data":results});
+
+          init(results);
+
+          console.log(JSON.stringify(results));
+        }else
+        {
+          $ionicHistory.goBack();
+
+
+        }
+
+      });
+
+      // utilService.hasReadExternalStoragePermissions(function(ret)
+      //         {
+      //           if(ret == 1)
+      //           {
       //
-      //   if (results)
-      //   {
-      //     //$state.go("makeVideo",{"data":results});
+      //             $scope.programData = {"items": []};
       //
-      //     init(results);
+      //             utilService.selectImage(function (results)
+      //             {
+      //                //results=[{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/jnme.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"}];
       //
-      //     console.log(JSON.stringify(results));
-      //   }else
-      //   {
-      //     $ionicHistory.goBack();
+      //               if (results)
+      //               {
+      //                 //$state.go("makeVideo",{"data":results});
+      //
+      //                 init(results);
+      //
+      //                 console.log(JSON.stringify(results));
+      //               }else
+      //               {
+      //                  $ionicHistory.goBack();
       //
       //
-      //   }
+      //               }
       //
-      // });
-
-      utilService.hasReadExternalStoragePermissions(function(ret)
-              {
-                if(ret == 1)
-                {
-
-                  $scope.programData = {"items": []};
-
-                  utilService.selectImage(function (results)
-                  {
-                     //results=[{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/jnme.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"}];
-
-                    if (results)
-                    {
-                      //$state.go("makeVideo",{"data":results});
-
-                      init(results);
-
-                      console.log(JSON.stringify(results));
-                    }else
-                    {
-                       $ionicHistory.goBack();
-
-
-                    }
-
-                  });
-
-                }else
-                {
-                    $ionicHistory.goBack();
-                }
-
-              });
+      //             });
+      //
+      //           }else
+      //           {
+      //               $ionicHistory.goBack();
+      //           }
+      //
+      //         });
 
 
 
