@@ -182,7 +182,7 @@ angular.module('starter.services')
 
       this.httpGetData(requestUrl)
         .success(function (data) {
-          console.log("Data = " + JSON.stringify(data));
+          //console.log("Data = " + JSON.stringify(data));
           if (data.result === 0) {
             if (callback) {
               callback(data);
