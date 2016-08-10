@@ -13,78 +13,68 @@
 
 angular.module('starter.controllers')
 
-  .controller('makeVideoCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $ionicLoading, $state, $stateParams,$ionicHistory,$timeout) {
-
+  .controller('makeVideoCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $ionicLoading, $state, $stateParams, $ionicHistory, $timeout) {
 
 
     $scope.$on('$ionicView.beforeEnter', function () {
-            // update campaigns everytime the view becomes active
-            // (on first time added to DOM and after the view becomes active after cached
+      // update campaigns everytime the view becomes active
+      // (on first time added to DOM and after the view becomes active after cached
 
 
       $scope.programData = {"items": []};
 
-      utilService.selectImage(function (results)
-      {
-        results=[{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/jnme.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"}];
+      // utilService.selectImage(function (results)
+      // {
+      //   results=[{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/jnme.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"}];
+      //
+      //   if (results)
+      //   {
+      //     //$state.go("makeVideo",{"data":results});
+      //
+      //     init(results);
+      //
+      //     console.log(JSON.stringify(results));
+      //   }else
+      //   {
+      //     $ionicHistory.goBack();
+      //
+      //
+      //   }
+      //
+      // });
 
-        if (results)
-        {
-          //$state.go("makeVideo",{"data":results});
+      utilService.hasReadExternalStoragePermissions(function (ret) {
+        if (ret == 1) {
 
-          init(results);
+          $scope.programData = {"items": []};
 
-          console.log(JSON.stringify(results));
-        }else
-        {
+          utilService.selectImage(function (results) {
+            //results=[{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/jnme.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"}];
+
+            if (results) {
+              //$state.go("makeVideo",{"data":results});
+
+              init(results);
+
+              console.log(JSON.stringify(results));
+            } else {
+              $ionicHistory.goBack();
+
+
+            }
+
+          });
+
+        } else {
           $ionicHistory.goBack();
-
-
         }
 
       });
-
-      // utilService.hasReadExternalStoragePermissions(function(ret)
-      //         {
-      //           if(ret == 1)
-      //           {
-      //
-      //             $scope.programData = {"items": []};
-      //
-      //             utilService.selectImage(function (results)
-      //             {
-      //                //results=[{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/jnme.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"}];
-      //
-      //               if (results)
-      //               {
-      //                 //$state.go("makeVideo",{"data":results});
-      //
-      //                 init(results);
-      //
-      //                 console.log(JSON.stringify(results));
-      //               }else
-      //               {
-      //                  $ionicHistory.goBack();
-      //
-      //
-      //               }
-      //
-      //             });
-      //
-      //           }else
-      //           {
-      //               $ionicHistory.goBack();
-      //           }
-      //
-      //         });
-
-
-
+      
     });
 
 
-    var init = function (results)
-    {
+    var init = function (results) {
 
       $scope.programData = {};
 
@@ -92,8 +82,7 @@ angular.module('starter.controllers')
 
       var items = [];
 
-      for (var i = 0; i < results.length; i++)
-      {
+      for (var i = 0; i < results.length; i++) {
         var data = results[i];
 
         data.playtime = $scope.programData.totaltime / results.length;
@@ -115,12 +104,10 @@ angular.module('starter.controllers')
     }
 
 
-    $scope.clickItem = function (index, event)
-    {
+    $scope.clickItem = function (index, event) {
       $scope.currentIndex = index;
 
-      for (var i = 0; i < $scope.programData.items.length; i++)
-      {
+      for (var i = 0; i < $scope.programData.items.length; i++) {
         if (index == i)
           $scope.programData.items[i].selected = true;
         else
@@ -131,67 +118,53 @@ angular.module('starter.controllers')
 
     }
 
-    $scope.clickPlayTurn = function ()
-    {
-      utilService.showPopup("请输入轮播的总时长(秒)", "", function (t)
-      {
-        if (!t || t < 0)
-        {
+    $scope.clickPlayTurn = function () {
+      utilService.showPopup("请输入轮播的总时长(秒)", "", function (t) {
+        if (!t || t < 0) {
           return;
         }
         setTotalTime(t);
-      }, $scope,"number");
+      }, $scope, "number");
 
     }
 
-    $scope.clickCustom = function ()
-    {
-      if ($scope.currentIndex == undefined)
-      {
-        utilService.alertTimeout('请选择图片进行设置！',2000);
+    $scope.clickCustom = function () {
+      if ($scope.currentIndex == undefined) {
+        utilService.alertTimeout('请选择图片进行设置！', 2000);
         return;
       }
 
-      utilService.showPopup("请输入播放时间(秒)", "", function (t)
-      {
-        if (!t || t < 0)
-        {
+      utilService.showPopup("请输入播放时间(秒)", "", function (t) {
+        if (!t || t < 0) {
           //showAlert("请输入时间");
           return;
         }
         setItemTime(t);
-      }, $scope,"number");
+      }, $scope, "number");
     }
 
-    $scope.startMaking = function ()
-    {
-      utilService.showPopup("请输入节目名称", "", function (t)
-      {
-        if (t && t.length > 0)
-        {
+    $scope.startMaking = function () {
+      utilService.showPopup("请输入节目名称", "", function (t) {
+        if (t && t.length > 0) {
           createProgram(t);
         }
 
       }, $scope, "text");
     }
 
-    $scope.toMainPage = function ()
-    {
+    $scope.toMainPage = function () {
       $state.go("main");
     }
 
-    var getPostImageList = function (sendImgInfo)
-    {
+    var getPostImageList = function (sendImgInfo) {
       var newItems = [];
 
       var items = $scope.programData.items;
 
       var found = false;
 
-      for (var i = 0; i < items.length; i++)
-      {
-        if (sendImgInfo[i].id == "")
-        {
+      for (var i = 0; i < items.length; i++) {
+        if (sendImgInfo[i].id == "") {
           newItems.push(items[i]);
         }
 
@@ -200,25 +173,18 @@ angular.module('starter.controllers')
       return newItems;
     }
 
-    var doCreate = function (programData, callback)
-    {
-      aJaxService.createProgram(programData, function (data)
-      {
-        if (data)
-        {
+    var doCreate = function (programData, callback) {
+      aJaxService.createProgram(programData, function (data) {
+        if (data) {
           console.log(JSON.stringify(data));
 
-          if (callback)
-          {
+          if (callback) {
             callback(data);
           }
 
 
-
-        } else
-        {
-          if (callback)
-          {
+        } else {
+          if (callback) {
             callback(undefined);
           }
 
@@ -228,15 +194,13 @@ angular.module('starter.controllers')
       });
     }
 
-    var createProgram = function (name)
-    {
+    var createProgram = function (name) {
       utilService.showLoading("节目制作中，请稍候...");
 
       $scope.programData.name = name;
 
       aJaxService.existFileMD5s($scope.programData.items, function (data) {
-        if (data)
-        {
+        if (data) {
 
           var items = getPostImageList(data.data);
 
@@ -244,69 +208,54 @@ angular.module('starter.controllers')
 
           var itemLength = items.length;
 
-          if (itemLength == 0)
-          {
-            doCreate($scope.programData, function (ret)
-            {
-              if (ret)
-              {
+          if (itemLength == 0) {
+            doCreate($scope.programData, function (ret) {
+              if (ret) {
 
-                utilService.showAlert("","制作节目成功！", function ()
-                {
+                utilService.showAlert("", "制作节目成功！", function () {
                   $state.go("manage");
                 });
 
 
-              } else
-              {
-                utilService.showAlert("","制作节目失败！");
+              } else {
+                utilService.showAlert("", "制作节目失败！");
               }
 
-               utilService.hideLoading();
+              utilService.hideLoading();
             });
             return;
           }
 
-          for (var i = 0; i < itemLength; i++)
-          {
-            aJaxService.postImage(items[i], function (data)
-            {
-              if (data)
-              {
+          for (var i = 0; i < itemLength; i++) {
+            aJaxService.postImage(items[i], function (data) {
+              if (data) {
                 postCount++;
 
-                if (postCount == itemLength)
-                {
+                if (postCount == itemLength) {
 
-                  doCreate($scope.programData, function (ret)
-                  {
-                    if (ret)
-                    {
-                      utilService.showAlert("","制作节目成功！", function ()
-                      {
+                  doCreate($scope.programData, function (ret) {
+                    if (ret) {
+                      utilService.showAlert("", "制作节目成功！", function () {
                         $state.go("manage");
                       });
 
-                    } else
-                    {
-                      utilService.showAlert("","制作节目失败！");
+                    } else {
+                      utilService.showAlert("", "制作节目失败！");
                     }
 
-                   utilService.hideLoading();
+                    utilService.hideLoading();
                   });
                 }
 
-              } else
-              {
-                 utilService.hideLoading();
+              } else {
+                utilService.hideLoading();
                 console.log("上传图片失败");
               }
 
 
             });
           }//
-        } else
-        {
+        } else {
           utilService.hideLoading();
           utilService.showAlert("上传图失败！");
         }
@@ -315,16 +264,12 @@ angular.module('starter.controllers')
       });
 
 
-
-
     }
 
 
-    var setItemTime = function (t)
-    {
+    var setItemTime = function (t) {
 
-      if ($scope.currentIndex != undefined)
-      {
+      if ($scope.currentIndex != undefined) {
         var data = $scope.programData.items[$scope.currentIndex];
         var oldtime = data.playtime;
         data.playtime = t;
@@ -333,12 +278,10 @@ angular.module('starter.controllers')
       }
     }
 
-    var setTotalTime = function (t)
-    {
+    var setTotalTime = function (t) {
       $scope.programData.totaltime = t;
 
-      for (var i = 0; i < $scope.programData.items.length; i++)
-      {
+      for (var i = 0; i < $scope.programData.items.length; i++) {
         var data = $scope.programData.items[i];
 
         data.playtime = $scope.programData.totaltime / $scope.programData.items.length;
