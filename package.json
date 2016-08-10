@@ -35,7 +35,7 @@
     "cordova-hot-code-push-plugin",
     "cordova-hot-code-push-local-dev-addon",
     "cordova-imagePicker",
-    "cordova-plugin-android-permissions@0.10.0"
+    "cordova-plugin-android-permissions"
   ],
   "cordovaPlatforms": [
     "android"
