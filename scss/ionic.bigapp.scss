@@ -337,13 +337,14 @@ input {
   /*border: 1px solid #d56e00;*/
   border-radius: 10px;
   align-items: center;
+  justify-content: center;
 }
 
 .stnmg {
   width: 15%;
   height: auto;
   margin-right: 5%;
-  margin-left: 20%;
+  /*margin-left: 20%;*/
 }
 
 .txtn {
@@ -1553,6 +1554,7 @@ input {
 .mtun{
   padding-left: 5%;
 }
+
 @media screen and (max-width: 450px) {
   .slgth {
     line-height: 1.2em;
@@ -1789,21 +1791,19 @@ input {
     font-size: 0.9em;
     border-radius: 3px;
     align-items: center;
+    justify-content: center;
   }
   .theig {
     top: 7%;
   }
   .stnmg {
     width: 10%;
-    margin-left: 29%;
   }
   .btnpos {
     position: absolute;
     bottom: 35%;
   }
-  .newPg{
-    margin-left: 20%;
-  }
+
   .marltg{
     width: 12%;
     margin-left: 17%;
@@ -1892,5 +1892,6 @@ input {
   .a_barc{
     height:94px;
   }
+
 }
 
