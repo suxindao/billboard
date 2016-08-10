@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-angular.module('starter.directives', [])
+angular.module('starter.directives')
 
 
   .directive('lightslide', function () {

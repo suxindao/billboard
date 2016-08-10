@@ -6,7 +6,7 @@
 
 angular.module('starter.controllers')
 
-  .controller('MainCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $state) {
+  .controller('MainCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $state, $ionicLoading) {
 
     $scope.clickPost = function () {
 
@@ -32,7 +32,13 @@ angular.module('starter.controllers')
     };
 
     $scope.goTest = function () {
-      utilService.showLoading("节目发布中，请稍候...");
+      $ionicLoading.show({
+        template: '内容加载中',
+        // animation: 'fade-in',
+        // showBackdrop: true,
+        // maxWidth: 200,
+        // showDelay: 0
+      });
     };
 
 

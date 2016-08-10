@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-angular.module('starter.filters', [])
+angular.module('starter.filters')
 
   .filter("formatdate", function () {
     return function (input) {
@@ -14,7 +14,7 @@ angular.module('starter.filters', [])
 
   .filter("setLength", function () {
     return function (input, length) {
-      if (input.length > 3) {
+      if (input.length > length) {
         return input.substring(0, length) + "..";
       } else {
         return input;

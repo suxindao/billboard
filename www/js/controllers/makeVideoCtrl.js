@@ -21,7 +21,30 @@ angular.module('starter.controllers')
             // update campaigns everytime the view becomes active
             // (on first time added to DOM and after the view becomes active after cached
 
-              utilService.hasReadExternalStoragePermissions(function(ret)
+
+      $scope.programData = {"items": []};
+
+      // utilService.selectImage(function (results)
+      // {
+      //   results=[{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/jnme.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"}];
+      //
+      //   if (results)
+      //   {
+      //     //$state.go("makeVideo",{"data":results});
+      //
+      //     init(results);
+      //
+      //     console.log(JSON.stringify(results));
+      //   }else
+      //   {
+      //     $ionicHistory.goBack();
+      //
+      //
+      //   }
+      //
+      // });
+
+      utilService.hasReadExternalStoragePermissions(function(ret)
               {
                 if(ret == 1)
                 {
@@ -30,7 +53,7 @@ angular.module('starter.controllers')
 
                   utilService.selectImage(function (results)
                   {
-                     // results=[{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/jnme.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"}];
+                     //results=[{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/jnme.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"},{"filePath":"img/home.png"}];
 
                     if (results)
                     {
@@ -110,7 +133,7 @@ angular.module('starter.controllers')
 
     $scope.clickPlayTurn = function ()
     {
-      utilService.showPopup("提示", "请输入轮播的总时长(秒)", function (t)
+      utilService.showPopup("请输入轮播的总时长(秒)", "", function (t)
       {
         if (!t || t < 0)
         {
@@ -129,7 +152,7 @@ angular.module('starter.controllers')
         return;
       }
 
-      utilService.showPopup("提示", "请输入播放时间(秒)", function (t)
+      utilService.showPopup("请输入播放时间(秒)", "", function (t)
       {
         if (!t || t < 0)
         {
@@ -142,7 +165,7 @@ angular.module('starter.controllers')
 
     $scope.startMaking = function ()
     {
-      utilService.showPopup("提示", "请输入节目名称", function (t)
+      utilService.showPopup("请输入节目名称", "", function (t)
       {
         if (t && t.length > 0)
         {

@@ -1552,21 +1552,6 @@ input {
 .mtun{
   padding-left: 5%;
 }
-
-.nbebtn {
-  width: 62%;
-  height: 100%;
-  background: #fba64c;
-  color: #fff;
-  font-size: 0.9em;
-  border-radius: 3px;
-  align-items: center;
-}
-
-.btnpos {
-  position: absolute;
-  bottom: 35%;
-}
 @media screen and (max-width: 450px) {
   .slgth {
     line-height: 1.2em;
@@ -1807,7 +1792,10 @@ input {
     width: 10%;
     margin-left: 29%;
   }
-
+  .btnpos {
+    position: absolute;
+    bottom: 35%;
+  }
   .newPg{
     margin-left: 20%;
   }

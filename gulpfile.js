@@ -7,13 +7,17 @@ var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
+var sourcemaps = require('gulp-sourcemaps');
+var uglify = require('gulp-uglify');
+var jshint = require('gulp-jshint');
 
 var paths = {
   sass: ['./scss/**/*.scss']
 };
 
 var sdir = "./bower_components/";
-var ddir = "./www/lib/";
+var jsdir = "./www/lib/";
+var cssdir = "./www/css/";
 
 var filesToMove = [
   sdir + '/ionic/js/ionic.bundle.js',
@@ -21,29 +25,58 @@ var filesToMove = [
   sdir + '/Swiper/dist/js/swiper.js'
 ];
 
-gulp.task('default', ['cpjs', 'sass']);
+gulp.task('default', ['clean', 'cpjs', 'sass']);
 
-gulp.task('clean', function () {
-  return gulp.src([ddir], {read: false})
+gulp.task('clean', ['cleanJS', 'cleanCSS']);
+
+gulp.task('cleanJS', function () {
+  return gulp.src([jsdir], {read: false})
     .pipe(clean());
 });
 
-gulp.task('cpjs', ['clean'], function () {
-  return gulp.src(filesToMove)
-    .pipe(gulp.dest(ddir));
+gulp.task('cleanCSS', function () {
+  return gulp.src([cssdir], {read: false})
+    .pipe(clean());
 });
 
-gulp.task('sass', function (done) {
-  gulp.src('./scss/ionic.app.scss')
+gulp.task('cpjs', ['cleanJS'], function () {
+  return gulp.src(filesToMove)
+    .pipe(gulp.dest(jsdir));
+});
+
+
+gulp.task('sass', ['cleanCSS'], function (done) {
+  gulp.src('./scss/*.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass())
     .on('error', sass.logError)
-    .pipe(gulp.dest('./www/css/'))
+    // .pipe(gulp.dest('./www/css/'))
     .pipe(minifyCss({
       keepSpecialComments: 0
     }))
     .pipe(rename({extname: '.min.css'}))
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./www/css/'))
     .on('end', done);
+});
+
+//压缩,合并 js
+gulp.task('minifyjs', function () {
+  return gulp.src('./www/js/controllers/*.js')      //需要操作的文件
+    // .pipe(sourcemaps.init())
+    .pipe(concat('controllers.js'))    //合并所有js到main.js
+    // .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('./www/jsa'))       //输出到文件夹
+    .pipe(rename({suffix: '.min'}))   //rename压缩后的文件名
+    .pipe(uglify())    //压缩
+    .pipe(gulp.dest('./www/jsa'));  //输出
+});
+
+//语法检查
+gulp.task('jshint', function () {
+  return gulp.src('js/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
 });
 
 gulp.task('watch', function () {
@@ -69,3 +102,4 @@ gulp.task('git-check', function (done) {
   }
   done();
 });
+
