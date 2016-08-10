@@ -68,3 +68,22 @@ Issues have been disabled on this repo, if you do find an issue or have a questi
 "Mozilla/5.0 (Linux; Android 4.4.2; Coolpad 9976D Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0 Mobile Safari/537.36"
 
 "Mozilla/5.0 (Linux; Android 4.4.2; Coolpad 9976D Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Crosswalk/19.49.514.5 Mobile Safari/537.36"
+
+
+## Ionic Android应用Release指南
+1) 生成命令
+```bash
+keytool -genkey -v -keystore my-release-key.keystore -alias panocean -keyalg RSA -keysize 2048 -validity 10000
+```
+2) 生成 release包
+```bash
+ionic build --release android
+```
+3) 签名
+```bash
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore /Users/suxindao/work/billboard/platforms/android/build/outputs/apk/android-release-unsigned.apk panocean
+```
+4) 优化
+```bash
+zipalign -v 4 android-release-unsigned.apk MagicManager-release.apk
+```
