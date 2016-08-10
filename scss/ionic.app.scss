@@ -1601,6 +1601,10 @@ input {
   line-height: 2em;
 }
 
+.a_barb{
+  height: 58px;
+}
+
 @media screen and (max-width: 450px) {
   .slgth {
     line-height: 1.2em;
@@ -1744,9 +1748,9 @@ input {
     position: fixed;
     bottom: 12%;
   }
-  .bar.bar-footer.f_bar.bcbg.overf.nbtomm{
+  /*.bar.bar-footer.f_bar.bcbg.overf.nbtomm{
     bottom:24%;
-  }
+  }*/
 
   .jmtia {
     font-size: 1em;
