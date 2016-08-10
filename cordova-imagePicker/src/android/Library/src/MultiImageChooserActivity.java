@@ -760,7 +760,7 @@ private class ResizeImagesTask extends AsyncTask<ArrayList<ImageFileInfo>, Void,
         File file = File.createTempFile("tmp_" + name, ext);
         OutputStream outStream = new FileOutputStream(file);
         if (ext.compareToIgnoreCase(".png") == 0) {
-            bmp.compress(Bitmap.CompressFormat.PNG, quality, outStream);
+            bmp.compress(Bitmap.CompressFormat.JPEG, quality, outStream);
         } else {
             bmp.compress(Bitmap.CompressFormat.JPEG, quality, outStream);
         }
