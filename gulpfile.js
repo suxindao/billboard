@@ -25,7 +25,7 @@ var filesToMove = [
   sdir + '/Swiper/dist/js/swiper.js'
 ];
 
-gulp.task('default', ['clean', 'cpjs', 'sass']);
+gulp.task('default', ['clean', 'cpjs', 'cpFont', 'sass']);
 
 gulp.task('clean', ['cleanJS', 'cleanCSS']);
 
@@ -44,6 +44,10 @@ gulp.task('cpjs', ['cleanJS'], function () {
     .pipe(gulp.dest(jsdir));
 });
 
+gulp.task('cpFont', ['cleanCSS'], function () {
+  return gulp.src(sdir + '/ionic/fonts/**')
+    .pipe(gulp.dest(cssdir + '/ionic/fonts/'));
+});
 
 gulp.task('sass', ['cleanCSS'], function (done) {
   gulp.src('./scss/*.scss')
