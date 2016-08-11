@@ -445,7 +445,7 @@ input {
 
 .clock {
   width: 17%;
-  margin-left: 5%;
+  margin-left: 0;
   margin-right: 6%;
 }
 
@@ -784,7 +784,7 @@ input {
   font-size: 1.2em;
   border-radius: 10px;
   padding: 3.5% 1%;
-  margin-bottom: 5%;
+  margin-bottom: 10%;
 }
 
 /*点击发布节目*/
@@ -988,7 +988,7 @@ input {
 }
 
 .fimg {
-  width: 4%;
+  width: 6%;
   margin-left: 5%;
   margin-right: 5%;
 }
@@ -1603,6 +1603,10 @@ input {
 
 .a_barb{
   height: 58px;
+}
+
+.marg_noe{
+  margin-bottom: 0;
 }
 
 /*css3旋转*/
