@@ -3,6 +3,7 @@
   "app_id": "",
   "gulpStartupTasks": [
     "cpjs",
+    "cpFont",
     "sass",
     "watch"
   ],
