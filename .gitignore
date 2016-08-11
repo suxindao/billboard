@@ -6,5 +6,7 @@ node_modules/
 nbproject/
 www/lib/
 www/css/
+#!/www/css/ionic/
 plugins/
 .idea/
+www/jsa/

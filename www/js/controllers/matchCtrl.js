@@ -47,7 +47,13 @@ angular.module('starter.controllers')
 
           $timeout(function () {
             $scope.data.showGif = false;
-            $scope.data.message = "配对失败";
+            if (data.result == 215
+              || data.result == 216
+              || data.result == 217) {
+              $scope.data.message = "配对失败: " + data.msgc;
+            } else {
+              $scope.data.message = "配对失败";
+            }
             utilService.hideLoading();
           }, 2000)
         });

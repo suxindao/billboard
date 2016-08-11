@@ -29,7 +29,6 @@ $ ionic platform update android
 $ ionic run android
 ```
 
-
 Substitute ios for android if not on a Mac, but if you can, the ios development toolchain is a lot easier to work with until you need to do anything custom to Android.
 
 ## Demo
@@ -40,3 +39,5 @@ Issues have been disabled on this repo, if you do find an issue or have a questi
 
 ## Use LightSlide plugin
 http://sachinchoolur.github.io/lightslider/settings.html
+
+

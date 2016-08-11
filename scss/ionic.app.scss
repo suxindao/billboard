@@ -64,7 +64,7 @@ input {
 }
 
 .has-header {
-  top: 0em;
+  top: 0;
 }
 
 .bar {
@@ -1605,6 +1605,20 @@ input {
   height: 58px;
 }
 
+/*css3旋转*/
+@-webkit-keyframes rotation{
+  from {-webkit-transform: rotate(0deg);}
+  to {-webkit-transform: rotate(360deg);}
+}
+
+.Rotation{
+  -webkit-transform: rotate(360deg);
+  animation: rotation 2s linear infinite;
+  -moz-animation: rotation 2s linear infinite;
+  -webkit-animation: rotation 2s linear infinite;
+  -o-animation: rotation 2s linear infinite;
+}
+
 @media screen and (max-width: 450px) {
   .slgth {
     line-height: 1.2em;
@@ -1626,7 +1640,7 @@ input {
   }
 }
 
-@media screen and (min-width: 768px) and (min-resolution: 2dpi) {
+/*@media screen and (min-width: 768px) and (min-resolution: 2dpi) {
 
   .bar .mtit {
     font-size: 40px;
@@ -1733,7 +1747,7 @@ input {
   .col.col-50.pmzero.real {
     height: 100%;
     .tabcel {
-      /*display: inline-block;*/
+      !*display: inline-block;*!
       width: 82%;
       height: 66.8%;
     }
@@ -1748,9 +1762,9 @@ input {
     position: fixed;
     bottom: 12%;
   }
-  /*.bar.bar-footer.f_bar.bcbg.overf.nbtomm{
+  !*.bar.bar-footer.f_bar.bcbg.overf.nbtomm{
     bottom:24%;
-  }*/
+  }*!
 
   .jmtia {
     font-size: 1em;
@@ -1786,8 +1800,8 @@ input {
   #smgbs,#smgbsn {
     height: 58.6%;
     min-height: 58.6%;
-    /*height:69.6%;
-    min-height:69.6%;*/
+    !*height:69.6%;
+    min-height:69.6%;*!
     padding: 0 4.4% 3.8% 4.4%;
   }
 
@@ -1826,9 +1840,9 @@ input {
   .nmargt {
     margin-right: 4.5%;
   }
-  /*.fbjm{
+  !*.fbjm{
 
-  }*/
+  }*!
   .nbebtn {
     width: 62%;
     height: 100%;
@@ -1925,11 +1939,11 @@ input {
   #matid{
     line-height: 110%;
   }
-  /**/
+  !**!
   .mhgtn {
     height: 8%;
   }
 
 
-}
+}*/
 
