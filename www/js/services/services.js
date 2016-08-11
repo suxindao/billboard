@@ -72,8 +72,7 @@ angular.module('starter.services')
         console.log("httpGetData successData = " + JSON.stringify(data));
         if (data.result == 0) {
           deferred.resolve(data);
-        }
-        else if (data.result == -2 || data.result == -3 || data.result == -4) {
+        } else if (data.result == -2 || data.result == -3 || data.result == -4) {
           $rootScope.user = {};
           locals.setObject("user", $rootScope.user);
           $state.go("login");
@@ -182,7 +181,7 @@ angular.module('starter.services')
 
       this.httpGetData(requestUrl)
         .success(function (data) {
-          console.log("Data = " + JSON.stringify(data));
+          //console.log("Data = " + JSON.stringify(data));
           if (data.result === 0) {
             if (callback) {
               callback(data);
