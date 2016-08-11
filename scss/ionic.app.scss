@@ -1605,6 +1605,19 @@ input {
   height: 58px;
 }
 
+@-webkit-keyframes rotation{
+  from {-webkit-transform: rotate(0deg);}
+  to {-webkit-transform: rotate(360deg);}
+}
+
+.Rotation{
+  -webkit-transform: rotate(360deg);
+  animation: rotation 2s linear infinite;
+  -moz-animation: rotation 2s linear infinite;
+  -webkit-animation: rotation 2s linear infinite;
+  -o-animation: rotation 2s linear infinite;
+}
+
 @media screen and (max-width: 450px) {
   .slgth {
     line-height: 1.2em;
