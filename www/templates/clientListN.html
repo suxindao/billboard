@@ -19,7 +19,7 @@
 
   <ion-content class="scroll-content stopb pmzero theit" overflow-scroll="true" scroll="true">
 
-    <!--<ion-refresher pulling-text="正在刷新..." on-refresh="doRefresh()"></ion-refresher>-->
+    <ion-refresher pulling-text="正在刷新..." on-refresh="doRefresh()"></ion-refresher>
 
     <div class="jqlist fxcen" ng-repeat="client in data.clients">
       <img ng-if="(client.status == '0')" class="marauto jqmg" src="img/vboad.png">
@@ -39,7 +39,6 @@
         <div class="jqdel marauto hbz" ng-click="unbind({{client.id}})">解除绑定</div>
       </div>
     </div>
-
 
   </ion-content>
   <ion-footer-bar align-title="center" class="bar bar-footer f_bar bcbg overf btozero">
