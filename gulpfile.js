@@ -49,7 +49,7 @@ gulp.task('cpFont', ['cleanCSS'], function () {
     .pipe(gulp.dest(cssdir + '/ionic/fonts/'));
 });
 
-gulp.task('sass', ['cleanCSS'], function (done) {
+gulp.task('sass', function (done) {
   gulp.src('./scss/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass())
@@ -84,7 +84,7 @@ gulp.task('jshint', function () {
 });
 
 gulp.task('watch', function () {
-  gulp.watch(paths.sass, ['sass', 'cpFont']);
+  gulp.watch(paths.sass, ['sass']);
 });
 
 gulp.task('install', ['git-check'], function () {
