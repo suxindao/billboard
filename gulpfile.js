@@ -49,7 +49,7 @@ gulp.task('cpFont', ['cleanCSS'], function () {
     .pipe(gulp.dest(cssdir + '/ionic/fonts/'));
 });
 
-gulp.task('sass', ['cleanCSS'], function (done) {
+gulp.task('sass', function (done) {
   gulp.src('./scss/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass())
@@ -67,7 +67,7 @@ gulp.task('sass', ['cleanCSS'], function (done) {
 //压缩,合并 js
 gulp.task('minifyjs', function () {
   return gulp.src('./www/js/controllers/*.js')      //需要操作的文件
-    // .pipe(sourcemaps.init())
+  // .pipe(sourcemaps.init())
     .pipe(concat('controllers.js'))    //合并所有js到main.js
     // .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./www/jsa'))       //输出到文件夹

@@ -93,3 +93,6 @@ http://realfavicongenerator.net/
 
 ### 图片压缩
 https://tinypng.com/
+
+### 以同步的方式运行 Gulp 任务和任务中的步骤
+http://www.tuicool.com/articles/BbIrEnU
