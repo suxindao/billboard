@@ -1350,10 +1350,6 @@ input {
   position: fixed;
 }
 
-.minht {
-  min-height: 620px;
-}
-
 .hide {
   display: none;
 }
@@ -1608,6 +1604,11 @@ input {
 .marg_noe{
   margin-bottom: 0;
 }
+
+.wsne{
+  width:6.9%;
+}
+
 
 /*css3旋转*/
 @-webkit-keyframes rotation{
