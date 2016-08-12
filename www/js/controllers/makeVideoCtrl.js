@@ -228,6 +228,51 @@ angular.module('starter.controllers')
       });
     }
 
+
+    
+    var uploadFiles=function(files,index)
+    {
+        if(files.length == index)
+        {
+            
+            doCreate($scope.programData, function (ret)
+                  {
+                    if (ret)
+                    {
+                      utilService.showAlert("","制作节目成功！", function ()
+                      {
+                        $state.go("manage");
+                      });
+
+                    } else
+                    {
+                      utilService.showAlert("","制作节目失败！");
+                    }
+
+                   utilService.hideLoading();
+                   
+                  });
+                  
+            return;
+        }
+            
+        var newIndex=index+1;
+        
+         aJaxService.postImage(files[index], function (data)
+         {
+             if(data)
+             { 
+                 uploadFiles(files,newIndex);
+                 
+             }else
+             {
+                  utilService.showAlert("","制作节目失败！");
+             }
+             
+         });
+         
+    }
+    
     var createProgram = function (name)
     {
       utilService.showLoading("节目制作中，请稍候...");
@@ -266,45 +311,47 @@ angular.module('starter.controllers')
             });
             return;
           }
+          
+          uploadFiles(items,0);
 
-          for (var i = 0; i < itemLength; i++)
-          {
-            aJaxService.postImage(items[i], function (data)
-            {
-              if (data)
-              {
-                postCount++;
-
-                if (postCount == itemLength)
-                {
-
-                  doCreate($scope.programData, function (ret)
-                  {
-                    if (ret)
-                    {
-                      utilService.showAlert("","制作节目成功！", function ()
-                      {
-                        $state.go("manage");
-                      });
-
-                    } else
-                    {
-                      utilService.showAlert("","制作节目失败！");
-                    }
-
-                   utilService.hideLoading();
-                  });
-                }
-
-              } else
-              {
-                 utilService.hideLoading();
-                console.log("上传图片失败");
-              }
-
-
-            });
-          }//
+//          for (var i = 0; i < itemLength; i++)
+//          {
+//            aJaxService.postImage(items[i], function (data)
+//            {
+//              if (data)
+//              {
+//                postCount++;
+//
+//                if (postCount == itemLength)
+//                {
+//
+//                  doCreate($scope.programData, function (ret)
+//                  {
+//                    if (ret)
+//                    {
+//                      utilService.showAlert("","制作节目成功！", function ()
+//                      {
+//                        $state.go("manage");
+//                      });
+//
+//                    } else
+//                    {
+//                      utilService.showAlert("","制作节目失败！");
+//                    }
+//
+//                   utilService.hideLoading();
+//                  });
+//                }
+//
+//              } else
+//              {
+//                 utilService.hideLoading();
+//                console.log("上传图片失败");
+//              }
+//
+//
+//            });
+//          }//
         } else
         {
           utilService.hideLoading();
