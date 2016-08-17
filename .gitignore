@@ -10,5 +10,5 @@ www/css/
 plugins/
 .idea/
 www/jsa/
-*.apk
+build/
 
