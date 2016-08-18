@@ -45,7 +45,7 @@ import java.util.Set;
 import java.util.concurrent.RunnableFuture;
 import java.util.concurrent.SynchronousQueue;
 
-import com.ionicframework.starter.R;
+import com.panocean.starter.R;
 import com.synconset.FakeR;
 import android.app.Activity;
 import android.app.ActionBar;
