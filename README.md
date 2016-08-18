@@ -85,7 +85,7 @@ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.
 ```
 4) 优化
 ```bash
-zipalign -v 4 android-release-unsigned.apk MagicManager-release.apk
+zipalign -f -v 4 android-release-unsigned.apk MagicManager-release.apk
 ```
 
 ### 图标在线制作

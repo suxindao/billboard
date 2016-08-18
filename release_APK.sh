@@ -11,4 +11,4 @@ rm $build_path/MagicManager-release-$DATE.apk
 
 ionic build --release android
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore $apk_path/android-release-unsigned.apk panocean
-zipalign -v 4 $apk_path/android-release-unsigned.apk $build_path/MagicManager-release-$DATE.apk
+zipalign -f -v 4 $apk_path/android-release-unsigned.apk $build_path/MagicManager-release-$DATE.apk
