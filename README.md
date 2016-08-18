@@ -74,6 +74,7 @@ Issues have been disabled on this repo, if you do find an issue or have a questi
 1) 生成命令
 ```bash
 keytool -genkey -v -keystore my-release-key.keystore -alias panocean -keyalg RSA -keysize 2048 -validity 10000
+keytool -genkeypair -alias migicboard.keystore -keyalg RSA -validity 10000 -keystore migicboard.keystore
 ```
 2) 生成 release包
 ```bash
@@ -82,6 +83,7 @@ ionic build --release android
 3) 签名
 ```bash
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore /Users/suxindao/work/billboard/platforms/android/build/outputs/apk/android-release-unsigned.apk panocean
+jarsigner -verbose -keystore migicboard.keystore -signedjar $build_path/MagicManager-$DATE.apk $apk_path/android-release-unsigned.apk migicboard.keystore
 ```
 4) 优化
 ```bash

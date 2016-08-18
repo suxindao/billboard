@@ -9,6 +9,14 @@ fi
 
 rm $build_path/MagicManager-release-$DATE.apk
 
+#生成Key
+#keytool -genkeypair -alias migicboard.keystore -keyalg RSA -validity 10000 -keystore migicboard.keystore
+
 ionic build --release android
-jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore $apk_path/android-release-unsigned.apk panocean
-zipalign -f -v 4 $apk_path/android-release-unsigned.apk $build_path/MagicManager-release-$DATE.apk
+
+#jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore $apk_path/android-release-unsigned.apk panocean
+jarsigner -verbose -keystore migicboard.keystore -signedjar $build_path/MagicManager-$DATE.apk $apk_path/android-release-unsigned.apk migicboard.keystore
+
+zipalign -f -v 4 $build_path/MagicManager-$DATE.apk $build_path/MagicManager-release-$DATE.apk
+
+rm $build_path/MagicManager-$DATE.apk
