@@ -10,3 +10,5 @@ www/css/
 plugins/
 .idea/
 www/jsa/
+build/
+

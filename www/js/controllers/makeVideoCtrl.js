@@ -99,7 +99,7 @@ angular.module('starter.controllers')
         data.playtime = $scope.programData.totaltime / results.length;
         data.playtime = Math.round(data.playtime);
 
-        if (i == 2 || i == 5)
+        if ((i+1) % 3 == 0 )
           data.line = false;
         else
           data.line = true;
@@ -229,12 +229,12 @@ angular.module('starter.controllers')
     }
 
 
-    
+
     var uploadFiles=function(files,index)
     {
         if(files.length == index)
         {
-            
+
             doCreate($scope.programData, function (ret)
                   {
                     if (ret)
@@ -250,29 +250,29 @@ angular.module('starter.controllers')
                     }
 
                    utilService.hideLoading();
-                   
+
                   });
-                  
+
             return;
         }
-            
+
         var newIndex=index+1;
-        
+
          aJaxService.postImage(files[index], function (data)
          {
              if(data)
-             { 
+             {
                  uploadFiles(files,newIndex);
-                 
+
              }else
              {
                   utilService.showAlert("","制作节目失败！");
              }
-             
+
          });
-         
+
     }
-    
+
     var createProgram = function (name)
     {
       utilService.showLoading("节目制作中，请稍候...");
@@ -311,7 +311,7 @@ angular.module('starter.controllers')
             });
             return;
           }
-          
+
           uploadFiles(items,0);
 
 //          for (var i = 0; i < itemLength; i++)
