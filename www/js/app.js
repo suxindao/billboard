@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter.services', 'starter.directives', 'starter.filters'])
+angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter.services', 'starter.directives', 'starter.filters', 'pascalprecht.translate'])
 
   .run(function ($ImageCacheFactory, $ionicPlatform, $location, $ionicPopup, $rootScope, $state, $stateParams, $ionicHistory, locals) {
 
@@ -100,7 +100,19 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
 
   })
 
-  .config(function ($httpProvider, $stateProvider, $urlRouterProvider, $ionicConfigProvider, $cordovaInAppBrowserProvider) {
+  .config(function ($httpProvider, $stateProvider, $urlRouterProvider, $ionicConfigProvider, $cordovaInAppBrowserProvider, $translateProvider, _translate_EN) {
+
+    $translateProvider.translations('en', _translate_EN);
+
+    $translateProvider.registerAvailableLanguageKeys(['en', 'zh'], {
+      'en-*': 'en',
+      'zh-*': 'zh',
+      'cn-*': 'zh'
+    });
+
+    $translateProvider.preferredLanguage('zh');
+    $translateProvider.determinePreferredLanguage();//这个方法是获取手机默认语言设置
+    $translateProvider.fallbackLanguage('en');
 
     //禁用全局缓存
 //    $ionicConfigProvider.views.maxCache(0);

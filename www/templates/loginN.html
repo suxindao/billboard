@@ -1,7 +1,7 @@
 <ion-view view-title="用户登录" class="bcbg minht">
 
   <ion-header-bar align-title="center" class="bar bar-header a_bar a_barc fxcen">
-    <h1 class="title mtit">用户登录</h1>
+    <h1 class="title mtit">{{'用户登录' | T}}</h1>
   </ion-header-bar>
 
   <ion-content class="scroll-content tophet" overflow-scroll="false" scroll="false">
@@ -23,10 +23,10 @@
         <img class="marauto newWht" src="img/tel.png">
         <i class="borgtl"></i>
       </label>
-      <input class="padlft" id="yzm" type="tel" maxlength="4" placeholder="请输入验证码" ng-model="data.code">
+      <input class="padlft" id="yzm" type="tel" maxlength="4" placeholder="{{'请输入验证码' | T}}" ng-model="data.code">
       <div class="yzmbtn textcen mrret" ng-show="!data.showCountNumber" ng-click="loginSendSMSCode()">
         <img class="clock marauto" src="img/clocka.png">
-        <span class="yzmtit textcen" flash-button flash-css="yzmcol">获取验证码</span>
+        <span class="yzmtit textcen" flash-button flash-css="yzmcol">{{'获取验证码' | T}}</span>
       </div>
       <div class="yzmbtn fxcen mrret" ng-show="data.showCountNumber">
         <span class="wborw yzmtit bultxt textcen">{{data.countdown}}秒后重新获取</span>
@@ -35,7 +35,8 @@
     </div>
 
     <div class="logbtnf logbtn textcen" ng-click="loginWithSMSCode()" flash-button flash-css="clkbg">
-      登<span class="inblo wthd"></span>录
+      <!--登<span class="inblo wthd"></span>录-->
+      {{'登录' | T }}
     </div>
 
     <!-- <div class="join">

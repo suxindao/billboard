@@ -87,11 +87,10 @@ angular.module('starter.services')
       }
 
 
-      function errorCall(info)
-      {
+      function errorCall(info) {
 
-        if(info != undefined)
-           alertTimeout('图像文件处理失败！',2000);
+        if (info != undefined)
+          alertTimeout('图像文件处理失败！', 2000);
 
 
         if (callback) {
@@ -103,7 +102,7 @@ angular.module('starter.services')
       function pickerFailure(info) {
 
 
-         errorCall(info);
+        errorCall(info);
 
 
       }
@@ -111,9 +110,8 @@ angular.module('starter.services')
       function pickerSuccess(results) {
         //$ionicLoading.hide();
 
-       // alert("success");
-        if (results.length == 0)
-        {
+        // alert("success");
+        if (results.length == 0) {
           errorCall(undefined);
 
           return;
@@ -249,60 +247,64 @@ angular.module('starter.services')
 
     };
 
-      this.hasReadExternalStoragePermissions=function(callback)
-      {
-          try
-          {
-              var temp=cordova;
+    this.hasReadExternalStoragePermissions = function (callback) {
+      try {
+        var temp = cordova;
 
-          }catch(err)
-          {
-              if(callback)
-              {
-                  callback(0);
+      } catch (err) {
+        if (callback) {
+          callback(0);
+        }
+        return;
+      }
+
+      var permissions = cordova.plugins.permissions;
+
+
+      permissions.hasPermission(permissions.READ_EXTERNAL_STORAGE, checkPermissionCallback, null);
+
+
+      function checkPermissionCallback(status) {
+        if (!status.hasPermission) {
+          var errorCallback = function () {
+            console.log('Camera permission is not turned on');
+            if (callback)
+              callback(0);
+          }
+
+          permissions.requestPermission(
+            permissions.READ_EXTERNAL_STORAGE,
+            function (status) {
+              if (!status.hasPermission)
+                errorCallback();
+              else {
+                if (callback)
+                  callback(1);
               }
-              return;
+
+            },
+            errorCallback);
+        } else {
+          if (callback) {
+            callback(1);
           }
+        }
+      }
+    };
 
-          var permissions = cordova.plugins.permissions;
+  })
 
+  .factory('T', ['$translate', function ($translate) {
+    var T = {
+      T: function (key) {
+        if (key) {
+          if ($translate.proposedLanguage() == "zh")
+            return key;
+          return $translate.instant(key);
+        }
+        return key;
+      }
+    }
+    return T;
+  }]);
 
-
-          permissions.hasPermission(permissions.READ_EXTERNAL_STORAGE, checkPermissionCallback, null);
-
-
-         function checkPermissionCallback(status) {
-          if(!status.hasPermission) {
-            var errorCallback = function() {
-               console.log('Camera permission is not turned on');
-              if(callback)
-                  callback(0);
-            }
-
-            permissions.requestPermission(
-              permissions.READ_EXTERNAL_STORAGE,
-              function(status) {
-                if(!status.hasPermission)
-                  errorCallback();
-                else
-                {
-                  if(callback)
-                    callback(1);
-                }
-
-              },
-              errorCallback);
-            }else
-            {
-                if(callback)
-                {
-                    callback(1);
-                }
-            }
-          }
-      };
-
-
-
-
-  });

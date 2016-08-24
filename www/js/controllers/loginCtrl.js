@@ -6,7 +6,7 @@
 
 angular.module('starter.controllers')
 
-  .controller('LoginCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $state, $interval) {
+  .controller('LoginCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $state, $interval, T) {
     $scope.data = {
       countdown: 60,
       showMessage: false,
@@ -24,7 +24,7 @@ angular.module('starter.controllers')
     $scope.loginSendSMSCode = function () {
 
       if (!utilService.checkMobile($scope.data.mobile)) {
-        utilService.showAlert('提示', '不是完整的11位手机号或者正确的手机号前七位！');
+        utilService.showAlert(T.T('提示'), T.T('不是完整的11位手机号或者正确的手机号前七位！'));
         return;
       }
 
@@ -51,7 +51,7 @@ angular.module('starter.controllers')
 //        return;
 
       if (!utilService.checkMobile($scope.data.mobile)) {
-        utilService.showAlert('提示', '请输入正确的手机号码！');
+        utilService.showAlert(T.T('提示'), T.T('请输入正确的手机号码！'));
         return;
       }
 
