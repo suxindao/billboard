@@ -50,6 +50,7 @@
     <source-file src="src/android/splash_screen.xml" target-dir="res/layout"/>
     <source-file src="src/android/splash_logo.png" target-dir="res/drawable-xhdpi"/>
     <source-file src="src/android/splash_text.png" target-dir="res/drawable-xhdpi"/>
+    <source-file src="src/android/strings.xml" target-dir="res/values-zh"/>
 
   </platform>
 

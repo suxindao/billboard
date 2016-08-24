@@ -218,7 +218,7 @@ progress = new ProgressDialog(this,R.style.myProgressDialog);
 
 //  progress.getWindow().setContentView(R.layout);
 // progress.setTitle("Processing Images");
-progress.setMessage(this.getString(R.string.processing_images_message));
+progress.setMessage(this.getString(R.string.processing_images_header));
 
 progress.setCancelable(false);
 
