@@ -35,10 +35,10 @@ angular.module('starter.controllers')
       aJaxService.httpGetData(requestUrl)
         .success(function (data) {
           $scope.data.vaildButton = true;
-          $scope.data.message = "验证码已发送";
+          $scope.data.message = T.T('验证码已发送');
         })
         .error(function (data) {
-          utilService.showAlert('获取失败', '获取验证码失败！请重新获取！');
+          utilService.showAlert(T.T('获取失败'), T.T('获取验证码失败！请重新获取！'));
           $scope.data.message = data.msgc;
         });
 
@@ -56,7 +56,7 @@ angular.module('starter.controllers')
       }
 
       if (!utilService.checkSMSCode($scope.data.code)) {
-        utilService.showAlert('提示', '短信验证码格式不正确!');
+        utilService.showAlert(T.T('提示'), T.T('短信验证码格式不正确!'));
         return;
       }
 
@@ -69,7 +69,7 @@ angular.module('starter.controllers')
         })
         .error(function (data) {
           aJaxService.setToken(undefined);
-          utilService.showAlert('登录', '登录失败！');
+          utilService.showAlert(T.T('登录'), T.T('登录失败！'));
           $scope.data.showMessage = true;
           $scope.data.message = data.msgc;
 

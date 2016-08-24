@@ -24,7 +24,7 @@ angular.module('starter.filters')
 
   .filter("T", ['$translate', function ($translate) {
     return function (key) {
-      // console.log($translate.instant(key));
+      // alert($translate.proposedLanguage());
       if (key) {
         // if ($translate.proposedLanguage() == "zh")
         //   return key;

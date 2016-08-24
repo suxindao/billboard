@@ -111,8 +111,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
     });
 
     $translateProvider.preferredLanguage('zh');
-    $translateProvider.determinePreferredLanguage();//这个方法是获取手机默认语言设置
-    $translateProvider.fallbackLanguage('en');
+    $translateProvider.uniformLanguageTag('bcp47').determinePreferredLanguage();//这个方法是获取手机默认语言设置
+    $translateProvider.fallbackLanguage('zh');
 
     //禁用全局缓存
 //    $ionicConfigProvider.views.maxCache(0);
