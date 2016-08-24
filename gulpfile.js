@@ -23,7 +23,7 @@ var filesToMove = [
   sdir + '/ionic/js/ionic.bundle.js',
   sdir + '/ngCordova/dist/ng-cordova.js',
   sdir + '/Swiper/dist/js/swiper.js',
-  sdir + '/angular-translate/angular-translate.min.js'
+  sdir + '/angular-translate/angular-translate.js'
 ];
 
 gulp.task('default', ['clean', 'cpjs', 'cpFont', 'sass']);

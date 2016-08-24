@@ -298,8 +298,8 @@ angular.module('starter.services')
     var T = {
       T: function (key) {
         if (key) {
-          if ($translate.proposedLanguage() == "zh")
-            return key;
+          // if ($translate.proposedLanguage() == "zh")
+          //   return key;
           return $translate.instant(key);
         }
         return key;
