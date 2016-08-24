@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.panocean.starter" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>广告牌</name>
+    <name>MagicManager</name>
     <description>
     An Ionic Framework and Cordova project.
   </description>
@@ -48,6 +48,7 @@
         <splash density="port-xhdpi" src="resources/android/splash/wel_768_1024.png" />
         <splash density="port-xxhdpi" src="resources/android/splash/wel_960_1440.png" />
         <splash density="port-xxxhdpi" src="resources/android/splash/wel_1280_1920.png" />
+         <source-file src="resources/android/strings.xml" target-dir="res/values-zh"/>
     </platform>
     <allow-intent href="*" />
     <allow-navigation href="*" />

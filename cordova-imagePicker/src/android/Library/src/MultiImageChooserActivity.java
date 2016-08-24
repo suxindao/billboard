@@ -218,7 +218,7 @@ progress = new ProgressDialog(this,R.style.myProgressDialog);
 
 //  progress.getWindow().setContentView(R.layout);
 // progress.setTitle("Processing Images");
-progress.setMessage("正在处理图片。。。");
+progress.setMessage(this.getString(R.string.processing_images_header));
 
 progress.setCancelable(false);
 
@@ -275,7 +275,9 @@ window.setContentView(R.layout.alertdialog);
 
 TextView tv_title = (TextView) window.findViewById(R.id.tv_dialog_title);
 
-tv_title.setText("图片数量最多为 " + maxImageCount + " 张!!!");
+String str=String.format(this.getString(R.string.maximum_selection_count_error_message),maxImageCount);
+
+tv_title.setText(str);
 
 handler.removeCallbacks(run);
 

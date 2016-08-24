@@ -22,7 +22,6 @@
     "shelljs": "^0.3.0"
   },
   "cordovaPlugins": [
-    "cordova-plugin-device",
     "cordova-plugin-console",
     "cordova-plugin-whitelist",
     "cordova-plugin-statusbar",
@@ -35,7 +34,8 @@
     "cordova-hot-code-push-local-dev-addon",
     "cordova-imagePicker",
     "cordova-plugin-android-permissions",
-    "cordova-splashscreen"
+    "cordova-splashscreen",
+    "cordova-plugin-device"
   ],
   "cordovaPlatforms": [
     "android"
