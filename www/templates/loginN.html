@@ -14,7 +14,7 @@
         <img class="marauto newWht" src="img/admin.png">
         <i class="borgtl"></i>
       </label>
-      <input class="padlft" id="user" type="number" placeholder="手机号码" ng-model="data.mobile">
+      <input class="padlft" id="user" type="number" placeholder={{'手机号码' | T}} ng-model="data.mobile">
       <img class="fr xamg marauto mrret" src="img/xa.png" ng-if="!((''+data.mobile).length > 0)">
       <img class="fr xamg marauto mrret" src="img/xb.png" ng-if="((''+data.mobile).length > 0)" ng-click="clearPhone()">
     </div>
@@ -29,7 +29,7 @@
         <span class="yzmtit textcen" flash-button flash-css="yzmcol">{{'获取验证码' | T}}</span>
       </div>
       <div class="yzmbtn fxcen mrret" ng-show="data.showCountNumber">
-        <span class="wborw yzmtit bultxt textcen">{{data.countdown}}秒后重新获取</span>
+        <span class="wborw yzmtit bultxt textcen">{{data.countdown}}{{'秒后重新获取' | T}}</span>
       </div>
 
     </div>

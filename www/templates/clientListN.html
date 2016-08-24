@@ -10,7 +10,7 @@
     <div class="buttons mgft fxcen btlft towdp" ng-click="goMain()">
       <img class="wborw marauto" src="img/hogo.png">
     </div>
-    <h1 class="title mtit" id="stitb">设备匹配</h1>
+    <h1 class="title mtit" id="stitb">{{'设备匹配' | T}}</h1>
     <div class="buttons mgrt fxcen mfr towdp" ui-sref="match">
       <img class="marauto wborw" src="img/addn.png">
     </div>
@@ -19,7 +19,7 @@
 
   <ion-content class="scroll-content stopb pmzero theit" overflow-scroll="true" scroll="true">
 
-    <ion-refresher pulling-text="正在刷新..." on-refresh="doRefresh()"></ion-refresher>
+    <ion-refresher pulling-text={{'正在刷新...' | T}} on-refresh="doRefresh()"></ion-refresher>
 
     <div class="jqlist fxcen" ng-repeat="client in data.clients">
       <img ng-if="(client.status == '0')" class="marauto jqmg" src="img/vboad.png">
