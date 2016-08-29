@@ -162,4 +162,19 @@ angular.module('starter.directives')
         });
       }
     };
-  });
+  })
+
+  .directive('languagecss', function ($translate) {
+    return {
+      restrict: 'A',
+      scope: {
+        languagecss: "@"
+      },
+      link: function (_scope, _element) {
+        if ($translate.proposedLanguage() == "en")
+        _element.attr("href", _scope.languagecss);
+      }
+    };
+  })
+
+;
