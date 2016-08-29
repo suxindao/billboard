@@ -6,7 +6,7 @@
 
 angular.module('starter.controllers')
 
-  .controller('ManageCtrl', function ($scope, $state, $timeout, $ionicActionSheet, $ionicLoading, contentService, utilService, $cordovaInAppBrowser, $ionicPopup) {
+  .controller('ManageCtrl', function ($scope, $state, $timeout, $ionicActionSheet, $ionicLoading, contentService, utilService, $cordovaInAppBrowser, $ionicPopup, T ) {
 
     $scope.data = {
       galleryTop: null,
@@ -25,7 +25,7 @@ angular.module('starter.controllers')
     if ($scope.data.photos === null) {
       // Setup the loader
       $ionicLoading.show({
-        template: '内容加载中',
+        template: T.T('内容加载中'),
         // animation: 'fade-in',
         // showBackdrop: true,
         // maxWidth: 200,
@@ -47,7 +47,7 @@ angular.module('starter.controllers')
             $scope.noContentConfirm();
           }
         } else { //网络错误
-          utilService.showAlert('内容获取失败');
+          utilService.showAlert(T.T('内容获取失败'));
         }
 
       });
@@ -149,7 +149,7 @@ angular.module('starter.controllers')
 
     $scope.noContentConfirm = function () {
 
-      var noContentConfirm = utilService.showConfirm('内容管理', '没有节目内容,是否去创建?', '确定', '取消',
+      var noContentConfirm = utilService.showConfirm(T.T('内容管理'), T.T('没有节目内容,是否去创建?'), T.T('确定'), T.T('取消'),
         function () {
           $state.go("makeVideo", {getPremission: true});
           return;
@@ -207,7 +207,7 @@ angular.module('starter.controllers')
             //   }
             // });
 
-            utilService.alertTimeout('删除成功', 2000, function () {
+            utilService.alertTimeout(T.T('删除成功'), 2000, function () {
               $scope.data.photos.splice(slideIndex, 1);
               // $scope.$emit('ngRepeatFinished');
               $scope.data.galleryTop.removeSlide(slideIndex);
@@ -221,13 +221,13 @@ angular.module('starter.controllers')
           })
           .error(function (data) {
             // utilService.showAlert('删除失败', '删除失败');
-            utilService.alertTimeout('删除失败', 2000);
+            utilService.alertTimeout(T.T('删除失败'), 2000);
           });
       };
 
-      utilService.showConfirm('删除节目',
-        '<p class="fxcen"><input class="delput" type="checkbox" ng-model="data.deleteAll" ng-true-value="1" ng-false-value="0"/><span class="textcen">是否同时删除设备上的该节目?</span></p>',
-        '确定', '取消', confirmOk, null, $scope);
+      utilService.showConfirm(T.T('删除节目'),
+        '<p class="fxcen">' +'<input class="delput" type="checkbox" ng-model="data.deleteAll" ng-true-value="1" ng-false-value="0"/><span class="textcen">{{"是否同时删除设备上的该节目?" | T}}</span></p>',
+        T.T('确定'), T.T('取消'), confirmOk, null, $scope);
     }
 
     $scope.showClientList = function () {
@@ -245,12 +245,12 @@ angular.module('starter.controllers')
         })
         templates += '</ul>';
       } else {
-        templates = "未发布";
+        templates = T.T("未发布");
       }
 
       var myPopup = $ionicPopup.show({
         template: templates,
-        title: '发布设备列表',
+        title: T.T('发布设备列表'),
         // subTitle: '已发布设备',
         scope: $scope,
         cssClass: "sList",

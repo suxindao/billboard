@@ -7,7 +7,7 @@
     <div class="buttons mgft fxcen btlft towdp" ng-click="toMainPage()">
       <img class="wborw marauto" src="img/hogo.png">
     </div>
-    <h1 class="title mtit">个人设置</h1>
+    <h1 class="title mtit">{{'个人设置' | T}}</h1>
     <!--<div class="buttons mgrt textcen" id="exit" ng-click="logout()">-->
     <!--退出登录-->
     <!--</div>-->
@@ -23,7 +23,7 @@
       <div class="grtem textbetwn">
         <P class="pf fxcen">
           <img class="marauto fimg wsne" src="img/grad.png">
-          <span class="textcen">用户名：</span>
+          <span class="textcen">{{'用户名' | T}}：</span>
         </P>
         <P class="pr fxcen fenld" style="width: 40%; padding-right: 6%;">
           <span class="textcen">{{user.name}}</span>
@@ -33,7 +33,7 @@
       <div class="grtem textbetwn borwid" ng-click="goManage()">
         <P class="pf fxcen" style="width: 70%;">
           <img class="marauto fimg nmargt" src="img/grvo.png">
-          <span class="textcen">已制作节目：</span>
+          <span class="textcen">{{'已制作节目' | T}}：</span>
         </P>
         <P class="pr fxcen fenld">
           <span class="textcen">{{user.program}}</span>
@@ -43,7 +43,7 @@
       <div class="grtem textbetwn">
         <P class="pf fxcen" style="width: 70%;">
           <img class="marauto fimg" src="img/grnt.png">
-          <span class="textcen">已发布节目：</span>
+          <span class="textcen">{{'已发布节目' | T}}：</span>
         </P>
         <P class="pr fxcen fenld" style="padding-right: 8%;">
           <span class="textcen">{{user.publish}}</span>
@@ -53,7 +53,7 @@
       <div class="grtem textbetwn bornoe" ng-click="goClientList()">
         <P class="pf fxcen" style="width: 70%;">
           <img class="marauto fimg" src="img/grsz.png">
-          <span class="textcen">已配对设备：</span>
+          <span class="textcen">{{'已配对设备' | T}}：</span>
         </P>
         <P class="pr fxcen fenld">
           <span class="textcen">{{user.client}}</span>
@@ -96,7 +96,7 @@
     -->
     <div class="mofth fbjm textcen nbottm btnpos">
       <span class="yebtn nbebtn textcen" ng-click="logout()">
-        <span>退出登录</span>
+        <span>{{'退出登录' | T}}</span>
       </span>
     </div>
   </ion-content>

@@ -5,5 +5,6 @@ angular.module('starter.services')
     "注册": "Register",
     "获取验证码": "Pin code",
     "提示": "Alert",
-    "请输入正确的手机号码！": "aaaaaaaaa"
+    "请输入正确的手机号码！": "aaaaaaaaa",
+    "手机号码":"Tel"
   });

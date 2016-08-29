@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-  .controller('ClientCtrl', function ($scope, $state, $ionicActionSheet, $ionicLoading, clientService, utilService, $ionicPopup) {
+  .controller('ClientCtrl', function ($scope, $state, $ionicActionSheet, $ionicLoading, clientService, utilService, $ionicPopup, T ) {
 
     $scope.data = {
       clients: null,
@@ -8,7 +8,7 @@ angular.module('starter.controllers')
     };
 
     var noClientConfirm = function () {
-      utilService.showConfirm('设备列表', '没有匹配设备,是否去匹配?', '确定', '取消', function () {
+      utilService.showConfirm(T.T('设备列表'), T.T('没有匹配设备,是否去匹配?'), T.T('确定'), T.T('取消'), function () {
         $state.go("match");
       }, function () {
         $state.go("main");
@@ -18,7 +18,7 @@ angular.module('starter.controllers')
     var getClientList = function () {
 
       $ionicLoading.show({
-        template: '设备列表加载中'
+        template: T.T('设备列表加载中')
       });
 
       clientService.getClients(function (data) {
@@ -122,12 +122,12 @@ angular.module('starter.controllers')
       $ionicPopup.show({
         cssClass: 'iptTop',
         template: '<input type="text" maxlength="12" ng-model="data.name" auto-focus>',
-        title: '请输入新设备名',
+        title: T.T('请输入新设备名'),
         /*subTitle: '请输入新设备名',*/
         scope: $scope,
         buttons: [
-          {text: '取消'}, {
-            text: '<b>确定</b>',
+          {text: T.T('取消')}, {
+            text: '<b>{{"确定" | T}}</b>',
             type: 'button-positive',
             onTap: function (e) {
               if (!$scope.data.name) {
@@ -147,12 +147,12 @@ angular.module('starter.controllers')
               //   updateLocalName(clientID, res);
               // });
               updateLocalName(clientID, res);
-              utilService.alertTimeout('修改成功！', 2000);
+              utilService.alertTimeout(T.T('修改成功！'), 2000);
 
             })
             .error(function (data) {
               // utilService.showAlert('修改失败');
-              utilService.alertTimeout('修改失败', 2000);
+              utilService.alertTimeout(T.T('修改失败'), 2000);
             });
         } else {
           console.log("放弃修改/名字未修改");
@@ -172,7 +172,7 @@ angular.module('starter.controllers')
 
               $scope.removeClient(clientID);
 
-              utilService.alertTimeout('解绑成功！', 2000, function () {
+              utilService.alertTimeout(T.T('解绑成功！'), 2000, function () {
                 if ($scope.data.clients.length == 0) {
                   noClientConfirm();
                 }
@@ -180,14 +180,14 @@ angular.module('starter.controllers')
 
             })
             .error(function (data) {
-              utilService.alertTimeout('解绑失败', 2000);
+              utilService.alertTimeout(T.T('解绑失败'), 2000);
             });
         } else {
           console.log("放弃解除绑定设备");
         }
       }
 
-      utilService.showConfirm("解除设备", "确定解除设备 " + $scope.data.name + "吗?", "确定", "取消", okConfirm, null, $scope);
+      utilService.showConfirm(T.T("解除设备"), T.T("确定解除设备 ") + $scope.data.name + T.T("吗?"), T.T("确定"), T.T("取消"), okConfirm, null, $scope);
 
     };
 

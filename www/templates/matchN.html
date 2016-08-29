@@ -4,7 +4,7 @@
     <div class="buttons mgft fxcen btlft towdp" ng-click="goMain()">
       <img class="wborw marauto" src="img/hogo.png">
     </div>
-    <h1 class="title mtit">设备匹配</h1>
+    <h1 class="title mtit">{{'设备匹配' | T}}</h1>
     <div class="buttons mgrt fxcen mfr towdp" ng-click="goClientList()">
       <img class="marauto wborw" src="img/backg.png">
     </div>
@@ -29,8 +29,8 @@
       <img class="fr xamg marauto" src="img/xa.png" ng-if="!((''+data.clientID).length > 0)">
       <img class="fr xamg marauto" src="img/xb.png" ng-if="((''+data.clientID).length > 0)" ng-click="data.clientID=''">
     </div>
-    <div class="logbtnf logbtn textcen" ng-show="!data.showNextButton" ng-click="clientBind()">配对</div>
-    <div class="logbtnf logbtn textcen" ng-show="data.showNextButton" ng-click="goList()">下一步</div>
+    <div class="logbtnf logbtn textcen" ng-show="!data.showNextButton" ng-click="clientBind()">{{'配对' | T}}</div>
+    <div class="logbtnf logbtn textcen" ng-show="data.showNextButton" ng-click="goList()">{{'下一步' | T}}</div>
   </ion-content>
 
   <!--
