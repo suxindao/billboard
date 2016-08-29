@@ -6,7 +6,7 @@
 
 angular.module('starter.controllers')
 
-  .controller('ManageCtrl', function ($scope, $state, $timeout, $ionicActionSheet, $ionicLoading, contentService, utilService, $cordovaInAppBrowser, $ionicPopup, T ) {
+  .controller('ManageCtrl', function ($scope, $state, $timeout, $ionicActionSheet, $ionicLoading, contentService, utilService, $cordovaInAppBrowser, $ionicPopup, T) {
 
     $scope.data = {
       galleryTop: null,
@@ -226,8 +226,10 @@ angular.module('starter.controllers')
       };
 
       utilService.showConfirm(T.T('删除节目'),
-        '<p class="fxcen">' +'<input class="delput" type="checkbox" ng-model="data.deleteAll" ng-true-value="1" ng-false-value="0"/><span class="textcen">{{"是否同时删除设备上的该节目?" | T}}</span></p>',
-        T.T('确定'), T.T('取消'), confirmOk, null, $scope);
+        '<p class="fxcen">' + '<input class="delput" type="checkbox" ng-model="data.deleteAll" ng-true-value="1" ng-false-value="0"/><span class="textcen">' + T.T("是否同时删除设备上的该节目?") + '</span></p>',
+        T.T('确定'), T.T('取消'), confirmOk, null, $scope
+      )
+      ;
     }
 
     $scope.showClientList = function () {

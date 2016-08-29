@@ -13,7 +13,7 @@ angular.module('starter.controllers')
     //设备配对
     $scope.clientBind = function () {
 
-      utilService.showLoading(T.T("设备匹配中，请稍候..."));
+      utilService.showLoading(T.T("设备匹配中，请稍候"));
 
       $scope.data.showGif = true;
 

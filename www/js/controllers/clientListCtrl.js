@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-  .controller('ClientCtrl', function ($scope, $state, $ionicActionSheet, $ionicLoading, clientService, utilService, $ionicPopup, T ) {
+  .controller('ClientCtrl', function ($scope, $state, $ionicActionSheet, $ionicLoading, clientService, utilService, $ionicPopup, T) {
 
     $scope.data = {
       clients: null,
@@ -127,7 +127,7 @@ angular.module('starter.controllers')
         scope: $scope,
         buttons: [
           {text: T.T('取消')}, {
-            text: '<b>{{"确定" | T}}</b>',
+            text: '<b>' + T.T('确定') + '</b>',
             type: 'button-positive',
             onTap: function (e) {
               if (!$scope.data.name) {

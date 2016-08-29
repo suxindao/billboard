@@ -15,13 +15,13 @@
       <img ng-if="!data.showGif" class="disblok matmg" style="width: 20%; margin: auto;" src="img/nnn.png">
       <img ng-if="data.showGif" class="disblok matmg" style="width: 20%; margin: auto;" src="img/dhp.gif">
     </div>
-    <p class="matit" style="height: 20px;margin-top: 3%;" ng-bind="data.message"/>
+    <p class="matit" style="height: 20px;margin-top: 3%;">{{data.message | T}}</p>
     <div class="adipt fxcen">
       <label class="labpt fxcen" for="matid">
         <img class="marauto adico" src="img/jqid.png">
         <i class="borgtl"></i>
       </label>
-      <input class="padlft fl x-input-el" id="matid" type="number" placeholder="请输入设备ID"
+      <input class="padlft fl x-input-el" id="matid" type="number" placeholder="{{'请输入设备ID' | T}}"
              ng-model="data.clientID"
              ng-focus="data.focusInput = true"
              ng-blur="data.focusInput = false"
