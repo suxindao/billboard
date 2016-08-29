@@ -4,7 +4,7 @@
     <div class="buttons mgft fxcen btlft towdp" ng-click="goMain()">
       <img class="wborw marauto" src="img/hogo.png">
     </div>
-    <h1 class="title mtit">设备匹配</h1>
+    <h1 class="title mtit">{{'设备匹配' | T}}</h1>
     <div class="buttons mgrt fxcen mfr towdp" ng-click="goClientList()">
       <img class="marauto wborw" src="img/backg.png">
     </div>
@@ -15,13 +15,13 @@
       <img ng-if="!data.showGif" class="disblok matmg" style="width: 20%; margin: auto;" src="img/nnn.png">
       <img ng-if="data.showGif" class="disblok matmg" style="width: 20%; margin: auto;" src="img/dhp.gif">
     </div>
-    <p class="matit" style="height: 20px;margin-top: 3%;" ng-bind="data.message"/>
+    <p class="matit" style="height: 20px;margin-top: 3%;">{{data.message | T}}</p>
     <div class="adipt fxcen">
       <label class="labpt fxcen" for="matid">
         <img class="marauto adico" src="img/jqid.png">
         <i class="borgtl"></i>
       </label>
-      <input class="padlft fl x-input-el" id="matid" type="number" placeholder="请输入设备ID"
+      <input class="padlft fl x-input-el" id="matid" type="number" placeholder="{{'请输入设备ID' | T}}"
              ng-model="data.clientID"
              ng-focus="data.focusInput = true"
              ng-blur="data.focusInput = false"
@@ -29,8 +29,8 @@
       <img class="fr xamg marauto" src="img/xa.png" ng-if="!((''+data.clientID).length > 0)">
       <img class="fr xamg marauto" src="img/xb.png" ng-if="((''+data.clientID).length > 0)" ng-click="data.clientID=''">
     </div>
-    <div class="logbtnf logbtn textcen" ng-show="!data.showNextButton" ng-click="clientBind()">配对</div>
-    <div class="logbtnf logbtn textcen" ng-show="data.showNextButton" ng-click="goList()">下一步</div>
+    <div class="logbtnf logbtn textcen" ng-show="!data.showNextButton" ng-click="clientBind()">{{'配对' | T}}</div>
+    <div class="logbtnf logbtn textcen" ng-show="data.showNextButton" ng-click="goList()">{{'下一步' | T}}</div>
   </ion-content>
 
   <!--

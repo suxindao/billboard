@@ -6,14 +6,14 @@
 
 angular.module('starter.controllers')
 
-  .controller('MatchCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $state, $timeout) {
+  .controller('MatchCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $state, $timeout, T) {
 
     init();
 
     //设备配对
     $scope.clientBind = function () {
 
-      utilService.showLoading("设备匹配中，请稍候...");
+      utilService.showLoading(T.T("设备匹配中，请稍候"));
 
       $scope.data.showGif = true;
 
@@ -30,10 +30,10 @@ angular.module('starter.controllers')
 
             if (data.result === 0) {
               $scope.data.showNextButton = true;
-              $scope.data.message = "配对成功";
+              $scope.data.message = T.T("配对成功");
 
               //以下两行直接跳转回设备列表
-              utilService.alertTimeout('配对成功', 2000, function () {
+              utilService.alertTimeout(T.T('配对成功'), 2000, function () {
                 $scope.goList();
               });
             } else {
@@ -50,9 +50,9 @@ angular.module('starter.controllers')
             if (data.result == 215
               || data.result == 216
               || data.result == 217) {
-              $scope.data.message = "配对失败: " + data.msgc;
+              $scope.data.message = T.T("配对失败: ") + data.msgc;
             } else {
-              $scope.data.message = "配对失败";
+              $scope.data.message = T.T("配对失败");
             }
             utilService.hideLoading();
           }, 2000)

@@ -6,7 +6,7 @@
 
 angular.module('starter.controllers')
 
-  .controller('MainCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $state, $ionicLoading) {
+  .controller('MainCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $state, $ionicLoading, T) {
 
     $scope.clickPost = function () {
 
@@ -33,7 +33,7 @@ angular.module('starter.controllers')
 
     $scope.goTest = function () {
       $ionicLoading.show({
-        template: '内容加载中',
+        template: T.T('内容加载中'),
         // animation: 'fade-in',
         // showBackdrop: true,
         // maxWidth: 200,

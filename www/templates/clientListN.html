@@ -10,7 +10,7 @@
     <div class="buttons mgft fxcen btlft towdp" ng-click="goMain()">
       <img class="wborw marauto" src="img/hogo.png">
     </div>
-    <h1 class="title mtit" id="stitb">设备匹配</h1>
+    <h1 class="title mtit" id="stitb">{{'设备匹配' | T}}</h1>
     <div class="buttons mgrt fxcen mfr towdp" ui-sref="match">
       <img class="marauto wborw" src="img/addn.png">
     </div>
@@ -19,7 +19,7 @@
 
   <ion-content class="scroll-content stopb pmzero theit" overflow-scroll="true" scroll="true">
 
-    <ion-refresher pulling-text="正在刷新..." on-refresh="doRefresh()"></ion-refresher>
+    <ion-refresher pulling-text="{{'正在刷新' | T}}..." on-refresh="doRefresh()"></ion-refresher>
 
     <div class="jqlist fxcen" ng-repeat="client in data.clients">
       <img ng-if="(client.status == '0')" class="marauto jqmg" src="img/vboad.png">
@@ -27,16 +27,16 @@
       <ul class="marauto jqul">
         <li class="jqlia">
           <p class="jqlip inblo"><span class="jqspc">ID </span>: {{client.id}}</p>
-          <p class="jqliq inblo"><span class="jqspc">状态 </span>: {{(client.status == "0")? "离线" : "在线"}}</p>
+          <p class="jqliq inblo"><span class="jqspc">{{'状态' | T}} </span>: {{(client.status == "0"? '离线':'在线') | T}} </p>
         </li>
-        <li class="jqlia"><span class="jqspc">名称 </span>: {{client.name}}</li>
-        <li class="jqlia"><span class="jqspc">创建时间 </span>: {{client.create_date}}</li>
-        <li class="jqlia"><span class="jqspc">当前节目 </span>: {{client.current_program}}</li>
+        <li class="jqlia" style="line-height:1em"><span class="jqspc">{{'名称' | T}} </span>: {{client.name}}</li>
+        <li class="jqlia"><span class="jqspc">{{'创建时间' | T}} </span>: {{client.create_date}}</li>
+        <li class="jqlia" style="margin-bottom:0"><span class="jqspc">{{'当前节目' | T}} </span>: {{client.current_program}}</li>
       </ul>
 
       <div class="sbtnls">
-        <div class="jqdel marauto mbth" ng-click="changeName({{client.id}})">修改名称</div>
-        <div class="jqdel marauto hbz marg_noe" ng-click="unbind({{client.id}})">解除绑定</div>
+        <div class="jqdel marauto mbth" ng-click="changeName({{client.id}})">{{'修改名称'| T}}</div>
+        <div class="jqdel marauto hbz marg_noe" ng-click="unbind({{client.id}})">{{'解除绑定' | T}}</div>
       </div>
     </div>
 

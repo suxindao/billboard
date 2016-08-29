@@ -13,7 +13,7 @@
 
 angular.module('starter.controllers')
 
-  .controller('makeVideoCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $ionicLoading, $state, $stateParams,$ionicHistory,$timeout) {
+  .controller('makeVideoCtrl', function ($scope, aJaxService, utilService, $ionicPopup, $ionicLoading, $state, $stateParams,$ionicHistory, $timeout, T) {
 
 
 
@@ -133,7 +133,7 @@ angular.module('starter.controllers')
 
     $scope.clickPlayTurn = function ()
     {
-      utilService.showPopup("请输入轮播的总时长(秒)", "", function (t)
+      utilService.showPopup(T.T("请输入轮播的总时长(秒)"), "", function (t)
       {
         if (!t || t < 0)
         {
@@ -148,11 +148,11 @@ angular.module('starter.controllers')
     {
       if ($scope.currentIndex == undefined)
       {
-        utilService.alertTimeout('请选择图片进行设置！',2000);
+        utilService.alertTimeout(T.T('请选择图片进行设置！'),2000);
         return;
       }
 
-      utilService.showPopup("请输入播放时间(秒)", "", function (t)
+      utilService.showPopup(T.T("请输入播放时间(秒)"), "", function (t)
       {
         if (!t || t < 0)
         {
@@ -165,7 +165,7 @@ angular.module('starter.controllers')
 
     $scope.startMaking = function ()
     {
-      utilService.showPopup("请输入节目名称", "", function (t)
+      utilService.showPopup(T.T("请输入节目名称"), "", function (t)
       {
         if (t && t.length > 0)
         {
@@ -239,14 +239,14 @@ angular.module('starter.controllers')
                   {
                     if (ret)
                     {
-                      utilService.showAlert("","制作节目成功！", function ()
+                      utilService.showAlert("",T.T("制作节目成功！"), function ()
                       {
                         $state.go("manage");
                       });
 
                     } else
                     {
-                      utilService.showAlert("","制作节目失败！");
+                      utilService.showAlert("",T.T("制作节目失败！"));
                     }
 
                    utilService.hideLoading();
@@ -266,7 +266,7 @@ angular.module('starter.controllers')
 
              }else
              {
-                  utilService.showAlert("","制作节目失败！");
+                  utilService.showAlert("",T.T("制作节目失败！"));
              }
 
          });
@@ -275,7 +275,7 @@ angular.module('starter.controllers')
 
     var createProgram = function (name)
     {
-      utilService.showLoading("节目制作中，请稍候...");
+      utilService.showLoading(T.T("节目制作中，请稍候..."));
 
       $scope.programData.name = name;
 
@@ -296,7 +296,7 @@ angular.module('starter.controllers')
               if (ret)
               {
 
-                utilService.showAlert("","制作节目成功！", function ()
+                utilService.showAlert("",T.T("制作节目成功！"), function ()
                 {
                   $state.go("manage");
                 });
@@ -304,7 +304,7 @@ angular.module('starter.controllers')
 
               } else
               {
-                utilService.showAlert("","制作节目失败！");
+                utilService.showAlert("",T.T("制作节目失败！"));
               }
 
                utilService.hideLoading();
@@ -355,7 +355,7 @@ angular.module('starter.controllers')
         } else
         {
           utilService.hideLoading();
-          utilService.showAlert("上传图失败！");
+          utilService.showAlert(T.T("上传图失败！"));
         }
 
 

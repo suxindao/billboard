@@ -7,7 +7,7 @@
     <div class="buttons mgft fxcen btlft towdp" ng-click="toMainPage()">
       <img class="wborw marauto" src="img/hogo.png">
     </div>
-    <h1 class="title mtit">节目管理</h1>
+    <h1 class="title mtit">{{'节目管理' | T}}</h1>
     <!--<div class="buttons mgrt fxcen" ng-click="menu()">
       <img class="marauto btnmr" src="img/mcon.png">
     </div>-->
@@ -39,7 +39,7 @@
               <ul class="jmtit margut">
                 <li class="jmtitli">({{$index+1}}/{{data.photos.length}})</li>
                 <li class="jmtitli">{{photo.update_date | formatdate}}</li>
-                <li class="jmtitli redcol" ng-click="showClientList()">运行设备详情</li>
+                <li class="jmtitli redcol" ng-click="showClientList()">{{'运行设备详情' | T}}</li>
               </ul>
             </div>
             <!--<div class="col real"></div>-->
@@ -54,19 +54,19 @@
       <div class="col col-33 pmzero pdeight" ng-click="preViewUrl()">
         <span class="yebtn fxcen pf cbgol magbtn">
         <img class="newPg" src="img/yla.png">
-        <span class="fr textcen hglto">预览</span>
+        <span class="fr textcen hglto">{{'预览' | T}}</span>
         </span>
       </div>
       <div class="col col-33 pmzero pdeight" ng-click="publishContent()">
         <span class="yebtn fxcen pf cbgol manag">
         <img class="newPg" src="img/fbb.png">
-        <span class="fr textcen hglto">发布</span>
+        <span class="fr textcen hglto">{{'发布' | T}}</span>
         </span>
       </div>
       <div class="col col-33 pmzero pdeight" ng-click="removeContent()">
         <span class="yebtn fxcen pf cbgol hbz">
         <img class="newPg" src="img/delc.png">
-        <span class="fr textcen hglto">删除</span>
+        <span class="fr textcen hglto">{{'删除' | T}}</span>
         </span>
       </div>
     </div>
