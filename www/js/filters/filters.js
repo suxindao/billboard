@@ -32,4 +32,6 @@ angular.module('starter.filters')
       }
       return key;
     };
-  }]);
+  }])
+
+;
