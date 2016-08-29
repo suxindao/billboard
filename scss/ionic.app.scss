@@ -20,6 +20,21 @@ $ionicons-font-path: "ionic/fonts" !default;
 
 // Include all of Ionic
 @import "ionic/ionic";
+//变量声明
+$gb_color: #02d4c3;
+
+//混合器
+@mixin flexf{
+  display: flex;
+  text-align: center;
+}
+
+@mixin fltexn($value:center){
+  display: flex;
+  justify-content: $value;
+  align-items: center;
+}
+
 body {
   width: 100%;
   height: 100%;
@@ -40,45 +55,6 @@ input {
   margin: 0;
   border: none;
   width: 60%;
-}
-
-.fxcen {
-  display: flex;
-  text-align: center;
-}
-
-.textcen {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.textbetwn {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.marauto {
-  margin: auto;
-}
-
-.has-header {
-  top: 0;
-}
-
-.bar {
-  background-image: none;
-}
-
-.a_bar {
-  height: 9.4%;
-  background: #02d4c3;
-}
-
-.f_bar {
-  height: 5.3%;
-  padding-bottom: 10%;
 }
 
 .real {
@@ -105,6 +81,52 @@ input {
   float: right;
 }
 
+.fxcen {
+  @include flexf;
+}
+
+.textcen {
+  @include fltexn;
+}
+
+.textbetwn {
+  @include fltexn($value:space-around);
+}
+
+.marauto {
+  margin: auto;
+}
+
+.has-header {
+  top: 0;
+}
+
+.bar {
+  background-image: none;
+  .mtit {
+    height: 100%;
+    color: #fff;
+    font-size: 1em;
+    @extend .textbetwn;
+  }
+  .mbtn {
+    background: none;
+    font-size: 1.3em;
+    color: #fff;
+    padding-top: 1%;
+  }
+}
+
+.a_bar {
+  height: 9.4%;
+  background: $gb_color;
+}
+
+.f_bar {
+  height: 5.3%;
+  padding-bottom: 10%;
+}
+
 .bcbg {
   background: #f2f2f2;
   border-color: #f2f2f2;
@@ -118,22 +140,6 @@ input {
 .btnmr {
   width: 40%;
   height: auto;
-}
-
-.bar .mtit {
-  height: 100%;
-  color: #fff;
-  font-size: 1em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.bar .mbtn {
-  background: none;
-  font-size: 1.3em;
-  color: #fff;
-  padding-top: 1%;
 }
 
 .mgft {
@@ -150,6 +156,7 @@ input {
 
 .tophet {
   top: 9.4%;
+  bottom:5.3%;
 }
 
 .camg {
@@ -368,9 +375,7 @@ input {
 .logof {
   width: 100%;
   height: 36%;
-  text-align: center;
   padding-top: 9%;
-  padding-bottom: 8%;
   margin-bottom: 5%;
   background: url(../img/bgful.png);
 }
@@ -1521,7 +1526,6 @@ input {
 }
 
 .agchge {
-  padding-bottom: 0;
   height: 30%;
 }
 
@@ -1538,7 +1542,7 @@ input {
 }
 
 .mrret {
-  margin-right: 2%;
+  margin-right: 2.5%;
 }
 
 .newWht {

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="multi_app_name">图片多选器</string>
+    <string name="free_version_label">图片剩下: %d 张</string>
+    <string name="error_database">打开数据库出现了一个错误. 请报告这个问题.</string>
+    <string name="requesting_thumbnails">正在下载缩略图,请稍候...</string>
+    <string name="processing_images_header">正在处理图片...</string>
+    <string name="processing_images_message">请稍候...</string>
+    <string name="maximum_selection_count_error_header">图片数量限制</string>
+    <string name="maximum_selection_count_error_message">你一次只能选择 %d 张图片.</string>
+    <string name="discard">取消</string>
+    <string name="done">确定</string>
+</resources>
