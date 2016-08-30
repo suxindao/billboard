@@ -26,7 +26,7 @@ var filesToMove = [
   sdir + '/angular-translate/angular-translate.js'
 ];
 
-gulp.task('default', ['clean', 'cpjs', 'cpFont', 'sass']);
+gulp.task('default', ['clean', 'cpjs', 'cpFont', 'sass', 'watch']);
 
 gulp.task('clean', ['cleanJS', 'cleanCSS']);
 
