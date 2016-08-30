@@ -1,0 +1,19 @@
+@media screen and (max-width: 767px){
+  #yzm{ width:43%;}
+  .yzmbtn { width: 33%;}
+  .enwth{ width: 50%;}
+  .jqdel{ min-height:40px; width:76%;
+          align-items: center;
+          display: flex;
+          justify-content: center;
+  }
+}
+
+@media screen and (min-resolution: 2dpi) and (min-width: 768px){
+  .yzmbtn { width: 33%; margin-right: 1%;}
+  #yzm{ width:46%;}
+  .clock{ margin-left: 0;}
+  .jqlip{ margin-right: 3%;}
+  .jqliq{ width: 44%;}
+  .ename{ line-height: 1em;}
+}

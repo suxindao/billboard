@@ -239,14 +239,14 @@ angular.module('starter.controllers')
                   {
                     if (ret)
                     {
-                      utilService.showAlert("",T.T("制作节目成功！"), function ()
+                      utilService.showAlert("",T.T("制作节目成功!"), function ()
                       {
                         $state.go("manage");
                       });
 
                     } else
                     {
-                      utilService.showAlert("",T.T("制作节目失败！"));
+                      utilService.showAlert("",T.T("制作节目失败!"));
                     }
 
                    utilService.hideLoading();

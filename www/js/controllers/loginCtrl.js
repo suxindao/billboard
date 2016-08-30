@@ -51,7 +51,7 @@ angular.module('starter.controllers')
 //        return;
 
       if (!utilService.checkMobile($scope.data.mobile)) {
-        utilService.showAlert(T.T('提示'), T.T('请输入正确的手机号码！'));
+        utilService.showAlert(T.T('提示'), T.T('请输入正确的手机号码!'));
         return;
       }
 

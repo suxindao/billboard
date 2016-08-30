@@ -11,7 +11,7 @@ angular.module('starter.services')
 
     "提示": " Reminder",
 
-    "请输入正确的手机号码": "Pls type in your cellphone number",
+    "请输入正确的手机号码!": "Please type in your cellphone number",
 
     "确定": "OK",
 
@@ -21,7 +21,7 @@ angular.module('starter.services')
 
     "验证码已发送": " Verification Code Sent",
 
-    "秒后重新获取": "Resend after sec",
+    "秒后重新获取": "s Resend",
 
     "短信验证码错误": "Incorrect Verification Code",
 
@@ -37,7 +37,7 @@ angular.module('starter.services')
 
     "已发布节目": "Published Content",
 
-    "已配对设备": "Paired Devices",
+    "已配对设备": "Bound Devices",
 
     "退出登录": "Logout",
 
@@ -63,9 +63,9 @@ angular.module('starter.services')
 
     "请输入节目名称": "Please enter the name of content",
 
-    "制作节目成功": "Edit Content Succeed",
+    "制作节目成功!": "Edit Content Succeed",
 
-    "制作节目失败": "Edit Content Failed",
+    "制作节目失败!": "Edit Content Failed",
 
     "节目制作中，请稍候...": "Content processing, please wait a min",
 
@@ -97,7 +97,7 @@ angular.module('starter.services')
 
     "发布设备列表": "List of Published Device",
 
-    "设备匹配": "Device pairing",
+    "设备匹配": "Device binding",
 
     "状态": "Status",
 
@@ -111,19 +111,21 @@ angular.module('starter.services')
 
     "当前节目": "Current Content",
 
-    "修改名称": "Edit Name",
+    "修改名称": "Edit",
 
-    "解除绑定": "Unpaired",
+    "解除绑定": "Un      bound",
 
     "解除设备": "Deleted the Device",
 
-    "确定解除设备（此处设备名）吗？": "Confirm delete the device?",
+    "确定解除设备": "Confirm delete the device (",
+
+    "吗?":")?",
 
     "请输入新设备名": "Please enter the name of the device",
 
     "正在刷新": "Refreshing",
 
-    "没有匹配设备,是否去匹配?": "No paried device, pair now?",
+    "没有匹配设备,是否去匹配?": "No bound device, bind now?",
 
     "设备列表": "List of device",
 
@@ -133,25 +135,25 @@ angular.module('starter.services')
 
     "修改失败": "Fail to edit",
 
-    "解绑成功": "Unpair succeed",
+    "解绑成功": "Unbind succeed",
 
-    "解绑失败": "Fail to unpair",
+    "解绑失败": "Fail to unbind",
 
     "请输入设备ID": "Please enter ID of device",
 
-    "配对": "Pair",
+    "配对": "Bind",
 
-    "设备匹配中，请稍候": "Pairing the device, please wait a min",
+    "设备匹配中，请稍候": "binding the device, please wait a min",
 
-    "配对成功": "Paired succeed",
+    "配对成功": "Bound succeed",
 
-    "配对失败": "Fail to pair",
+    "配对失败": "Fail to bind",
 
-    "配对失败:终端不存在": "Fail to pair, device is not available",
+    "配对失败:终端不存在": "Fail to bind, device is not available",
 
-    "终端已经绑定给此用户了": "This device already paired",
+    "终端已经绑定给此用户了": "This device already bound",
 
-    "终端已经绑定给其他用户了": "This device already paired to other user",
+    "终端已经绑定给其他用户了": "This device already bound to other user",
 
     "发布节目": "Publish Content",
 
@@ -179,10 +181,13 @@ angular.module('starter.services')
 
     "退出应用": "Exit the application",
 
-    "你确定要退出应用吗？": "Are you sure to exit?",
+    "你确定要退出应用吗?": "Are you sure to exit?",
 
     "下一步": "Next",
 
-    "内容轮播": "Loop of content"
+    "内容轮播": "Loop of content",
+
+    "退出": "exit"
+
 
   });

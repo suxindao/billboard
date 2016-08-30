@@ -6,7 +6,7 @@
 
 angular.module('starter.services')
 
-  .service('utilService', function ($http, $q, $ionicLoading, $ionicPopup, $timeout) {
+  .service('utilService', function ($http, $q, $ionicLoading, $ionicPopup, $timeout,T) {
 
     this.checkMobile = function (mobileNumber) {
       if (!(/^1[3|4|5|7|8][0-9]\d{4,8}$/.test(mobileNumber))) {
@@ -90,7 +90,7 @@ angular.module('starter.services')
       function errorCall(info) {
 
         if (info != undefined)
-          alertTimeout('图像文件处理失败！', 2000);
+          alertTimeout(T.T('图像文件处理失败！'), 2000);
 
 
         if (callback) {
@@ -183,7 +183,7 @@ angular.module('starter.services')
       var alertPopup = $ionicPopup.alert({
         title: '<strong>' + title + '</strong>',
         template: template,
-        okText: '确定'
+        okText: T.T('确定')
       });
       alertPopup.then(function (res) {
         if (callback)
@@ -206,9 +206,9 @@ angular.module('starter.services')
         subTitle: subtitle,
         scope: scope,
         buttons: [
-          {text: '取消'},
+          {text: T.T('取消')},
           {
-            text: '<b>确定</b>',
+            text: '<b>'+T.T('确定')+'</b>',
             type: 'button-positive',
             onTap: function (e) {
               return scope.data.value;

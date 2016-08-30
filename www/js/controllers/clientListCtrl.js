@@ -187,7 +187,7 @@ angular.module('starter.controllers')
         }
       }
 
-      utilService.showConfirm(T.T("解除设备"), T.T("确定解除设备 ") + $scope.data.name + T.T("吗?"), T.T("确定"), T.T("取消"), okConfirm, null, $scope);
+      utilService.showConfirm(T.T("解除设备"), T.T("确定解除设备") + $scope.data.name + T.T("吗?"), T.T("确定"), T.T("取消"), okConfirm, null, $scope);
 
     };
 

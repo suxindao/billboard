@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter.services', 'starter.directives', 'starter.filters', 'pascalprecht.translate'])
 
-  .run(function ($ImageCacheFactory, $ionicPlatform, $location, $ionicPopup, $rootScope, $state, $stateParams, $ionicHistory, locals) {
+  .run(function ($ImageCacheFactory, $ionicPlatform, $location, $ionicPopup, $rootScope, $state, $stateParams, $ionicHistory, locals, T) {
 
     //主页面显示退出提示框
     $ionicPlatform.registerBackButtonAction(function (e) {
@@ -14,10 +14,10 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
 
       function showConfirm() {
         var confirmPopup = $ionicPopup.confirm({
-          title: '退出应用?',
-          template: '你确定要退出应用吗?',
-          okText: '退出',
-          cancelText: '取消'
+          title: T.T('退出应用'),
+          template: T.T('你确定要退出应用吗?'),
+          okText: T.T('退出'),
+          cancelText:T.T('取消')
         });
 
         confirmPopup.then(function (res) {
