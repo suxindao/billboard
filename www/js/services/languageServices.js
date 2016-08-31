@@ -143,7 +143,7 @@ angular.module('starter.services')
 
     "配对": "Bind",
 
-    "设备匹配中，请稍候": "binding the device, please wait a min",
+    "设备匹配中，请稍候": "Binding the device, please wait a min",
 
     "配对成功": "Bound succeed",
 
@@ -151,9 +151,9 @@ angular.module('starter.services')
 
     "配对失败:终端不存在": "Fail to bind, device is not available",
 
-    "终端已经绑定给此用户了": "This device already bound",
+    "配对失败:终端已经绑定给此用户了": "This device already bound",
 
-    "终端已经绑定给其他用户了": "This device already bound to other user",
+    "配对失败:终端已经绑定给其他用户了": "This device already bound to other user",
 
     "发布节目": "Publish Content",
 
