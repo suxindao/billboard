@@ -1,0 +1,48 @@
+<ion-view view-title="设备匹配" class="bcbg minht">
+
+  <ion-header-bar align-title="center" class="bar bar-header a_bar fxcen mhgtn">
+    <div class="buttons mgft fxcen btlft towdp" ng-click="goMain()">
+      <img class="wborw marauto" src="img/hogo.png">
+    </div>
+    <h1 class="title mtit">{{'设备匹配' | T}}</h1>
+    <div class="buttons mgrt fxcen mfr towdp" ng-click="goClientList()">
+      <img class="marauto wborw" src="img/backg.png">
+    </div>
+  </ion-header-bar>
+
+  <ion-content class="scroll-content topheta topheto" overflow-scroll="true" scroll="false">
+    <div class="bgpp fxcen" ng-class="{'fmartop' : data.focusInput}">
+      <img ng-if="!data.showGif" class="disblok matmg" style="width: 20%; margin: auto;" src="img/nnn.png">
+      <img ng-if="data.showGif" class="disblok matmg" style="width: 20%; margin: auto;" src="img/dhp.gif">
+    </div>
+    <p class="matit" style="height: 20px;margin-top: 3%;">{{data.message | T}}</p>
+    <div class="adipt fxcen">
+      <label class="labpt fxcen" for="matid">
+        <img class="marauto adico" src="img/jqid.png">
+        <i class="borgtl"></i>
+      </label>
+      <input class="padlft fl x-input-el" id="matid" type="number" placeholder="{{'请输入设备ID' | T}}"
+             ng-model="data.clientID"
+             ng-focus="data.focusInput = true"
+             ng-blur="data.focusInput = false"
+      >
+      <img class="fr xamg marauto" src="img/xa.png" ng-if="!((''+data.clientID).length > 0)">
+      <img class="fr xamg marauto" src="img/xb.png" ng-if="((''+data.clientID).length > 0)" ng-click="data.clientID=''">
+    </div>
+    <div class="logbtnf logbtn textcen" ng-show="!data.showNextButton" ng-click="clientBind()">{{'配对' | T}}</div>
+    <div class="logbtnf logbtn textcen" ng-show="data.showNextButton" ng-click="goList()">{{'下一步' | T}}</div>
+  </ion-content>
+
+  <!--
+    <ion-footer-bar align-title="center" class="bar bar-footer f_bar overf ">
+      <h1 class="title" id="ftit">Copyright © MagicPoster</h1>
+    </ion-footer-bar>
+  -->
+
+  <!-- <div ng-include="'templates/footer.html'" class="bcbg"></div> -->
+  <ion-footer-bar align-title="center" class="bar bar-footer f_bar bcbg overf nbtomm">
+    <h1 class="title bcbg" id="ftit">Copyright(c) MagicBoard</h1>
+  </ion-footer-bar>
+
+
+</ion-view>

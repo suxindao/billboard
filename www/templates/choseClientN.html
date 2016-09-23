@@ -1,0 +1,51 @@
+<ion-view view-title="发布设备选择" class="bcbg">
+  <ion-header-bar align-title="center" class="bar bar-header a_bar fxcen">
+    <div class="buttons mgft fxcen btlft towdp" ng-click="goMain()">
+      <img class="wborw marauto" src="img/hogo.png">
+    </div>
+    <h1 class="title mtit">{{'设备列表' | T}}</h1><!--id="stitb"-->
+    <div class="buttons mgrt fxcen mfr towdp" ng-click="goManage()">
+      <img class="marauto wborw" src="img/backg.png">
+    </div>
+  </ion-header-bar>
+
+  <ion-content class="scroll-content stopb theit jmbgnn" overflow-scroll="true" scroll="false">
+    <div class="row" id="smgbs">
+
+      <div class="col col-275 pmzero sgrmg real"
+           ng-repeat="client in data.clients"
+           ng-class="{'borclo': client.chose, 'smrb': ($index+1) % 3 !== 0}"
+           ng-click="chose({{client.id}})"
+      >
+        <div class="bgstyle pf absol bgtran" ng-show="client.chose"></div>
+        <div class="absol brav " ng-show="client.chose"></div>
+        <!--<img ng-show="client.chose" class="absol sgmg mcbrav" src="img/01.png">-->
+        <!--<img class="sgmg" src="img/sgirl.png">-->
+        <div class="tabcel sgmg" style="display: inline-block;">
+          <img class="sgmg" ng-src="{{client.first_image}}">
+        </div>
+        <p class="absol spbt fxcen mtun">
+          <!--<img class="marauto smag " src="img/sma.png">-->
+          <span class="textcen sptbt " id="">{{client.name | setLength:6}}</span>
+        </p>
+        <p class="absol spbb justar textcen">
+          <span class="tim slgth">{{client.create_date | formatdate}}</span>
+        </p>
+      </div>
+
+
+    </div>
+
+    <div class="mofth fbjm textcen nbottm martopy">
+      <span class="nbebtn fxcen" ng-click="sendVideo()">
+        <img class="stnmg" src="img/mai.png">
+        <span class="fr textcen">{{'发布节目' | T}}</span>
+      </span>
+    </div>
+
+  </ion-content>
+
+  <ion-footer-bar align-title="center" class="bar bar-footer f_bar bcbg overf bgtran btozero">
+    <h1 class="title bcbg bgtran nbtomm" id="ftit">Copyright(c) MagicBoard</h1>
+  </ion-footer-bar>
+</ion-view>

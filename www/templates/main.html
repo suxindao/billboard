@@ -1,23 +1,30 @@
-<ion-view view-title="应用主页面" name="account-view" hide-nav-bar="true">
-  <ion-content class="" overflow-scroll="true" scroll="false"> 
-    <div class="app_bg bgstyle">
-      <img class="cream none" src="img/cream.png">
-      <div class="logo_txt mars">
-        <img class="whmg" src="img/logo.png"><br>
-        <p>Magic Poster</p>
-      </div>
-      <div class="mtxt">
-        <a href="#" class="bgtext bkmg" ng-click="clickPost()">节目制作</a>
-        <a ui-sref="manage"  class="bgtext bkmg">节目管理</a>
-        <a href="#" class="hbmg marr bkmg">海报制作</a><!--点击效果 zcok-->
-      </div>
-      <div class="mgnt">
+<ion-view view-title="MagicManager">
 
-        <!--<a href="#" class="agt marag" ng-click="clickPost()"><img src="img/bmg.png" class="mbmg mbtl"><span>系统设置</span></a>-->
-        <a ui-sref="clientList" class="agt marbg"><img src="img/amg.png" class="mamg mbtl"><span>设备管理</span></a>           
+  <ion-header-bar align-title="center" class="bar bar-header a_bar fxcen jcbet">
+    <div class="buttons mgft fxcen btlft towdp" ng-click="goAdmin()">
+      <img class="wborw marauto" src="img/qadmin.png">
+    </div>
+    <h1 class="title mtit">MagicManager</h1>
+  </ion-header-bar>
 
-      </div>
-      <p class="txtlogo">Copyright © MagicPoster</p>
+  <ion-content class="scroll-content tophet" overflow-scroll="true" scroll="false">
+    <div class="bgstyle logof fxcen">
+      <img class="logob marauto" src="img/logoa.png">
+    </div>
+    <div class="magauto magsty magbtn textcen" ng-click="clickPost()">
+      <img class="magmg marauto" src="img/aqq1.png">
+      <span class="magsp textcen">{{'节目制作' | T}}</span>
+    </div>
+    <div class="magauto magsty manag textcen" ng-click="goManage()">
+      <img class="magmg marauto" src="img/aqq2.png">
+      <span class="magsp textcen">{{'节目管理' | T}}</span>
+    </div>
+    <div class="magauto magsty hbz textcen" ng-click="goDevice()">
+      <img class="magmg marauto" src="img/aqq3.png">
+      <span class="magsp textcen">{{'设备管理' | T}}</span>
     </div>
   </ion-content>
+  <ion-footer-bar align-title="center" class="bar bar-footer f_bar overf">
+    <h1 class="title" id="ftit">Copyright(c) MagicBoard</h1>
+  </ion-footer-bar>
 </ion-view>

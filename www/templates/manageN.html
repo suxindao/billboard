@@ -1,0 +1,78 @@
+<ion-view view-title="节目管理">
+
+  <ion-header-bar align-title="center" class="bar bar-header a_bar fxcen">
+    <!-- <div class="mgft fxcen">
+      <a class="marauto" ui-sref="admin"><img class="btnbg" src="img/user.png"></a>
+    </div> -->
+    <div class="buttons mgft fxcen btlft towdp" ng-click="toMainPage()">
+      <img class="wborw marauto" src="img/hogo.png">
+    </div>
+    <h1 class="title mtit">{{'节目管理' | T}}</h1>
+    <!--<div class="buttons mgrt fxcen" ng-click="menu()">
+      <img class="marauto btnmr" src="img/mcon.png">
+    </div>-->
+  </ion-header-bar>
+
+  <ion-content class="scroll-content topheto bgman bgstyle ghbul" overflow-scroll="true" scroll="false">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" ng-repeat="photo in data.photos" gallery-repeat-finish>
+          <div class="row btop">
+            <!--<div class="col real"></div>-->
+            <div class="col col-50 pmzero real">
+              <div class="jmtia margut">{{photo.name}}</div>
+              <div class="borclo tabcel real margut">
+                <!--<img class="whmg" ng-src="{{photo.first_image}}" preview-url="{{photo.preview_url}}" inappbowser>-->
+                <!--<div ng-click="($index == data.galleryTop.activeIndex)?menu():null" class="scmg">-->
+                <div class="scmg">
+                  <img class="whmg" ng-src="{{photo.first_image}}" preview-url="{{photo.preview_url}}">
+                </div>
+                <!--<div class="mesg absol fxcen">
+                  &lt;!&ndash; <img class="fl mpg marauto" src="img/ptn.png"> class="inblo mfr"&ndash;&gt;
+                  <div class="fr vpsg textcen txt-cent">
+                    <span>{{photo.update_date | formatdate}}</span>
+                    &lt;!&ndash;<span>未发布</span>&ndash;&gt;
+                  </div>
+                </div>-->
+              </div>
+              <!--<div class="absol glmgb sgally"></div>-->
+              <ul class="jmtit margut">
+                <li class="jmtitli">({{$index+1}}/{{data.photos.length}})</li>
+                <li class="jmtitli">{{photo.update_date | formatdate}}</li>
+                <li class="jmtitli redcol" ng-click="showClientList()">{{'运行设备详情' | T}}</li>
+              </ul>
+            </div>
+            <!--<div class="col real"></div>-->
+          </div>
+        </div>
+      </div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next swiper-button-white"></div>
+      <div class="swiper-button-prev swiper-button-white"></div>
+    </div>
+    <div class="row rowhet">
+      <div class="col col-33 pmzero pdeight" ng-click="preViewUrl()">
+        <span class="yebtn fxcen pf cbgol magbtn">
+        <img class="newPg" src="img/yla.png">
+        <span class="fr textcen hglto">{{'预览' | T}}</span>
+        </span>
+      </div>
+      <div class="col col-33 pmzero pdeight" ng-click="publishContent()">
+        <span class="yebtn fxcen pf cbgol manag">
+        <img class="newPg" src="img/fbb.png">
+        <span class="fr textcen hglto">{{'发布' | T}}</span>
+        </span>
+      </div>
+      <div class="col col-33 pmzero pdeight" ng-click="removeContent()">
+        <span class="yebtn fxcen pf cbgol hbz">
+        <img class="newPg" src="img/delc.png">
+        <span class="fr textcen hglto">{{'删除' | T}}</span>
+        </span>
+      </div>
+    </div>
+    <ion-footer-bar align-title="center" class="bar bar-footer f_bar overf" style="background: none;">
+      <h1 class="title" id="ftit">Copyright(c) MagicBoard</h1>
+    </ion-footer-bar>
+  </ion-content>
+
+</ion-view>

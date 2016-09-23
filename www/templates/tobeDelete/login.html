@@ -1,0 +1,66 @@
+<ion-view view-title="登录" name="account-view" hide-nav-bar="true">
+  <ion-content class="" overflow-scroll="true" scroll="false">
+    <header class="heade">
+      <span>用户登录</span>
+    </header>
+    <!--<div class="header"></div>-->
+
+    <div class="app_bg bgstyle">
+
+      <!--<p class="logon fpasd fr">忘记密码</p>
+      <p class="logon fpasd fr none">立即注册</p>
+      <div class="clear"></div>-->
+      <div class="logo_txt">
+        <img class="whmg" src="img/logo.png"><br>
+        <p>MagicManager</p>
+      </div>
+      <!--登录错误-->
+      <p class="psdeor" ng-class="{'none':!data.showMessage}" ng-bind="data.message"></p>
+
+      <ul class="login_txt">
+        <!--输入手机号注册
+        <li class="login_li putbor" id="tel_li">
+            <label for="tel" class="lab_tel"></label>
+            <input type="tel" class="txtput" maxlength="11" id="tel" placeholder="请输入有效手机号">
+            <a class="amg" href="#"><img src="/img/xx.png"></a>
+        </li>
+        <li class="login_li none" id="zcyz_li">
+            <label for="zcyz" class="lab_yzm"></label>
+            <input type="text" class="txtput" id="zcyz" placeholder="输入短信验证码">
+            <a class="zcyzcode agtime"><img src="/img/clock.png"><span class="timec">60</span>秒后重新获取</a>
+        </li>-->
+
+        <!--admin登录-->
+        <li class="login_li" id="user_li">
+          <label for="user " class="lab_user bkmg"></label>
+          <input type="tel" class="txtput" id="user" placeholder="用户名" ng-model="data.mobile">
+          <a class="amg" href="#"><img class="bxx" src="img/xx.png"></a>
+        </li>
+
+        <!--<li class="login_li none" id="pasd_li">
+            <label for="pasd" class="lab_pasd"></label>
+            <input type="password" class="txtput" id="pasd" placeholder="密码">
+            <a class="amg" href="#"><img src="/img/xx.png"></a>
+        </li>
+        再次输入密码
+        <li class="login_li" id="zcyz_li">
+            <label for="zcyz" class="lab_yzm"></label>
+            <input type="password" class="txtput" id="zcyz" placeholder="再次输入密码">
+            <a class="amg" style="margin-top: 22px;" href="#"><img src="/img/xx.png" ></a>
+        </li>-->
+
+        <li class="login_li " id="yzm_li">
+          <label for="yzm " class="lab_yzm bkmg"></label>
+          <input type="number" class="txtput" id="yzm" maxlength="4" placeholder="输入手机验证码" ng-model="data.code">
+          <a href="" class="a_yzm" ng-show="!data.showCountNumber" ng-click="loginSendSMSCode()"><img class="yzmg none" src="#"><span>获取手机验证码</span></a>
+          <a class="zcyzcode agtime" ng-show="data.showCountNumber"><img class="clomg" src="img/clock.png"><span class="timec">{{data.countdown}}</span>秒后重新获取</a>
+        </li>
+      </ul>
+
+      <p class="denlu" ng-class="{'dltn':data.vaildButton}" ng-click="loginWithSMSCode()">登<span class="kong"></span>录</p>
+      <!--<p class="logon" ng-click="logon();">立即注册</p>-->
+      <p class="logon none">立即登录</p>
+      <p class="txtlogo">Copyright © MagicPoster</p>
+    </div>
+  </ion-content>
+</ion-view>

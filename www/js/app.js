@@ -3,41 +3,41 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter.services', 'starter.directives'])
+angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter.services', 'starter.directives', 'starter.filters', 'pascalprecht.translate'])
 
-  .run(function ($ImageCacheFactory, $ionicPlatform, $location, $ionicPopup, $rootScope, $state, $stateParams, $ionicHistory, locals) {
+  .run(function ($ImageCacheFactory, $ionicPlatform, $location, $ionicPopup, $rootScope, $state, $stateParams, $ionicHistory, locals, T) {
 
-    //主页面显示退出提示框  
+    //主页面显示退出提示框
     $ionicPlatform.registerBackButtonAction(function (e) {
 
       e.preventDefault();
 
       function showConfirm() {
         var confirmPopup = $ionicPopup.confirm({
-          title: '退出应用?',
-          template: '你确定要退出应用吗?',
-          okText: '退出',
-          cancelText: '取消'
+          title: T.T('退出应用'),
+          template: T.T('你确定要退出应用吗?'),
+          okText: T.T('退出'),
+          cancelText:T.T('取消')
         });
 
         confirmPopup.then(function (res) {
           if (res) {
             ionic.Platform.exitApp();
           } else {
-            // Don't close  
+            // Don't close
           }
         });
       }
 
-      // Is there a page to go back to?  
+      // Is there a page to go back to?
       if ($location.path() == '/main' || $location.path() == '/login') {
         showConfirm();
       } else if ($ionicHistory.backView) {
-        // console.log('currentView:', $ionicHistory.currentView);  
-        // Go back in history  
+        // console.log('currentView:', $ionicHistory.currentView);
+        // Go back in history
         $ionicHistory.goBack();
       } else {
-        // This is the last page: Show confirmation popup  
+        // This is the last page: Show confirmation popup
         showConfirm();
       }
 
@@ -71,39 +71,15 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
 
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
 
-//      if (fromState.name == "" && ($rootScope.user && $rootScope.user.token)) {
-//
-//        event.preventDefault(); // 取消默认跳转行为
-//        fromState.name = $rootScope.defaultPage;
-//        $state.go($rootScope.defaultPage);
-//        return;
-//      }
-//
-//      if (fromState.name == "")
-//        return;
-//      // 如果用户不存在
-//      if (!$rootScope.user || !$rootScope.user.token) {
-//
-//        if (fromState.name != "login")
-//
-//        {
-//          event.preventDefault(); // 取消默认跳转行为
-//          fromState.name = "login";
-//          $state.go("login", {from: "login", w: 'notLogin'}); //跳转到登录界面
-//        }
-//
-//      } else {
-//        if (toState.url == '/login') {
-//          if (fromState.name != "") {
-//            event.preventDefault(); // 取消默认跳转行为
-//          }
-//
-//
-//        } // 如果是进入登录界面则允许
-//      }
-
       if ($rootScope.user.token) {
-        if (fromState.url == "^" && toState.url != "/main") {
+
+        if (fromState.url == "/manage" && toState.url == "/makeVideo") {
+          if (toParams.getPremission != true) {
+            event.preventDefault(); // 取消默认跳转行为
+            $state.go($rootScope.defaultPage);
+            return;
+          }
+        } else if (fromState.url == "^" && toState.url != "/main") {
           event.preventDefault(); // 取消默认跳转行为
           fromState.name = $rootScope.defaultPage;
           $state.go($rootScope.defaultPage);
@@ -112,6 +88,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
           event.preventDefault(); // 取消默认跳转行为
           return;
         }
+
       } else {
         if (toState.url != "/login") {
           event.preventDefault(); // 取消默认跳转行为
@@ -120,14 +97,24 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
         }
       }
 
-
-
     });
 
 
   })
 
-  .config(function ($httpProvider, $stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+  .config(function ($httpProvider, $stateProvider, $urlRouterProvider, $ionicConfigProvider, $cordovaInAppBrowserProvider, $translateProvider, _translate_EN) {
+
+    $translateProvider.translations('en', _translate_EN);
+
+    $translateProvider.registerAvailableLanguageKeys(['en', 'zh'], {
+      'en-*': 'en',
+      'zh-*': 'zh',
+      'cn-*': 'zh'
+    });
+
+    $translateProvider.preferredLanguage('zh');
+    $translateProvider.uniformLanguageTag('bcp47').determinePreferredLanguage();//这个方法是获取手机默认语言设置
+    $translateProvider.fallbackLanguage('zh');
 
     //禁用全局缓存
 //    $ionicConfigProvider.views.maxCache(0);
@@ -142,20 +129,20 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
 
       .state('login', {
         url: '/login',
-        templateUrl: 'templates/login.html',
+        templateUrl: 'templates/loginN.html',
         controller: 'LoginCtrl'
       })
 
       .state('match', {
         url: '/match',
-        templateUrl: 'templates/match.html',
+        templateUrl: 'templates/matchN.html',
         controller: 'MatchCtrl'
       })
 
       .state('manage', {
         cache: false,
         url: '/manage',
-        templateUrl: 'templates/manage.html',
+        templateUrl: 'templates/manageN.html',
         controller: 'ManageCtrl'
       })
 
@@ -166,36 +153,30 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
       })
 
       .state('makeVideo', {
-//        cache: false,
+        cache: false,
         url: '/makeVideo',
-        templateUrl: 'templates/makeVideo.html',
+        templateUrl: 'templates/makeVideoN.html',
         controller: 'makeVideoCtrl',
-        params: {'data': null}
+        params: {'data': null, 'getPremission': null}
       })
 
       .state('admin', {
-//        cache: false,
+        cache: false,
         url: '/admin',
-        templateUrl: 'templates/admin.html',
+        templateUrl: 'templates/adminN.html',
         controller: 'AdminCtrl'
       })
 
-      .state('aboutme', {
-        url: '/aboutme',
-        templateUrl: 'templates/aboutme.html',
-        controller: ''
-      })
-
-      .state('sendV', {
-        url: '/sendV',
-        templateUrl: 'templates/sendV.html',
-        controller: ''
-      })
+      // .state('aboutme', {
+      //   url: '/aboutme',
+      //   templateUrl: 'templates/aboutme.html',
+      //   controller: ''
+      // })
 
       .state('clientList', {
-//        cache: false,
+        cache: false,
         url: '/clientList',
-        templateUrl: 'templates/clientList.html',
+        templateUrl: 'templates/clientListN.html',
         controller: 'ClientCtrl'
       })
 
@@ -206,61 +187,41 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
       })
 
       .state('choseClient', {
+        cache: false,
         url: '/choseClient/:contentid',
-        templateUrl: 'templates/choseClient.html',
+        templateUrl: 'templates/choseClientN.html',
         controller: 'ChoseClientCtrl'
       })
 
-      .state('jmang', {
-        url: '/jmang',
-        templateUrl: 'templates/jmang.html',
-        controller: ''
+      // .state('jmang', {
+      //   url: '/jmang',
+      //   templateUrl: 'templates/jmang.html',
+      //   controller: ''
+      // })
+
+      .state('test', {
+        url: '/test',
+        templateUrl: 'templates/test.html',
+        controller: 'ClientCtrl'
       });
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/login');
-  })
-  .factory('UserInterceptor', ["$q", "$rootScope", function ($q, $rootScope) {
-      return {
-        request: function (config) {
-          //config.headers["TOKEN"] = $rootScope.user.token;
-          return config;
-        },
-        responseError: function (response) {
-          //            var data = response.data;
-          //			// 判断错误码，如果是未登录
-          //            if(data["errorCode"] == "500999"){
-          //				// 清空用户本地token存储的信息，如果
-          //                $rootScope.user = {token:""};
-          //				// 全局事件，方便其他view获取该事件，并给以相应的提示或处理
-          //                $rootScope.$emit("userIntercepted","notLogin",response);
-          //            }
-          //			// 如果是登录超时
-          //			if(data["errorCode"] == "500998"){
-          //                $rootScope.$emit("userIntercepted","sessionOut",response);
-          //            }
-          return $q.reject(response);
-        }
-      };
-    }])
-  .factory('locals', ['$window', function ($window) {
-      return {
-        //存储单个属性
-        set: function (key, value) {
-          $window.localStorage[key] = value;
-        },
-        //读取单个属性
-        get: function (key, defaultValue) {
-          return $window.localStorage[key] || defaultValue;
-        },
-        //存储对象，以JSON格式存储
-        setObject: function (key, value) {
-          $window.localStorage[key] = JSON.stringify(value);
-        },
-        //读取对象
-        getObject: function (key) {
-          return JSON.parse($window.localStorage[key] || '{}');
-        }
 
-      }
-    }]);
+    // set $cordovaInAppBrowserProvider
+    var defaultOptions = {
+      location: 'no',
+      clearcache: 'no',
+      toolbar: 'no'
+    };
+
+    document.addEventListener("deviceready", function () {
+      $cordovaInAppBrowserProvider.setDefaultOptions(defaultOptions)
+    }, false);
+
+  });
+
+angular.module('starter.controllers', []);
+angular.module('starter.services', []);
+angular.module('starter.filters', []);
+angular.module('starter.directives', []);
