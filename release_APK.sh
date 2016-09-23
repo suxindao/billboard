@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+
+#添加 build android 环境变量
+PATH=${PATH}:/Users/suxindao/Library/Android/sdk/build-tools/24.0.2/
+
+#配置输出路径
 export apk_path=/Users/suxindao/work/billboard/platforms/android/build/outputs/apk
 export build_path=build
 export DATE=$(date +"%Y%m%d")
