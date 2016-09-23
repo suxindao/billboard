@@ -23,42 +23,6 @@ $ionicons-font-path: "ionic/fonts" !default;
 //变量声明
 $gb_color: #02d4c3;
 
-<<<<<<< HEAD
-@function px($number){
-  @return ($number*(1200/1536))/3;
-  /*@return $number/2;*/
-}     
-
-html{ font-family: "微软雅黑", Microsoft YaHei, sans-serif;}
-body,p,ul,li{ padding: 0; margin: 0;list-style:none;}
-a{text-decoration:none; color:#fff;}
-body{overflow: hidden;}
-.fr{float: right;}
-.fl{float: left;}
-.clear{clear: both;}
-.none{display: none;}
-.line_k{display: inline-block;}
-.absol{position: absolute;}
-.real{position: relative;}
-/*:-webkit-input-placeholder {  WebKit browsers 
-　　color:#a8a8aa;
-　　}
-　　:-moz-placeholder { /* Mozilla Firefox 4 to 18 
-　　color:#a8a8aa;
-　　}
-　　:-moz-placeholder { /* Mozilla Firefox 19+ 
-　　color:#a8a8aa;
-　　}
-　　:-ms-input-placeholder { /* Internet Explorer 10+ 
-　　color:#a8a8aa;
-　　}*/
-.putbor{ border-bottom: px(2px) solid #f6f6f6;}
-.wel{
-  background-image: url("../img/wel.png");
-}
-
-.app_bg{
-=======
 //混合器
 @mixin flexf{
   display: flex;
@@ -1454,7 +1418,6 @@ input {
 }
 
 .txt-cent {
->>>>>>> multi_language
   width: 100%;
   text-align: center;
   justify-content: center;
