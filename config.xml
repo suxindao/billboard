@@ -1,55 +1,56 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.panocean.starter" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>MagicManager</name>
-    <description>
+<widget id="com.panocean.starter" version="1.0.1" xmlns="http://www.w3.org/ns/widgets"
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>MagicManager</name>
+  <description>
     An Ionic Framework and Cordova project.
   </description>
-    <author email="you@example.com" href="http://example.com.com/">
+  <author email="you@example.com" href="http://example.com.com/">
     Your Name Here
   </author>
-    <content src="index.html" />
-    <access origin="*" />
-    <preference name="orientation" value="portrait" />
-    <preference name="webviewbounce" value="false" />
-    <preference name="UIWebViewBounce" value="false" />
-    <preference name="DisallowOverscroll" value="true" />
-    <preference name="android-minSdkVersion" value="16" />
-    <preference name="BackupWebStorage" value="none" />
-    <preference name="SplashScreen" value="screen" />
-    <preference name="SplashScreenDelay" value="5000" />
-    <preference name="FadeSplashScreenDuration" value="0000" />
-    <preference name="ShowSplashScreenSpinner" value="false" />
-    <preference name="AutoHideSplashScreen" value="true" />
-    <preference name="FadeSplashScreen" value="false" />
-    <preference name="SplashMaintainAspectRatio" value="false" />
-    <preference name="SplashShowOnlyFirstTime" value="true" />
-    <feature name="StatusBar">
-        <param name="ios-package" onload="true" value="CDVStatusBar" />
-    </feature>
-    <platform name="android">
-        <config-file mode="add" parent="/manifest" platform="android">
-            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-        </config-file>
-        <icon density="ldpi" src="resources/android/icon/96_96_320.png" />
-        <icon density="mdpi" src="resources/android/icon/96_96_320.png" />
-        <icon density="hdpi" src="resources/android/icon/96_96_320.png" />
-        <icon density="xhdpi" src="resources/android/icon/96_96_320.png" />
-        <icon density="xxhdpi" src="resources/android/icon/144_144_480.png" />
-        <icon density="xxxhdpi" src="resources/android/icon/192_192_320.png" />
-        <splash density="land-ldpi" src="resources/android/splash/wel_720_1280.png" />
-        <splash density="land-mdpi" src="resources/android/splash/wel_720_1280.png" />
-        <splash density="land-hdpi" src="resources/android/splash/wel_720_1280.png" />
-        <splash density="land-xhdpi" src="resources/android/splash/wel_720_1280.png" />
-        <splash density="land-xxhdpi" src="resources/android/splash/wel_960_1440.png" />
-        <splash density="land-xxxhdpi" src="resources/android/splash/wel_1280_1920.png" />
-        <splash density="port-ldpi" src="resources/android/splash/wel_1536_1920.png" />
-        <splash density="port-mdpi" src="resources/android/splash/wel_1536_1920.png" />
-        <splash density="port-hdpi" src="resources/android/splash/wel_1536_1920.png" />
-        <splash density="port-xhdpi" src="resources/android/splash/wel_768_1024.png" />
-        <splash density="port-xxhdpi" src="resources/android/splash/wel_960_1440.png" />
-        <splash density="port-xxxhdpi" src="resources/android/splash/wel_1280_1920.png" />
-         <source-file src="resources/android/strings.xml" target-dir="res/values-zh"/>
-    </platform>
-    <allow-intent href="*" />
-    <allow-navigation href="*" />
+  <content src="index.html"/>
+  <access origin="*"/>
+  <preference name="orientation" value="portrait"/>
+  <preference name="webviewbounce" value="false"/>
+  <preference name="UIWebViewBounce" value="false"/>
+  <preference name="DisallowOverscroll" value="true"/>
+  <preference name="android-minSdkVersion" value="16"/>
+  <preference name="BackupWebStorage" value="none"/>
+  <preference name="SplashScreen" value="screen"/>
+  <preference name="SplashScreenDelay" value="5000"/>
+  <preference name="FadeSplashScreenDuration" value="0000"/>
+  <preference name="ShowSplashScreenSpinner" value="false"/>
+  <preference name="AutoHideSplashScreen" value="true"/>
+  <preference name="FadeSplashScreen" value="false"/>
+  <preference name="SplashMaintainAspectRatio" value="false"/>
+  <preference name="SplashShowOnlyFirstTime" value="true"/>
+  <feature name="StatusBar">
+    <param name="ios-package" onload="true" value="CDVStatusBar"/>
+  </feature>
+  <platform name="android">
+    <config-file mode="add" parent="/manifest" platform="android">
+      <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    </config-file>
+    <icon density="ldpi" src="resources/android/icon/96_96_320.png"/>
+    <icon density="mdpi" src="resources/android/icon/96_96_320.png"/>
+    <icon density="hdpi" src="resources/android/icon/96_96_320.png"/>
+    <icon density="xhdpi" src="resources/android/icon/96_96_320.png"/>
+    <icon density="xxhdpi" src="resources/android/icon/144_144_480.png"/>
+    <icon density="xxxhdpi" src="resources/android/icon/192_192_320.png"/>
+    <splash density="land-ldpi" src="resources/android/splash/wel_720_1280.png"/>
+    <splash density="land-mdpi" src="resources/android/splash/wel_720_1280.png"/>
+    <splash density="land-hdpi" src="resources/android/splash/wel_720_1280.png"/>
+    <splash density="land-xhdpi" src="resources/android/splash/wel_720_1280.png"/>
+    <splash density="land-xxhdpi" src="resources/android/splash/wel_960_1440.png"/>
+    <splash density="land-xxxhdpi" src="resources/android/splash/wel_1280_1920.png"/>
+    <splash density="port-ldpi" src="resources/android/splash/wel_1536_1920.png"/>
+    <splash density="port-mdpi" src="resources/android/splash/wel_1536_1920.png"/>
+    <splash density="port-hdpi" src="resources/android/splash/wel_1536_1920.png"/>
+    <splash density="port-xhdpi" src="resources/android/splash/wel_768_1024.png"/>
+    <splash density="port-xxhdpi" src="resources/android/splash/wel_960_1440.png"/>
+    <splash density="port-xxxhdpi" src="resources/android/splash/wel_1280_1920.png"/>
+    <source-file src="resources/android/strings.xml" target-dir="res/values-zh"/>
+  </platform>
+  <allow-intent href="*"/>
+  <allow-navigation href="*"/>
 </widget>
